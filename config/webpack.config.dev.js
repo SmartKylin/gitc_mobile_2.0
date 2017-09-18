@@ -92,7 +92,7 @@ module.exports = webpackMerge(baseConfig, {
     // for React Native Web.
     extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      layout: path.resolve(__dirname, '../src/layout'),
+      pages: path.resolve(__dirname, '../src/pages'),
       component: path.resolve(__dirname, '../src/component'),
       container: path.resolve(__dirname, '../src/container'),
       services: path.resolve(__dirname, '../src/services/index.js'),
