@@ -1,5 +1,5 @@
 import React from 'react';
-import BackgroundAll from 'components/BackgroundAll/BackgroundAll';
+// import HeadPortrait from 'components/HeadPortrait';
 import {
     Router,
     Route
@@ -23,8 +23,8 @@ const App = () => (
 // props.match.params.activity_id  ？？？
     <Router history={history}>
         <div>
-            <Route exact path="/" component={BackgroundAll}/>
-            <Route path="/home" component={Home}></Route>
+            <Route exact path="/" component={Home}/>
+            {/*<Route path="/home" component={Home}></Route>*/}
             {/*<Route path="/home" component={Home}/>*/}
             {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
             <Route path="/login" component={LoginPage}/>

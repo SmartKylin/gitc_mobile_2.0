@@ -1,0 +1,19 @@
+.headportrait-content{
+  width: 94px;
+  height: 134px;
+  background: #ccc;
+  font-size: 9px;
+  .headportrait-img{
+    height:85px;
+    width: 94px;
+    background:blue;
+    display: block
+  };
+  .headportrait-font{
+    text-align: center;
+    padding: 0 15px;
+  }
+  .headportrait-font-title{
+    font-size: 12px
+  }
+}

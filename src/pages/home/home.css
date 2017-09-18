@@ -42,6 +42,9 @@
     margin: 0 auto;
     color: #fff
 }
+.agenda-name{
+    margin-top: 1.5rem;
+}
 .special-li{
     width: 15rem;
     height: 2rem;
@@ -90,12 +93,76 @@
     height: 2.5rem;
 }
 .highlights-icon1{
+    width: 1.3rem;
+    height: 1.1rem;
+    display: inline-block;
+    background:url(../../components/images/01.png);
+    background-size: cover;
+    float: left;
+}
+.highlights-icon2{
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    background:url(../../components/images/02.png);
+    background-size: cover;
+    float: left;
+}
+.highlights-icon3{
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    background:url(../../components/images/03.png);
+    background-size: cover;
+    float: left;
+}
+.highlights-icon4{
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    background:url(../../components/images/less.png);
+    background:url(../../components/images/04.png);
     background-size: cover;
-    float: left
+    float: left;
+}
+.highlights-icon5{
+    width: 1.85rem;
+    height: 1.85rem;
+    display: inline-block;
+    /*background:url(../../components/images/05.png);
+    background-size: cover;*/
+    float: left;
+}
+.highlights-icon6{
+    width: 1.85rem;
+    height: 1.85rem;
+    display: inline-block;
+    /*background:url(../../components/images/06.png);
+    background-size: cover;*/
+    float: left;
+}
+.highlights-icon7{
+    width: 1.85rem;
+    height: 1.85rem;
+    display: inline-block;
+    /*background:url(../../components/images/07.png);
+    background-size: cover;*/
+    float: left;
+}
+.highlights-icon8{
+    width: 1.85rem;
+    height: 1.85rem;
+    display: inline-block;
+    /*background:url(../../components/images/08.png);
+    background-size: cover;*/
+    float: left;
+}
+.highlights-icon9{
+    width: 1.85rem;
+    height: 1.85rem;
+    display: inline-block;
+    /*background:url(../../components/images/09.png);
+    background-size: cover;*/
+    float: left;
 }
 .highlights-li div{
     float: left

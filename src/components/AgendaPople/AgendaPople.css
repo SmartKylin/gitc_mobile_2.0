@@ -48,13 +48,14 @@ align-items:flex-end
   margin-top: 0.5rem;
 }
 .popele-box-l{
-  font-size: 0.8rem;
- width: 76%;
+  font-size:16px;
+ width: 72%;
 align-items:center
 }
 .popele-box-r{
  /*width: 20%;*/
-align-items:flex-end
+align-items:flex-end;
+font-size: 9px;
 }
 .popele-name-title{
   display: flex;
@@ -69,9 +70,10 @@ align-items:flex-start
 .popele-box-text{
   margin-top: 0.3rem;
   display: -webkit-box;
--webkit-box-orient: vertical;
+-webkit-box-orient: vertical; 
 -webkit-line-clamp: 2;
 overflow: hidden;
+
 }
 /*pop*/
 .windowPop{
@@ -134,7 +136,7 @@ font-size: 0.4rem;
   margin-top: 0.4rem;
  display: -webkit-box;
 -webkit-box-orient: vertical;
--webkit-line-clamp: 5;
+-webkit-line-clamp: 1;
 overflow: hidden;
 }
 .windowBox-icon{
