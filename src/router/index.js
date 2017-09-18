@@ -4,7 +4,7 @@ import {
     Router,
     Route
 } from 'react-router-dom'
-import Home from 'pages/home/activity.list.page'
+import Home from 'pages/home'
 import createBrowserHistory from 'history/createBrowserHistory'
 const history = createBrowserHistory();
 
@@ -24,7 +24,8 @@ const App = () => (
     <Router history={history}>
         <div>
             <Route exact path="/" component={BackgroundAll}/>
-            <Route path="/home" component={Home}/>
+            <Route path="/home" component={Home}></Route>
+            {/*<Route path="/home" component={Home}/>*/}
             {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
             <Route path="/login" component={LoginPage}/>
             <Route path="/acts/:stage_id" component={ActivityList}/>
