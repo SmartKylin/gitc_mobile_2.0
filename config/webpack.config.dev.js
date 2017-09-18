@@ -93,7 +93,7 @@ module.exports = webpackMerge(baseConfig, {
     extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
       pages: path.resolve(__dirname, '../src/pages'),
-      component: path.resolve(__dirname, '../src/component'),
+      components: path.resolve(__dirname, '../src/components'),
       container: path.resolve(__dirname, '../src/container'),
       services: path.resolve(__dirname, '../src/services/index.js'),
       images: path.resolve(__dirname, '../src/images'),
