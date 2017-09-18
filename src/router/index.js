@@ -1,11 +1,13 @@
 import React from 'react';
 import BackgroundAll from 'components/BackgroundAll/BackgroundAll';
 import {
-    Router,
-    Route
+  Router,
+  Route
 } from 'react-router-dom'
 import Home from 'pages/home'
+import Login from 'pages/login'
 import createBrowserHistory from 'history/createBrowserHistory'
+
 const history = createBrowserHistory();
 
 // import "./App.css"
@@ -21,21 +23,22 @@ const history = createBrowserHistory();
 
 const App = () => (
 // props.match.params.activity_id  ？？？
-    <Router history={history}>
-        <div>
-            <Route exact path="/" component={BackgroundAll}/>
-            <Route path="/home" component={Home}></Route>
-            {/*<Route path="/home" component={Home}/>*/}
-            {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
-            <Route path="/login" component={LoginPage}/>
-            <Route path="/acts/:stage_id" component={ActivityList}/>
-            <Route path="/acts" component={ActivityList}/>
-            <Route path="/successDetails/:orderid" component={SuccessDetails}/>
-            <Route path="/refund" component={Refund}/>
-            <Route path="/personal/:stage_id" component={Personal}/>
-            <Route path="/personal" component={Personal}/>
-            <Route path="/error" component={Error}/>*/}
-        </div>
-    </Router>
+  <Router history={history}>
+    <div>
+      <Route exact path="/" component={BackgroundAll}/>
+      <Route path="/home" component={Home}></Route>
+      <Route path="/login" component={Login}></Route>
+      {/*<Route path="/home" component={Home}/>*/}
+      {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
+              <Route path="/login" component={LoginPage}/>
+              <Route path="/acts/:stage_id" component={ActivityList}/>
+              <Route path="/acts" component={ActivityList}/>
+              <Route path="/successDetails/:orderid" component={SuccessDetails}/>
+              <Route path="/refund" component={Refund}/>
+              <Route path="/personal/:stage_id" component={Personal}/>
+              <Route path="/personal" component={Personal}/>
+              <Route path="/error" component={Error}/>*/}
+    </div>
+  </Router>
 );
 export default App
