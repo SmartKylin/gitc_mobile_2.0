@@ -20,6 +20,24 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+     <script>
+      /* rem.js文件内容 */
+      ;(function(win, doc){
+          function change(){
+              doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+          }
+          change();
+
+          win.addEventListener('resize', change, false);
+      })(window, document);
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?abbc3af13c79a34100958b890dad8b1d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
   </head>
   <body>
     <noscript>
