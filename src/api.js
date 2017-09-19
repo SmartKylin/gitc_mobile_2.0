@@ -15,4 +15,12 @@ export default (config => {
   // 个人中心
   'sendCode': '/api/gitc/user/',
   // 触点统计数据
+  'popleList':'/api/gitc/person-'
 })
+
+
+
+
+// 人员列表
+// http://120.92.10.182:8000/api/gitc/person-{page_id}
+// /list.json?token=1afb756d16740266efde290917ca1a8e

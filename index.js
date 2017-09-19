@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import {
     Link
-} from 'react-router-dom';
+} from 'react-router-dom'
 // import { PREFIX_URL,request } from "../common"
 // import { getShopList, handlePhone } from "../common"
 import ClassDetails from "components/ClassRooms/ClassDetails/ClassDetails"
 import ClassRooms from "components/ClassRooms/ClassRooms"
 import AgendaPople from "components/AgendaPople/AgendaPople"
-// import HeadPortrait from "components/HeadPortrait/HeadPortrait"
-// import BackgroundAll from "components/BackgroundAll/BackgroundAll"
+import HeadPortrait from "components/HeadPortrait/HeadPortrait"
+import BackgroundAll from "components/BackgroundAll/BackgroundAll"
 // // import fetchJsonp from 'fetch-jsonp';
 import './home.css';
 // import StgItem from "components/stg.item";
-import { getPopleList } from "../../services/home";
+
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
-// const HEADER = require('components/images/logo2.jpg')
-// const LOGO_01 = require('components/images/01.png')
+const HEADER = require('components/images/logo2.jpg')
+const LOGO_01=require('components/images/01.png')
 const MAP = require('components/images/map.png')
 
 export default class Activity extends Component {
@@ -24,41 +24,39 @@ export default class Activity extends Component {
         super(...args);
         this.onFetch = this.onFetch.bind(this)
         this.state = {
-            data: null,
-            data1: [],
-            DATAS: []
+            data:null,
+            data1:[],
+            DATAS:[]
         }
-        this.onfetchBtn = this.onfetchBtn.bind(this)
+        this.onfetchBtn=this.onfetchBtn.bind(this)
     }
-    componentWillMount() {
-        let rooms = require("../../mock/data.json");
+    componentWillMount(){
+        let rooms  = require("../../mock/data.json");
         // console.log(rooms["DATAS"],'llllllllllll')
         this.setState({
-            data: rooms,
-            data1: rooms["DATA23"],
-            DATAS: rooms["DATAS"]
+            data:rooms,
+            data1:rooms["DATA23"],
+            DATAS:rooms["DATAS"]
         })
 
     }
-    componentDidMount() {
-        getPopleList(4).then(data=>data.json()).then(data => {
-            console.log(data)
-        })
-    }
-    onfetchBtn(e) {
+    onfetchBtn(e){
         console.log(e.target.innerHTML)
     }
-    onFetch(e) {
-        e.target.setAttribute('style','color:#fff;');
-        // e.target.removeAttribute('style','color:#fff;')
+    componentDidMount(){
+       
+    }
+    onFetch(e){
         this.setState({
-            data1: this.state.data[e.target.getAttribute('name')]
+            data1:this.state.data[e.target.getAttribute('name')]
         })
     }
-
+       
     render() {
+
         return (
             <span>
+                
                 <div className="index-banner"></div>
                 <div className="content">
                     <div className="highlights">
@@ -117,10 +115,10 @@ export default class Activity extends Component {
                         <h3 className="special-name">大会专题</h3>
                         <p className="special-title">GENERAL ASSEMBLY TOPICS</p>
                         <ul className="special-ul ">
-                            {this.state.DATAS ?
-                                this.state.DATAS.map((data, index) => {
-                                    return <ClassDetails key={index} text={data.text} titleName={data.name} />
-                                }) : ""}
+                            {this.state.DATAS?
+                            this.state.DATAS.map((data,index)=>{
+                               return <ClassDetails key={index} text={data.text} titleName={data.name}/>
+                            }):""}
                             {/*<ClassDetails taxt="222" titleName="主会场1"/
                            <ClassDetails taxt="222"  titleName="主会场2"/>
                            <ClassDetails taxt="222" titleName="主会场3"/>
@@ -133,35 +131,35 @@ export default class Activity extends Component {
                         <Link to="./error.page" className="look-all">查看全部 》</Link>
                     </div>
                     <div className="agenda-content" >
-                        <div className="time" onClick={this.onFetch}>
-                            <span className="time1 " name="DATA23">11.23</span>
+                        <div className="time"  onClick={this.onFetch}>
+                            <span className="time1 cat-btn" name="DATA23">11.23</span>
                             <span className="time2" name="DATA24">11.24</span>
                         </div>
                         <div className="agenda-ul-box">
                             <div className="agenda-ul-toggle" style={{ display: "block" }}>
                                 <ul className=" agenda-ul agenda-ul-btn1 clearfix">
                                     <li className="toggle-bg">主会会场</li>
-                                    {/*<ClassRooms roomList="主会场1" />
-                                    <ClassRooms roomList="主会场2" />
-                                    <ClassRooms roomList="主会场3" />*/}
-                                    {this.state.data1 ?
-                                        this.state.data1.map((data, index) => {
-                                            return <ClassRooms key={index} roomList={data.name} onfetch={this.onfetchBtn} />
-                                        }) : ""}
+                                    <ClassRooms roomList="主会场1"/>
+                                    <ClassRooms roomList="主会场2"/>
+                                    <ClassRooms roomList="主会场3"/>
+                             {this.state.data1?
+                            this.state.data1.map((data,index)=>{
+                               return <ClassRooms key={index} roomList={data.name} onfetch={this.onfetchBtn}/>
+                            }):""}
                                 </ul>
                                 <div className="agenda-pople-box agenda-pople-box-btn1" >
                                     <ul className="agenda-pople" >
-                                        <AgendaPople />
-                                        <AgendaPople />
-                                        <AgendaPople />
+                                        <AgendaPople/>
+                                        <AgendaPople/>
+                                        <AgendaPople/>
                                     </ul>
                                 </div>
                             </div>
                             <div className="agenda-ul-toggle">
                                 <ul className="agenda-ul agenda-ul-btn2 clearfix">
-                                    <ClassRooms roomList="24主会场1" />
-                                    <ClassRooms roomList="24主会场2" />
-                                    <ClassRooms roomList="24主会场3" />
+                                    <ClassRooms roomList="24主会场1"/>
+                                    <ClassRooms roomList="24主会场2"/>
+                                    <ClassRooms roomList="24主会场3"/>
                                 </ul>
                                 <div className="agenda-pople-box agenda-pople-box-btn2">
                                     <ul className="agenda-pople" style={{ display: "block" }} >
@@ -190,7 +188,7 @@ export default class Activity extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <a href="javascript:;" className="btn-all btn-all-bottom " >会议提要 》 </a>
+                            <a href="#" className="btn-all btn-all-bottom " >会议提要 》 </a>
                             <div className="guests-popole">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">大会嘉宾</h3>
@@ -270,11 +268,11 @@ export default class Activity extends Component {
                             </div>
 
                         </div>
-
+                        
                     </div>
                     <a href="https://www.baidu.com" className="live">直播</a>
                 </div>
-
+                
             </span>
         );
     }

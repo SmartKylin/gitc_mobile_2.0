@@ -23,8 +23,15 @@
 /* Bootstrap 中默认情况下没有媒体查询 */
 .content{
     width: 16rem;
+    height:100%;
     padding: 1rem 0 0 0;
     background: #0d1428;
+    background:url(../../components/images/bg-center.jpg);
+    /*background-size: cover;*/
+}
+html,body{
+    width: 100%;
+    height: 100%;
 }
 .highlights,.special{
     width: 16rem;
@@ -247,7 +254,7 @@
     float: left;
     background: #1b2d4c;
     border-radius:0.4rem;
-    margin: 0.2rem 0.2rem;
+    margin: 0.2rem 0.3rem;
     color: #ccc
 }
 
