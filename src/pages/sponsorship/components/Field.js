@@ -1,29 +1,31 @@
 import React, {Component} from 'react'
 
-let cellWrap = {
-  padding: '0 13px',
+let FieldWrap = {
+  margin: '0 13px',
+  padding: '12px 0',
   background: '#fff',
-  height: '43px',
-  lineHeight: '43px',
   fontSize: '13px',
   display: 'flex',
-  borderBottom: '1px solid #e3e3e3'
+  borderBottom: '1px solid #e3e3e3',
+  flex: 1
 }
 
-
+let inputStyle = {
+  flex: 6
+}
 export default class extends Component {
   constructor (props) {
     super(props)
   }
   render () {
     return (
-      <div style={cellWrap}>
+      <div style={FieldWrap}>
         <span>{this.props.title}：</span>
-        <input type="text"/>
+        <input type="text" style={inputStyle}/>
       </div>
     )
   }
   componentWillMount () {
-    console.log(this.props.title);
+    // console.log(this.props.title);
   }
 }
