@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import Home from 'pages/home'
 import Login from 'pages/login'
+import SponsorShip from 'pages/sponsorship'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const history = createBrowserHistory();
@@ -28,6 +29,7 @@ const App = () => (
       <Route exact path="/" component={BackgroundAll}/>
       <Route path="/home" component={Home}></Route>
       <Route path="/login" component={Login}></Route>
+      <Route path="/sponsorship" component={SponsorShip}></Route>
       {/*<Route path="/home" component={Home}/>*/}
       {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
               <Route path="/login" component={LoginPage}/>

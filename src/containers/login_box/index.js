@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import './index.scss'
+import {sendCode} from "../../services/code";
+
 let iconIphone = require('../../images/icon-phone.svg')
 
 const TIME = 60
@@ -17,6 +19,12 @@ export default class extends Component {
     if (!this.state.mobileRight) {
       return
     }
+   /* sendCode(this.mobile.value, {phone: this.mobile.value}).then(res => res.json()).then(data => {
+      console.log(data);
+    })*/
+    sendCode(this.mobile.value, {phone: this.mobile.value}).then(data => {
+      console.log(data);
+    })
     this.countDown()
   }
   // 倒计时
