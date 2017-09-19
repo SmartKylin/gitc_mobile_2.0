@@ -2,11 +2,15 @@ import React, {Component} from 'react'
 import './index.scss'
 import {sendCode} from "../../services/code";
 
-import IconClose from 'images/close-black.svg'
+// import IconClose from 'images/close-black.svg'
 let iconIphone = require('../../images/icon-phone.svg')
 
 
 const TIME = 60
+let inputStyle = {
+  appearance: 'none',
+  borderRadius: 0
+}
 export default class extends Component {
   constructor (props) {
     super(props)
@@ -67,6 +71,12 @@ export default class extends Component {
       }
     }
   }
+  // 限制手机号长度
+  trimLength = () => {
+    if (this.mobile.value.length > 11) {
+      this.mobile.value.length = this.mobile.value.length.slice(0, 11)
+    }
+  }
   render () {
     return (
     <div className="loginbox">
@@ -77,12 +87,13 @@ export default class extends Component {
         <div className="mobile--area">
           <div className="mobile--wrap">
             <img src={iconIphone} alt="" className="icon--phone"/>
+            {/*<input type="number"  onChange={(e) => this.validateMobile(e)} ref={mobile => this.mobile = mobile} onInput={() => this.trimLength()} value={this.mobile.value}/>*/}
             <input type="number"  onChange={(e) => this.validateMobile(e)} ref={mobile => this.mobile = mobile}/>
           </div>
         </div>
   
         <div className="code--area">
-          <input type="text"/>
+          <input type="text" style={inputStyle}/>
           {/*<div className="code--txt">输入验证码</div>*/}
           {
             this.state.coding ? <div className="send--code">重新发送{this.state.time}s</div> : <div className={'send--code ' + (this.state.mobileRight ? 'active' : '')} onClick={() => this.sendCode()}>发送验证码</div>

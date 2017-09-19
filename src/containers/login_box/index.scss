@@ -65,21 +65,21 @@
     input {
       border-bottom: 1px solid $darkblue;
       width: 60%;
+      height: 23px;
     }
      /* .code--txt {
         color: $darkblue;
         font-size: 11px;
       }*/
     .send--code {
-      margin-top: 3px;
       text-align: center;
-      height: 20px;
-      width: 74px;
+      height: 23px;
+      width: 82px;
       background: #ccc;
       color: #fff;
       font-size: 11px;
       border-radius: 4px;
-      line-height: 20px;
+      line-height: 23px;
       &.active {
         background: $darkblue;
       }
