@@ -7,7 +7,7 @@ class ClassDetails extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			toggleBtn:true
+			toggleBtn:false
 			// close_display: 'none',
 			// text: '请输入验证码'
 		}

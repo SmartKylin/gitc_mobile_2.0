@@ -22,6 +22,7 @@ class BackgroundAll extends Component {
 				<div >muy_btn</div>
 				<div>nav</div>
 			</div>
+			
 		</div>
 		);
 	}

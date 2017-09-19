@@ -7,12 +7,15 @@ import {
 import ClassDetails from "components/ClassRooms/ClassDetails/ClassDetails"
 import ClassRooms from "components/ClassRooms/ClassRooms"
 import AgendaPople from "components/AgendaPople/AgendaPople"
+import HeadPortrait from "components/HeadPortrait/HeadPortrait"
 // // import fetchJsonp from 'fetch-jsonp';
 import './home.css';
 // import StgItem from "components/stg.item";
+
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
 const HEADER = require('components/images/logo2.jpg')
+const LOGO_01=require('components/images/01.png')
 const MAP = require('components/images/map.png')
 
 export default class Activity extends Component {
@@ -59,47 +62,48 @@ export default class Activity extends Component {
                         <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
                         <ul className="highlights-ul clearfix">
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                {/*<span className="highlights-icon1"></span>*/}
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font "> 领袖峰会</div>
                                 <div>触电行业最强大脑</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font ">行业领袖</div>
                                 <div>技术军团旗帜人物</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font "> 领袖峰会</div>
                                 <div>触电行业最强大脑</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font ">行业领袖</div>
                                 <div>技术军团旗帜人物</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font "> 领袖峰会</div>
                                 <div>触电行业最强大脑</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font ">行业领袖</div>
                                 <div>技术军团旗帜人物</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font ">行业领袖</div>
                                 <div>技术军团旗帜人物</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font ">行业领袖</div>
                                 <div>技术军团旗帜人物</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon1"></span>
+                                <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font ">行业领袖</div>
                                 <div>技术军团旗帜人物</div>
                             </li>
@@ -144,7 +148,7 @@ export default class Activity extends Component {
                                 <div className="agenda-pople-box agenda-pople-box-btn1" >
                                     <ul className="agenda-pople" >
                                         <AgendaPople headerImg={HEADER}/>
-                                       <AgendaPople/>
+                                       <AgendaPople headerImg={HEADER}/>
                                     </ul>
                                 </div>
                             </div>
@@ -181,7 +185,7 @@ export default class Activity extends Component {
                                     </ul>
                                 </div>
                             </div>*/}
-                            <a href="#" className="btn-all btn-all-bottom " >会议提要 &nbsp&nbsp》 </a>
+                            <a href="#" className="btn-all btn-all-bottom " >会议提要 》 </a>
                             <div className="guests-popole">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">大会嘉宾</h3>
@@ -195,8 +199,12 @@ export default class Activity extends Component {
                                     <li></li>
                                     <li></li>
                                     <li></li>
+                                    {/*<HeadPortrait name="lp" show="携程网携程网携程网"  style={{margin:'15px',float:'left'}}/>
+                                    <HeadPortrait name="lp" show="携程网携程网携程网" style={{margin:'15px',float:'left'}}/>
+                                    <HeadPortrait name="lp" show="金山云合伙人"  style={{margin:'15px',float:'left'}}/>
+                                    <HeadPortrait name="lp" show="携程网携程网携程网" style={{margin:'15px',float:'left'}}/>*/}
                                 </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 &nbsp&nbsp》 </a>
+                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 》 </a>
                                 <span className="title-btn "> 专家顾问团	</span>
                                 <ul className="guests-popole-ul clearfix">
                                     <li></li>
@@ -206,7 +214,7 @@ export default class Activity extends Component {
                                     <li></li>
                                     <li></li>
                                 </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 &nbsp&nbsp》 </a>
+                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 》 </a>
                                 <span className="title-btn "> 演讲嘉宾	</span>
                                 <ul className="guests-popole-ul clearfix">
                                     <li></li>
@@ -216,7 +224,7 @@ export default class Activity extends Component {
                                     <li></li>
                                     <li></li>
                                 </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 &nbsp&nbsp》 </a>
+                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 》 </a>
                             </div>
                             <div className="logo">
                                 <div className="highlights">
@@ -229,7 +237,7 @@ export default class Activity extends Component {
                                 <img src={LOGO_1} alt="" />
                                 <p>媒体合作</p>
                                 <img src={LOGO_2} alt="" />
-                                <a href="#" className="btn-all btn-all-bottoms" >赞助机会 &nbsp&nbsp》 </a>
+                                <a href="#" className="btn-all btn-all-bottoms" >赞助机会 》 </a>
                             </div>
                             <div className="bg-b">
                                 <div className="maps" >
