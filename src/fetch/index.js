@@ -10,7 +10,6 @@ const formatUrlencoded = obj => {
 };
 
 export const get = url => {
-  console.log('get');
   return fetch(url, {
     Accept: 'application/json',
     // 设置请求可以跨域发送cookie
