@@ -1,0 +1,22 @@
+.collection--icon {
+  background: url(../../../../images/collection-icon.svg) no-repeat center 3px;
+  background-size: 80%;
+  width: 20px;
+  height: 18px;
+}
+
+.document--collection {
+  background: url(../../../../images/document-collection.svg) no-repeat center 3px;
+  background-size: 80%;
+  width: 20px;
+  height: 18px;
+}
+
+.user {
+  .ant-menu-submenu-title {
+    font-size: 15px;
+  }
+  .ant-menu-submenu-inline > .ant-menu-submenu-title:after {
+    font-size: 20px;
+  }
+}

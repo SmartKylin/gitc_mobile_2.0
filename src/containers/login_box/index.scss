@@ -2,17 +2,39 @@
 .loginbox {
   height: 180px;
   width: 86%;
+ /* background: url(../../images/close-black.svg) no-repeat #fff 98% 5px;
+  background-size: 20px;*/
   background: #fff;
   position: relative;
   z-index: 100;
   display: flex;
   border-radius: 8px;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
+
+  .close--area {
+    height: 35px;
+    display: flex;
+    justify-content: flex-end;
+    .close--icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: url(../../images/close-black.svg) no-repeat center;
+      background-size: 60%;
+      cursor: pointer;
+    }
+  }
+  .form--wrap {
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
   .mobile--area {
     width: 223px;
     border-bottom: 1px solid $darkblue;
-    margin-top: 35px;
+    //margin-top: 35px;
     justify-content: space-between;
 
     height: 28px;
@@ -32,19 +54,6 @@
       //margin-top: 7px;
       display: inline-block;
     }
-    .send--code {
-      margin-top: 3px;
-      text-align: center;
-      height: 20px;
-      width: 74px;
-      background: #ccc;
-      color: #fff;
-      font-size: 11px;
-      border-radius: 4px;
-      &.active {
-        background: $darkblue;
-      }
-    }
   }
   .code--area {
     width: 223px;
@@ -55,10 +64,25 @@
     justify-content: space-between;
     input {
       border-bottom: 1px solid $darkblue;
+      width: 60%;
+      height: 23px;
     }
-    .code--txt {
-      color: $darkblue;
+     /* .code--txt {
+        color: $darkblue;
+        font-size: 11px;
+      }*/
+    .send--code {
+      text-align: center;
+      height: 23px;
+      width: 82px;
+      background: #ccc;
+      color: #fff;
       font-size: 11px;
+      border-radius: 4px;
+      line-height: 23px;
+      &.active {
+        background: $darkblue;
+      }
     }
   }
   .btn--area {
