@@ -14,7 +14,7 @@ export const get = url => {
     Accept: 'application/json',
     // 设置请求可以跨域发送cookie
     credentials: 'include',
-    mode: 'no-cors',
+    mode: 'cors',
     cache: 'default'
   })
 }

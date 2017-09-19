@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Field from '../components/Field'
 
 let boxStyle = {
-  height: '82%',
+  height: '89%',
   borderRadius: '5px',
   overflow: 'hidden',
   background: '#fff',
@@ -11,14 +11,14 @@ let boxStyle = {
 
 let btnStyle = {
   width: '112px',
-  height: '29px',
+  height: '30px',
   color: "#fff",
   background: '#336cfa',
-  lineHeight: '29px',
+  lineHeight: '30px',
   fontSize: '12px',
   textAlign: 'center',
   marginTop: '30px',
-  borderRadius: '12px'
+  borderRadius: '15px'
 }
 export default class extends Component {
   render() {
@@ -29,7 +29,7 @@ export default class extends Component {
       <Field title='手机'></Field>
       <Field title={'职位'}></Field>
       <Field title={'邮箱'}></Field>
-      <Field title={'赞助意向'}></Field>
+      <Field title={'合作意向'} disabled={true} textArea={true}></Field>
       <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
         <div style={btnStyle}>确定提交</div>
       </div>
