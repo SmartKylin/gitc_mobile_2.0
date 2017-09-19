@@ -36,7 +36,7 @@ class AgendaPople extends Component {
 						<span className="popele-name-l">崔宝秋</span>
 						<span className="popele-name-r">小米丨首席架构师</span>
 					</div>
-					<p className="popele-box-text">演讲内容:GITC北京峰全京峰会全球互会全京峰会全球互联网技术大会北京峰会全球互联</p>
+					<p className="popele-box-text sl">111演讲内容:GITC北京峰全京峰会全球互会全京峰会全球互联网技术大会北京峰会全球互联</p>
 				</div>
 				<div className="windowPop">
 					<div className="windowBox">
