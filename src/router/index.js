@@ -29,8 +29,8 @@ const App = () => (
     <div>
       <Route exact path="/" component={Home}/>
       <Route path="/home" component={Home}></Route>
-      {/*<Route path="/login" component={Login}></Route>
-      <Route path="/sponsorship" component={SponsorShip}></Route>*/}
+      <Route path="/login" component={Login}></Route>
+      <Route path="/sponsorship" component={SponsorShip}></Route>
       {/*<Route path="/home" component={Home}/>*/}
       {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
               <Route path="/login" component={LoginPage}/>
