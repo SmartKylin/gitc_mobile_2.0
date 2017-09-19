@@ -8,7 +8,7 @@ export default class extends Component {
   }
   render () {
     return (
-      <div style={{with: '100%', height: '475px', backgroundColor: 'rgba(0, 0, 0, .85)', visibility: this.props.visibility, position: 'absolute', top: 0, left: 0, right: 0, zIndex: '10'}}>
+      <div style={{with: '100%', height: '475px', backgroundColor: 'rgba(0, 0, 0, .9)', visibility: this.props.visibility, position: 'absolute', top: 0, left: 0, right: 0, zIndex: '10'}}>
         <div style={{display: 'flex', justifyContent: 'flex-end', padding: '0 15px', marginTop: '17px', marginBottom: '7px'}}>
           <div className="close--menu--icon" onClick={() => this.props.closeMenu()}></div>
         </div>
