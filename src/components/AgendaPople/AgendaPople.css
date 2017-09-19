@@ -78,7 +78,7 @@ height: 32px;
 }
 /*pop*/
 .windowPop{
-  display: none;
+  /*display: none;*/
     position: fixed;
     top:0;
     bottom: 0;
@@ -92,7 +92,7 @@ height: 32px;
     position: absolute;
     left: 50%;
     top:50%;
-    margin: -10.8rem -7rem;
+    margin: -10.8rem -6.8rem;
     background: #fff;
     border-radius: 0.5rem;
     padding: 0 0.8rem;
@@ -105,7 +105,8 @@ height: 32px;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: blue
+  background: blue;
+  position: relative
 }
 .windowBox-name{
   font-size: 0.8rem;
@@ -144,6 +145,7 @@ overflow: hidden;
   width: 50%;
   margin-top: 2rem;
   display: flex;
+  margin-bottom: 0.4rem
 }
 .windowBox-icon>div{
   width: 33%;
@@ -162,4 +164,15 @@ overflow: hidden;
   display: flex;
    flex-direction:row-reverse;
   width: 100%
+}
+.close-btn{
+  width: 0.8rem;
+  height: 0.8rem;
+  position: absolute;
+  right: -5rem;
+  top: -0.4rem;
+  border-radius:50%;
+  border: 1px solid #ccc ;
+  text-align: center;
+  line-height: 0.8rem
 }

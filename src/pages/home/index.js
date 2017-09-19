@@ -8,6 +8,7 @@ import ClassDetails from "components/ClassRooms/ClassDetails/ClassDetails"
 import ClassRooms from "components/ClassRooms/ClassRooms"
 import AgendaPople from "components/AgendaPople/AgendaPople"
 import HeadPortrait from "components/HeadPortrait/HeadPortrait"
+import BackgroundAll from "components/BackgroundAll/BackgroundAll"
 // // import fetchJsonp from 'fetch-jsonp';
 import './home.css';
 // import StgItem from "components/stg.item";
@@ -55,6 +56,7 @@ export default class Activity extends Component {
 
         return (
             <span>
+                
                 <div className="index-banner"></div>
                 <div className="content">
                     <div className="highlights">
@@ -136,10 +138,10 @@ export default class Activity extends Component {
                         <div className="agenda-ul-box">
                             <div className="agenda-ul-toggle" style={{ display: "block" }}>
                                 <ul className=" agenda-ul agenda-ul-btn1 clearfix">
-                                    {/*<li className="toggle-bg">主会会场</li>*/}
-                                    {/*<ClassRooms roomList="主会场1"/>
+                                    <li className="toggle-bg">主会会场</li>
+                                    <ClassRooms roomList="主会场1"/>
                                     <ClassRooms roomList="主会场2"/>
-                                    <ClassRooms roomList="主会场3"/>*/}
+                                    <ClassRooms roomList="主会场3"/>
                              {this.state.data1?
                             this.state.data1.map((data,index)=>{
                                return <ClassRooms key={index} roomList={data.name} onfetch={this.onfetchBtn}/>
@@ -147,12 +149,13 @@ export default class Activity extends Component {
                                 </ul>
                                 <div className="agenda-pople-box agenda-pople-box-btn1" >
                                     <ul className="agenda-pople" >
-                                        <AgendaPople headerImg={HEADER}/>
-                                       <AgendaPople headerImg={HEADER}/>
+                                        <AgendaPople/>
+                                        <AgendaPople/>
+                                        <AgendaPople/>
                                     </ul>
                                 </div>
                             </div>
-                            {/*<div className="agenda-ul-toggle">
+                            <div className="agenda-ul-toggle">
                                 <ul className="agenda-ul agenda-ul-btn2 clearfix">
                                     <ClassRooms roomList="24主会场1"/>
                                     <ClassRooms roomList="24主会场2"/>
@@ -184,7 +187,7 @@ export default class Activity extends Component {
                                         <li>33</li>
                                     </ul>
                                 </div>
-                            </div>*/}
+                            </div>
                             <a href="#" className="btn-all btn-all-bottom " >会议提要 》 </a>
                             <div className="guests-popole">
                                 <div className="highlights">
