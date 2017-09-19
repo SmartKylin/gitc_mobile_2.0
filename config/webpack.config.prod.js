@@ -92,7 +92,7 @@ module.exports = {
     alias: {
       pages: path.resolve(__dirname, '../src/pages'),
       components: path.resolve(__dirname, '../src/components'),
-      container: path.resolve(__dirname, '../src/container'),
+      containers: path.resolve(__dirname, '../src/containers'),
       services: path.resolve(__dirname, '../src/services/index.js'),
       images: path.resolve(__dirname, '../src/images'),
       '@': path.resolve(__dirname, '../src'),
