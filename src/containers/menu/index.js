@@ -3,8 +3,13 @@ import {Link} from 'react-router-dom'
 import './index.scss'
 
 export default class extends Component {
-  constructor (props) {
-    super(props)
+  handleClickUser = () => {
+    this.props.closeMenu()
+    if (window.login) {
+      this.props.history.push('/user')
+    } else {
+      this.props.openPop()
+    }
   }
   render () {
     return (
@@ -15,7 +20,8 @@ export default class extends Component {
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '17px'}} className="nav--group">
           <Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>
           <Link to={"/ticket"} onClick={() => this.props.closeMenu()}>我的门票</Link>
-          <Link to={"/user"} onClick={() => this.props.closeMenu()}>个人中心</Link>
+          {/*<Link to={"/user"} onClick={() => this.handleClickUser()}>个人中心</Link>*/}
+          <a href="javascript:;" onClick={() => this.handleClickUser()}>个人中心</a>
           <Link to={"/login"} onClick={() => this.props.closeMenu()}>大会商店</Link>
           <Link to={"/activity"} onClick={() => this.props.closeMenu()}>现场活动</Link>
           <Link to={"/login"} onClick={() => this.props.closeMenu()}>大会相册</Link>

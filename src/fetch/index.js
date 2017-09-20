@@ -13,6 +13,7 @@ export const get = url => {
   return fetch(url, {
     Accept: 'application/json',
     // 设置请求可以跨域发送cookie
+
     credentials: 'include',
     mode: 'cors',
     cache: 'default'

@@ -23,8 +23,15 @@
 /* Bootstrap 中默认情况下没有媒体查询 */
 .content{
     width: 16rem;
+    height:100%;
     padding: 1rem 0 0 0;
     background: #0d1428;
+    background:url(../../components/images/bg-center.jpg);
+    /*background-size: cover;*/
+}
+html,body{
+    width: 100%;
+    height: 100%;
 }
 .highlights,.special{
     width: 16rem;
@@ -57,7 +64,7 @@
     padding: 0.6rem 0.5rem;
     font-size: 0.5rem;
     background: #121d35;
-    width: 15rem;
+    width: 16rem;
 }
 
 .z{
@@ -85,34 +92,39 @@
 }
 .highlights-ul{
     width: 15rem;
-    margin: 0 auto
+    margin: 0 auto;
+    padding-left: 0.3rem
 }
 .highlights-li{
     width: 50%;
     float: left;
     height: 2.5rem;
+    margin-top: 0.4rem
+}
+.highlights-li  span{
+    margin-right: 0.4rem
 }
 .highlights-icon1{
-    width: 1.3rem;
-    height: 1.1rem;
+    width: 1.6rem;
+    height: 1.4rem;
     display: inline-block;
-    background:url(../../components/images/01.png);
+    background:url(../../components/images/icon001.png);
     background-size: cover;
     float: left;
 }
 .highlights-icon2{
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/02.png);
+    background:url(../../components/images/icon003.png);
     background-size: cover;
     float: left;
 }
 .highlights-icon3{
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/03.png);
+    background:url(../../components/images/icon004.png);
     background-size: cover;
     float: left;
 }
@@ -120,7 +132,7 @@
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    background:url(../../components/images/04.png);
+    background:url(../../components/images/icon005.png);
     background-size: cover;
     float: left;
 }
@@ -128,48 +140,66 @@
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    /*background:url(../../components/images/05.png);
-    background-size: cover;*/
+    background:url(../../components/images/icon006.png);
+    background-size: cover;
     float: left;
 }
 .highlights-icon6{
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    /*background:url(../../components/images/06.png);
-    background-size: cover;*/
+    background:url(../../components/images/icon007.png);
+    background-size: cover;
     float: left;
 }
 .highlights-icon7{
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    /*background:url(../../components/images/07.png);
-    background-size: cover;*/
+    background:url(../../components/images/icon008.png);
+    background-size: cover;
     float: left;
 }
 .highlights-icon8{
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    /*background:url(../../components/images/08.png);
-    background-size: cover;*/
+    background:url(../../components/images/icon009.png);
+    background-size: cover;
     float: left;
 }
 .highlights-icon9{
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    /*background:url(../../components/images/09.png);
-    background-size: cover;*/
+    background:url(../../components/images/icon002.png);
+    background-size: cover;
     float: left;
+}
+.pa-icon{
+    position: absolute;
+    right: -1rem;
+    top:0.2rem;
+    width: 12px;
+    height: 12px;
+}
+.pa-icon1{
+background:url(../../components/images/vip1.png);
+    background-size: cover;
+}
+.pa-icon2{
+background:url(../../components/images/vip2.png);
+    background-size: cover;
+}
+.pa-icon3{
+background:url(../../components/images/vip2.png);
+    background-size: cover;
 }
 .highlights-li div{
     float: left
 }
 .highlights-li-font{
     font-size: 0.7rem;
-    margin-top: 0.4rem
 }
 @keyframes change{
     0% {
@@ -243,16 +273,16 @@
     padding: 0.5rem;
 }
 .agenda-ul li{
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.4rem;
     float: left;
     background: #1b2d4c;
     border-radius:0.4rem;
-    margin: 0.2rem 0.2rem;
+    margin: 0.2rem 0.3rem;
     color: #ccc
 }
 
-.cat-btn{
-    color: #fff !important
+.catbtn{
+    color: #fff
 }
 /*.agenda-pople li{
     width: 15rem;
@@ -353,6 +383,13 @@
     height: 3rem;
     display: block;
     background: url(../../components/images/code.png);
-    background-size: cover
+    background-size: cover;
+    z-index: 1
 }
+.highlights-li-fonts {
+font-size: 10px;
+}
+
+html{height:100%;overflow:hidden}
+html,body{height:100%;overflow:auto}
 
