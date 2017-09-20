@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import RouterMap from '../router'
-import Menu from 'containers/menu'
+// import Menu from 'containers/menu'
 import {authCheck} from "../helper/login";
 
 import Popup from 'components/popup'

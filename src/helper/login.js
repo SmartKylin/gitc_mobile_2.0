@@ -11,4 +11,5 @@ export function authCheck(cb) {
   window.phone = phone
   window.login = !! phone
   cb && cb();
+  return phone
 }

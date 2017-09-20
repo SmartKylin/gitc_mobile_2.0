@@ -3,9 +3,6 @@ import {Link} from 'react-router-dom'
 import './index.scss'
 
 export default class extends Component {
-  constructor (props) {
-    super(props)
-  }
   handleClickUser = () => {
     this.props.closeMenu()
     if (window.login) {
