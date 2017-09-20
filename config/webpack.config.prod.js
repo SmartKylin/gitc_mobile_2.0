@@ -150,6 +150,8 @@ module.exports = {
           /\.gif$/,
           /\.jpe?g$/,
           /\.png$/,
+          /\.svg$/,
+          /\.scss$/
         ],
         loader: require.resolve('file-loader'),
         options: {
@@ -159,7 +161,7 @@ module.exports = {
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
         loader: require.resolve('url-loader'),
         options: {
           limit: 10000,
@@ -230,6 +232,10 @@ module.exports = {
         ),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],
