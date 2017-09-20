@@ -13,15 +13,15 @@ export default class extends Component {
           <div className="close--menu--icon" onClick={() => this.props.closeMenu()}></div>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '17px'}} className="nav--group">
-          <Link to={"/home"}>首页</Link>
-          <Link to={"/sponsorship"}>我的门票</Link>
-          <Link to={"/user"}>个人中心</Link>
-          <Link to={"/login"}>大会商店</Link>
-          <Link to={"/login"}>现场活动</Link>
-          <Link to={"/login"}>大会相册</Link>
-          <Link to={"/login"}>场馆地图</Link>
-          <Link to={"/login"}>议题提交</Link>
-          <Link to={"/sponsorship"}>赞助合作</Link>
+          <Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>
+          <Link to={"/ticket"} onClick={() => this.props.closeMenu()}>我的门票</Link>
+          <Link to={"/user"} onClick={() => this.props.closeMenu()}>个人中心</Link>
+          <Link to={"/login"} onClick={() => this.props.closeMenu()}>大会商店</Link>
+          <Link to={"/activity"} onClick={() => this.props.closeMenu()}>现场活动</Link>
+          <Link to={"/login"} onClick={() => this.props.closeMenu()}>大会相册</Link>
+          <Link to={"/login"} onClick={() => this.props.closeMenu()}>场馆地图</Link>
+          <Link to={"/issue"} onClick={() => this.props.closeMenu()}>议题提交</Link>
+          <Link to={"/sponsorship"} onClick={() => this.props.closeMenu()}>赞助合作</Link>
         </div>
       </div>
     )

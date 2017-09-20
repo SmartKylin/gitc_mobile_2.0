@@ -17,19 +17,29 @@ let inputStyle = {
 export default class extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      value: ''
+    }
+  }
+  changeValue = (e) => {
+    let value = e.target.value
+    this.setState({
+      value
+    })
+    this.props.changeValue(this.props.name, value)
   }
   render () {
     return (
       <div style={FieldWrap}>
         <div>
           <span>{this.props.title}：</span>
-          {this.props.textArea ? null : <input type="text" style={inputStyle}/>}
+          {this.props.textArea ? null : <input type={this.props.type || 'text'} style={inputStyle} onInput={ (e) => this.changeValue(e)}/>}
         </div>
-        {this.props.textArea ? <textarea name="" id="" cols="30" rows="8" maxLength={200} style={{resize: 'none'}}></textarea> : null}
+        {this.props.textArea ? <textarea name="" id="" cols="30" rows="8" maxLength={200} style={{resize: 'none'}} onInput={ (e) => this.changeValue(e)}></textarea> : null}
       </div>
     )
   }
   componentWillMount () {
-    // console.log(this.props.title);
+    console.log(this.props.model);
   }
 }

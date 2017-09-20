@@ -12,10 +12,14 @@ export default (config => {
     return copy
   }, {})
 })({
-  // 个人中心
+  // 发送验证码
   'sendCode': '/api/gitc/code/',
   // 触点统计数据
 
   //大会新闻列表
-  'getListNews':'/api/gitc/article-'
+  'getListNews':'/api/gitc/article-',
+  // 注册或者登陆
+  'user': '/api/gitc/user/',
+  // 赞助
+  'sponsor': '/api/gitc/sponsor/',
 })
