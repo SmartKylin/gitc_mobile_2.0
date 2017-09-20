@@ -11,6 +11,7 @@ import User from 'pages/user'
 import Ticket from 'pages/ticket'
 import TicketDetail from 'pages/ticketdetail'
 import Activity from 'pages/activity'
+import Issue from 'pages/issue'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const history = createBrowserHistory();
@@ -39,6 +40,7 @@ const App = () => (
       <Route path="/ticket" component={Ticket}></Route>
       <Route path="/ticketdetail" component={TicketDetail}></Route>
       <Route path="/activity" component={Activity}></Route>
+      <Route path="/issue" component={Issue}></Route>
       {/*<Route path="/home" component={Home}/>*/}
       {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
               <Route path="/login" component={LoginPage}/>
