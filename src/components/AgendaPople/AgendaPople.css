@@ -27,21 +27,42 @@
 .header-icon{
   width: 3rem;
   height: 0.6rem;
-  background: #ccc;
   display: flex;
   align-items: center;
 }
 .header-icon .l{
   width: 33.33%;
-align-items:flex-start
+align-items:flex-start;
+display: flex;
+ justify-content:center
 }
 .header-icon .c{
   width: 33.33%;
-align-items:center
+align-items:center;
+display: flex;
+ justify-content:center
 }
 .header-icon .r{
   width: 33.33%;
-align-items:flex-end
+align-items:flex-end;
+display: flex;
+ justify-content:center
+}
+.popele-box-1,.popele-box-2,.popele-box-3{
+width: 16px;
+height: 16px;
+}
+.popele-box-1{
+   background: url(../images/sc.png);
+  background-size: cover;
+}
+.popele-box-2{
+ background: url(../images/wdsc.png);
+  background-size: cover;
+}
+.popele-box-3{
+ background: url(../images/ckwd.png);
+  background-size: cover;
 }
 .popele-box-title{
   display: flex;
@@ -89,12 +110,12 @@ font-size: 12px;
     background: rgba(000, 000, 000, 0.6)
 }
 .windowBox{
-    width: 12rem;
+    width: 86%;
     height: 21.6rem;
     position: absolute;
     left: 50%;
     top:50%;
-    margin: -10.8rem -6.8rem;
+    margin: -10.8rem -43%;
     background: #fff;
     border-radius: 0.5rem;
     padding: 0 0.8rem;
@@ -132,6 +153,7 @@ font-size: 0.4rem;
 .windowBox-title{
   font-size: 12px;
   margin-top: 0.6rem ;
+  margin-left:0.3rem
 }
 .win-l{
   display: flex;
@@ -203,10 +225,12 @@ font-size: 12px;
   display:  inline-block
 }
 .windowBox-iconlink{
-  width: 1.4rem;
-  height: 1.4rem;
-  border: 1px solid #ccc; 
+  width: 28px;
+  height: 28px;
+  border: 1px solid #cddafa; 
   border-radius:50%;
+  webkit-box-shadow: 0px 0px 4px #cddafa;
+    box-shadow: 0px 0px 4px#cddafa;
 }
 
 .windowBox-icon-ml{
@@ -244,12 +268,17 @@ background: url(../images/ckwd.png);
   background-size: cover;
 }
 .windowBox-icon .windowBox-icon-mln{
+  position: relative;
+  margin-left: 0
+}
+.windowBox-icon .windowBox-icon-mlnr{
+  position: relative;
   margin-left: 0
 }
 .windowBox-btn-color{
   width: 1.5rem;
   height: 1.5rem;
   position: absolute;
-  right: -5.6rem;
+  right: -226%;
   top:-1rem;
 }

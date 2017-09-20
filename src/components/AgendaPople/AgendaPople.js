@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import $ from 'jquery'
 import './AgendaPople.css';
 class AgendaPople extends Component {
 	constructor(props) {
@@ -7,7 +8,10 @@ class AgendaPople extends Component {
 		this.state = {
 			a:false,
 			linkColor:true,
-			linkColor2:true
+			linkColor2:true,
+			link1:true,
+			link2:true,
+			link3:true
 		}
 		this._handleClick=this._handleClick.bind(this)
 		this._handleOffClick=this._handleOffClick.bind(this)
@@ -53,20 +57,46 @@ class AgendaPople extends Component {
 		})
 	}
 	mounseup(e){
-//  e.preventDefault();
- return false;
+ $('html').css('height','100%')
+		$('body').css('height','100%')
+ $('body').css('overflow','hidden')
+ $('html').css('overflow','hidden')
+	}
+	unmounseup(e){
+ $('body').css('overflow','auto')
+	}
+	toggleLink1(e){
+		this.setState({
+			link1:!this.state.link1
+		})
+	}
+	toggleLink2(e){
+		this.setState({
+			link2:!this.state.link2
+		})
+	}
+	toggleLink3(e){
+		this.setState({
+			link3:!this.state.link3
+		})
 	}
 	render() {
 		const { headerImg } = this.props
 		return (
-			<li className="popele-box" onClick={this._handleClick}>
+			<li className="popele-box" id="a" onClick={this._handleClick}>
 				
 				<div className="popele-box-left">
 					<img src={headerImg} alt="" className="header-img" />
 					<div className="header-icon">
-						<span className="l">1</span>
-						<span className="c">2</span>
-						<span className="r">3</span>
+						<span className="l">
+<div className="popele-box-1"></div>
+						</span>
+						<span className="c">
+<div className="popele-box-2"></div>
+						</span>
+						<span className="r">
+<div className="popele-box-3"></div>
+						</span>
 					</div>
 				</div>
 				<div className="popele-box-right">
@@ -78,10 +108,11 @@ class AgendaPople extends Component {
 						<span className="popele-name-l">崔宝秋</span>
 						<span className="popele-name-r">小米丨首席架构师</span>
 					</div>
-					<p className="popele-box-text sl">111演讲内容:GITC北京峰全京峰会全球互会全京峰会全球互联网技术大会北京峰会全球互联</p>
+					<p className="popele-box-text sl">演讲内容:GITC北京峰全京峰会全球互会全京峰会全球互联网技术大会北京峰会全球互联</p>
 				</div>
 				<div className="windowPop" style={{display:this.state.a?"block":'none'}} 
 				onTouchStart={this.mounseup.bind(this)}
+				onTouchEnd={this.unmounseup.bind(this)}
 				>
 					
 					<div className="windowBox">
@@ -117,9 +148,9 @@ class AgendaPople extends Component {
 				onTouchEnd={this.mounout2} style={{borderColor:this.state.linkColor2?"":"#ccc"}}>个人简介：GITC2017全球互联网技术大会北京站热点议题全覆盖，众多互联网行业领袖和技术精英们将共同探讨架构、前端开发等领域的技术热点；共同发现运维、IoT、移动互联网等领域的发展趋势。</p>
 						<div className="windowBox-icon-content">
 							<div className="windowBox-icon">
-								<div  className="windowBox-iconlink  windowBox-icon-ml windowBox-icon-mln"><div className="windowBox-iconlink-l1"></div></div>
-								<div  className="windowBox-iconlink windowBox-icon-ml"><div className="windowBox-iconlink-l2"></div></div>
-								<div  className="windowBox-iconlink windowBox-icon-ml"><div className="windowBox-iconlink-l3"></div></div>
+								<div  style={{borderColor:this.state.link1?'#ccc':'blue'}}className="windowBox-iconlink   windowBox-icon-mln" onClick={this.toggleLink1.bind(this)}><div className="windowBox-iconlink-l1"></div></div><div style={{width:'0.8rem'}}>	</div>
+								<div style={{borderColor:this.state.link2?'#ccc':'blue'}} className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink2.bind(this)}><div className="windowBox-iconlink-l2"></div></div><div  style={{width:'0.8rem'}}></div>
+								<div   style={{borderColor:this.state.link3?'#ccc':'blue'}} className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}><div className="windowBox-iconlink-l3"></div></div>
 							</div>
 						</div>
 					</div>

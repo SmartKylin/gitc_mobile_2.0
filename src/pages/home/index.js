@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
     Link
 } from 'react-router-dom';
+import $ from 'jquery'
 // import { PREFIX_URL,request } from "../common"
 // import { getShopList, handlePhone } from "../common"
 import ClassDetails from "components/ClassRooms/ClassDetails/ClassDetails"
@@ -49,7 +50,8 @@ export default class Activity extends Component {
         console.log(e.target.innerHTML)
     }
     onFetch(e) {
-        e.target.setAttribute('style','color:#fff;');
+        $('.time span').removeClass('catbtn'); 
+        $(e.target).addClass('catbtn');
         // e.target.removeAttribute('style','color:#fff;')
         this.setState({
             data1: this.state.data[e.target.getAttribute('name')]
@@ -67,49 +69,55 @@ export default class Activity extends Component {
                         <ul className="highlights-ul clearfix">
                             <li className="highlights-li ">
                                 {/*<span className="highlights-icon1"></span>*/}
-                                <span className="highlights-icon4"></span>
-                                <div className="highlights-li-font "> 领袖峰会</div>
-                                <div>触电行业最强大脑</div>
+                                <span className="highlights-icon1"></span>
+                                <div className="highlights-li-font  pr"> 领袖峰会<div className="pa-icon pa-icon1"></div></div>
+                                <div  className="highlights-li-fonts">触电行业最强大脑
+                                    
+                                </div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon4"></span>
+                                <span className="highlights-icon2"></span>
                                 <div className="highlights-li-font ">行业领袖</div>
-                                <div>技术军团旗帜人物</div>
+                                <div className="highlights-li-fonts ">技术军团旗帜人物</div>
+                            </li>
+                            <li className="highlights-li ">
+                                <span className="highlights-icon3"></span>
+                                <div className="highlights-li-font "> 技术专家</div>
+                                <div className="highlights-li-fonts ">分享最前沿的技术观点</div>
                             </li>
                             <li className="highlights-li ">
                                 <span className="highlights-icon4"></span>
-                                <div className="highlights-li-font "> 领袖峰会</div>
-                                <div>触电行业最强大脑</div>
+                                <div className="highlights-li-font ">品牌专场</div>
+                                <div className="highlights-li-fonts ">重新定义品牌价值</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon4"></span>
-                                <div className="highlights-li-font ">行业领袖</div>
-                                <div>技术军团旗帜人物</div>
+                                <span className="highlights-icon5"></span>
+                                <div className="highlights-li-font "> Tech Tutor</div>
+                                <div className="highlights-li-fonts ">掌握最强最先进技术大触</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon4"></span>
-                                <div className="highlights-li-font "> 领袖峰会</div>
-                                <div>触电行业最强大脑</div>
+                                <span className="highlights-icon6"></span>
+                                <div className="highlights-li-font ">Tech+</div>
+                                <div className="highlights-li-fonts ">技术带你感受游戏魅力</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon4"></span>
-                                <div className="highlights-li-font ">行业领袖</div>
-                                <div>技术军团旗帜人物</div>
+                                <span className="highlights-icon7"></span>
+                                <div className="highlights-li-font pr">颁奖典礼
+                                    <div className="pa-icon pa-icon2"></div>
+                                </div>
+                                <div className="highlights-li-fonts ">见证行业中的榜样力量</div>
                             </li>
                             <li className="highlights-li ">
-                                <span className="highlights-icon4"></span>
-                                <div className="highlights-li-font ">行业领袖</div>
-                                <div>技术军团旗帜人物</div>
+                                <span className="highlights-icon8"></span>
+                                <div className="highlights-li-font ">黑科技游乐园</div>
+                                <div className="highlights-li-fonts ">感受游戏魅力,最真实表演</div>
                             </li>
-                            <li className="highlights-li ">
-                                <span className="highlights-icon4"></span>
-                                <div className="highlights-li-font ">行业领袖</div>
-                                <div>技术军团旗帜人物</div>
-                            </li>
-                            <li className="highlights-li ">
-                                <span className="highlights-icon4"></span>
-                                <div className="highlights-li-font ">行业领袖</div>
-                                <div>技术军团旗帜人物</div>
+                            <li className="highlights-li " style={{width:'60%'}}>
+                                <span className="highlights-icon9"></span>
+                                <div className="highlights-li-font pr">邀请晚宴
+                                    <div className="pa-icon pa-icon3"></div>
+                                </div>
+                                <div className="highlights-li-fonts ">真人王者荣誉互联网社交重头戏</div>
                             </li>
                         </ul>
                     </div>
@@ -134,8 +142,8 @@ export default class Activity extends Component {
                     </div>
                     <div className="agenda-content" >
                         <div className="time" onClick={this.onFetch}>
-                            <span className="time1 " name="DATA23">11.23</span>
-                            <span className="time2" name="DATA24">11.24</span>
+                            <span className="time1 datacolor catbtn" name="DATA23">11.23</span>
+                            <span className="time2 datacolor" name="DATA24">11.24</span>
                         </div>
                         <div className="agenda-ul-box">
                             <div className="agenda-ul-toggle" style={{ display: "block" }}>
