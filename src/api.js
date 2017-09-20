@@ -13,7 +13,7 @@ export default (config => {
   }, {})
 })({
   // 个人中心
-  'sendCode': '/api/gitc/user/',
+  'sendCode': '/api/gitc/code/',
   // 触点统计数据
   'popleList':'/api/gitc/person-'
 })
