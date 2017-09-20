@@ -15,4 +15,7 @@ export default (config => {
   // 个人中心
   'sendCode': '/api/gitc/code/',
   // 触点统计数据
+
+  //大会新闻列表
+  'getListNews':'/api/gitc/article-'
 })

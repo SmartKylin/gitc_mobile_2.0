@@ -8,6 +8,9 @@ import Home from 'pages/home'
 import Login from 'pages/login'
 import SponsorShip from 'pages/sponsorship'
 import User from 'pages/user'
+import cAgenda from 'pages/cAgenda'
+import conferenceNews from 'pages/conferenceNews'
+
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const history = createBrowserHistory();
@@ -33,6 +36,8 @@ const App = () => (
       <Route path="/login" component={Login}></Route>
       <Route path="/sponsorship" component={SponsorShip}></Route>
       <Route path="/user" component={User}></Route>
+      <Route path="/cAgenda" component={cAgenda}></Route>
+      <Route path="/conferencenews" component={conferenceNews}></Route>
       {/*<Route path="/home" component={Home}/>*/}
       {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
               <Route path="/login" component={LoginPage}/>
