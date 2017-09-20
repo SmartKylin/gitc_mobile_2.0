@@ -12,7 +12,10 @@ export default (config => {
     return copy
   }, {})
 })({
-  // 个人中心
+  // 发送验证码
   'sendCode': '/api/gitc/code/',
-  // 触点统计数据
+  // 注册或者登陆
+  'user': '/api/gitc/user/',
+  // 赞助
+  'sponsor': '/api/gitc/sponsor/',
 })
