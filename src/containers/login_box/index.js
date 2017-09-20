@@ -3,6 +3,7 @@ import './index.scss'
 import {sendCode} from "../../services/code";
 import {sign} from "../../services/user"
 import {message} from 'antd'
+import {setIphone} from "../../helper/login";
 
 // import IconClose from 'images/close-black.svg'
 let iconIphone = require('../../images/icon-phone.svg')
@@ -77,12 +78,19 @@ export default class extends Component {
     let params = {}
     params.code = this.code.value;
     params.mobile = this.mobile.value;
+    
+    const sucesss = () => {
+      document.cookie = "iphone=" + this.mobile.value
+      this.props.closePop()
+    }
+    sucesss();
     sign(this.mobile.value, params)
     .then(res => res.json())
     .then(data => {
       message.info(data.msg)
       if (data.status) {
-        document.cookie = 'phone=' + this.mobile.value
+        // setIphone(this.mobile.value);
+        this.props.closePop()
       }
     })
   }

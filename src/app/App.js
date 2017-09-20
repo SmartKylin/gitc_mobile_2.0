@@ -19,11 +19,19 @@ class App extends Component {
     this.setState({
       loginBoxDisplay: 'none'
     })
+    console.log('closePop' + this.path);
+    if (this.path) {
+      window.location.href = 'http://localhost:3001' + this.path
+    }
   }
-  openPop = () => {
+  openPop = (path) => {
+    console.log("openpop" + path);
     this.setState({
       loginBoxDisplay: 'flex'
     })
+    if (path) {
+      this.path = path
+    }
   }
   render() {
     return (

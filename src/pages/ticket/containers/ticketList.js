@@ -11,7 +11,7 @@ export default class extends Component {
       // background: 'url(../../../images/avatar.svg)'
     }
     return (
-      <div style={{background: '#fff', marginTop: '10%', height: '69%', borderRadius: '4px', padding: '0 16px'}}>
+      <div style={{background: '#fff', marginTop: '10%', height: '86%', borderRadius: '4px', padding: '0 16px'}}>
         {
           [1, 2, 3].map((item, index) => (
               <Link key={index} to={'/ticketdetail'} style={{borderBottom: '1px solid #ccc', height: '54px', fontSize: '14px', lineHeight: '54px', color: '#000', display: 'flex', alignItems: 'center', fontWeight: 'bold'}}>
