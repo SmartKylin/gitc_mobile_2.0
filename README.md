@@ -1,1 +1,1 @@
-# react-webpack-template
+# H5 for gitc

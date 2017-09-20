@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './index.scss'
 import {sendCode} from "../../services/code";
+import {message} from 'antd'
 
 // import IconClose from 'images/close-black.svg'
 let iconIphone = require('../../images/icon-phone.svg')
@@ -25,11 +26,10 @@ export default class extends Component {
     if (!this.state.mobileRight) {
       return
     }
-   /* sendCode(this.mobile.value, {phone: this.mobile.value}).then(res => res.json()).then(data => {
-      console.log(data);
-    })*/
-    sendCode(this.mobile.value, {phone: this.mobile.value}).then(data => {
-      console.log(data);
+    sendCode(this.mobile.value, {phone: this.mobile.value})
+    .then(res => res.json())
+    .then(data => {
+      message.info(data.msg)
     })
     this.countDown()
   }
@@ -56,7 +56,7 @@ export default class extends Component {
     }, 1000)
   }
   // 验证手机号
-  validateMobile(e) {
+  validateMobile() {
     let reg = /^1[3|4|5|7|8][0-9]{9}$/;
     let mobile = this.mobile.value;
     let mobileRight =  reg.test(mobile)
@@ -71,12 +71,12 @@ export default class extends Component {
       }
     }
   }
-  // 限制手机号长度
+  /*// 限制手机号长度
   trimLength = () => {
     if (this.mobile.value.length > 11) {
       this.mobile.value.length = this.mobile.value.length.slice(0, 11)
     }
-  }
+  }*/
   render () {
     return (
     <div className="loginbox">
