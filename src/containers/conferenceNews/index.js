@@ -1,14 +1,21 @@
 import React from "react";
-import ConferenceNewsItem from "../../components/conferenceNewsItem/index";
+import ConferenceNewsItem from "../../components/conferenceNews/index";
 import ChildCotainer from 'containers/child_container'
-import dataImg from "../../images/大会新闻_03.png"
-import {get} from "../../fetch/index"
+import {getListNews} from "../../services/getListNews";
 export default class ConferenceNews extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             datas:[]
         }
+    }
+    componentWillMount(){
+        getListNews(27).then(res => res.json())
+            .then(data => {
+                this.setState({
+                    datas:data.data
+                })
+            })
     }
     componentDidMount(){
 
@@ -18,7 +25,10 @@ export default class ConferenceNews extends React.Component {
             <ChildCotainer>
             <div  className="conferenceNewsMain">
                 {
-                    <ConferenceNewsItem />
+                    this.state.datas.map((data,index)=>(
+
+                        <ConferenceNewsItem history={this.props.history} key={index} data={data}/>
+                    ))
                 }
 
             </div>

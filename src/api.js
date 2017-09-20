@@ -18,6 +18,8 @@ export default (config => {
 
   //大会新闻列表
   'getListNews':'/api/gitc/article-',
+  //  大会新闻详情页
+  'getDetalisNews':'/api/gitc/article',
   // 注册或者登陆
   'user': '/api/gitc/user/',
   // 赞助

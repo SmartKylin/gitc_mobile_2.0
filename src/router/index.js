@@ -11,6 +11,7 @@ import User from 'pages/user'
 
 import cAgenda from 'pages/cAgenda'
 import conferenceNews from 'pages/conferenceNews'
+import conferenceNewsdetails from 'pages/conferenceNews/details'
 
 import Ticket from 'pages/ticket'
 import TicketDetail from 'pages/ticketdetail'
@@ -35,6 +36,7 @@ const App = () => (
 
       <Route path="/cAgenda" component={cAgenda}></Route>
       <Route path="/conferencenews" component={conferenceNews}></Route>
+      <Route path="/conferencenewsdetails/:id" component={conferenceNewsdetails}></Route>
 
       <Route path="/ticket" component={Ticket}></Route>
       <Route path="/ticketdetail" component={TicketDetail}></Route>

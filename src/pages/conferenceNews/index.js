@@ -13,7 +13,7 @@ class conferenceNewsPage extends React.Component {
 
         return (
             <div  className="conferenceNewsPageMain">
-               <ConferenceNews/>
+               <ConferenceNews history={this.props.history}/>
             </div>
         );
     }
