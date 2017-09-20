@@ -23,7 +23,7 @@ const RouterMap = class extends Component {
   render () {
     return (
     <Router history={history}>
-      <Wrapper openPop={this.props.openPop}>
+      <Wrapper openPop={this.props.openPop} history={history}>
         <Route exact path="/" component={Home}/>
         <Route path="/home" component={Home}></Route>
         <Route path="/sponsorship" component={SponsorShip}></Route>
