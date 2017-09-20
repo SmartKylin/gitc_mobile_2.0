@@ -8,7 +8,14 @@ import Home from 'pages/home'
 import Login from 'pages/login'
 import SponsorShip from 'pages/sponsorship'
 import User from 'pages/user'
+<<<<<<< HEAD
 import DataAgenda from '../pages/dataAgenda/DataAgenda'
+=======
+import Ticket from 'pages/ticket'
+import TicketDetail from 'pages/ticketdetail'
+import Activity from 'pages/activity'
+import Issue from 'pages/issue'
+>>>>>>> 35102a7a8b21bc877c4bb7621a38c20e3baa4b70
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const history = createBrowserHistory();
@@ -34,7 +41,14 @@ const App = () => (
       <Route path="/login" component={Login}></Route>
       <Route path="/sponsorship" component={SponsorShip}></Route>
       <Route path="/user" component={User}></Route>
+<<<<<<< HEAD
       <Route path="/dataagenda" component={DataAgenda}></Route>
+=======
+      <Route path="/ticket" component={Ticket}></Route>
+      <Route path="/ticketdetail" component={TicketDetail}></Route>
+      <Route path="/activity" component={Activity}></Route>
+      <Route path="/issue" component={Issue}></Route>
+>>>>>>> 35102a7a8b21bc877c4bb7621a38c20e3baa4b70
       {/*<Route path="/home" component={Home}/>*/}
       {/*<Route path="/activity/:activity_id/:stg_id" component={Activity}/>
               <Route path="/login" component={LoginPage}/>

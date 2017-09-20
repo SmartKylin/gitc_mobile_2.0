@@ -14,6 +14,8 @@ import AgendaPople from "components/AgendaPople/AgendaPople"
 import './home.css';
 // import StgItem from "components/stg.item";
 import { getPopleList } from "../../services/home";
+import Menu from 'containers/menu'
+
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
 // const HEADER = require('components/images/logo2.jpg')
@@ -25,9 +27,10 @@ export default class Activity extends Component {
         super(...args);
         this.onFetch = this.onFetch.bind(this)
         this.state = {
-            data: null,
-            data1: [],
-            DATAS: []
+            data:null,
+            data1:[],
+            DATAS:[],
+            menuVisible: 'hidden'
         }
         this.onfetchBtn = this.onfetchBtn.bind(this)
     }
@@ -58,9 +61,20 @@ export default class Activity extends Component {
         })
     }
 
+    closeMenu = () => {
+      this.setState({
+        menuVisible: 'hidden'
+      })
+    }
+
     render() {
         return (
             <span>
+                <div style={{display: 'flex', alignItems: 'center', position: 'absolute', width: '100%'}}>
+                    <a style={{width: '75px', height: '25px', background: '#263c66', lineHeight: '25px', textAlign: 'center', borderRadius: '12px', marginTop: '8px', fontSize: '11px', color: '#fff', position: 'relative', left: '68%'}} href={'http://www.baidu.com'}>立即购买</a>
+                    <div className="menu--icon" onClick={() => this.setState({menuVisible: true})} style={{position: 'absolute', right: '10px', top: '1px'}}/>
+                    <Menu visibility={this.state.menuVisible} closeMenu={this.closeMenu}/>
+                </div>
                 <div className="index-banner"></div>
                 <div className="content">
                     <div className="highlights">

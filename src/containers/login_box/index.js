@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './index.scss'
 import {sendCode} from "../../services/code";
+import {sign} from "../../services/user"
 import {message} from 'antd'
 
 // import IconClose from 'images/close-black.svg'
@@ -71,6 +72,20 @@ export default class extends Component {
       }
     }
   }
+  // 登陆或者注册
+  signIn = () => {
+    let params = {}
+    params.code = this.code.value;
+    params.mobile = this.mobile.value;
+    sign(this.mobile.value, params)
+    .then(res => res.json())
+    .then(data => {
+      message.info(data.msg)
+      if (data.status) {
+        document.cookie = 'phone=' + this.mobile.value
+      }
+    })
+  }
   /*// 限制手机号长度
   trimLength = () => {
     if (this.mobile.value.length > 11) {
@@ -93,14 +108,13 @@ export default class extends Component {
         </div>
   
         <div className="code--area">
-          <input type="text" style={inputStyle}/>
-          {/*<div className="code--txt">输入验证码</div>*/}
+          <input type="text" style={inputStyle} ref={code => this.code = code}/>
           {
             this.state.coding ? <div className="send--code">重新发送{this.state.time}s</div> : <div className={'send--code ' + (this.state.mobileRight ? 'active' : '')} onClick={() => this.sendCode()}>发送验证码</div>
           }
         </div>
         <div className="btn--area">
-          <div className="btn--ensure">确定</div>
+          <div className="btn--ensure" onClick={() => this.signIn()}>确定</div>
         </div>
       </div>
     </div>

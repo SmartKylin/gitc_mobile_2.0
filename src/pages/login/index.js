@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import LoginBox from 'containers/login_box'
 import Popup from 'components/popup'
+import ChildContainer from 'containers/child_container'
 
 export default class extends Component {
   constructor () {
@@ -16,9 +17,11 @@ export default class extends Component {
   }
   render () {
     return (
-      <Popup display={this.state.display}>
-        <LoginBox closePop={this.closePop}/>
-      </Popup>
+      <ChildContainer>
+        <Popup display={this.state.display}>
+          <LoginBox closePop={this.closePop}/>
+        </Popup>
+      </ChildContainer>
     )
   }
 }
