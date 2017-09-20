@@ -19,7 +19,7 @@ export default class extends Component {
     return (
       <ChildContainer>
         <Popup display={this.state.display}>
-          <LoginBox closePop={this.closePop}/>
+          <LoginBox closePop={this.props.closePop}/>
         </Popup>
       </ChildContainer>
     )

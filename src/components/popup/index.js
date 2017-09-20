@@ -4,15 +4,7 @@ import './index.scss'
 export default class extends Component {
   constructor (props) {
     super(props)
-    /*  this.state = {
-        display: 'flex'
-      }*/
   }
-  /*closePop = () => {
-    this.setState({
-      display: 'none'
-    })
-  }*/
   render () {
     let popStyle = {
       position: 'absolute',

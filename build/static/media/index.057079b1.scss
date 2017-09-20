@@ -1,0 +1,103 @@
+@import "../../style/index";
+.loginbox {
+  height: 180px;
+  width: 86%;
+ /* background: url(../../images/close-black.svg) no-repeat #fff 98% 5px;
+  background-size: 20px;*/
+  background: #fff;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  border-radius: 8px;
+  flex-direction: column;
+  //align-items: center;
+
+  .close--area {
+    height: 35px;
+    display: flex;
+    justify-content: flex-end;
+    .close--icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: url(../../images/close-black.svg) no-repeat center;
+      background-size: 60%;
+      cursor: pointer;
+    }
+  }
+  .form--wrap {
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile--area {
+    width: 223px;
+    border-bottom: 1px solid $darkblue;
+    //margin-top: 35px;
+    justify-content: space-between;
+
+    height: 28px;
+    display: flex;
+    .mobile--wrap {
+      display: flex;
+      align-items: center;
+    }
+    input {
+      font-size: 13px;
+      width: 100%;
+    }
+    .icon--phone {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      //margin-top: 7px;
+      display: inline-block;
+    }
+  }
+  .code--area {
+    width: 223px;
+    //width: 68%;
+    display: flex;
+    height: 20px;
+    margin-top: 25px;
+    justify-content: space-between;
+    input {
+      border-bottom: 1px solid $darkblue;
+      width: 60%;
+      height: 23px;
+    }
+     /* .code--txt {
+        color: $darkblue;
+        font-size: 11px;
+      }*/
+    .send--code {
+      text-align: center;
+      height: 23px;
+      width: 82px;
+      background: #ccc;
+      color: #fff;
+      font-size: 11px;
+      border-radius: 4px;
+      line-height: 23px;
+      &.active {
+        background: $darkblue;
+      }
+    }
+  }
+  .btn--area {
+    width: 223px;
+
+    .btn--ensure {
+      color: #fff;
+      background: $darkblue;
+      height: 30px;
+      width: 89px;
+      border-radius: 4px;
+      font-size: 13px;
+      line-height: 30px;
+      text-align: center;
+      margin-top: 23px;
+    }
+  }
+}

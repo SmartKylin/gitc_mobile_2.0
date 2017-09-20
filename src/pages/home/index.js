@@ -30,12 +30,13 @@ export default class Activity extends Component {
             data:null,
             data1:[],
             DATAS:[],
-            menuVisible: 'hidden'
+            // menuVisible: 'hidden'
         }
         this.onfetchBtn = this.onfetchBtn.bind(this)
     }
     componentWillMount() {
-        let rooms = require("../../mock/data.json");
+      console.log(this.props.history);
+      let rooms = require("../../mock/data.json");
         // console.log(rooms["DATAS"],'llllllllllll')
         this.setState({
             data: rooms,
@@ -61,20 +62,20 @@ export default class Activity extends Component {
         })
     }
 
-    closeMenu = () => {
+   /* closeMenu = () => {
       this.setState({
         menuVisible: 'hidden'
       })
-    }
+    }*/
 
     render() {
         return (
             <span>
-                <div style={{display: 'flex', alignItems: 'center', position: 'absolute', width: '100%'}}>
-                    <a style={{width: '75px', height: '25px', background: '#263c66', lineHeight: '25px', textAlign: 'center', borderRadius: '12px', marginTop: '8px', fontSize: '11px', color: '#fff', position: 'relative', left: '68%'}} href={'http://www.baidu.com'}>立即购买</a>
-                    <div className="menu--icon" onClick={() => this.setState({menuVisible: true})} style={{position: 'absolute', right: '10px', top: '1px'}}/>
+                {/*<div style={{display: 'flex', alignItems: 'center', position: 'absolute', width: '100%'}}>
+                    <a style={{width: '75px', height: '25px', background: '#263c66', lineHeight: '25px', textAlign: 'center', borderRadius: '12px', marginTop: '8px', fontSize: '11px', color: '#fff', position: 'relative', left: '65%'}} href={'http://www.baidu.com'}>立即购买</a>
+                    <div className="menu--icon" onClick={() => this.setState({menuVisible: true})} style={{position: 'absolute', right: '2%', top: '0'}}/>
                     <Menu visibility={this.state.menuVisible} closeMenu={this.closeMenu}/>
-                </div>
+                </div>*/}
                 <div className="index-banner"></div>
                 <div className="content">
                     <div className="highlights">
