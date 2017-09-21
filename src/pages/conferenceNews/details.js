@@ -1,5 +1,5 @@
 import React from "react";
-import ConferenceNewsDetalis from "../../containers/conferenceNews/conferenceNewsDetalis";
+import ConferenceNewsDetalis from "./containers/conferenceNewsDetalis";
 
 
 class conferenceNewsDetalisPage extends React.Component {

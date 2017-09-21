@@ -1,7 +1,7 @@
 import React from "react";
-import "./index.scss"
-import yanjing from "../../images/yanjing_06.png"
-import xinwen from "../../images/大会新闻_03.png"
+import "../index.scss"
+import yanjing from "../../../images/yanjing_06.png"
+import xinwen from "../../../images/大会新闻_03.png"
 export default class ConferenceNewsItem extends React.Component {
     constructor(props) {
         super(props);

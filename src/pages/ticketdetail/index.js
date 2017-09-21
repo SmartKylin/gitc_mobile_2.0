@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ChildContainer from 'containers/child_container'
 import ticketBg from '../../images/ticket-bg.png'
 import './index.scss'
+import Right from './component/right'
 import JsBarcode from 'jsbarcode'
 // import Canvas from 'react-canvas'
 
@@ -49,6 +50,7 @@ export default class extends Component {
                   <span>领袖峰会</span>
                   <span>VIP餐</span>
                   <span>普通餐</span>
+                  <Right title="领袖峰会" access={true}></Right>
                 </div>
               </div>
               <div className="rights--row">

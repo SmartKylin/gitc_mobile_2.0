@@ -1,7 +1,7 @@
 import React from "react";
-import ConferenceNewsDetalisiItem from "../../components/conferenceNews/conferenceNewsDetalisiItem";
+import ConferenceNewsDetalisiItem from "../components/conferenceNewsDetalisiItem";
 import ChildCotainer from 'containers/child_container'
-import {getDetalisNews} from "../../services/getDetalisNews";
+import {getDetalisNews} from "../../../services/getDetalisNews";
 export default class ConferenceNewsDetalis extends React.Component {
     constructor(props) {
         super(props);
