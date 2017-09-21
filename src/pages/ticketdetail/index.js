@@ -35,19 +35,19 @@ export default class extends Component {
             <div style={{fontSize: '12px'}}>
               <div>
                 特别权益
-                <div>
-                  <span>VIP休息室</span>
-                  <span>VIP纪念馆</span>
-                  <span>同声传译</span>
-                  <span>前排坐席</span>
+                <div className="rights--row">
+                  <span style={{flex: 1}}>VIP休息室</span>
+                  <span style={{flex: 1}}>VIP纪念馆</span>
+                  <span style={{flex: 1}}>同声传译</span>
+                  <span style={{flex: 1}}>前排坐席</span>
                 </div>
-                <div>
+                <div className="rights--row">
                   <span>领袖峰会</span>
                   <span>VIP餐</span>
                   <span>普通餐</span>
                 </div>
               </div>
-              <div>
+              <div className="rights--row">
                 会议期间
                 <span>主会场</span>
                 <span>企业专场</span>

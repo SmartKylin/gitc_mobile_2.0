@@ -3,13 +3,15 @@ import Field from '../components/Field'
 import {sponsor} from "../../../services/sponsor";
 import {message} from 'antd'
 
+let minHeight = parseInt(document.documentElement? document.documentElement.clientHeight : document.body.clientHeight) -80
 let boxStyle = {
   height: '89%',
   borderRadius: '5px',
   overflow: 'hidden',
   background: '#fff',
   position: 'relative',
-  paddingBottom: '10px'
+  paddingBottom: '10px',
+  minHeight
 }
 
 let btnStyle = {

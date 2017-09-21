@@ -11,7 +11,6 @@ export default class extends Component {
       // background: 'url(../../../images/avatar.svg)'
     }
     let minHeight = parseInt(document.documentElement? document.documentElement.clientHeight : document.body.clientHeight) -100
-    console.log(minHeight);
     return (
       <div style={{background: '#fff', marginTop: '10%', height: minHeight + 'px', borderRadius: '4px', padding: '0 16px'}}>
         {
