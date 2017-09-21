@@ -67,7 +67,6 @@ export default class Issus extends Component {
             remark,theme,content,innovate,hot_topic,
             experience,generality,suggest
         } = this.state;
-
         issue({name, company, position, phone, email,
             addr,photo,summary,speech_experience,interest,remark,theme,content,innovate,hot_topic,
             experience,generality,suggest})
@@ -98,7 +97,7 @@ export default class Issus extends Component {
                         <div style={{fontSize: '13px', borderBottom: '1px solid rgb(227, 227, 227)'}}>
                             <span>选择你感兴趣的专场</span>
                             <span style={{color: "#2f72ff", marginLeft: '5px'}}>(选择1-2个)</span>
-                            <Checkgroup/>
+                            <Checkgroup name="interest" changeValue={this.changeValue}/>
                         </div>
                     </div>
                     <Field title='备注' changeValue={this.changeValue}  name={'remark'}></Field>
