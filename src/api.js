@@ -14,6 +14,7 @@ export default (config => {
 })({
   // 发送验证码
   'sendCode': '/api/gitc/code/',
+
   //大会新闻列表
   'getListNews':'/api/gitc/article-',
   //  大会新闻详情页

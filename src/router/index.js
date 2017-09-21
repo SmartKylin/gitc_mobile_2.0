@@ -12,6 +12,7 @@ import User from 'pages/user'
 
 import conferenceNews from 'pages/conferenceNews'
 import conferenceNewsdetails from 'pages/conferenceNews/details'
+
 import DataAgenda from '../pages/dataAgenda/DataAgenda'
 
 import Ticket from 'pages/ticket'
@@ -24,7 +25,6 @@ import createBrowserHistory from 'history/createBrowserHistory'
 let history = createBrowserHistory();
 
 const RouterMap = class extends Component {
-  // history.openPop = this.props.openPop;
   render () {
     return (
     <Router history={history}>
@@ -39,7 +39,10 @@ const RouterMap = class extends Component {
         <Route path="/user" component={User}></Route>
         <Route path="/dataagenda" component={DataAgenda}></Route>
         <Route path="/login" compoent={Login}></Route>
-    
+
+        <Route path="/conferencenews" component={conferenceNews}></Route>
+        <Route path="/conferencenewsdetails/:id" component={conferenceNewsdetails}></Route>
+
         <Route path="/ticket" component={Ticket}></Route>
         <Route path="/ticketdetail" component={TicketDetail}></Route>
         <Route path="/activity" component={Activity}></Route>
