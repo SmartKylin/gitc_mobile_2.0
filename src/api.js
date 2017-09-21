@@ -24,6 +24,9 @@ export default (config => {
   'user': '/api/gitc/user/',
   // 赞助
   'sponsor': '/api/gitc/sponsor/',
+   //议题提交
+   'issue':'/api/gitc/meetissue/'
+
 })
 
 

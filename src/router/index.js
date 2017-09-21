@@ -10,7 +10,6 @@ import Login from 'pages/login'
 import SponsorShip from 'pages/sponsorship'
 import User from 'pages/user'
 
-import cAgenda from 'pages/cAgenda'
 import conferenceNews from 'pages/conferenceNews'
 import conferenceNewsdetails from 'pages/conferenceNews/details'
 
@@ -38,7 +37,6 @@ const RouterMap = class extends Component {
         <Route path="/dataagenda" component={DataAgenda}></Route>
         <Route path="/login" compoent={Login}></Route>
 
-        <Route path="/cAgenda" component={cAgenda}></Route>
         <Route path="/conferencenews" component={conferenceNews}></Route>
         <Route path="/conferencenewsdetails/:id" component={conferenceNewsdetails}></Route>
 

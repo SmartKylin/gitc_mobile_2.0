@@ -1,14 +1,12 @@
 import React, {Component} from 'react'
-import ChildContainer from 'containers/child_container'
+import Issus from "./containers";
 
 export default class extends Component {
   render() {
     return (
-      <ChildContainer>
-        <div style={{background: '#fff'}}>
-          议程提交
-        </div>
-      </ChildContainer>
+      <div>
+          <Issus/>
+      </div>
     )
   }
 }
