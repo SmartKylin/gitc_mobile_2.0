@@ -15,6 +15,10 @@ export default (config => {
   // 发送验证码
   'sendCode': '/api/gitc/code/',
   // 触点统计数据
+  //大会新闻列表
+  'getListNews':'/api/gitc/article-',
+  //  大会新闻详情页
+  'getDetalisNews':'/api/gitc/article',
   'popleList':'/api/gitc/person-',
   // 注册或者登陆
   'user': '/api/gitc/user/',

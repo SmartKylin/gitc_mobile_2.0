@@ -27,15 +27,23 @@ export default class Activity extends Component {
         super(...args);
         this.onFetch = this.onFetch.bind(this)
         this.state = {
+<<<<<<< HEAD
             data: null,
             data1: [],
             DATAS: [],
             menuVisible: 'hidden'
+=======
+            data:null,
+            data1:[],
+            DATAS:[],
+            // menuVisible: 'hidden'
+>>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7
         }
         this.onfetchBtn = this.onfetchBtn.bind(this)
     }
     componentWillMount() {
-        let rooms = require("../../mock/data.json");
+      console.log(this.props.history);
+      let rooms = require("../../mock/data.json");
         // console.log(rooms["DATAS"],'llllllllllll')
         this.setState({
             data: rooms,
@@ -73,15 +81,24 @@ export default class Activity extends Component {
         })
     }
 
+<<<<<<< HEAD
     closeMenu = () => {
         this.setState({
             menuVisible: 'hidden'
         })
     }
+=======
+   /* closeMenu = () => {
+      this.setState({
+        menuVisible: 'hidden'
+      })
+    }*/
+>>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7
 
     render() {
         return (
             <span>
+<<<<<<< HEAD
                 <div class="linkbgtg" style={{ display: 'flex', alignItems: 'center', position: 'absolute', width: '100%' }}>
                     <div className="ban"></div>
                     <a className="tolink" style={{ width: '75px', height: '25px', lineHeight: '25px', textAlign: 'center', borderRadius: '12px', marginTop: '8px', fontSize: '11px', color: '#fff', position: 'relative', left: '68%' }} href={'http://www.baidu.com'}>立即购买</a>
@@ -91,6 +108,14 @@ export default class Activity extends Component {
                 <div className="index-banner">
 
                 </div>
+=======
+                {/*<div style={{display: 'flex', alignItems: 'center', position: 'absolute', width: '100%'}}>
+                    <a style={{width: '75px', height: '25px', background: '#263c66', lineHeight: '25px', textAlign: 'center', borderRadius: '12px', marginTop: '8px', fontSize: '11px', color: '#fff', position: 'relative', left: '65%'}} href={'http://www.baidu.com'}>立即购买</a>
+                    <div className="menu--icon" onClick={() => this.setState({menuVisible: true})} style={{position: 'absolute', right: '2%', top: '0'}}/>
+                    <Menu visibility={this.state.menuVisible} closeMenu={this.closeMenu}/>
+                </div>*/}
+                <div className="index-banner"></div>
+>>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7
                 <div className="content">
                     <div className="highlights highlights">
                         <h3 className="highlights-name ">大会亮点</h3>

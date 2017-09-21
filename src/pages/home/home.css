@@ -403,6 +403,7 @@ background:url(../../components/images/vip2.png);
 .highlights-li-fonts {
 font-size: 10px;
 }
+<<<<<<< HEAD
 /*html{height:100%;overflow:hidden}
 html,body{height:100%;overflow:auto}*/
 /*link*/
@@ -549,3 +550,9 @@ text-align: center;
 display: inline-block;
 margin-left: 0.4rem
 }
+=======
+
+html{height:100%;overflow:hidden}
+html,body{height:100%;overflow:auto}
+
+>>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7
