@@ -8,7 +8,8 @@ let boxStyle = {
   borderRadius: '5px',
   overflow: 'hidden',
   background: '#fff',
-  position: 'relative'
+  position: 'relative',
+  paddingBottom: '10px'
 }
 
 let btnStyle = {

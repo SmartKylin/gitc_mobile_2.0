@@ -2,9 +2,30 @@ import React, {Component} from 'react'
 import './index.scss'
 import logIcon from 'images/logo.png'
 
+
+/*
+window.onresize = function() {
+  let minHeight = document.documentElement?document.documentElement.clientHeight:document.body.clientHeight
+  this.setState ? this.setState(minHeight): null
+};
+*/
+
 export default class extends Component {
+  constructor () {
+    super();
+    this.state = {
+      minHeight: document.documentElement?document.documentElement.clientHeight:document.body.clientHeight
+    }
+  }
+  
+  
   render () {
-    const style = this.props.style?this.props.style:{}
+   /* window.setState = (minHeight) => {
+      this.setState({
+        minHeight
+      })
+    }*/
+    const style={position: "static",minHeight:`${this.state.minHeight}px`, paddingBottom: "10px"}
       return (
       <div className="container" style={style}>
         <div style={{color: '#fff', display: 'flex', height: '40px', marginBottom: '15px', justifyContent: 'space-between'}}>
