@@ -1,0 +1,35 @@
+.ticket--bg {
+  //background: url(../../images/ticket-bg.png);
+  position: relative;
+  width: 83%;
+  //height: 410px;
+  height: 61%;
+}
+
+.ticket--type {
+  //width: 50px;
+  height: 30px;
+  color: #000;
+  position: absolute;
+  left: 16%;
+  top: 51%;
+  font-size: 16px;
+}
+
+.ticket--instructions {
+  position: relative;
+  color: #fff;
+  font-size: 10px;
+  padding-left: 10%;
+  margin-top: 17px;
+}
+
+.ticket--rights {
+  margin-top: 28px;
+  color: #fff;
+  font-size: 10px;
+}
+
+.rights--row {
+  display: flex;
+}

@@ -4,6 +4,9 @@ import TicketList from './containers/ticketList'
 import {authCheck} from "../../helper/login";
 
 export default class extends Component {
+  componentWillMount () {
+    document.title = "门票"
+  }
   render () {
     return (
       <ChildBackground>

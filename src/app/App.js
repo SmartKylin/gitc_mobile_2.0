@@ -20,9 +20,9 @@ class App extends Component {
       loginBoxDisplay: 'none'
     })
     console.log('closePop' + this.path);
-    if (this.path) {
-      window.location.href = 'http://localhost:3001' + this.path
-    }
+    /*if (this.path) {
+     windosw
+    }*/
   }
   openPop = (path) => {
     console.log("openpop" + path);

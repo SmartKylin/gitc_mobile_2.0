@@ -3,12 +3,15 @@ import Field from '../components/Field'
 import {sponsor} from "../../../services/sponsor";
 import {message} from 'antd'
 
+let minHeight = parseInt(document.documentElement? document.documentElement.clientHeight : document.body.clientHeight) -80
 let boxStyle = {
   height: '89%',
   borderRadius: '5px',
   overflow: 'hidden',
   background: '#fff',
-  position: 'relative'
+  position: 'relative',
+  paddingBottom: '10px',
+  minHeight
 }
 
 let btnStyle = {
@@ -52,15 +55,14 @@ export default class extends Component {
     })
   }
   render() {
-    let {name, company, phone, position, email, intention} = this.state
     return (
     <div style={boxStyle}>
-      <Field title='姓名' model={name} changeValue={this.changeValue}  name={'name'}></Field>
-      <Field title='公司' model={company}  name={'company'} changeValue={this.changeValue}></Field>
-      <Field title='手机' model={phone}  name={'phone'} changeValue={this.changeValue}></Field>
-      <Field title={'职位'} model={position} name={'position'} changeValue={this.changeValue}></Field>
-      <Field title={'邮箱'} type="email" model={email}  name={'email'} changeValue={this.changeValue}></Field>
-      <Field title={'合作意向'} textArea={true} model={intention}  name={'intention'} changeValue={this.changeValue}></Field>
+      <Field title='姓名' changeValue={this.changeValue}  name={'name'}></Field>
+      <Field title='公司' name={'company'} changeValue={this.changeValue}></Field>
+      <Field title='手机' name={'phone'} changeValue={this.changeValue}></Field>
+      <Field title={'职位'} name={'position'} changeValue={this.changeValue}></Field>
+      <Field title={'邮箱'} type="email" name={'email'} changeValue={this.changeValue}></Field>
+      <Field title={'合作意向'} textArea={true} name={'intention'} changeValue={this.changeValue}></Field>
       <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
         <div style={btnStyle} onClick={() => this.post()}>确定提交</div>
       </div>

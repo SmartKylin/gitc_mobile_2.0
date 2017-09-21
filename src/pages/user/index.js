@@ -16,12 +16,11 @@ export default class extends Component {
       </ChildBackground>
     )
   }
-  /*componentWillMount () {
+  componentWillMount () {
     let iphone = authCheck()
     if (!iphone) {
-      this.props.history.push('/')
-    } else {
-      this.iphone = iphone
+      // this.props.history.push('/')
     }
-  }*/
+    this.iphone = iphone
+  }
 }

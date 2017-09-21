@@ -14,7 +14,7 @@ export default (config => {
 })({
   // 发送验证码
   'sendCode': '/api/gitc/code/',
-  // 触点统计数据
+
   //大会新闻列表
   'getListNews':'/api/gitc/article-',
   //  大会新闻详情页
@@ -31,9 +31,6 @@ export default (config => {
    'issue':'/api/gitc/meetissue/'
 
 })
-
-
-
 
 // 人员列表
 // http://120.92.10.182:8000/api/gitc/person-{page_id}
