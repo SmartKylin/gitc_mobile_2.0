@@ -1,0 +1,40 @@
+.required--star:after {
+  content: '*';
+  width: 3px;
+  height: 3px;
+  color: red;
+  font-size: 12px;
+}
+
+.box{
+  position:relative
+}
+.weizhi{
+  position:absolute;
+  right: 4px;
+}
+
+.issue {
+  .ant-rate-star-full {
+    .anticon:before {
+      color: #2f72ff
+    }
+  }
+  .ant-rate-star-zero {
+    .anticon:before {
+      content: "\E661"!important;
+    }
+  }
+  .anticon:before {
+    font-size: 15px;
+  }
+}
+
+.checkgroup {
+  padding: 13px 0;
+  label {
+    width: 47%;
+    height: 32px;
+    line-heght: 32px;
+  }
+}

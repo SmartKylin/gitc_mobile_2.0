@@ -97,6 +97,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "rc-touchable": "^1.2.3"
   }
 }
