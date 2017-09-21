@@ -1,11 +1,12 @@
 import React from "react";
-import ConferenceNewsItem from "../../components/conferenceNews/index";
+import ConferenceNewsItem from "../components/index";
 import ChildCotainer from 'containers/child_container'
-import {getListNews} from "../../services/getListNews";
+import {getListNews} from "../../../services/getListNews";
 export default class ConferenceNews extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            minHeight:"",
             datas:[]
         }
     }
@@ -13,7 +14,8 @@ export default class ConferenceNews extends React.Component {
         getListNews(27).then(res => res.json())
             .then(data => {
                 this.setState({
-                    datas:data.data
+                    datas:data.data,
+                    minHeight:document.documentElement?document.documentElement.clientHeight:document.body.clientHeight
                 })
             })
     }
@@ -22,7 +24,7 @@ export default class ConferenceNews extends React.Component {
     }
     render() {
         return (
-            <ChildCotainer>
+            <ChildCotainer style={{position:"static",minHeight:`${this.state.minHeight}px`,paddingBottom:"5px"}}>
             <div  className="conferenceNewsMain">
                 {
                     this.state.datas.map((data,index)=>(
