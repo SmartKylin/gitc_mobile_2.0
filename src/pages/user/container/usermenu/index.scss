@@ -19,4 +19,11 @@
   .ant-menu-submenu-inline > .ant-menu-submenu-title:after {
     font-size: 20px;
   }
+  .ant-menu-submenu-inline > .ant-menu-submenu-title:after {
+    right: 10px;
+  }
+  .ant-menu-sub.ant-menu-inline > .ant-menu-item {
+    padding-left: 10px!important;
+  }
 }
+

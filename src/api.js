@@ -14,24 +14,16 @@ export default (config => {
 })({
   // 发送验证码
   'sendCode': '/api/gitc/code/',
-  // 触点统计数据
-<<<<<<< HEAD
-
   //大会新闻列表
   'getListNews':'/api/gitc/article-',
   //  大会新闻详情页
   'getDetalisNews':'/api/gitc/article',
-=======
   'popleList':'/api/gitc/person-',
->>>>>>> 5faae74f47285fa7443865e8a9a3728d5ca89fa5
   // 注册或者登陆
   'user': '/api/gitc/user/',
   // 赞助
   'sponsor': '/api/gitc/sponsor/',
 })
-
-
-
 
 // 人员列表
 // http://120.92.10.182:8000/api/gitc/person-{page_id}

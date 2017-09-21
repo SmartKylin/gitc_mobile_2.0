@@ -26,9 +26,9 @@ export default class extends Component {
           {/*<Link to={"/user"} onClick={() => this.handleClickUser()}>个人中心</Link>*/}
           <a href="javascript:;" onClick={() => this.handleClick('/ticket')}>我的门票</a>
           <a href="javascript:;" onClick={() => this.handleClick('/user')}>个人中心</a>
-          <Link to={"/login"} onClick={() => this.props.closeMenu()}>大会商店</Link>
+          {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会商店</Link>*/}
           <Link to={"/activity"} onClick={() => this.props.closeMenu()}>现场活动</Link>
-          <Link to={"/login"} onClick={() => this.props.closeMenu()}>大会相册</Link>
+          {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会相册</Link>*/}
           <Link to={"/conferencenews"} onClick={() => this.props.closeMenu()}>大会新闻</Link>
           <Link to={"/login"} onClick={() => this.props.closeMenu()}>场馆地图</Link>
           <Link to={"/issue"} onClick={() => this.props.closeMenu()}>议题提交</Link>
