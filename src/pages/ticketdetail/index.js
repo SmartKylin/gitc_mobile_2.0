@@ -14,6 +14,7 @@ export default class extends Component {
   }
   componentWillMount () {
     // JsBarcode("#barcode", "212111111121")
+    document.title = "门票"
   }
   render() {
     return (
@@ -21,7 +22,10 @@ export default class extends Component {
         <ChildContainer>
           <div style={{background: 'rgba(0, 0, 0, 0)', marginTop: '10.5%', position: 'relative', display: 'flex', justifyContent: 'center'}}>
             <img src={ticketBg} alt="" className="ticket--bg"/>
-            <div className="ticket--type">基础架构票</div>
+            <div className="ticket--type">
+              <div style={{fontSize: '13px', fontWeight: 'bold'}}>毛不易</div>
+              <div>基础架构专场票</div>
+            </div>
             <img src="" alt="" ref={img => this.img = img} id="barcode"/>
           </div>
           <div className="ticket--instructions">

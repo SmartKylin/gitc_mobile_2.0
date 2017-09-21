@@ -1,13 +1,15 @@
 {
-  "main.css": "static/css/main.6ac000e3.css",
-  "main.css.map": "static/css/main.6ac000e3.css.map",
-  "main.js": "static/js/main.0f8f63d0.js",
-  "main.js.map": "static/js/main.0f8f63d0.js.map",
-  "static/media/banner.png": "static/media/banner.6e08a163.png",
+  "main.css": "static/css/main.99a2f171.css",
+  "main.css.map": "static/css/main.99a2f171.css.map",
+  "main.js": "static/js/main.3f02d10f.js",
+  "main.js.map": "static/js/main.3f02d10f.js.map",
+  "static/media/banner.png": "static/media/banner.7b1b8841.png",
+  "static/media/bannerlink.png": "static/media/bannerlink.d044d448.png",
   "static/media/bg-all.png": "static/media/bg-all.553c8d90.png",
   "static/media/bg-b.png": "static/media/bg-b.6d8682d9.png",
-  "static/media/bg-center.jpg": "static/media/bg-center.3520269a.jpg",
   "static/media/logo1.jpg": "static/media/logo1.37472fa3.jpg",
   "static/media/logo2.jpg": "static/media/logo2.53613087.jpg",
-  "static/media/map.png": "static/media/map.6b59c1ce.png"
+  "static/media/map.png": "static/media/map.6b59c1ce.png",
+  "static/media/ticket-bg.png": "static/media/ticket-bg.a427aa62.png",
+  "static/media/大会新闻_03.png": "static/media/大会新闻_03.cedf427a.png"
 }
