@@ -1,6 +1,6 @@
 .agendaitem{
   .headers{
-    width: 43.33%;
+    width:68%;
     height:26px;
     background: #1b2d4c;
     border-radius: 14px;
@@ -12,12 +12,13 @@
     font-size: 12px;
     margin-top: 16px;
     margin-bottom: 9px;
+    text-align: center;
     .headers-name{
       text-align: center;
-      width: 76%;
+      width: 50%;
     }
     .headers-number{
-      width: 24%;
+      width: 50%;
     }
   }
 }

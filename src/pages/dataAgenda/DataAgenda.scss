@@ -1,10 +1,11 @@
 .dataagenda{
-  position: fixed;
+  position: relative;
   left: 0;
   top:0;
   right: 0;
   bottom: 0;
-  // background: #101927;
+  background: #101927;
+  padding-bottom: 50px;
   .header{
 width: 85.3%;
 height: 40px;
@@ -20,8 +21,6 @@ border-radius:0 0 6px 6px;
    justify-content: center;
    align-items: center
  }
- 
-
   .btncolor{
     color:#acc0ff
   }
