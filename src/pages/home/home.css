@@ -403,7 +403,6 @@ background:url(../../components/images/vip2.png);
 .highlights-li-fonts {
 font-size: 10px;
 }
-<<<<<<< HEAD
 /*html{height:100%;overflow:hidden}
 html,body{height:100%;overflow:auto}*/
 /*link*/
@@ -461,7 +460,8 @@ html,body{height:100%;overflow:auto}*/
 .agenda-ul-toggle-box{
     width: 15rem;
     height:118px;
-    margin:0 auto
+    margin:0 auto;
+    display: none
 }
 .agenda-ul-toggle-box span{
     height: 0.9rem;
@@ -550,9 +550,7 @@ text-align: center;
 display: inline-block;
 margin-left: 0.4rem
 }
-=======
-
-html{height:100%;overflow:hidden}
-html,body{height:100%;overflow:auto}
-
->>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7
+.agenda-btn{
+    background: #2b67ff !important;
+    color: #fff !important
+}

@@ -27,24 +27,16 @@ export default class Activity extends Component {
         super(...args);
         this.onFetch = this.onFetch.bind(this)
         this.state = {
-<<<<<<< HEAD
             data: null,
             data1: [],
             DATAS: [],
             menuVisible: 'hidden'
-=======
-            data:null,
-            data1:[],
-            DATAS:[],
-            // menuVisible: 'hidden'
->>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7
         }
         this.onfetchBtn = this.onfetchBtn.bind(this)
     }
     componentWillMount() {
       console.log(this.props.history);
       let rooms = require("../../mock/data.json");
-        // console.log(rooms["DATAS"],'llllllllllll')
         this.setState({
             data: rooms,
             data1: rooms["DATA23"],
@@ -54,21 +46,37 @@ export default class Activity extends Component {
 
     }
     componentDidMount() {
+         $('.agenda-ul-toggle-box1 span').on('click',function(e){
+                $('.agenda-ul-toggle-box1 span').removeClass('agenda-btn')
+                $(e.target).addClass('agenda-btn')
+        })
         getPopleList(4).then(data => data.json()).then(data => {
             console.log(data)
         })
+       
     }
     onfetchBtn(e) {
         console.log(e.target.innerHTML)
     }
     onFetch(e) {
         console.log(e.target, 'pppppppp')
+         $('.agenda-ul-toggle-box1 span').on('click',function(e){
+                $('.agenda-ul-toggle-box1 span').removeClass('agenda-btn')
+                $(e.target).addClass('agenda-btn')
+            })
+             $('.agenda-ul-toggle-box2 span').on('click',function(e){
+                $('.agenda-ul-toggle-box2 span').removeClass('agenda-btn')
+                $(e.target).addClass('agenda-btn')
+            })
+         
         if (e.target.getAttribute('name') == "DATA23") {
+           
             this.setState({
                 toggle: true
             })
         }
         else {
+           
             this.setState({
                 toggle: false
             })
@@ -80,42 +88,24 @@ export default class Activity extends Component {
             data1: this.state.data[e.target.getAttribute('name')]
         })
     }
-
-<<<<<<< HEAD
     closeMenu = () => {
         this.setState({
             menuVisible: 'hidden'
         })
     }
-=======
-   /* closeMenu = () => {
-      this.setState({
-        menuVisible: 'hidden'
-      })
-    }*/
->>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7
 
     render() {
         return (
             <span>
-<<<<<<< HEAD
-                <div class="linkbgtg" style={{ display: 'flex', alignItems: 'center', position: 'absolute', width: '100%' }}>
+                {/*<div class="linkbgtg" style={{ display: 'flex', alignItems: 'center', position: 'absolute', width: '100%' }}>
                     <div className="ban"></div>
                     <a className="tolink" style={{ width: '75px', height: '25px', lineHeight: '25px', textAlign: 'center', borderRadius: '12px', marginTop: '8px', fontSize: '11px', color: '#fff', position: 'relative', left: '68%' }} href={'http://www.baidu.com'}>立即购买</a>
                     <div className="menu--icon" onClick={() => this.setState({ menuVisible: true })} style={{ position: 'absolute', right: '10px', top: '1px' }} />
                     <Menu visibility={this.state.menuVisible} closeMenu={this.closeMenu} />
-                </div>
-                <div className="index-banner">
-
-                </div>
-=======
-                {/*<div style={{display: 'flex', alignItems: 'center', position: 'absolute', width: '100%'}}>
-                    <a style={{width: '75px', height: '25px', background: '#263c66', lineHeight: '25px', textAlign: 'center', borderRadius: '12px', marginTop: '8px', fontSize: '11px', color: '#fff', position: 'relative', left: '65%'}} href={'http://www.baidu.com'}>立即购买</a>
-                    <div className="menu--icon" onClick={() => this.setState({menuVisible: true})} style={{position: 'absolute', right: '2%', top: '0'}}/>
-                    <Menu visibility={this.state.menuVisible} closeMenu={this.closeMenu}/>
                 </div>*/}
-                <div className="index-banner"></div>
->>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7
+                <div className="index-banner">
+                    <div className="ban"></div>
+                </div>
                 <div className="content">
                     <div className="highlights highlights">
                         <h3 className="highlights-name ">大会亮点</h3>
@@ -195,7 +185,7 @@ export default class Activity extends Component {
                         <h3 className="agenda-name">大会议程</h3>
                         <p className="agenda-title">GENERAL ASSEMBLY AGENDA</p>
                         <img src={blink} alt="" className="blue-link" />
-                        <Link to="./error.page" className="look-all">查看全部 <i className="batn-add"></i></Link>
+                        <Link to="./dataagenda" className="look-all">查看全部 <i className="batn-add"></i></Link>
                     </div>
                     <div className="agenda-content" >
                         <div className="time" onClick={this.onFetch}>
@@ -214,10 +204,10 @@ export default class Activity extends Component {
                                             return <ClassRooms key={index} roomList={data.name} onfetch={this.onfetchBtn} />
                                         }) : ""}
                                 </ul>*/}
-                               {this.state.toggle ?
-                                    <div className="agenda-ul-toggle-box">
+                               {/*{this.state.toggle ?*/}
+<div className="agenda-ul-toggle-box agenda-ul-toggle-box1" style={{  display:this.state.toggle?'block':'none'}}>
                                         <p className="agenda-ul-toggle-box-one">
-                                            <span>主会场</span>
+                                            <span className="agenda-btn">主会场</span>
                                             <span>运维专场</span>
                                             <span>大数据专场</span>
                                             <span>基础架构专场</span>
@@ -235,9 +225,9 @@ export default class Activity extends Component {
 
                                     </div>
 
-                                    :  <div className="agenda-ul-toggle-box">
+<div className="agenda-ul-toggle-box agenda-ul-toggle-box2" style={{  display:this.state.toggle?'none':'block'}}>
                                         <p className="agenda-ul-toggle-box-one">
-                                            <span>主会场</span>
+                                            <span className="agenda-btn">主会场</span>
                                             <span>运维专场</span>
                                             <span>大数据专场</span>
                                             <span>基础架构专场</span>
@@ -253,7 +243,7 @@ export default class Activity extends Component {
                                         </p>
                                     </div>
 
-                                }
+                                {/*}*/}
                                 <div className="agenda-pople-box agenda-pople-box-btn1" >
                                     <ul className="agenda-pople" >
                                         <AgendaPople />

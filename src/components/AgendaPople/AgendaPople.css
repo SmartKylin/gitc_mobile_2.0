@@ -1,5 +1,5 @@
 .popele-box{
-  width: 90%;
+  width: 94%;
    height: 4.5rem;
   display: flex;
   background: #ffffff;
@@ -71,13 +71,17 @@ height: 16px;
 }
 .popele-box-l{
   font-size:16px;
- width: 68%;
-align-items:center
+ width: 70%;
+align-items:center;
+overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .popele-box-r{
  /*width: 20%;*/
 align-items:flex-end;
-font-size: 9px;
+font-size: 11px;
 }
 .popele-name-title{
   display: flex;
