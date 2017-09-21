@@ -81,12 +81,12 @@ class AgendaPople extends Component {
 		})
 	}
 	render() {
-		const { headerImg } = this.props
+		const {data} = this.props;
 		return (
 			<li className="popele-box" id="a" onClick={this._handleClick}>
 				
 				<div className="popele-box-left">
-					<img src={headerImg} alt="" className="header-img" />
+					{data?<img src={data.pic} alt="" className="header-img" />:""}
 					<div className="header-icon">
 						<span className="l">
 <div className="popele-box-1"></div>
@@ -102,13 +102,13 @@ class AgendaPople extends Component {
 				<div className="popele-box-right">
 					<div className="popele-box-title">
 						<span className="popele-box-l">演讲嘉宾的主题</span>
-						<span className="popele-box-r">9:00-9:45</span>
+						{data?<span className="popele-box-r">{data.stime}</span>:''}
 					</div>
 					<div className="popele-name-title">
-						<span className="popele-name-l">崔宝秋</span>
-						<span className="popele-name-r">小米丨首席架构师</span>
+						{data?<span className="popele-name-l">{data.name}</span>:""}
+					{data?<span className="popele-name-r">{data.company}丨{data.summary}</span>:''}
 					</div>
-					<p className="popele-box-text sl">演讲内容:GITC北京峰全京峰会全球互会全京峰会全球互联网技术大会北京峰会全球互联</p>
+			{data?	<p className="popele-box-text sl">演讲内容:{data.sintroduce}</p>:''}
 				</div>
 				<div className="windowPop" style={{display:this.state.a?"block":'none'}} 
 				onTouchStart={this.mounseup.bind(this)}

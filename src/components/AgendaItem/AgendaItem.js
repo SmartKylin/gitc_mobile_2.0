@@ -12,12 +12,17 @@ class AgendaItem extends Component {
 		type: PropTypes.string,
 	};
 	render() {
+		const {name,other,data}=this.props.data;
+
 		return (
 			<div className="agendaitem">
 				<div className="headers">
-					<div  className="headers-name">技术管理&产品专场</div><div className="headers-number">308a</div>
+					<div  className="headers-name">{name}</div>
+					<div className="headers-number">{other}</div>
 				</div>
-				<AgendaPople/>
+				{data.map((data,index)=>(
+					<AgendaPople  key={index} data={data}/>
+					))}
 			</div>
 
 		);

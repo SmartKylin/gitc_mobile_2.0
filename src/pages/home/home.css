@@ -26,7 +26,7 @@
     height:100%;
     padding: 1rem 0 0 0;
     background: #0d1428;
-    background:url(../../components/images/bg-center.jpg);
+    /*background:url(../../components/images/bg-center.jpg);*/
     /*background-size: cover;*/
 }
 html,body{
@@ -40,11 +40,12 @@ html,body{
 .agenda-name,.highlights-name,.special-name{
     width: 15rem;
     height: 1.2rem;
-    font-size: 0.8rem;
+    font-size: 18px;
     margin: 0 auto;
     color: #fff
 }
 .agenda-title,.highlights-title,.special-title{
+    font-size: 12px;
     width: 15rem;
     margin: 0 auto;
     color: #fff
@@ -55,14 +56,14 @@ html,body{
 .special-li{
     width: 15rem;
     height: 2rem;
-    border-bottom: 0.025rem solid #ccc;
-    font-size: 0.65rem;
+    border-bottom: 1px solid rgba(27, 45, 76, 0.8);
+    font-size: 15px;
     line-height: 2rem;
     margin: 0 0.5rem;
 }
 .special-show-font{
     padding: 0.6rem 0.5rem;
-    font-size: 0.5rem;
+    font-size: 12px;
     background: #121d35;
     width: 16rem;
 }
@@ -88,7 +89,10 @@ html,body{
     width: 16rem;
     color: #fff;
     position: relative;
-    top:-3rem
+    top:-47px
+}
+.highlightsa{
+    top:0px !important
 }
 .highlights-ul{
     width: 15rem;
@@ -170,7 +174,7 @@ html,body{
 }
 .highlights-icon9{
     width: 1.85rem;
-    height: 1.85rem;
+    height: 1.65rem;
     display: inline-block;
     background:url(../../components/images/icon002.png);
     background-size: cover;
@@ -199,7 +203,7 @@ background:url(../../components/images/vip2.png);
     float: left
 }
 .highlights-li-font{
-    font-size: 0.7rem;
+    font-size: 15px;
 }
 @keyframes change{
     0% {
@@ -233,16 +237,18 @@ background:url(../../components/images/vip2.png);
     background: #0538db;
     border-radius: 50%;
     box-shadow: 0px 0px 0.8rem #0538db;
-    animation:change 1s infinite linear;
+    /*animation:change 1s infinite linear;*/
     position: fixed;
     right: 0.5rem;
     bottom: 6rem;
+    color: #fff
 }
 
 .look-all{
     position: absolute;
     right: 0.5rem;
-    top:0.8rem
+    top:0.8rem;
+    color: #2b67ff
 }
 .time{
     width: 12.24rem;
@@ -305,40 +311,47 @@ background:url(../../components/images/vip2.png);
     background:#2b67ff !important
 }
 .btn-all{
-    border: 0.025rem solid #2b67ff;
+    border: 0.025rem solid #4676ff;
     border-radius:1rem;
     font-size: 0.6rem;
-    width: 5rem;
-    height: 1.5rem;
-    margin: 2.8rem auto 0;
-    line-height: 1.5rem;
+    width: 108px;
+    height:30px;
+    margin: 36px auto 48px;
+    line-height: 30px;
     text-align: center;
-    display: block
+    display: block;
+    color: #fff;
 }
 .btn-all-bottom{
-    margin-bottom: 2.8rem;
+    /*margin-bottom: 2.8rem;*/
 }
 .btn-all-bottoms{
-    margin-bottom: 1.6rem;
+    /*margin-bottom: 1.6rem;*/
 }
 .about-me .highlights ,.maps .highlights ,.logo .highlights ,.guests-popole .highlights{
     top:0
 }
+.pas{
+    position: relative;
+    top:-12px;
+}
 .about-me{
-    margin: 2.8rem 0 0.8rem 0
+    margin: 0px 0 0.0px 0
 }
 .title-btn{
-    border: 0.05rem solid #ccc;
-    border-radius:1rem;
+    /*border: 0.05rem solid #ccc;
+    border-radius:1rem;*/
     font-size: 0.6rem;
     width: 3.6rem;
-    height: 1rem;
+    height: 1.2rem;
     margin: 1.2rem auto 0rem;
-    line-height: 1rem;
+    line-height: 1.3rem;
     text-align: center;
     display: block;
-    background: #215df7;
-    color: #fff
+    /*background: #215df7;*/
+    color: #fff;
+    background: url(../../components/images/dh.png);
+    background-size: cover;
 }
 .bg-b{
     background: url(../../components/images/bg-b.png);
@@ -358,7 +371,7 @@ background:url(../../components/images/vip2.png);
    font-size: 0.6rem;
     margin: 0.8rem 0.5rem;
     }
-.maps img,.logo-contnet img{
+.maps .img,.logo-contnet img{
     width: 15rem;
     margin: 0 auto;
     }
@@ -368,16 +381,17 @@ background:url(../../components/images/vip2.png);
     line-height: 1.2rem;
     margin: 0 auto;
     color: #fff;
+    font-size: 12px;
 }
-.about-me .one{
+/*.about-me .one{
     margin-top:1rem
-    }
+    }*/
 .about-me{
     position: relative
 }
 .about-me .code{
     position: absolute;
-    bottom: -0.5rem;
+    bottom: 26px;
     right: 1rem;
     width: 3rem;
     height: 3rem;
@@ -389,7 +403,156 @@ background:url(../../components/images/vip2.png);
 .highlights-li-fonts {
 font-size: 10px;
 }
+<<<<<<< HEAD
+/*html{height:100%;overflow:hidden}
+html,body{height:100%;overflow:auto}*/
+/*link*/
+.blue-link{
+    margin-left: 0.5rem;
+    margin-top: 7px;
+    margin-bottom: 16px;
+}
+.tolink{
+   background:  -webkit-gradient(linear, 0 0, 0 bottom, from(#28406e), to(rgb(34, 53, 90)));  
+   font-weight: bold
+}
+.highlights-name {
+    margin-top: 20px
+}
+.linkbgtg{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: url(../../components/images/bannerlink.png);
+    background-size: cover;
+}
+.batn-r{
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(../../components/images/add.png);
+    background-size: cover;
+}
+.batn-t{
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.5rem;
+    background: url(../../components/images/xx.png);
+    background-size: cover;
+}
+.batn-add{
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url(../../components/images/add-r.png);
+    background-size: cover;
+}
+.ban{
+    width: 100px;
+    height: 26px;
+    background: url(../../components/images/m.png);
+    background-size: cover;
+    position: absolute;
+    left: 12px;
+    top: 8px;
+}
+/*日期toggle*/
+.agenda-ul-toggle-box{
+    width: 15rem;
+    height:118px;
+    margin:0 auto
+}
+.agenda-ul-toggle-box span{
+    height: 0.9rem;
+line-height: 0.9rem;
+text-align: center;
+border-radius: .5rem;
+font-size: 12px;
+color: #bfc1c8;
+background: #1b2d4c
+}
+.agenda-ul-toggle-box-one,.agenda-ul-toggle-box-two {
+    margin-bottom: 11px;
+}
+.agenda-ul-toggle-box-one :nth-child(1){
+width: 2.9rem;
+height: 0.9rem;
+line-height: 0.9rem;
+text-align: center;
+display: inline-block
+}
+.agenda-ul-toggle-box-one :nth-child(2){
+width: 3.325rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.3rem
+}
+.agenda-ul-toggle-box-one :nth-child(3){
+width: 3.6rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.3rem
+}
+.agenda-ul-toggle-box-one :nth-child(4){
+width: 4.2rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.3rem
+}
+.agenda-ul-toggle-box-two :nth-child(1){
+width: 4.95rem;
+height: 0.9rem;
+display: inline-block;
+}
+.agenda-ul-toggle-box-two :nth-child(2){
+width: 4.95rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-ul-toggle-box-two :nth-child(3){
+width: 4.3rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-ul-toggle-box-three :nth-child(1){
+width: 4.95rem;
+height: 0.9rem;
+display: inline-block;
+}
+.agenda-ul-toggle-box-three :nth-child(2){
+width: 4.95rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-ul-toggle-box-three :nth-child(3){
+width: 4.3rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-ul-toggle-box-three-r :nth-child(1){
+width:4.9rem;
+height: 0.9rem;
+line-height: 0.9rem;
+text-align: center;
+display: inline-block;
+margin-left: 2.38rem
+}
+.agenda-ul-toggle-box-three-r :nth-child(2){
+width:4.8rem;
+height: 0.9rem;
+line-height: 0.9rem;
+text-align: center;
+display: inline-block;
+margin-left: 0.4rem
+}
+=======
 
 html{height:100%;overflow:hidden}
 html,body{height:100%;overflow:auto}
 
+>>>>>>> 12bd4d31f366c1cbc4b0c053b0070e0e9cde7bf7

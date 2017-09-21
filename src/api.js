@@ -24,6 +24,12 @@ export default (config => {
   'user': '/api/gitc/user/',
   // 赞助
   'sponsor': '/api/gitc/sponsor/',
+  // 调取某页全部人员
+// http://120.92.10.182:8000/api/gitc/person-4/all/list.json?token=1afb756d16740266efde290917ca1a8e
+  'pagepople':'/api/gitc/',
+   //议题提交
+   'issue':'/api/gitc/meetissue/'
+
 })
 
 // 人员列表
