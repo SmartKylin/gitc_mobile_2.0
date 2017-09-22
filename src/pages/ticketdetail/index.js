@@ -31,6 +31,8 @@ let getBgByTicket = (ticket) => {
       return yunwei;
     case '展览票':
       return zhanlan;
+    default:
+      return dahui;
   }
 }
 
