@@ -28,7 +28,7 @@ const RouterMap = class extends Component {
   render() {
     return (
     <Router history={history}>
-      <Wrapper openPop={this.props.openPop} history={history}>
+      <Wrapper openPop={this.props.openPop} history={history} setLoginCb={this.props.setLoginCb}>
         <Route exact path="/" component={Home}/>
         <Route path="/home" component={Home}></Route>
         <Route path="/sponsorship" component={SponsorShip}></Route>
@@ -41,7 +41,7 @@ const RouterMap = class extends Component {
         <Route path="/login" compoent={Login}></Route>
         
         <Route path="/ticket" component={Ticket}></Route>
-        <Route path="/ticketdetail" component={TicketDetail}></Route>
+        <Route path="/ticketdetail/:id" component={TicketDetail}></Route>
         <Route path="/activity" component={Activity}></Route>
         <Route path="/issue" component={Issue}></Route>
         <Route path="/map" component={Map}></Route>

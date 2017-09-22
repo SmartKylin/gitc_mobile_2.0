@@ -13,7 +13,7 @@ export default class extends Component {
     render() {
         const { value } = this.state;
         return (
-            <span style={{padding: '0 13px', display: 'flex', alignItems: 'center'}} className="issue">
+            <span style={{display: 'flex', alignItems: 'center'}} className="issue">
                 <div style={{width: '30%', fontSize: '13px'}}>{this.props.title}</div>
                 <Rate onChange={this.handleChange} value={value} />
             </span>
