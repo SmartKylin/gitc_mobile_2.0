@@ -8,6 +8,16 @@ import Checkgroup from '../componets/Checkgroup'
 import UploaderPage from '../componets/UploaderPage'
 import {message} from 'antd'
 
+let minHeight = parseInt(document.documentElement? document.documentElement.clientHeight : document.body.clientHeight) -80
+let boxStyle = {
+    height: '89%',
+    borderRadius: '5px',
+    overflow: 'hidden',
+    background: '#fff',
+    position: 'relative',
+    paddingBottom: '10px',
+    minHeight
+}
 let btnStyle = {
     width: '112px',
     height: '30px',
@@ -16,9 +26,10 @@ let btnStyle = {
     lineHeight: '30px',
     fontSize: '12px',
     textAlign: 'center',
-    margin: '20px 0',
+    marginTop: '30px',
     borderRadius: '15px'
 }
+
 
 export default class Issus extends Component {
     constructor () {
@@ -68,12 +79,12 @@ export default class Issus extends Component {
             remark,theme,content,innovate,hot_topic,
             experience,generality,suggest
         } = this.state;
-
-        let photo = photonew&&photonew.length>0?photonew[0].dataUrl:""
+        var dm_id = 3
+        let photo = photonew&&photonew.length>0?photonew.pop().dataUrl:""
 
         issue({name,company, position, phone, email,
             addr,photo,summary,speech_experience,interest,remark,theme,content,innovate,hot_topic,
-            experience,generality,suggest})
+            experience,generality,suggest,dm_id})
             .then(res => res.json())
             .then(data => {
                 message.info(data.msg)
@@ -87,7 +98,7 @@ export default class Issus extends Component {
         } = this.state;
         return (
             <ChildContainer  style={{position:"static",minHeight:`${this.state.minHeight}px`,paddingBottom:"10px"}}>
-                <div style={{background: '#fff',borderRadius:'4px'}}>
+                <div style={boxStyle}>
                     <Field title='姓名 :' required={true} changeValue={this.changeValue}  name={'name'}></Field>
                     <Field title='公司 :' required={true} changeValue={this.changeValue}  name={'company'}></Field>
                     <Field title='职位 :' required={true} changeValue={this.changeValue}  name={'position'}></Field>

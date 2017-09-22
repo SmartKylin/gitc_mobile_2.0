@@ -50,7 +50,7 @@ class UploaderPage extends React.Component {
             <div className=''>
                 <Uploader
                     data={uploadList1}
-                    uploadUrl={'https://jsonplaceholder.typicode.com/posts/'}
+                    uploadUrl={"http://120.92.10.182:8000/api/gitc/meetissue/upload.json?token=1afb756d16740266efde290917ca1a8e?doamin=3"}
                     onChange={this.handleUploadChange}
                     onDelete={this.handleDelete}
                     max={5}

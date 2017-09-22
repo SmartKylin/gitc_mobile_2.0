@@ -26,17 +26,20 @@ class Uploader extends React.Component{
         const file = event.target.files[0];
         const {typeArray, maxSize} = this.props;
         // 图片类型检查
-        if(typeArray.indexOf(file.type.split('/')[1]) === -1){
-            Toast.error('不支持文件类型', 2000, undefined, false);
-            return;
+        if(file){
+            if(typeArray.indexOf(file.type.split('/')[1]) === -1){
+                Toast.error('不支持文件类型', 2000, undefined, false);
+                return;
+            }
+            // 图片尺寸检查
+            if(file.size > maxSize * 1024){
+                Toast.error('文件大小超过限制', 2000, undefined, false);
+                return;
+            }
+            // 图片转dataUrl
+            this.transformFileToDataUrl(file);
         }
-        // 图片尺寸检查
-        if(file.size > maxSize * 1024){
-            Toast.error('文件大小超过限制', 2000, undefined, false);
-            return;
-        }
-        // 图片转dataUrl
-        this.transformFileToDataUrl(file);
+
     }
     transformFileToDataUrl (file) {
         const _this = this;
@@ -204,7 +207,7 @@ class Uploader extends React.Component{
                 onPress={()=>{_this.refs.input.click();}}>
                 <div className="zhaopian">
                     <div  className="geren"><span>个人照片</span></div>
-                    <div className="zby-upload-img">
+                    <div  className="zby-upload-img">
                         <img className="xiangji" src={zhaoxiangji} alt=""/>
                     </div>
                     <div><span className="text">高清个人半身照，不戴墨镜、帽子，职业照最佳</span></div>

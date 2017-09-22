@@ -11,22 +11,16 @@ $darkGray: #bbb;
   width: 100%;
   padding: 10px 0;
   background: #fff;
-
+  position: relative;
   .zby-img-preview-box {
-    width: 100%;
-    height:200px;
+    width: 15%;
+    height: 40px;
+    left: 60px;
     box-sizing: border-box;
     display: inline-block;
-    position: relative;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 4px;
-    border: 2px solid #d9d9d9;
+    position: absolute;
+    border: 1px solid #d9d9d9;
     background: #fff;
-    animation: scaleIn .3s;
-    vertical-align: top;
-
     transition: all .3s;
     transform-origin: left top;
 
@@ -51,19 +45,12 @@ $darkGray: #bbb;
     img {
       display: block;
       height: 100%;
-      border-radius: 20px;
     }
 
     .uploading {
       width: 200px;
       height: 100%;
       text-align: center;
-
-      .fa {
-        font-size: 80px;
-        line-height: 176px;
-        color: #999;
-      }
     }
 
     .progress-text {
@@ -81,23 +68,27 @@ $darkGray: #bbb;
       left: 0;
       bottom: 0;
       width: 0;
-      height: 6px;
+      height: 2px;
       background: $linearViColor;
     }
 
-    .close {
+    .close{
       position: absolute;
-      right: -11px;
-      top: -12px;
+      right: 15px;
+      top: 8px;
       width: 20px;
       height: 20px;
       border: 1px solid $darkGray;
       background: #fff;
       border-radius: 50%;
-      font-size: 24px;
+      font-size: 12px;
       line-height: 40px;
-      color: $viColor;
-      text-align: center;
+      color: black;
+      .fa{
+        position:absolute;
+        right: 6px;
+        top: -12px;
+      }
     }
   }
   .box{
@@ -153,26 +144,417 @@ $darkGray: #bbb;
   }
 }
 
-@keyframes scaleIn {
-  0% {
-    width: 0;
-    height: 0;
-  }
-  100% {
-    width: auto;
-    height: 200px;
+
+@media screen and (max-width: 375px) {
+  .zby-uploader-box {
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+    position: relative;
+    .zby-img-preview-box {
+      width: 14%;
+      height: 40px;
+      left: 60px;
+      box-sizing: border-box;
+      display: inline-block;
+      position: absolute;
+      border: 1px solid #d9d9d9;
+      background: #fff;
+      transition: all .3s;
+      transform-origin: left top;
+
+      &.loading {
+        overflow: hidden;
+      }
+
+      &.error {
+        border-color: red;
+      }
+
+      &.deleted {
+        margin: 0;
+        padding: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        border: none;
+        animation: scaleOut .3s;
+      }
+
+      img {
+        display: block;
+        height: 100%;
+      }
+
+      .uploading {
+        width: 200px;
+        height: 100%;
+        text-align: center;
+      }
+
+      .progress-text {
+        font-size: 26px;
+        color: #999;
+        position: absolute;
+        left: 50%;
+        bottom: 15px;
+
+        transform: translate(-50%);
+      }
+
+      .progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: $linearViColor;
+      }
+
+      .close{
+        position: absolute;
+        right: 11px;
+        top: 8px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $darkGray;
+        background: #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        line-height: 40px;
+        color: black;
+        .fa{
+          position:absolute;
+          right: 6px;
+          top: -12px;
+        }
+      }
+    }
+    .box{
+      display: flex;
+    }
+    .zhaopian{
+      width: 100%;
+      display: flex;
+      .geren{
+        width: 60px;
+        height: 100%;
+      }
+      .zby-upload-img {
+        margin-left: 10px;
+        width: 50px;
+        height: 40px;
+        border-radius: 4px;
+        background: #e3e3e3;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        .xiangji{
+          width: 20px;
+          height: 20px;
+        }
+        &:hover{
+          cursor:pointer;
+        }
+        &.zby-upload-img-active {
+          background: #fbfbfb;
+        }
+
+        .fa-plus {
+          font-size: 60px;
+          line-height: 150px;
+        }
+
+        .text {
+          font-size: 12px;
+        }
+      }
+
+
+      .text{
+        display: inline-block;
+        color: #cccccc;
+        margin-left: 10px;
+      }
+    }
+    .file-input {
+      display: none;
+    }
   }
 }
 
-@keyframes scaleOut {
-  0% {
-    width: auto;
-    height: 200px;
-    opacity: 1;
-  }
-  100% {
-    width: 0;
-    height: 0;
-    opacity: 0;
+@media screen and (max-width: 360px) {
+  .zby-uploader-box {
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+    position: relative;
+    .zby-img-preview-box {
+      width: 20%;
+      height: 40px;
+      left: 60px;
+      box-sizing: border-box;
+      display: inline-block;
+      position: absolute;
+      border: 1px solid #d9d9d9;
+      background: #fff;
+      transition: all .3s;
+      transform-origin: left top;
+
+      &.loading {
+        overflow: hidden;
+      }
+
+      &.error {
+        border-color: red;
+      }
+
+      &.deleted {
+        margin: 0;
+        padding: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        border: none;
+        animation: scaleOut .3s;
+      }
+
+      img {
+        display: block;
+        height: 100%;
+      }
+
+      .uploading {
+        width: 200px;
+        height: 100%;
+        text-align: center;
+      }
+
+      .progress-text {
+        font-size: 12px;
+        color: #999;
+        position: absolute;
+        left: 50%;
+
+        transform: translate(-50%);
+      }
+
+      .progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: $linearViColor;
+      }
+
+      .close{
+        position: absolute;
+        right: 19px;
+        top: 8px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $darkGray;
+        background: #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        line-height: 40px;
+        color: black;
+        .fa{
+          position:absolute;
+          right: 6px;
+          top: -12px;
+        }
+      }
+    }
+    .box{
+      display: flex;
+    }
+    .zhaopian{
+      width: 100%;
+      display: flex;
+      .geren{
+        width: 65px;
+        height: 100%;
+      }
+      .zby-upload-img {
+        margin-left: 10px;
+        width: 50px;
+        height: 40px;
+        border-radius: 4px;
+        background: #e3e3e3;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        .xiangji{
+          width: 20px;
+          height: 20px;
+        }
+        &:hover{
+          cursor:pointer;
+        }
+        &.zby-upload-img-active {
+          background: #fbfbfb;
+        }
+
+        .fa-plus {
+          font-size: 60px;
+          line-height: 150px;
+        }
+
+        .text {
+          font-size: 12px;
+        }
+      }
+
+
+      .text{
+        display: inline-block;
+        color: #cccccc;
+        margin-left: 10px;
+      }
+    }
+    .file-input {
+      display: none;
+    }
   }
 }
+
+
+@media screen and (max-width: 320px)  {
+  .zby-uploader-box {
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+    position: relative;
+    .zby-img-preview-box {
+      width: 17%;
+      height: 40px;
+      left: 60px;
+      box-sizing: border-box;
+      display: inline-block;
+      position: absolute;
+      border: 1px solid #d9d9d9;
+      background: #fff;
+      transition: all .3s;
+      transform-origin: left top;
+
+      &.loading {
+        overflow: hidden;
+      }
+
+      &.error {
+        border-color: red;
+      }
+
+      &.deleted {
+        margin: 0;
+        padding: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        border: none;
+        animation: scaleOut .3s;
+      }
+
+      img {
+        display: block;
+        height: 100%;
+      }
+
+      .uploading {
+        width: 200px;
+        height: 100%;
+        text-align: center;
+      }
+
+      .progress-text {
+        font-size: 12px;
+        color: #999;
+        position: absolute;
+        left: 50%;
+
+        transform: translate(-50%);
+      }
+
+      .progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: $linearViColor;
+      }
+
+      .close{
+        position: absolute;
+        right: 11px;
+        top: 8px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $darkGray;
+        background: #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        line-height: 40px;
+        color: black;
+        .fa{
+          position:absolute;
+          right: 5px;
+          top: -12px;
+        }
+      }
+    }
+    .box{
+      display: flex;
+    }
+    .zhaopian{
+      width: 100%;
+      display: flex;
+      .geren{
+        width: 100px;
+        height: 100%;
+      }
+      .zby-upload-img {
+        margin-left: 10px;
+        width: 50px;
+        height: 40px;
+        border-radius: 4px;
+        background: #e3e3e3;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        .xiangji{
+          width: 20px;
+          height: 20px;
+        }
+        &:hover{
+          cursor:pointer;
+        }
+        &.zby-upload-img-active {
+          background: #fbfbfb;
+        }
+
+        .fa-plus {
+          font-size: 60px;
+          line-height: 150px;
+        }
+
+        .text {
+          font-size: 12px;
+        }
+      }
+
+
+      .text{
+        display: inline-block;
+        color: #cccccc;
+        margin-left: 10px;
+      }
+    }
+    .file-input {
+      display: none;
+    }
+  }
+}
+
