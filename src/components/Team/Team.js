@@ -21,13 +21,13 @@ class Team extends Component {
           {this.props.data?this.props.data.map((data,index)=>(
 <HeadPortrait name={data.name} show={data.position}  pics={data.pic} style={{ margin: '15px', float: 'left' }} />
           )):''}
-          
+         
           {/*<HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />
           <HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />
           <HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />
           <HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />*/}
         </ul>
-
+ <a href="#" className="btn-all btn-all-bottoms" >查看更多 <div className="batn-t"></div>   </a>
       </div>
 
     );
