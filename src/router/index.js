@@ -26,6 +26,8 @@ let history = createBrowserHistory();
 
 const RouterMap = class extends Component {
   render() {
+    history.openPop = this.props.openPop
+    history.setLoginCb = this.props.setLoginCb
     return (
     <Router history={history}>
       <Wrapper openPop={this.props.openPop} history={history} setLoginCb={this.props.setLoginCb}>

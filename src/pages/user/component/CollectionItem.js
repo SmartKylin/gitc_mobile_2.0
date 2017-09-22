@@ -3,9 +3,10 @@ import {Icon} from 'antd'
 import "./index.scss"
 export default class CollectionItem extends Component {
   render () {
+    console.log(this.props.data.id,"12312312");
     return (
     <div>
-      {this.props.item==0?<div><div className='collectionItemtime'>11月23日</div><div className='xian'></div></div>:""}
+      {this.props.data.id==4?<div><div className='collectionItemtime'>11月23日</div><div className='xian'></div></div>:""}
       <div className='box'>
         <div className='boximg'>
           <div ><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>
