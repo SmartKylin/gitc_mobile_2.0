@@ -189,15 +189,15 @@ html,body{
     height: 12px;
 }
 .pa-icon1{
-background:url(../../components/images/vip1.png);
+background:url(../../components/images/vip1.svg);
     background-size: cover;
 }
 .pa-icon2{
-background:url(../../components/images/vip2.png);
+background:url(../../components/images/vip2.svg);
     background-size: cover;
 }
 .pa-icon3{
-background:url(../../components/images/vip2.png);
+background:url(../../components/images/vip2.svg);
     background-size: cover;
 }
 .highlights-li div{
