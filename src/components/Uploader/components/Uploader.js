@@ -2,12 +2,12 @@
  * Created by Aus on 2017/7/4.
  */
 import React from 'react'
+import classNames from 'classnames'
 import Touchable from 'rc-touchable'
 import Figure from './Figure'
-// import Toast from '../../../Feedback/Toast/components/Toast'
-import {message} from 'antd'
+import Toast from '../../Toast/index'
 import '../style/index.scss'
-
+import zhaoxiangji from "../../../images/xiangji.svg"
 // 统计img总数 防止重复
 let imgNumber = 0;
 
@@ -27,12 +27,12 @@ class Uploader extends React.Component{
         const {typeArray, maxSize} = this.props;
         // 图片类型检查
         if(typeArray.indexOf(file.type.split('/')[1]) === -1){
-            message.info('不支持文件类型');
+            Toast.error('不支持文件类型', 2000, undefined, false);
             return;
         }
         // 图片尺寸检查
         if(file.size > maxSize * 1024){
-            message.info('文件大小超过限制');
+            Toast.error('文件大小超过限制', 2000, undefined, false);
             return;
         }
         // 图片转dataUrl
@@ -114,7 +114,7 @@ class Uploader extends React.Component{
                 window.MozBlobBuilder ||
                 window.MSBlobBuilder;
             if (error.name === 'TypeError' && window.BlobBuilder){
-                const builder = new BlobBuilder();
+                const builder = new Blob();
                 builder.append(arrayBuffer);
                 blob = builder.getBlob(imgFile.type);
             } else {
@@ -202,9 +202,12 @@ class Uploader extends React.Component{
                 key="add"
                 activeClassName={'zby-upload-img-active'}
                 onPress={()=>{_this.refs.input.click();}}>
-                <div className="zby-upload-img">
-                    <i key="icon" className="fa fa-plus"></i>
-                    <p className="text">上传图片</p>
+                <div className="zhaopian">
+                    <div  className="geren"><span>个人照片</span></div>
+                    <div className="zby-upload-img">
+                        <img className="xiangji" src={zhaoxiangji} alt=""/>
+                    </div>
+                    <div><span className="text">高清个人半身照，不戴墨镜、帽子，职业照最佳</span></div>
                 </div>
             </Touchable>
         );
