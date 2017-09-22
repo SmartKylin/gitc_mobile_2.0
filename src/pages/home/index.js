@@ -42,7 +42,9 @@ export default class Activity extends Component {
             chairman: [],
             expert: [],
             guest: [],
-            basedata: []
+            basedata: [],
+            baseexpert:[],
+            baseguest:[]
             // menuVisible: 'hidden'
         }
     }
@@ -63,7 +65,8 @@ export default class Activity extends Component {
             .then(data => {
 
                 this.setState({
-                    expert: data.data
+                    expert: data.data,
+                    baseexpert: data.data.slice(0, 6)
                 })
 
             })
@@ -71,7 +74,8 @@ export default class Activity extends Component {
             .then(data => {
 
                 this.setState({
-                    guest: data.data
+                    guest: data.data,
+                    baseguest:data.data.slice(0, 6)
                 })
 
             })
@@ -367,8 +371,8 @@ export default class Activity extends Component {
                                     <img src={blink} alt="" className="blue-link"/>
                                 </div>
                                 <Team name='大会主席团' basedata={this.state.basedata} data={this.state.chairman}></Team>
-                                {/*<Team name="专家顾问团" data={this.state.expert}></Team>
-                               <Team name="演讲嘉宾" data={this.state.guest}></Team>*/}
+                                <Team name="专家顾问团" basedata={this.state.baseexpert} data={this.state.expert}></Team>
+                               <Team name="演讲嘉宾" basedata={this.state.baseguest} data={this.state.guest}></Team>
                             </div>
                             <div className="logo">
                                 <div className="highlights">
