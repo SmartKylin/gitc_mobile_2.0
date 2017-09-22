@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery'
 import './AgendaPople.css';
+import storage from '../../helper/storage'
+
+import {collectDocument, collectGuest} from "../../services/collect";
+
 class AgendaPople extends Component {
 	constructor(props) {
 		super(props);
@@ -80,9 +84,15 @@ class AgendaPople extends Component {
 			link3: !this.state.link3
 		})
 	}
+	
+	_collectGuest = () => {
+		let id = this.props.data.id
+		let phone = storage.get(storage.PHONE_KEY)
+		collectGuest()
+	}
 	render() {
 		const { data } = this.props;
-		return (
+    return (
 			<li className="popele-box" id="a" onClick={this._handleClick}>
 
 				<div className="popele-box-left">
