@@ -30,7 +30,9 @@ export default (config => {
   //议题提交
    'issue':'/api/gitc/meetissue/',
   // 获取门票列表
-  'getTicketList': '/api/gitc/tricket/list/'
+  'getTicketList': '/api/gitc/tricket/list/',
+  // 获取门票详情
+  'getTicketDetail': '/api/gitc/tricket/'
 })
 
 // 人员列表
