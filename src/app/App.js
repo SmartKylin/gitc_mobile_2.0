@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import RouterMap from '../router';
-import storage from '../helper/storage'
+// import storage from '../helper/storage'
 
 import Popup from 'components/popup'
 import LoginBox from 'containers/login_box'
@@ -11,33 +11,31 @@ class App extends Component {
     super(props)
     this.state = {
       loginBoxDisplay: 'none',
-      // menuVisible: 'hidden'
+      cb: null
     }
   }
   closePop = () => {
     this.setState({
       loginBoxDisplay: 'none'
     })
-    console.log('closePop' + this.path);
-    /*if (this.path) {
-     windosw
-    }*/
   }
-  openPop = (path) => {
-    console.log("openpop" + path);
+  openPop = () => {
+    // console.log("openpop" + path);
     this.setState({
       loginBoxDisplay: 'flex'
     })
-    if (path) {
-      this.path = path
-    }
+  }
+  setLoginCb = (fn) => {
+    this.setState({
+      cb: fn
+    })
   }
   render() {
     return (
       <div className="App">
-        <RouterMap openPop={this.openPop}/>
+        <RouterMap openPop={this.openPop} setLoginCb={this.setLoginCb}/>
         <Popup display={this.state.loginBoxDisplay}>
-          <LoginBox closePop={this.closePop}/>
+          <LoginBox closePop={this.closePop} loginSuccess={this.state.cb}/>
         </Popup>
       </div>
     );

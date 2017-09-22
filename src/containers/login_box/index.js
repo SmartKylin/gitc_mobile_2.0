@@ -76,7 +76,7 @@ export default class extends Component {
     }
   }
   // 登陆或者注册
-  signIn = () => {
+  signIn = (cb) => {
     let params = {}
     params.code = this.code.value;
     params.phone = this.mobile.value;
@@ -87,8 +87,9 @@ export default class extends Component {
       // 如果登陆成功，手机号存到localstorage
       if (data.status) {
         storage.set(storage.PHONE_KEY, this.mobile.value)
+        storage.set(storage.DATA_KEY, data.data)
         this.props.closePop()
-        console.log('cookie', document.cookie);
+        cb && cb()
       }
     }
     sign(this.mobile.value, params)
@@ -123,7 +124,7 @@ export default class extends Component {
           }
         </div>
         <div className="btn--area">
-          <div className="btn--ensure" onClick={() => this.signIn()}>确定</div>
+          <div className="btn--ensure" onClick={() => this.signIn(this.props.loginSuccess)}>确定</div>
         </div>
       </div>
     </div>

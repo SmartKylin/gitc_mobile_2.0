@@ -12,7 +12,7 @@ export default class extends Component {
       <ChildBackground>
         <div style={{display: 'flex', alignItems: 'center'}}>
           <div alt="" className="avatar"/>
-          <div style={{color: '#fff', fontSize: '16px',  marginLeft: '13px'}}>{this.iphone}</div>
+          <div style={{color: '#fff', fontSize: '16px',  marginLeft: '13px'}}>{this.phone}</div>
         </div>
         <UserMenu/>
       </ChildBackground>
@@ -20,13 +20,22 @@ export default class extends Component {
   }
   componentWillMount () {
     let phone = storage.get(storage.PHONE_KEY)
-    phone = 18201440272
     /*if (!phone) {
       this.props.history.goBack()
     }*/
-    getDocumentList({phone, token: TOKEN})
-    .then(data =>{
-      console.log(data);
-    })
+    this.phone = phone
+    if (phone) {
+      getDocumentList({phone, token: TOKEN})
+      .then(res => res && res.json())
+      .then(data => {
+        console.log(data);
+      })
+      
+      getGuestList({phone, token: TOKEN})
+      .then(res => res && res.json())
+      .then(data => {
+        console.log(data);
+      })
+    }
   }
 }

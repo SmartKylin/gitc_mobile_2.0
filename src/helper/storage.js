@@ -7,9 +7,11 @@ const set = (key, val) => {
 }
 
 const PHONE_KEY = 'phone'
+const DATA_KEY = 'gitc-data'
 
 export default {
   get,
   set,
-  PHONE_KEY
+  PHONE_KEY,
+  DATA_KEY
 }

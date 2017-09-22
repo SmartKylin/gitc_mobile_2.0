@@ -7,7 +7,7 @@ export function collectGuest (params) {
 }
 
 export function getGuestList(params) {
-  return http.post(api.getGuestList + params.phone + `.json?token=1afb756d16740266efde290917ca1a8e&phone`, params)
+  return http.post(api.getGuestList + params.phone + `.json?token=1afb756d16740266efde290917ca1a8e`, params)
 }
 
 export function collectDocument(params) {
@@ -16,5 +16,5 @@ export function collectDocument(params) {
 }
 
 export function getDocumentList(params) {
-  return http.post(api.getDocumentList + params.phone + `.json?token=1afb756d16740266efde290917ca1a8e&phone`, params)
+  return http.post(api.getDocumentList + params.phone + `.json?token=1afb756d16740266efde290917ca1a8e`, params)
 }

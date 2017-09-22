@@ -12,7 +12,11 @@ export default class extends Component {
     if (phone) {
       this.props.history.push(path)
     } else {
-      this.props.openPop(path)
+      this.props.openPop()
+      let cb = () => {
+        this.props.history.push(path)
+      }
+      this.props.setLoginCb(cb)
     }
   }
   render () {
