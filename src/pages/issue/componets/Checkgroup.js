@@ -57,7 +57,8 @@ export default class extends Component {
             })
         })
         let nameAry = ary.map(item => item.name)
-        console.log(nameAry.join(','));
+        // console.log(nameAry.join(','));
+        this.props.changeValue(this.props.name, nameAry.join(','))
     }
 
 

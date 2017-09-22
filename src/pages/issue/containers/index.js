@@ -32,7 +32,7 @@ export default class Issus extends Component {
             phone: '',//手机号
             email: '', //邮箱
             addr: '', //地址
-            photo: '', //照片
+            photonew: '', //照片
             summary:'', //简介
             speech_experience:'',//演讲经验
             interest:'',//兴趣专场
@@ -64,11 +64,14 @@ export default class Issus extends Component {
     // 议题提交
     post = () => {
         let {name, company, position, phone, email, addr,
-            photo,summary,speech_experience,interest,
+            photonew,summary,speech_experience,interest,
             remark,theme,content,innovate,hot_topic,
             experience,generality,suggest
         } = this.state;
-        issue({name, company, position, phone, email,
+
+        let photo = photonew&&photonew.length>0?photonew[0].dataUrl:""
+
+        issue({name,company, position, phone, email,
             addr,photo,summary,speech_experience,interest,remark,theme,content,innovate,hot_topic,
             experience,generality,suggest})
             .then(res => res.json())
@@ -92,7 +95,7 @@ export default class Issus extends Component {
                     <Field title='邮箱 :' required={true} changeValue={this.changeValue}  name={'email'}></Field>
                     <Field title='详细地址' required={true} textArea={{type:"yes"}} rows="2" placeholder=" (请填写详细地址)" model={addr} changeValue={this.changeValue}  name={'addr'}></Field>
                     <div className="shangchang">
-                        <UploaderPage changeValue={this.changeValue} name="photo"/>
+                        <UploaderPage changeValue={this.changeValue} name="photonew"/>
                     </div>
                     <Field title='简介'    textArea={{type:"yes"}} rows="3" placeholder=" (200字即可)" model={summary} changeValue={this.changeValue}  name={'summary'}></Field>
                     <Field title='演讲经验' textArea={{type:"yes"}} rows="5" placeholder=" (在行业会议、论坛等的演讲、主持或荣誉简介)"   model={speech_experience} changeValue={this.changeValue}  name={'speech_experience'}></Field>

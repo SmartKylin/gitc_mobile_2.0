@@ -11,6 +11,11 @@ class UploaderPage extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
+    changeValue = (value) => {
+        this.props.changeValue(this.props.name, value)
+    }
+
+
     handleUploadChange (obj) {
 
         if(obj.status === 'loading'){
@@ -19,17 +24,13 @@ class UploaderPage extends React.Component {
             });
         } else {
             this.setState((previousState)=>{
-
-                console.log(previousState.uploadList1,"2222222222222");
-                console.log(previousState.uploadList1[0],"dataUrl");
-
-
                 return previousState.uploadList1.map((item, index)=>{
                     if(item.id === obj.id){
                         previousState.uploadList1.splice(index, 1, obj)
                     }
                 });
             });
+            this.changeValue(this.state.uploadList1)
         }
     }
 
@@ -38,6 +39,7 @@ class UploaderPage extends React.Component {
             return previousState.uploadList1.map((item, index)=>{
                 if(item.id === id){
                     previousState.uploadList1[index].status = 'deleted';
+                    this.changeValue(this.state.uploadList1)
                 }
             });
         });
