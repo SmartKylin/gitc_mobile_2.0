@@ -15,7 +15,7 @@ import './home.css';
 // import StgItem from "components/stg.item";
 import { getPopleList } from "../../services/home";
 import Menu from 'containers/menu'
-
+import {pagepople} from "../../services/pagepople";
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
 // const HEADER = require('components/images/logo2.jpg')
@@ -27,16 +27,36 @@ export default class Activity extends Component {
         super(...args);
         this.onFetch = this.onFetch.bind(this)
         this.state = {
-            data:null,
-            data1:[],
-            DATAS:[],
+            data: null,
+            data1: [],
+            DATAS: [],
+            dadas:[],
+            address:'主会场',
+            adds:null,
+            arrs:[]
             // menuVisible: 'hidden'
         }
         this.onfetchBtn = this.onfetchBtn.bind(this)
     }
     componentWillMount() {
-      console.log(this.props.history);
-      let rooms = require("../../mock/data.json");
+
+
+
+	pagepople('person-4').then(res => res.json())
+    .then(data => {
+			
+			this.setState({
+				dadas:data.data
+			})
+
+
+            // if(this.state.dadas.name=="主会场"){
+            //     console.log(this.state.dadas,'ok')
+            // }
+    })
+
+        console.log(this.props.history);
+        let rooms = require("../../mock/data.json");
         this.setState({
             data: rooms,
             data1: rooms["DATA23"],
@@ -45,57 +65,88 @@ export default class Activity extends Component {
         })
 
     }
+
+    fn=()=>{
+        console.log("123123123123")
+        let add=this.state.dadas.find((obj) => {
+                return obj.name=this.state.address
+            })
+            this.setState({
+                adds:add
+            }) 
+    }
+
+
     componentDidMount() {
-         $('.agenda-ul-toggle-box1 span').on('click',function(e){
-                $('.agenda-ul-toggle-box1 span').removeClass('agenda-btn')
-                $(e.target).addClass('agenda-btn')
+
+        let _this=this
+        $('.agenda-ul-toggle-box span').on('click',function(e){
+            let ad=e.target.innerHTML;
+           
+            // console.log(this)
+            _this.setState({
+                address:ad
+            }) 
+
+        _this.fn()
+        _this.setState({
+            arrs:_this.state.adds.data
+        })
+        
+        })
+       
+
+
+
+        $('.agenda-ul-toggle-box1 span').on('click', function (e) {
+            $('.agenda-ul-toggle-box1 span').removeClass('agenda-btn')
+            $(e.target).addClass('agenda-btn')
+        })
+        $('.agenda-ul-toggle-box2 span').on('click', function (e) {
+            $('.agenda-ul-toggle-box2 span').removeClass('agenda-btn')
+            $(e.target).addClass('agenda-btn')
         })
         getPopleList(4).then(data => data.json()).then(data => {
             console.log(data)
         })
-       
+
     }
     onfetchBtn(e) {
         console.log(e.target.innerHTML)
     }
     onFetch(e) {
-        console.log(e.target, 'pppppppp')
-         $('.agenda-ul-toggle-box1 span').on('click',function(e){
-                $('.agenda-ul-toggle-box1 span').removeClass('agenda-btn')
-                $(e.target).addClass('agenda-btn')
-            })
-             $('.agenda-ul-toggle-box2 span').on('click',function(e){
-                $('.agenda-ul-toggle-box2 span').removeClass('agenda-btn')
-                $(e.target).addClass('agenda-btn')
-            })
-         
         if (e.target.getAttribute('name') == "DATA23") {
-           
+            $('.agenda-ul-toggle-box1 span').removeClass('agenda-btn')
+            $('.agenda-btnon').addClass('agenda-btn')
             this.setState({
                 toggle: true
             })
         }
         else {
-           
+            $('.agenda-ul-toggle-box2 span').removeClass('agenda-btn');
+            $('.agenda-btnon').addClass('agenda-btn')
             this.setState({
                 toggle: false
             })
         }
         $('.time span').removeClass('catbtn');
         $(e.target).addClass('catbtn');
+        console.log(e.target.innerHTML)
         // e.target.removeAttribute('style','color:#fff;')
         this.setState({
             data1: this.state.data[e.target.getAttribute('name')]
         })
     }
 
-   /* closeMenu = () => {
-      this.setState({
-        menuVisible: 'hidden'
-      })
-    }*/
+    /* closeMenu = () => {
+       this.setState({
+         menuVisible: 'hidden'
+       })
+     }*/
 
     render() {
+        console.log(this.state.dadas,"adasdasdasd")
+    
         return (
             <span>
                 <div className="index-banner">
@@ -199,51 +250,59 @@ export default class Activity extends Component {
                                             return <ClassRooms key={index} roomList={data.name} onfetch={this.onfetchBtn} />
                                         }) : ""}
                                 </ul>*/}
-                               {/*{this.state.toggle ?*/}
-<div className="agenda-ul-toggle-box agenda-ul-toggle-box1" style={{  display:this.state.toggle?'block':'none'}}>
-                                        <p className="agenda-ul-toggle-box-one">
-                                            <span className="agenda-btn">主会场</span>
-                                            <span>运维专场</span>
-                                            <span>大数据专场</span>
-                                            <span>基础架构专场</span>
-                                        </p>
-                                        <p className="agenda-ul-toggle-box-two">
-                                            <span>前端技术专场</span>
-                                            <span>移动互联专场</span>
-                                            <span>IOT峰会</span>
-                                        </p>
-                                        <p className="agenda-ul-toggle-box-three">
-                                            <span>技术管理&产品</span>
-                                            <span>领袖峰会</span>
-                                            <span>企业专场</span>
-                                        </p>
+                                {/*{this.state.toggle ?*/}
+                                <div className="agenda-ul-toggle-box agenda-ul-toggle-box1" style={{ display: this.state.toggle ? 'block' : 'none' }}>
+                                    <p className="agenda-ul-toggle-box-one">
+                                        <span className="agenda-btn  agenda-btnon">主会场</span>
+                                        <span>运维专场</span>
+                                        <span>大数据专场</span>
+                                        <span>基础架构专场</span>
+                                    </p>
+                                    <p className="agenda-ul-toggle-box-two">
+                                        <span>前端技术专场</span>
+                                        <span>移动互联专场</span>
+                                        <span>IOT峰会</span>
+                                    </p>
+                                    <p className="agenda-ul-toggle-box-three">
+                                        <span>技术管理&产品</span>
+                                        <span>领袖峰会</span>
+                                        <span>企业专场</span>
+                                    </p>
 
-                                    </div>
+                                </div>
 
-<div className="agenda-ul-toggle-box agenda-ul-toggle-box2" style={{  display:this.state.toggle?'none':'block'}}>
-                                        <p className="agenda-ul-toggle-box-one">
-                                            <span className="agenda-btn">主会场</span>
-                                            <span>运维专场</span>
-                                            <span>大数据专场</span>
-                                            <span>基础架构专场</span>
-                                        </p>
-                                        <p className="agenda-ul-toggle-box-two">
-                                            <span>质量和测试专场</span>
-                                            <span>网络安全专场</span>
-                                            <span>互联网金融峰会</span>
-                                        </p>
-                                        <p className="agenda-ul-toggle-box-three-r">
-                                            <span>智慧物流论坛</span>
-                                            <span>企业专场</span>
-                                        </p>
-                                    </div>
+                                <div className="agenda-ul-toggle-box agenda-ul-toggle-box2" style={{ display: this.state.toggle ? 'none' : 'block' }}>
+                                    <p className="agenda-ul-toggle-box-one">
+                                        <span className="agenda-btn agenda-btnon">主会场</span>
+                                        <span>运维专场</span>
+                                        <span>大数据专场</span>
+                                        <span>基础架构专场</span>
+                                    </p>
+                                    <p className="agenda-ul-toggle-box-two">
+                                        <span>质量和测试专场</span>
+                                        <span>网络安全专场</span>
+                                        <span>互联网金融峰会</span>
+                                    </p>
+                                    <p className="agenda-ul-toggle-box-three-r">
+                                        <span>智慧物流论坛</span>
+                                        <span>企业专场</span>
+                                    </p>
+                                </div>
 
                                 {/*}*/}
                                 <div className="agenda-pople-box agenda-pople-box-btn1" >
                                     <ul className="agenda-pople" >
-                                        <AgendaPople />
-                                        <AgendaPople />
-                                        <AgendaPople />
+
+
+                    {
+                     this.state.arrs && this.state.arrs.length>0?this.state.arrs.map((data,index)=>(
+                        <AgendaPople key={index} data={data}/>
+                     )):''
+           
+				    }
+
+
+                                        
                                     </ul>
                                 </div>
                             </div>
