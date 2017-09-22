@@ -12,7 +12,7 @@ export default class extends Component {
        openKeys: ['sub1'],
      }
    }*/
-  state = {
+ /* state = {
     openKeys: ['sub1']
   }
   rootSubmenuKeys = ['sub1', 'sub2'];
@@ -28,14 +28,14 @@ export default class extends Component {
         openKeys: latestOpenKey ? [latestOpenKey] : [],
       });
     }
-  }
+  }*/
   render() {
     return (
     <div className="user">
       <Menu
       mode="inline"
-      openKeys={this.state.openKeys}
-      onOpenChange={this.onOpenChange}
+      // openKeys={this.state.openKeys}
+      // onOpenChange={this.onOpenChange}
       style={{background: '#fff', marginTop: '35px', borderRadius: '5px'}}
       >
         <SubMenu key="sub1" title={<span><Icon type="file-text" style={{color: '#336cfa', fontSize: '17px'}}/><span>戳这里有礼哦品</span></span>}>
