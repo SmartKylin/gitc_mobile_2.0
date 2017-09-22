@@ -117,7 +117,7 @@ export default class Issus extends Component {
                             <Checkgroup name="interest" changeValue={this.changeValue}/>
                         </div>
                     </div>
-                    <Field title='备注' changeValue={this.changeValue}  name={'remark'}></Field>
+                    <Field title='备注'textArea={{type:"yes"}} rows="1" changeValue={this.changeValue}  name={'remark'}></Field>
                     <Field title='演讲主题' required={true} textArea={{type:"yes"}} rows="2" placeholder=" (请确保该主题未在其他公开场合分享过)" changeValue={this.changeValue}  name={'theme'}></Field>
                     <Field title='内容简介' required={true} textArea={{type:"yes"}} rows="5"placeholder=" (用于演讲内容审核，200字左右即可)" changeValue={this.changeValue}  name={'content'}></Field>
                     <div style={{padding: '10px 13px'}}>
