@@ -21,7 +21,7 @@ class AgendaItem extends Component {
 					<div className="headers-number">{other}</div>
 				</div>
 				{data.map((data,index)=>(
-					<AgendaPople  key={index} data={data}/>
+					<AgendaPople  key={index} data={data} openPop={this.props.openPop} setLoginCb={this.props.setLoginCb}/>
 					))}
 			</div>
 
