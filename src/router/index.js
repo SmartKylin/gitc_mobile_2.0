@@ -41,7 +41,7 @@ const RouterMap = class extends Component {
         <Route path="/login" compoent={Login}></Route>
         
         <Route path="/ticket" component={Ticket}></Route>
-        <Route path="/ticketdetail" component={TicketDetail}></Route>
+        <Route path="/ticketdetail/:id" component={TicketDetail}></Route>
         <Route path="/activity" component={Activity}></Route>
         <Route path="/issue" component={Issue}></Route>
       </Wrapper>
