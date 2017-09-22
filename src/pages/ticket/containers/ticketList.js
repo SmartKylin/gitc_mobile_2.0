@@ -7,12 +7,7 @@ import noTicket from 'images/no-ticket.png'
 let colorAry = ['#ff1854', '#0078ffi', '#273e6a', '#11daff'];
 
 export default class extends Component {
-  
-  componentDidMount () {
-    console.log(this.props);
-  }
   render () {
-    console.log('ticketList', this.props.ticketList);
     let minHeight = parseInt(document.documentElement? document.documentElement.clientHeight : document.body.clientHeight) -100
     return (
       <div style={{background: '#fff', marginTop: '10%', height: minHeight + 'px', borderRadius: '4px', padding: '0 16px'}}>

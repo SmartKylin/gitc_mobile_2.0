@@ -50,23 +50,17 @@ export default class extends Component {
     document.title = "门票"
   }
   componentDidMount () {
-    /*JsBarcode(this.barcode, '5848540983250432',
-    {
-      displayValue: false,  //  不显示原始值
-      // background: '#4b8b7f',  //  背景色
-      blank: 100,
-      lineColor: 'rgba(255,255,255)', // 线条颜色
-      width: 1.5  // 线条宽度
-    })*/
-  
-    let phone = storage.get(storage.PHONE_KEY)
     
-    let id = this.props.match.params.id
-    getTicketDetail(phone, id)
-    // .then(res => res.json())
+    let phone = storage.get(storage.PHONE_KEY)
+    // 门票ID
+    let cid = this.props.match.params.id
+    getTicketDetail({phone, cid})
+    .then(res => {
+      if (res) {
+        return res.json()
+      }
+    })
     .then( async data => {
-      console.log(data);
-      
       await this.setState({
         ticket: data.data && data.data.ticket || '基础架构专场票',
         barcodeString: data.data && data.data.code || '5848540983250432',
@@ -83,6 +77,10 @@ export default class extends Component {
         width: 1.5  // 线条宽度
       })
     })
+    .catch(() => {
+      this.history.goBack()
+    })
+    
   }
   render() {
     return (

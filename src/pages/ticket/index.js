@@ -4,6 +4,7 @@ import TicketList from './containers/ticketList'
 import {getTicketList} from "../../services/ticket";
 import storage from '../../helper/storage'
 import {message, Spin} from 'antd'
+import {TOKEN} from "../../helper/login";
 
 export default class extends Component {
   constructor () {
@@ -17,20 +18,27 @@ export default class extends Component {
     document.title = "门票"
     
     let phone = storage.get(storage.PHONE_KEY)
-    console.log(phone);
+  
     /*if (!iphone) {
       this.props.history.push('/')
     } else {
       this.iphone = iphone
     }*/
   
-    getTicketList(phone)
-    .then(res => res.json())
+    getTicketList({phone, token: TOKEN})
+    .then(res => {
+      if (res) {
+        return res.json()
+      }
+    })
     .then(data => {
-      message.info(data.msg)
-      this.setState({
-        ticketList: data.data
-      })
+      if (data.status) {
+        this.setState({
+          ticketList: data.data
+        })
+     } else {
+        message.info(data.msg)
+      }
     })
   
   }
