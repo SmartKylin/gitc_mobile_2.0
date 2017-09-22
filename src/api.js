@@ -25,10 +25,27 @@ export default (config => {
   // 赞助
   'sponsor': '/api/gitc/sponsor/',
   // 调取某页全部人员
-// http://120.92.10.182:8000/api/gitc/person-4/all/list.json?token=1afb756d16740266efde290917ca1a8e
+  // http://120.92.10.182:8000/api/gitc/person-4/all/list.json?token=1afb756d16740266efde290917ca1a8e
   'pagepople':'/api/gitc/',
-   //议题提交
-   'issue':'/api/gitc/meetissue/'
+
+   
+   'pople':'/api/gitc/person-',
+// 接口地址：http://120.92.10.182:8000/api/gitc/person-{library_id}/list.json
+
+  //议题提交
+   'issue':'/api/gitc/meetissue/',
+  // 获取门票列表
+  'getTicketList': '/api/gitc/tricket/list/',
+  // 获取门票详情
+  'getTicketDetail': '/api/gitc/tricket/',
+  // 获取个人收藏文档列表
+  'getDocumentList': '/api/gitc/file/',
+  // 获取个人收藏嘉宾列表
+  'getGuestList': '/api/gitc/collect/',
+  // 收藏文档
+  'collectDocument': '/api/gitc/file/add/',
+  // 收藏嘉宾
+  'collectGuest': '/api/gitc/collect/add/'
 
 })
 

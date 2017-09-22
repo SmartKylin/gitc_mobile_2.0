@@ -27,3 +27,38 @@
   }
 //}
 
+
+
+.collectionItemtime{
+  font-size: 15px;
+  font-weight: 700;
+  width: 100%;
+  border-bottom: 1px solid #dddfe1;
+  margin-top: -9px;
+  padding-left: 25px;
+}
+.box{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  .boximg{
+    display: flex;
+    align-items: center;
+  }
+  .boxiner{
+    height: 100%;
+    float: left;
+    .boxinerTextA{
+      margin-top: -6px;
+      margin-bottom: 6px;
+      height: 10px;
+      font-weight: 800;
+    }
+    boxinerTextB{
+      height: 8px;
+      font-weight: 200;
+    }
+  }
+}

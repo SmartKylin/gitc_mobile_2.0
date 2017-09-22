@@ -3,11 +3,10 @@ import './index.scss'
 import {sendCode} from "../../services/code";
 import {sign} from "../../services/user"
 import {message} from 'antd'
-import {setIphone} from "../../helper/login";
+import storage from '../../helper/storage'
+import {TOKEN} from "../../helper/login";
 
-// import IconClose from 'images/close-black.svg'
 let iconIphone = require('../../images/icon-phone.svg')
-
 
 const TIME = 60
 let inputStyle = {
@@ -24,16 +23,19 @@ export default class extends Component {
     }
   }
   // 发送验证码
-  sendCode() {
+  sendcode() {
     if (!this.state.mobileRight) {
       return
     }
-    sendCode(this.mobile.value, {phone: this.mobile.value})
+    sendCode(this.mobile.value, {phone: this.mobile.value, token: TOKEN})
     .then(res => res.json())
     .then(data => {
       message.info(data.msg)
+      if (data.status) {
+        this.countDown()
+      }
     })
-    this.countDown()
+    // this.countDown()
   }
   // 倒计时
   countDown() {
@@ -74,25 +76,25 @@ export default class extends Component {
     }
   }
   // 登陆或者注册
-  signIn = () => {
+  signIn = (cb) => {
     let params = {}
     params.code = this.code.value;
-    params.mobile = this.mobile.value;
+    params.phone = this.mobile.value;
+    params.token = TOKEN
     
-    const sucesss = () => {
-      document.cookie = "iphone=" + this.mobile.value
-      this.props.closePop()
+    const sucesss = (data) => {
+      message.info(data.msg)
+      // 如果登陆成功，手机号存到localstorage
+      if (data.status) {
+        storage.set(storage.PHONE_KEY, this.mobile.value)
+        storage.set(storage.DATA_KEY, data.data)
+        this.props.closePop()
+        cb && cb()
+      }
     }
-    sucesss();
     sign(this.mobile.value, params)
     .then(res => res.json())
-    .then(data => {
-      message.info(data.msg)
-      if (data.status) {
-        // setIphone(this.mobile.value);
-        this.props.closePop()
-      }
-    })
+    .then(sucesss)
   }
   /*// 限制手机号长度
   trimLength = () => {
@@ -118,11 +120,11 @@ export default class extends Component {
         <div className="code--area">
           <input type="text" style={inputStyle} ref={code => this.code = code}/>
           {
-            this.state.coding ? <div className="send--code">重新发送{this.state.time}s</div> : <div className={'send--code ' + (this.state.mobileRight ? 'active' : '')} onClick={() => this.sendCode()}>发送验证码</div>
+            this.state.coding ? <div className="send--code">重新发送{this.state.time}s</div> : <div className={'send--code ' + (this.state.mobileRight ? 'active' : '')} onClick={() => this.sendcode()}>发送验证码</div>
           }
         </div>
         <div className="btn--area">
-          <div className="btn--ensure" onClick={() => this.signIn()}>确定</div>
+          <div className="btn--ensure" onClick={() => this.signIn(this.props.loginSuccess)}>确定</div>
         </div>
       </div>
     </div>

@@ -29,8 +29,7 @@ export default class Arrange extends Component {
     }
 
     render() {
-
-        return (
+      return (
             <div className="arrange-content">
                 <div className="arrange-btn-content ">
                     <div className="arrange-btn-23 arrange-btn"><em></em><span>11月23日</span></div>

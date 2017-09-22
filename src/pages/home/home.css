@@ -342,17 +342,26 @@ background:url(../../components/images/vip2.svg);
 .title-btn{
     /*border: 0.05rem solid #ccc;
     border-radius:1rem;*/
-    font-size: 0.6rem;
-    width: 3.6rem;
-    height: 1.2rem;
+    font-size: 10px;
+    /*width: 3.6rem;
+    height: 1.2rem;*/
     margin: 1.2rem auto 0rem;
-    line-height: 1.3rem;
+    line-height: 14px;
     text-align: center;
     display: block;
     /*background: #215df7;*/
     color: #fff;
-    background: url(../../components/images/dh.png);
-    background-size: cover;
+    /*background: url(../../components/images/dh.png);
+    background-size: cover;*/
+    width: 63.5px;
+  height:18px;
+  border-radius: 7.5px;
+  border: 2.5px  solid #272b36;
+  /*borderRadius: ;*/
+  /*borderStyle: "solid";
+  borderWidth: 2.5px;
+  borderColor: #272b36;*/
+  background: linear-gradient(#376ffe, #1050f2);
 }
 .bg-b{
     background: url(../../components/images/bg-b.png);
@@ -397,7 +406,7 @@ background:url(../../components/images/vip2.svg);
     width: 3rem;
     height: 3rem;
     display: block;
-    background: url(../../components/images/code.png);
+    background: url(../../components/images/code.jpg);
     background-size: cover;
     z-index: 1
 }
@@ -554,4 +563,7 @@ margin-left: 0.4rem
 .agenda-btn{
     background: #2b67ff !important;
     color: #fff !important
+}
+.content .ant-back-top{
+    right: 12px;
 }

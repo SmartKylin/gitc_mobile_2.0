@@ -1,26 +1,45 @@
 import React, {Component} from 'react'
 import ChildBackground from 'containers/child_container'
 import UserMenu from './container/usermenu/userMenu'
-import {authCheck} from '@/helper/login'
+import storage from '../../helper/storage'
+import {getDocumentList, getGuestList} from "../../services/collect";
+import {TOKEN} from "../../helper/login";
 import './index.scss'
 
 export default class extends Component {
+  constructor () {
+    super()
+    this.state = {
+      userData: {}
+    }
+  }
+  componentWillMount () {
+    let phone = storage.get(storage.PHONE_KEY)
+    /*if (!phone) {
+      this.props.history.goBack()
+    }*/
+    this.phone = phone
+    
+    if (phone) {
+      // 获取文档列表和嘉宾列表
+      getGuestList({phone, token: TOKEN})
+      .then(res => res && res.json())
+      .then(data => {
+        this.setState({
+          userData: data.data
+        })
+      })
+    }
+  }
   render () {
     return (
       <ChildBackground>
         <div style={{display: 'flex', alignItems: 'center'}}>
           <div alt="" className="avatar"/>
-          <div style={{color: '#fff', fontSize: '16px',  marginLeft: '13px'}}>{this.iphone}</div>
+          <div style={{color: '#fff', fontSize: '16px',  marginLeft: '13px'}}>{this.phone}</div>
         </div>
-        <UserMenu/>
+        <UserMenu userData={this.state.userData}/>
       </ChildBackground>
     )
-  }
-  componentWillMount () {
-    let iphone = authCheck()
-    if (!iphone) {
-      // this.props.history.push('/')
-    }
-    this.iphone = iphone
   }
 }

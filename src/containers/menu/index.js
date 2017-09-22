@@ -1,17 +1,22 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './index.scss'
-import {authCheck} from "../../helper/login";
+import storage from '../../helper/storage'
 
 export default class extends Component {
   handleClick = path => {
-    let iphone = authCheck()
-    console.log(iphone);
+    let phone = storage.get(storage.PHONE_KEY)
+    console.log(phone);
     this.props.closeMenu()
-    if (iphone) {
+    
+    if (phone) {
       this.props.history.push(path)
     } else {
-      this.props.openPop(path)
+      this.props.openPop()
+      let cb = () => {
+        this.props.history.push(path)
+      }
+      this.props.setLoginCb(cb)
     }
   }
   render () {
@@ -36,8 +41,5 @@ export default class extends Component {
         </div>
       </div>
     )
-  }
-  componentWillMount () {
-    authCheck()
   }
 }

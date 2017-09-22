@@ -1,21 +1,25 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-    Link
+  Link
 } from 'react-router-dom';
 import $ from 'jquery'
+import {BackTop} from 'antd';
 // import { PREFIX_URL,request } from "../common"
 // import { getShopList, handlePhone } from "../common"
 import ClassDetails from "components/ClassRooms/ClassDetails/ClassDetails"
 import ClassRooms from "components/ClassRooms/ClassRooms"
 import AgendaPople from "components/AgendaPople/AgendaPople"
-// import HeadPortrait from "components/HeadPortrait/HeadPortrait"
+import Team from "../../components/Team/Team"
 // import BackgroundAll from "components/BackgroundAll/BackgroundAll"
 // // import fetchJsonp from 'fetch-jsonp';
 import './home.css';
 // import StgItem from "components/stg.item";
-import { getPopleList } from "../../services/home";
+import {getPopleList} from "../../services/home";
 import Menu from 'containers/menu'
-import {pagepople} from "../../services/pagepople";
+
+import { pople } from "../../services/pople";
+import { pagepople } from "../../services/pagepople";
+
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
 // const HEADER = require('components/images/logo2.jpg')
@@ -23,6 +27,7 @@ const LOGO_2 = require('components/images/logo2.jpg')
 const MAP = require('components/images/map.png')
 const blink = require('components/images/b_link.png')
 export default class Activity extends Component {
+
     constructor(...args) {
         super(...args);
         this.onFetch = this.onFetch.bind(this)
@@ -30,30 +35,59 @@ export default class Activity extends Component {
             data: null,
             data1: [],
             DATAS: [],
-            dadas:[],
-            address:'主会场',
-            adds:null,
-            arrs:[]
+            dadas: [],
+            address: '主会场',
+            adds: null,
+            arrs: [],
+            chairman: [],
+            expert: [],
+            guest: [],
+            basedata: [],
+            baseexpert:[],
+            baseguest:[]
             // menuVisible: 'hidden'
         }
-        this.onfetchBtn = this.onfetchBtn.bind(this)
     }
     componentWillMount() {
 
 
+        pople('45').then(res => res.json())
+            .then(data => {
 
-	pagepople('person-4').then(res => res.json())
-    .then(data => {
-			
-			this.setState({
-				dadas:data.data
-			})
+                this.setState({
+                    chairman: data.data,
+                    basedata: data.data.slice(0, 6)
+       
+                })
+
+            })
+        pople('46').then(res => res.json())
+            .then(data => {
+
+                this.setState({
+                    expert: data.data,
+                    baseexpert: data.data.slice(0, 6)
+                })
+
+            })
+        pople('47').then(res => res.json())
+            .then(data => {
+
+                this.setState({
+                    guest: data.data,
+                    baseguest:data.data.slice(0, 6)
+                })
+
+            })
+        pagepople('person-4').then(res => res.json())
+            .then(data => {
+
+                this.setState({
+                    dadas: data.data
+                })
 
 
-            // if(this.state.dadas.name=="主会场"){
-            //     console.log(this.state.dadas,'ok')
-            // }
-    })
+            })
 
         console.log(this.props.history);
         let rooms = require("../../mock/data.json");
@@ -66,35 +100,37 @@ export default class Activity extends Component {
 
     }
 
-    fn=()=>{
-        console.log("123123123123")
-        let add=this.state.dadas.find((obj) => {
-                return obj.name=this.state.address
-            })
-            this.setState({
-                adds:add
-            }) 
+    fn = () => {
+        let add = this.state.dadas.find((obj) => {
+            return obj.name = this.state.address
+        })
+        this.setState({
+            adds: add
+        })
     }
 
 
     componentDidMount() {
+        
+        console.log(this.state.basedata, 'ffff')
+        // this.state.chairman.
+        let _this = this
+        $('.agenda-ul-toggle-box span').on('click', function (e) {
+            let ad = e.target.innerHTML;
 
-        let _this=this
-        $('.agenda-ul-toggle-box span').on('click',function(e){
-            let ad=e.target.innerHTML;
-           
             // console.log(this)
             _this.setState({
-                address:ad
-            }) 
+                address: ad
+            })
 
-        _this.fn()
-        _this.setState({
-            arrs:_this.state.adds.data
+            _this.fn()
+            _this.setState({
+                arrs: _this.state.adds.data
+            })
+
         })
-        
-        })
-       
+
+
 
 
 
@@ -106,13 +142,7 @@ export default class Activity extends Component {
             $('.agenda-ul-toggle-box2 span').removeClass('agenda-btn')
             $(e.target).addClass('agenda-btn')
         })
-        getPopleList(4).then(data => data.json()).then(data => {
-            console.log(data)
-        })
 
-    }
-    onfetchBtn(e) {
-        console.log(e.target.innerHTML)
     }
     onFetch(e) {
         if (e.target.getAttribute('name') == "DATA23") {
@@ -131,7 +161,6 @@ export default class Activity extends Component {
         }
         $('.time span').removeClass('catbtn');
         $(e.target).addClass('catbtn');
-        console.log(e.target.innerHTML)
         // e.target.removeAttribute('style','color:#fff;')
         this.setState({
             data1: this.state.data[e.target.getAttribute('name')]
@@ -145,10 +174,10 @@ export default class Activity extends Component {
      }*/
 
     render() {
-        console.log(this.state.dadas,"adasdasdasd")
-    
+        // console.log(this.state.chairman,'mmmmmmmmmm')
         return (
             <span>
+
                 <div className="index-banner">
                     <div className="ban"></div>
                 </div>
@@ -156,12 +185,13 @@ export default class Activity extends Component {
                     <div className="highlights highlights">
                         <h3 className="highlights-name ">大会亮点</h3>
                         <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
-                        <img src={blink} alt="" className="blue-link" />
+                        <img src={blink} alt="" className="blue-link"/>
                         <ul className="highlights-ul clearfix">
                             <li className="highlights-li ">
                                 {/*<span className="highlights-icon1"></span>*/}
-                                <span className="highlights-icon1"></span>
-                                <div className="highlights-li-font  pr"> 领袖峰会<div className="pa-icon pa-icon1"></div></div>
+                              <span className="highlights-icon1"></span>
+                                <div className="highlights-li-font  pr"> 领袖峰会<div
+                                className="pa-icon pa-icon1"></div></div>
                                 <div className="highlights-li-fonts">触电行业最强大脑
 
                                 </div>
@@ -203,7 +233,7 @@ export default class Activity extends Component {
                                 <div className="highlights-li-font ">黑科技游乐园</div>
                                 <div className="highlights-li-fonts ">感受游戏魅力,最真实表演</div>
                             </li>
-                            <li className="highlights-li " style={{ width: '60%' }}>
+                            <li className="highlights-li " style={{width: '60%'}}>
                                 <span className="highlights-icon9"></span>
                                 <div className="highlights-li-font pr">邀请晚宴
                                     <div className="pa-icon pa-icon3"></div>
@@ -215,13 +245,13 @@ export default class Activity extends Component {
                     <div className="special pas">
                         <h3 className="special-name">大会专题</h3>
                         <p className="special-title">GENERAL ASSEMBLY TOPICS</p>
-                        <img src={blink} alt="" className="blue-link" />
+                        <img src={blink} alt="" className="blue-link"/>
                         <ul className="special-ul ">
                             {this.state.DATAS ?
-                                this.state.DATAS.map((data, index) => {
-                                    return <ClassDetails key={index} text={data.text} titleName={data.name} />
-                                }) : ""}
-                            {/*<ClassDetails taxt="222" titleName="主会场1"/
+                            this.state.DATAS.map((data, index) => {
+                              return <ClassDetails key={index} text={data.text} titleName={data.name}/>
+                            }) : ""}
+                          {/*<ClassDetails taxt="222" titleName="主会场1"/
                            <ClassDetails taxt="222"  titleName="主会场2"/>
                            <ClassDetails taxt="222" titleName="主会场3"/>
                            <ClassDetails  taxt="222" titleName="主会场4"/>*/}
@@ -230,27 +260,18 @@ export default class Activity extends Component {
                     <div className="pr big">
                         <h3 className="agenda-name">大会议程</h3>
                         <p className="agenda-title">GENERAL ASSEMBLY AGENDA</p>
-                        <img src={blink} alt="" className="blue-link" />
+                        <img src={blink} alt="" className="blue-link"/>
                         <Link to="./dataagenda" className="look-all">查看全部 <i className="batn-add"></i></Link>
                     </div>
-                    <div className="agenda-content" >
+                    <div className="agenda-content">
                         <div className="time" onClick={this.onFetch}>
                             <span className="time1 datacolor catbtn" name="DATA23">11.23</span>
                             <span className="time2 datacolor" name="DATA24">11.24</span>
                         </div>
                         <div className="agenda-ul-box">
+
                             <div className="agenda-ul-toggle" style={{ display: "block" }}>
-                                {/*<ul className=" agenda-ul agenda-ul-btn1 clearfix">
-                                    <li className="toggle-bg">主会会场</li>
-                                    <ClassRooms roomList="主会场1" />
-                                    <ClassRooms roomList="主会场2" />
-                                    <ClassRooms roomList="主会场3" />
-                                    {this.state.data1 ?
-                                        this.state.data1.map((data, index) => {
-                                            return <ClassRooms key={index} roomList={data.name} onfetch={this.onfetchBtn} />
-                                        }) : ""}
-                                </ul>*/}
-                                {/*{this.state.toggle ?*/}
+
                                 <div className="agenda-ul-toggle-box agenda-ul-toggle-box1" style={{ display: this.state.toggle ? 'block' : 'none' }}>
                                     <p className="agenda-ul-toggle-box-one">
                                         <span className="agenda-btn  agenda-btnon">主会场</span>
@@ -269,57 +290,69 @@ export default class Activity extends Component {
                                         <span>企业专场</span>
                                     </p>
 
-                                </div>
 
-                                <div className="agenda-ul-toggle-box agenda-ul-toggle-box2" style={{ display: this.state.toggle ? 'none' : 'block' }}>
-                                    <p className="agenda-ul-toggle-box-one">
-                                        <span className="agenda-btn agenda-btnon">主会场</span>
-                                        <span>运维专场</span>
-                                        <span>大数据专场</span>
-                                        <span>基础架构专场</span>
-                                    </p>
-                                    <p className="agenda-ul-toggle-box-two">
-                                        <span>质量和测试专场</span>
-                                        <span>网络安全专场</span>
-                                        <span>互联网金融峰会</span>
-                                    </p>
-                                    <p className="agenda-ul-toggle-box-three-r">
-                                        <span>智慧物流论坛</span>
-                                        <span>企业专场</span>
-                                    </p>
                                 </div>
-
+    
+                                <div className="agenda-ul-toggle-box agenda-ul-toggle-box2" style={{display: this.state.toggle ? 'none' : 'block'}}>
+                                <p className="agenda-ul-toggle-box-one">
+                                <span className="agenda-btn agenda-btnon">主会场</span>
+                                <span>运维专场</span>
+                                <span>大数据专场</span>
+                                <span>基础架构专场</span>
+                                </p>
+                                <p className="agenda-ul-toggle-box-two">
+                                <span>质量和测试专场</span>
+                                <span>网络安全专场</span>
+                                <span>互联网金融峰会</span>
+                                </p>
+                                <p className="agenda-ul-toggle-box-three-r">
+                                <span>智慧物流论坛</span>
+                                <span>企业专场</span>
+                                </p>
+                                </div>
+    
                                 {/*}*/}
-                                <div className="agenda-pople-box agenda-pople-box-btn1" >
-                                    <ul className="agenda-pople" >
+                              <div className="agenda-pople-box agenda-pople-box-btn1">
+                                    <ul className="agenda-pople">
 
 
+<<<<<<< HEAD
+
+                                        {
+                                            this.state.arrs && this.state.arrs.length > 0 ? this.state.arrs.map((data, index) => (
+                                                <AgendaPople key={index} data={data} />
+                                            )) : ''
+
+                                        }
+
+
+=======
                     {
-                     this.state.arrs && this.state.arrs.length>0?this.state.arrs.map((data,index)=>(
-                        <AgendaPople key={index} data={data}/>
-                     )):''
-           
-				    }
+                      this.state.arrs && this.state.arrs.length > 0 ? this.state.arrs.map((data, index) => (
+                      <AgendaPople key={index} data={data} openPop={this.props.history.openPop} closePop={this.props.history.closePop} setLoginCb={this.props.history.setLoginCb}/>
+                      )) : ''
+  
+                    }
+>>>>>>> ac3a06a503631b374fb9f3a2edea87cf52b4cb06
 
 
-                                        
                                     </ul>
                                 </div>
                             </div>
                             <div className="agenda-ul-toggle">
                                 <ul className="agenda-ul agenda-ul-btn2 clearfix">
-                                    <ClassRooms roomList="24主会场1" />
-                                    <ClassRooms roomList="24主会场2" />
-                                    <ClassRooms roomList="24主会场3" />
+                                    <ClassRooms roomList="24主会场1"/>
+                                    <ClassRooms roomList="24主会场2"/>
+                                    <ClassRooms roomList="24主会场3"/>
                                 </ul>
                                 <div className="agenda-pople-box agenda-pople-box-btn2">
-                                    <ul className="agenda-pople" style={{ display: "block" }} >
+                                    <ul className="agenda-pople" style={{display: "block"}}>
                                         <li>11</li>
                                         <li>111</li>
                                         <li>11</li>
                                         <li>11</li>
                                     </ul>
-                                    <ul className="agenda-pople" >
+                                    <ul className="agenda-pople">
                                         <li>22</li>
                                         <li>22</li>
                                         <li>22</li>
@@ -339,70 +372,40 @@ export default class Activity extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <a href="javascript:;" className="btn-all btn-all-bottom " >议题提交 <i className="batn-r"></i> </a>
+                            <a href="javascript:;" className="btn-all btn-all-bottom ">议题提交 <i className="batn-r"></i> </a>
                             <div className="guests-popole">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">大会嘉宾</h3>
                                     <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
-                                    <img src={blink} alt="" className="blue-link" />
+                                    <img src={blink} alt="" className="blue-link"/>
                                 </div>
-                                <span className="title-btn "> 大会主席团	</span>
-                                <ul className="guests-popole-ul clearfix">
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    {/*<HeadPortrait name="lp" show="携程网携程网携程网"  style={{margin:'15px',float:'left'}}/>
-                                    <HeadPortrait name="lp" show="携程网携程网携程网" style={{margin:'15px',float:'left'}}/>
-                                    <HeadPortrait name="lp" show="金山云合伙人"  style={{margin:'15px',float:'left'}}/>
-                                    <HeadPortrait name="lp" show="携程网携程网携程网" style={{margin:'15px',float:'left'}}/>*/}
-                                </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 <div className="batn-t"></div>   </a>
-                                <span className="title-btn "> 专家顾问团	</span>
-                                <ul className="guests-popole-ul clearfix">
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 <div className="batn-t"></div>   </a>
-                                <span className="title-btn "> 演讲嘉宾	</span>
-                                <ul className="guests-popole-ul clearfix">
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 <div className="batn-t"></div>   </a>
+                                <Team name='大会主席团' basedata={this.state.basedata} data={this.state.chairman}></Team>
+                                <Team name="专家顾问团" basedata={this.state.baseexpert} data={this.state.expert}></Team>
+                               <Team name="演讲嘉宾" basedata={this.state.baseguest} data={this.state.guest}></Team>
                             </div>
                             <div className="logo">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">合作伙伴</h3>
                                     <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
-                                    <img src={blink} alt="" className="blue-link" />
+                                    <img src={blink} alt="" className="blue-link"/>
                                 </div>
                             </div>
                             <div className="logo-contnet">
                                 <p>钻石赞助</p>
-                                <img src={LOGO_1} alt="" />
+                                <img src={LOGO_1} alt=""/>
                                 <p>媒体合作</p>
-                                <img src={LOGO_2} alt="" />
-                                <a href="#" className="btn-all btn-all-bottoms" >赞助机会 <div className="batn-r"></div>  </a>
+                                <img src={LOGO_2} alt=""/>
+                                <a href="#" className="btn-all btn-all-bottoms">赞助机会 <div
+                                className="batn-r"></div>  </a>
                             </div>
                             <div className="bg-b">
-                                <div className="maps" >
+                                <div className="maps">
                                     <div className="highlights">
                                         <h3 className="highlights-name ">参会指南</h3>
                                         <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
-                                        <img src={blink} alt="" className="blue-link" />
+                                        <img src={blink} alt="" className="blue-link"/>
                                     </div>
-                                    <img src={MAP} alt="" className="img" />
+                                    <img src={MAP} alt="" className="img"/>
                                     <p>时间:2017.11.23-11.24</p>
                                     <p>地址:国家会议中心</p>
                                     <p>乘车地址:地铁十五号线奥林匹克公园站H西南口下车</p>
@@ -411,7 +414,7 @@ export default class Activity extends Component {
                                     <div className="highlights">
                                         <h3 className="highlights-name ">联系我们</h3>
                                         <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
-                                        <img src={blink} alt="" className="blue-link" />
+                                        <img src={blink} alt="" className="blue-link"/>
                                     </div>
                                     <p className="one">赞助大会&展览展示咨询：business@kylinclub.org</p>
                                     <p>合作单位&合作媒体咨询：gitc@kylinclub.org</p>
@@ -424,12 +427,16 @@ export default class Activity extends Component {
 
                         </div>
 
+                        <BackTop />
                     </div>
+                    <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>
+
+
                     <a href="https://www.baidu.com" className="live">直播</a>
                 </div>
 
             </span>
-        );
-    }
+    );
+  }
 }
 
