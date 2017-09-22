@@ -43,9 +43,9 @@ export default (config => {
   // 获取个人收藏嘉宾列表
   'getGuestList': '/api/gitc/collect/',
   // 收藏文档
-  'collectDocument': '/api/gitc/file/add',
+  'collectDocument': '/api/gitc/file/add/',
   // 收藏嘉宾
-  'collectGuest': '/api/gitc/collect/add'
+  'collectGuest': '/api/gitc/collect/add/'
 
 })
 

@@ -77,7 +77,7 @@ $('.add-header').css('display','none')
 				{
 					this.state.dadas.map((data,index)=>(
 					
-							<AgendaItem key={index} data={data}/>
+							<AgendaItem key={index} data={data} openPop={this.props.history.openPop} setLoginCb={this.props.history.setLoginCb}/>
 					))
 				}
 			</div>

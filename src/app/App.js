@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <RouterMap openPop={this.openPop} setLoginCb={this.setLoginCb}/>
+        <RouterMap openPop={this.openPop} closePop={this.closePop} setLoginCb={this.setLoginCb}/>
         <Popup display={this.state.loginBoxDisplay}>
           <LoginBox closePop={this.closePop} loginSuccess={this.state.cb}/>
         </Popup>

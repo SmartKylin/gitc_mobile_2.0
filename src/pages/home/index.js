@@ -338,7 +338,7 @@ export default class Activity extends Component {
 
                     {
                       this.state.arrs && this.state.arrs.length > 0 ? this.state.arrs.map((data, index) => (
-                      <AgendaPople key={index} data={data}/>
+                      <AgendaPople key={index} data={data} openPop={this.props.history.openPop} closePop={this.props.history.closePop} setLoginCb={this.props.history.setLoginCb}/>
                       )) : ''
   
                     }
