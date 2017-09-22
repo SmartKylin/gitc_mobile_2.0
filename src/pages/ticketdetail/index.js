@@ -12,6 +12,8 @@ import menpiao from '../../images/2门票_03.png'
 import './index.scss'
 import JsBarcode from 'jsbarcode'
 
+
+let barcodeString = '600092105274'
 export default class extends Component {
   constructor () {
     super();
@@ -20,8 +22,17 @@ export default class extends Component {
     }
   }
   componentWillMount () {
-    // JsBarcode("#barcode", "212111111121")
     document.title = "门票"
+  }
+  componentDidMount () {
+    JsBarcode(this.barcode, barcodeString,
+    {
+      displayValue: false,  //  不显示原始值
+      // background: '#4b8b7f',  //  背景色
+      blank: 100,
+      lineColor: 'rgba(255,255,255)', // 线条颜色
+      width: 1.5  // 线条宽度
+    })
   }
   render() {
     return (
@@ -33,8 +44,12 @@ export default class extends Component {
               <div style={{fontSize: '13px', fontWeight: 'bold'}}>毛不易</div>
               <div>基础架构专场票</div>
             </div>
+            <div className="ticket--barcode">
+              <svg ref={ barcde => this.barcode = barcde}></svg>
+            </div>
+            <div style={{position: 'absolute', top: '20%'}}>{barcodeString}</div>
             <div  className='menpiaoImg'>
-              <img src={menpiao} alt="" ref={img => this.img = img} id="barcode"/>
+              <img src={menpiao} alt=""/>
             </div>
             <div className='menpiaoText1'>
               <div><span className='danhang'>白云山科技提醒您：到展位抽奖</span></div>
