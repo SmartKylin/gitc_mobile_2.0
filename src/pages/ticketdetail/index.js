@@ -12,7 +12,7 @@ import zhanlan from '../../images/展览票_03.png'
 import menpiao from '../../images/2门票_03.png'
 import './index.scss'
 import JsBarcode from 'jsbarcode'
-import {authCheck} from "../../helper/login";
+import storage from '../../helper/storage'
 
 // 根据票种得到对应门票的权益背景图
 let getBgByTicket = (ticket) => {
@@ -59,11 +59,11 @@ export default class extends Component {
       width: 1.5  // 线条宽度
     })*/
   
-    let iphone = authCheck()
+    let phone = storage.get(storage.PHONE_KEY)
     
     let id = this.props.match.params.id
-    getTicketDetail(iphone, id)
-    .then(res => res.json())
+    getTicketDetail(phone, id)
+    // .then(res => res.json())
     .then( async data => {
       console.log(data);
       

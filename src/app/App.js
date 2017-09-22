@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
-import RouterMap from '../router'
-// import Menu from 'containers/menu'
-import {authCheck} from "../helper/login";
+import RouterMap from '../router';
+import storage from '../helper/storage'
 
 import Popup from 'components/popup'
 import LoginBox from 'containers/login_box'
@@ -42,9 +41,6 @@ class App extends Component {
         </Popup>
       </div>
     );
-  }
-  componentWillMount () {
-    authCheck()
   }
 }
 

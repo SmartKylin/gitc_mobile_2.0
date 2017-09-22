@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import ChildBackground from 'containers/child_container'
 import UserMenu from './container/usermenu/userMenu'
-import {authCheck} from '@/helper/login'
+import storage from '../../helper/storage'
+import {getDocumentList, getGuestList} from "../../services/collect";
+import {TOKEN} from "../../helper/login";
 import './index.scss'
 
 export default class extends Component {
@@ -17,10 +19,14 @@ export default class extends Component {
     )
   }
   componentWillMount () {
-    let iphone = authCheck()
-    if (!iphone) {
-      // this.props.history.push('/')
-    }
-    this.iphone = iphone
+    let phone = storage.get(storage.PHONE_KEY)
+    phone = 18201440272
+    /*if (!phone) {
+      this.props.history.goBack()
+    }*/
+    getDocumentList({phone, token: TOKEN})
+    .then(data =>{
+      console.log(data);
+    })
   }
 }

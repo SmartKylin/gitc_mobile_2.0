@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import ChildBackground from 'containers/child_container'
 import TicketList from './containers/ticketList'
-import {authCheck} from "../../helper/login";
 import {getTicketList} from "../../services/ticket";
+import storage from '../../helper/storage'
 import {message, Spin} from 'antd'
 
 export default class extends Component {
@@ -16,15 +16,15 @@ export default class extends Component {
     // 设置二级页面标题
     document.title = "门票"
     
-    let iphone = authCheck()
-    if (!iphone) {
+    let phone = storage.get(storage.PHONE_KEY)
+    console.log(phone);
+    /*if (!iphone) {
       this.props.history.push('/')
     } else {
       this.iphone = iphone
-    }
-    console.log(this);
+    }*/
   
-    getTicketList(iphone)
+    getTicketList(phone)
     .then(res => res.json())
     .then(data => {
       message.info(data.msg)
@@ -37,7 +37,7 @@ export default class extends Component {
   render () {
     return (
       <ChildBackground>
-        { this.state.ticketList.length ?
+        { this.state.ticketList && this.state.ticketList.length ?
         <TicketList ticketList={this.state.ticketList}/> :
         <div style={{display: 'flex', justifyContent: 'center', height: '400px', alignItems: 'center'}}>
           <Spin size="large" tip="Loading..."/>

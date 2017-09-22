@@ -56,8 +56,6 @@ export default class extends Component {
           <Menu.Item key="11">前端开发等领域的技术热点</Menu.Item>
           <Menu.Item key="12">前端开发等领域的技术热点</Menu.Item>
         </SubMenu>
-        <SubMenu key="sub3" title={<span><Icon type="file-text" style={{color: '#336cfa', fontSize: '17px'}}/><span>戳这里有礼哦品</span></span>}>>戳这里有大奖</SubMenu>
-        <SubMenu key="sub4" title={<span><Icon type="file-text" style={{color: '#336cfa', fontSize: '17px'}}/><span>戳这里有礼哦品</span></span>}>>戳这里有大奖</SubMenu>
       </Menu>
     </div>
     )
