@@ -15,7 +15,7 @@ img:this.props.pics
 })
 		}else{
 	this.setState({
-img:require('../images/banner.png')
+img:require('../images/陈洋.jpg')
 })		
 		}
 	}

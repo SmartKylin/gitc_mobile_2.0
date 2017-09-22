@@ -16,8 +16,8 @@ import './home.css';
 // import StgItem from "components/stg.item";
 import { getPopleList } from "../../services/home";
 import Menu from 'containers/menu'
-import {pople} from "../../services/pople";
-import {pagepople} from "../../services/pagepople";
+import { pople } from "../../services/pople";
+import { pagepople } from "../../services/pagepople";
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
 // const HEADER = require('components/images/logo2.jpg')
@@ -32,68 +32,55 @@ export default class Activity extends Component {
             data: null,
             data1: [],
             DATAS: [],
-            dadas:[],
-            address:'主会场',
-            adds:null,
-            arrs:[],
-            chairman:[],
-            expert:[],
-            guest:[]
+            dadas: [],
+            address: '主会场',
+            adds: null,
+            arrs: [],
+            chairman: [],
+            expert: [],
+            guest: [],
+            basedata: []
             // menuVisible: 'hidden'
         }
-        this.onfetchBtn = this.onfetchBtn.bind(this)
     }
     componentWillMount() {
 
 
-pople('45').then(res => res.json())
-    .then(data => {
-			
-			this.setState({
-				chairman:data.data
-			})
-console.log(this.state.chairman,'ppppppppppppppppppppppp')
+        pople('45').then(res => res.json())
+            .then(data => {
 
-            // if(this.state.dadas.name=="主会场"){
-            //     console.log(this.state.dadas,'ok')
-            // }
-    })
-    pople('46').then(res => res.json())
-    .then(data => {
-			
-			this.setState({
-				expert:data.data
-			})
-console.log(this.state.expert,'ppppppppppppppppppppppp')
+                this.setState({
+                    chairman: data.data,
+                    basedata: data.data.slice(0, 6)
+       
+                })
 
-            // if(this.state.dadas.name=="主会场"){
-            //     console.log(this.state.dadas,'ok')
-            // }
-    })
-     pople('47').then(res => res.json())
-    .then(data => {
-			
-			this.setState({
-				guest:data.data
-			})
-console.log(this.state.guest,'ppppppppppppppppppppppp')
+            })
+        pople('46').then(res => res.json())
+            .then(data => {
 
-            // if(this.state.dadas.name=="主会场"){
-            //     console.log(this.state.dadas,'ok')
-            // }
-    })
-	pagepople('person-4').then(res => res.json())
-    .then(data => {
-			
-			this.setState({
-				dadas:data.data
-			})
+                this.setState({
+                    expert: data.data
+                })
+
+            })
+        pople('47').then(res => res.json())
+            .then(data => {
+
+                this.setState({
+                    guest: data.data
+                })
+
+            })
+        pagepople('person-4').then(res => res.json())
+            .then(data => {
+
+                this.setState({
+                    dadas: data.data
+                })
 
 
-            // if(this.state.dadas.name=="主会场"){
-            //     console.log(this.state.dadas,'ok')
-            // }
-    })
+            })
 
         console.log(this.props.history);
         let rooms = require("../../mock/data.json");
@@ -106,35 +93,37 @@ console.log(this.state.guest,'ppppppppppppppppppppppp')
 
     }
 
-    fn=()=>{
-        console.log("123123123123")
-        let add=this.state.dadas.find((obj) => {
-                return obj.name=this.state.address
-            })
-            this.setState({
-                adds:add
-            }) 
+    fn = () => {
+        let add = this.state.dadas.find((obj) => {
+            return obj.name = this.state.address
+        })
+        this.setState({
+            adds: add
+        })
     }
 
 
     componentDidMount() {
+        
+        console.log(this.state.basedata, 'ffff')
+        // this.state.chairman.
+        let _this = this
+        $('.agenda-ul-toggle-box span').on('click', function (e) {
+            let ad = e.target.innerHTML;
 
-        let _this=this
-        $('.agenda-ul-toggle-box span').on('click',function(e){
-            let ad=e.target.innerHTML;
-           
             // console.log(this)
             _this.setState({
-                address:ad
-            }) 
+                address: ad
+            })
 
-        _this.fn()
-        _this.setState({
-            arrs:_this.state.adds.data
+            _this.fn()
+            _this.setState({
+                arrs: _this.state.adds.data
+            })
+
         })
-        
-        })
-       
+
+
 
 
 
@@ -146,13 +135,7 @@ console.log(this.state.guest,'ppppppppppppppppppppppp')
             $('.agenda-ul-toggle-box2 span').removeClass('agenda-btn')
             $(e.target).addClass('agenda-btn')
         })
-        getPopleList(4).then(data => data.json()).then(data => {
-            console.log(data)
-        })
 
-    }
-    onfetchBtn(e) {
-        console.log(e.target.innerHTML)
     }
     onFetch(e) {
         if (e.target.getAttribute('name') == "DATA23") {
@@ -171,7 +154,6 @@ console.log(this.state.guest,'ppppppppppppppppppppppp')
         }
         $('.time span').removeClass('catbtn');
         $(e.target).addClass('catbtn');
-        console.log(e.target.innerHTML)
         // e.target.removeAttribute('style','color:#fff;')
         this.setState({
             data1: this.state.data[e.target.getAttribute('name')]
@@ -185,7 +167,7 @@ console.log(this.state.guest,'ppppppppppppppppppppppp')
      }*/
 
     render() {
-    console.log(this.state.chairman,'mmmmmmmmmm')
+        // console.log(this.state.chairman,'mmmmmmmmmm')
         return (
             <span>
                 <div className="index-banner">
@@ -279,17 +261,7 @@ console.log(this.state.guest,'ppppppppppppppppppppppp')
                         </div>
                         <div className="agenda-ul-box">
                             <div className="agenda-ul-toggle" style={{ display: "block" }}>
-                                {/*<ul className=" agenda-ul agenda-ul-btn1 clearfix">
-                                    <li className="toggle-bg">主会会场</li>
-                                    <ClassRooms roomList="主会场1" />
-                                    <ClassRooms roomList="主会场2" />
-                                    <ClassRooms roomList="主会场3" />
-                                    {this.state.data1 ?
-                                        this.state.data1.map((data, index) => {
-                                            return <ClassRooms key={index} roomList={data.name} onfetch={this.onfetchBtn} />
-                                        }) : ""}
-                                </ul>*/}
-                                {/*{this.state.toggle ?*/}
+
                                 <div className="agenda-ul-toggle-box agenda-ul-toggle-box1" style={{ display: this.state.toggle ? 'block' : 'none' }}>
                                     <p className="agenda-ul-toggle-box-one">
                                         <span className="agenda-btn  agenda-btnon">主会场</span>
@@ -333,15 +305,15 @@ console.log(this.state.guest,'ppppppppppppppppppppppp')
                                     <ul className="agenda-pople" >
 
 
-                    {
-                     this.state.arrs && this.state.arrs.length>0?this.state.arrs.map((data,index)=>(
-                        <AgendaPople key={index} data={data}/>
-                     )):''
-           
-				    }
+                                        {
+                                            this.state.arrs && this.state.arrs.length > 0 ? this.state.arrs.map((data, index) => (
+                                                <AgendaPople key={index} data={data} />
+                                            )) : ''
+
+                                        }
 
 
-                                        
+
                                     </ul>
                                 </div>
                             </div>
@@ -385,10 +357,10 @@ console.log(this.state.guest,'ppppppppppppppppppppppp')
                                     <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
                                     <img src={blink} alt="" className="blue-link" />
                                 </div>
-                               <Team name='大会主席团' data={this.state.chairman}></Team>
-                               <Team name="专家顾问团" data={this.state.expert}></Team>
-                               <Team name="演讲嘉宾" data={this.state.guest}></Team>
-                               </div>
+                                <Team name='大会主席团' basedata={this.state.basedata} data={this.state.chairman}></Team>
+                                {/*<Team name="专家顾问团" data={this.state.expert}></Team>
+                               <Team name="演讲嘉宾" data={this.state.guest}></Team>*/}
+                            </div>
                             <div className="logo">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">合作伙伴</h3>
@@ -431,9 +403,9 @@ console.log(this.state.guest,'ppppppppppppppppppppppp')
                             </div>
 
                         </div>
-<BackTop />
+                        <BackTop />
                     </div>
-                   <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong> 
+                    <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>
                     <a href="https://www.baidu.com" className="live">直播</a>
                 </div>
 
