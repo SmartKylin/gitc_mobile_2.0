@@ -32,7 +32,15 @@ export default (config => {
   // 获取门票列表
   'getTicketList': '/api/gitc/tricket/list/',
   // 获取门票详情
-  'getTicketDetail': '/api/gitc/tricket/'
+  'getTicketDetail': '/api/gitc/tricket/',
+  // 获取个人收藏文档列表
+  'getDocumentList': '/api/gitc/file/',
+  // 获取个人收藏嘉宾列表
+  'getGuestList': '/api/gitc/collect/',
+  // 收藏文档
+  'collectDocument': '/api/gitc/file/add',
+  // 收藏嘉宾
+  'collectGuest': '/api/gitc/collect/add'
 })
 
 // 人员列表

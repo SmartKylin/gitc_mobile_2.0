@@ -24,7 +24,7 @@ export default class extends Component {
     }
     console.log(this);
   
-    getTicketList(18201440272)
+    getTicketList(iphone)
     .then(res => res.json())
     .then(data => {
       message.info(data.msg)
