@@ -316,24 +316,12 @@ export default class Activity extends Component {
                                     <ul className="agenda-pople">
 
 
-<<<<<<< HEAD
-
-                                        {
-                                            this.state.arrs && this.state.arrs.length > 0 ? this.state.arrs.map((data, index) => (
-                                                <AgendaPople key={index} data={data} />
-                                            )) : ''
-
-                                        }
-
-
-=======
                     {
                       this.state.arrs && this.state.arrs.length > 0 ? this.state.arrs.map((data, index) => (
                       <AgendaPople key={index} data={data} openPop={this.props.history.openPop} closePop={this.props.history.closePop} setLoginCb={this.props.history.setLoginCb}/>
                       )) : ''
   
                     }
->>>>>>> ac3a06a503631b374fb9f3a2edea87cf52b4cb06
 
 
                                     </ul>

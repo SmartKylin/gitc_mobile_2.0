@@ -1,1 +1,92 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=2,user-scalable=no,width=device-width"><meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><title>GITC</title><script>var __CONFIG__={};__CONFIG__.apiPath="",function(e,t){function n(){t.documentElement.style.fontSize=20*t.documentElement.clientWidth/320+"px"}n(),e.addEventListener("resize",n,!1)}(window,document);var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?abbc3af13c79a34100958b890dad8b1d";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><link href="/static/css/main.da290937.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/static/js/main.65653a5c.js"></script></body></html>
+Html Webpack Plugin:
+<pre>
+  Error: Parse Error: <meta name="viewport" content="width=device-width, content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>GITC</title>
+    <script>
+      /* rem.js文件内容 */
+      var __CONFIG__ = {}
+      __CONFIG__.apiPath = ''
+      ;(function (win, doc) {
+        function change() {
+          doc.documentElement.style.fontSize = 20 * doc.documentElement.clientWidth / 320 + 'px';
+        }
+        change();
+        win.addEventListener('resize', change, false);
+      })(window, document);
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?abbc3af13c79a34100958b890dad8b1d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  <link href="/static/css/main.7df62815.css" rel="stylesheet"></head>
+  <body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+  <!--
+    This HTML file is a template.
+    If you open it directly in the browser, you will see an empty page.
+    You can add webfonts, meta tags, or analytics to this file.
+    The build step will place the bundled scripts into the <body> tag.
+    To begin the development, run `npm start` or `yarn start`.
+    To create a production bundle, use `npm run build` or `yarn build`.
+  -->
+  <script type="text/javascript" src="/static/js/main.ef4be0f8.js"></script></body>
+  </html>
+  
+  - htmlparser.js:235 new HTMLParser
+    [gitc_react]/[html-minifier]/src/htmlparser.js:235:13
+  
+  - htmlminifier.js:944 minify
+    [gitc_react]/[html-minifier]/src/htmlminifier.js:944:3
+  
+  - htmlminifier.js:1297 exports.minify
+    [gitc_react]/[html-minifier]/src/htmlminifier.js:1297:10
+  
+  - index.js:296 
+    [gitc_react]/[html-webpack-plugin]/index.js:296:16
+  
+  - util.js:16 tryCatcher
+    [gitc_react]/[bluebird]/js/release/util.js:16:23
+  
+  - promise.js:512 Promise._settlePromiseFromHandler
+    [gitc_react]/[bluebird]/js/release/promise.js:512:31
+  
+  - promise.js:569 Promise._settlePromise
+    [gitc_react]/[bluebird]/js/release/promise.js:569:18
+  
+  - promise.js:614 Promise._settlePromise0
+    [gitc_react]/[bluebird]/js/release/promise.js:614:10
+  
+  - promise.js:693 Promise._settlePromises
+    [gitc_react]/[bluebird]/js/release/promise.js:693:18
+  
+  - async.js:133 Async._drainQueue
+    [gitc_react]/[bluebird]/js/release/async.js:133:16
+  
+  - async.js:143 Async._drainQueues
+    [gitc_react]/[bluebird]/js/release/async.js:143:10
+  
+  - async.js:17 Immediate.Async.drainQueues
+    [gitc_react]/[bluebird]/js/release/async.js:17:14
+  
+</pre>

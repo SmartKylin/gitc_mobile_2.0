@@ -96,12 +96,17 @@ class AgendaPople extends Component {
     let {openPop, setLoginCb, closePop} = this.props
     let phone = storage.get(storage.PHONE_KEY)
     let cb = this._collect
-    
+   
     const failure = (msg) => {
     	openPop()
     	setLoginCb(cb)
 			message.info(msg)
   	}
+		 /* if(!phone) {
+				openPop()
+				setLoginCb(cb)
+				return
+			}*/
   	const success = (data) => {
       if (data.status) {
         // closePop()
