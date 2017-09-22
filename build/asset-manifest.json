@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.a3a13b38.css",
-  "main.css.map": "static/css/main.a3a13b38.css.map",
-  "main.js": "static/js/main.c634fa91.js",
-  "main.js.map": "static/js/main.c634fa91.js.map",
+  "main.css": "static/css/main.da290937.css",
+  "main.css.map": "static/css/main.da290937.css.map",
+  "main.js": "static/js/main.65653a5c.js",
+  "main.js.map": "static/js/main.65653a5c.js.map",
   "static/media/banner.png": "static/media/banner.7b1b8841.png",
   "static/media/bannerlink.png": "static/media/bannerlink.d044d448.png",
   "static/media/bg-all.png": "static/media/bg-all.553c8d90.png",
@@ -11,5 +11,13 @@
   "static/media/logo2.jpg": "static/media/logo2.53613087.jpg",
   "static/media/map.png": "static/media/map.6b59c1ce.png",
   "static/media/ticket-bg.png": "static/media/ticket-bg.a427aa62.png",
-  "static/media/大会新闻_03.png": "static/media/大会新闻_03.cedf427a.png"
+  "static/media/vip_03.png": "static/media/vip_03.9786593f.png",
+  "static/media/一.png": "static/media/一.ec3053c1.png",
+  "static/media/专业观众票_03.png": "static/media/专业观众票_03.ae614504.png",
+  "static/media/基础架构_07.png": "static/media/基础架构_07.13657eee.png",
+  "static/media/大会新闻_03.png": "static/media/大会新闻_03.cedf427a.png",
+  "static/media/大会通票_03.png": "static/media/大会通票_03.d1f20297.png",
+  "static/media/大数据_07.png": "static/media/大数据_07.a2b1073b.png",
+  "static/media/展览票_03.png": "static/media/展览票_03.f2e46c33.png",
+  "static/media/运维专场票_03.png": "static/media/运维专场票_03.d332ceae.png"
 }
