@@ -3,18 +3,20 @@ import {
     Link
 } from 'react-router-dom';
 import $ from 'jquery'
+import { BackTop } from 'antd';
 // import { PREFIX_URL,request } from "../common"
 // import { getShopList, handlePhone } from "../common"
 import ClassDetails from "components/ClassRooms/ClassDetails/ClassDetails"
 import ClassRooms from "components/ClassRooms/ClassRooms"
 import AgendaPople from "components/AgendaPople/AgendaPople"
-// import HeadPortrait from "components/HeadPortrait/HeadPortrait"
+import Team from "../../components/Team/Team"
 // import BackgroundAll from "components/BackgroundAll/BackgroundAll"
 // // import fetchJsonp from 'fetch-jsonp';
 import './home.css';
 // import StgItem from "components/stg.item";
 import { getPopleList } from "../../services/home";
 import Menu from 'containers/menu'
+import {pople} from "../../services/pople";
 import {pagepople} from "../../services/pagepople";
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
@@ -33,7 +35,10 @@ export default class Activity extends Component {
             dadas:[],
             address:'主会场',
             adds:null,
-            arrs:[]
+            arrs:[],
+            chairman:[],
+            expert:[],
+            guest:[]
             // menuVisible: 'hidden'
         }
         this.onfetchBtn = this.onfetchBtn.bind(this)
@@ -41,7 +46,42 @@ export default class Activity extends Component {
     componentWillMount() {
 
 
+pople('45').then(res => res.json())
+    .then(data => {
+			
+			this.setState({
+				chairman:data.data
+			})
+console.log(this.state.chairman,'ppppppppppppppppppppppp')
 
+            // if(this.state.dadas.name=="主会场"){
+            //     console.log(this.state.dadas,'ok')
+            // }
+    })
+    pople('46').then(res => res.json())
+    .then(data => {
+			
+			this.setState({
+				expert:data.data
+			})
+console.log(this.state.expert,'ppppppppppppppppppppppp')
+
+            // if(this.state.dadas.name=="主会场"){
+            //     console.log(this.state.dadas,'ok')
+            // }
+    })
+     pople('47').then(res => res.json())
+    .then(data => {
+			
+			this.setState({
+				guest:data.data
+			})
+console.log(this.state.guest,'ppppppppppppppppppppppp')
+
+            // if(this.state.dadas.name=="主会场"){
+            //     console.log(this.state.dadas,'ok')
+            // }
+    })
 	pagepople('person-4').then(res => res.json())
     .then(data => {
 			
@@ -145,8 +185,7 @@ export default class Activity extends Component {
      }*/
 
     render() {
-        console.log(this.state.dadas,"adasdasdasd")
-    
+    console.log(this.state.chairman,'mmmmmmmmmm')
         return (
             <span>
                 <div className="index-banner">
@@ -346,41 +385,10 @@ export default class Activity extends Component {
                                     <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
                                     <img src={blink} alt="" className="blue-link" />
                                 </div>
-                                <span className="title-btn "> 大会主席团	</span>
-                                <ul className="guests-popole-ul clearfix">
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    {/*<HeadPortrait name="lp" show="携程网携程网携程网"  style={{margin:'15px',float:'left'}}/>
-                                    <HeadPortrait name="lp" show="携程网携程网携程网" style={{margin:'15px',float:'left'}}/>
-                                    <HeadPortrait name="lp" show="金山云合伙人"  style={{margin:'15px',float:'left'}}/>
-                                    <HeadPortrait name="lp" show="携程网携程网携程网" style={{margin:'15px',float:'left'}}/>*/}
-                                </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 <div className="batn-t"></div>   </a>
-                                <span className="title-btn "> 专家顾问团	</span>
-                                <ul className="guests-popole-ul clearfix">
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 <div className="batn-t"></div>   </a>
-                                <span className="title-btn "> 演讲嘉宾	</span>
-                                <ul className="guests-popole-ul clearfix">
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                                <a href="#" className="btn-all btn-all-bottoms" >查看更多 <div className="batn-t"></div>   </a>
-                            </div>
+                               <Team name='大会主席团' data={this.state.chairman}></Team>
+                               <Team name="专家顾问团" data={this.state.expert}></Team>
+                               <Team name="演讲嘉宾" data={this.state.guest}></Team>
+                               </div>
                             <div className="logo">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">合作伙伴</h3>
@@ -423,8 +431,9 @@ export default class Activity extends Component {
                             </div>
 
                         </div>
-
+<BackTop />
                     </div>
+                   <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong> 
                     <a href="https://www.baidu.com" className="live">直播</a>
                 </div>
 

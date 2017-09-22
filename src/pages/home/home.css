@@ -555,3 +555,6 @@ margin-left: 0.4rem
     background: #2b67ff !important;
     color: #fff !important
 }
+.content .ant-back-top{
+    right: 12px;
+}

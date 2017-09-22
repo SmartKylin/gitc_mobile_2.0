@@ -5,20 +5,30 @@ class HeadPortrait extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+img:''
 		}
 	}
-
+	componentDidMount(){
+		if(this.props.pics){
+this.setState({
+img:this.props.pics
+})
+		}else{
+	this.setState({
+img:require('../images/banner.png')
+})		
+		}
+	}
 	static propTypes = {
 		type: PropTypes.string,
 	};
 
 
 	render() {
-	const	{imgLink,name,show,style}=this.props
+	const	{pics,name,show,style}=this.props
 		return (
 			<div className="headportrait-content" style={style}>
-				<img src={imgLink} alt="" className="headportrait-img"/>
+				<img src={this.state.img} alt="" className="headportrait-img"/>
 				<div className="headportrait-font" >
 					<div className="headportrait-font-title">{name}</div>
 					<div>{show}</div>
