@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Menu, Icon} from 'antd'
 import 'antd/dist/antd.css'
 import './index.scss'
+import avatarIcon from '../../../../images/yueguangjifeng.jpg'
 
 // import DocumentItem from '../../component/DocumentItem'
 // import CollectionItem from '../../component/CollectionItem'
@@ -33,9 +34,10 @@ export default class extends Component {
              <Menu.Item key={index}>
                <div className='box'>
                  <div className='boximg'>
-                   <div ><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>
+                   {/*<div><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>*/}
+                   <div className="avatar--wrap"><img src={avatarIcon} alt=""/></div>
                    <div className='boxiner'>
-                     <div className='boxinerTextA'><span>{item.stheme}</span></div>
+                     <div className='boxinerTextA'><span>{item.stheme || '主题信息未加载~'}</span></div>
                      <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.name}   {item.company}|{item.position}</span></div>
                    </div>
                  </div>
