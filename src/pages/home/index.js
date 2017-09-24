@@ -53,9 +53,9 @@ export default class Activity extends Component {
         document.title = "GITC"
         
         let phone = storage.get(storage.PHONE_KEY)
-        if (!phone) {
-            this.props.openPop()
-        }
+        /*if (!phone) {
+            this.props.history.openPop()
+        }*/
 
         pople('45', phone).then(res => res.json())
             .then(data => {
