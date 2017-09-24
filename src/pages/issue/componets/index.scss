@@ -38,3 +38,12 @@
     line-heght: 32px;
   }
 }
+.xingBox{
+  position: relative;
+  .xing{
+    position: absolute;
+    right: -11px;
+    top: 10px;
+    color: red;
+  }
+}

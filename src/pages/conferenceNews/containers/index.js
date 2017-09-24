@@ -11,6 +11,7 @@ export default class ConferenceNews extends React.Component {
         }
     }
     componentWillMount(){
+        //document.title='大会新闻'
         getListNews(27).then(res => res.json())
             .then(data => {
                 this.setState({

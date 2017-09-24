@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 
 export default class extends Component {
     state = {
-        value: 3,
+        value: 0,
         count: null,
     }
     handleChange = (value) => {

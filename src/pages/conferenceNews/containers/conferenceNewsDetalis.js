@@ -11,6 +11,7 @@ export default class ConferenceNewsDetalis extends React.Component {
         }
     }
     componentWillMount(){
+        //document.title='新闻详情'
         getDetalisNews(this.props.id).then(res => res.json())
             .then(data => {
                this.setState({
