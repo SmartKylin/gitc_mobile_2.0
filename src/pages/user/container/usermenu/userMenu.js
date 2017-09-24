@@ -36,7 +36,7 @@ export default class extends Component {
                    <div ><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>
                    <div className='boxiner'>
                      <div className='boxinerTextA'><span>{item.stheme}</span></div>
-                     <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.name}   小米|{item.position || '首席架构师'}</span></div>
+                     <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.name}   {item.company}|{item.position}</span></div>
                    </div>
                  </div>
                  <div><span>{item.stime}</span></div>
@@ -56,7 +56,7 @@ export default class extends Component {
                    <div ><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>
                    <div className='boxiner'>
                      <div className='boxinerTextA'><span>{item.stheme}</span></div>
-                     <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.name}  小米|{item.position || '首席架构师'}</span></div>
+                     <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.name}  {item.company}|{item.position}</span></div>
                    </div>
                  </div>
                  <div><span>{item.stime}</span></div>
@@ -75,7 +75,7 @@ export default class extends Component {
                       <div ><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>
                       <div className='boxiner'>
                         <div className='boxinerTextA'><span>前端开发等领域的技术热点</span></div>
-                        <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.name}   小米|首席架构师</span></div>
+                        <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.name}   {item.company}|{item.position}</span></div>
                       </div>
                     </div>
                     <div> <a href={item.url}>查看</a></div>

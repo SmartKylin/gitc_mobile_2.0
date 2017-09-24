@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import classNames from 'classnames'
-
+import {Icon} from "antd";
 const Figure = (props) => {
     const {status, imgUrl, dataUrl, id, onDelete} = props;
     const src = imgUrl ? imgUrl : dataUrl;
@@ -17,7 +17,7 @@ const Figure = (props) => {
             {src ? <img style={{width:"100%",height:"100%"}}src={src} onClick={()=>{imgUrl ? window.open(imgUrl) : ''}}/> : <div className="uploading"><i className="fa fa-picture-o"></i></div>}
             {status === 'loading' ? <div className="progress-text" id={`text-${id}`}></div> : ''}
             {status === 'loading' ? <div className="progress" id={`progress-${id}`}></div> : ''}
-            {status === 'loaded' || status === 'error' ? <div className="close" onClick={handleDelete}><i className="fa fa-times">x</i></div> : ''}
+            {status === 'loaded' || status === 'error' ? <div className="close" onClick={handleDelete}><i className="fa">x</i></div> : ''}
         </div>
     )
 };
