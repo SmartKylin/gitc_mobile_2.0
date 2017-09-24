@@ -43,7 +43,7 @@ export default class extends Component {
   }
   componentWillMount () {
     // 设置二级页面标题
-    document.title = "门票"
+    document.title = "我的门票"
     
     this.renderTicketList()
   }

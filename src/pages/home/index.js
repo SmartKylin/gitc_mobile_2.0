@@ -50,6 +50,8 @@ export default class Activity extends Component {
         }
     }
     componentWillMount() {
+        document.title = "GITC"
+        
         let phone = storage.get(storage.PHONE_KEY)
         if (!phone) {
             this.props.openPop()
