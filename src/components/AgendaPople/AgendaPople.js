@@ -89,10 +89,14 @@ class AgendaPople extends Component {
 		})
 	}
 	
+	
+	componentWillMount () {
+		document.title = "大会议程"
+	}
 	// 收藏嘉宾或者文档
 	_collect = (obj) => {
     let id = this.props.data.id
-		let fileId = this.props.data.ppl_id
+		let fileId = this.props.data.files__id
     let {openPop, setLoginCb, closePop} = this.props
     let phone = storage.get(storage.PHONE_KEY)
     let cb = this._collect
@@ -102,11 +106,13 @@ class AgendaPople extends Component {
     	setLoginCb(cb)
 			message.info(msg)
   	}
-		 /* if(!phone) {
-				openPop()
-				setLoginCb(cb)
-				return
-			}*/
+  	
+  	if(!phone) {
+      openPop()
+      setLoginCb(cb)
+    	return
+		}
+		
   	const success = (data) => {
       if (data.status) {
         // closePop()
@@ -134,6 +140,9 @@ class AgendaPople extends Component {
       .then(res => res && res.json())
       .then(success)
 		} else {
+    	if (!fileId) {
+    		message.info('没有相应文档~')
+			}
       collectDocument({phone, file: fileId, token: TOKEN})
       .then(res => res && res.json())
       .then(success)
