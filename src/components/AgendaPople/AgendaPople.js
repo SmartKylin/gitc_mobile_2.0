@@ -92,10 +92,6 @@ class AgendaPople extends Component {
 		}
 	}
 	
-	
-	componentWillMount () {
-		document.title = "大会议程"
-	}
 	// 收藏嘉宾
 	_collectGuest = () => {
     let {id, collect} = this.props.data.id
