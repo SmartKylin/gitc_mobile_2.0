@@ -330,7 +330,7 @@ export default class Activity extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="agenda-ul-toggle">
+                            {/*<div className="agenda-ul-toggle">
                                 <ul className="agenda-ul agenda-ul-btn2 clearfix">
                                     <ClassRooms roomList="24主会场1"/>
                                     <ClassRooms roomList="24主会场2"/>
@@ -362,7 +362,7 @@ export default class Activity extends Component {
                                         <li>33</li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div>*/}
                             <a href="javascript:;" className="btn-all btn-all-bottom ">议题提交 <i className="batn-r"></i> </a>
                             <div className="guests-popole">
                                 <div className="highlights">

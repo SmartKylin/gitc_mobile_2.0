@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Team.scss';
+import $ from 'jquery';
 import HeadPortrait from '../HeadPortrait/HeadPortrait'
 class Team extends Component {
   constructor(props) {
@@ -12,11 +13,16 @@ class Team extends Component {
   static propTypes = {
     type: PropTypes.string,
   };
-  _heandToggle(){
+  _heandToggle(e){
     this.setState({
 toggle:!this.state.toggle
     })
-    
+    if(this.state.toggle){
+ $(e.target).children(":first").addClass('rotate')
+    }else{
+ $(e.target).children(":first").removeClass('rotate')
+    }
+   
   }
   render() {
     const { name, data,basedata } = this.props;
