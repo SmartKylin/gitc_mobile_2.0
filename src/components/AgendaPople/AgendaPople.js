@@ -19,7 +19,8 @@ class AgendaPople extends Component {
 			linkColor2: true,
 			link1: true,
 			link2: true,
-			link3: true
+			link3: true,
+			day:''
 		}
 		this._handleClick = this._handleClick.bind(this)
 		this._handleOffClick = this._handleOffClick.bind(this)
@@ -91,7 +92,15 @@ class AgendaPople extends Component {
 	
 	
 	componentWillMount () {
-		document.title = "大会议程"
+		document.title = "大会议程";
+	}
+	componentDidMount(){
+		let a=this.props.data.sdata;
+		let b=a.substring(5) 
+		let c=b.replace('-', '月');
+		this.setState({
+			day:c+='日'
+		})
 	}
 	// 收藏嘉宾或者文档
 	_collect = (obj) => {
@@ -193,34 +202,34 @@ class AgendaPople extends Component {
 					<div className="windowBox">
 						<div className="windowBox-header">
 							{/*<img src="" alt=""  className="header-img"/>*/}
-							<span className="header-img"></span>
+							<img src={data.pic } className="header-img" alt=""/>
 							<div className="windowBox-btn-color" onClick={this._handleOffClick}>
 								<div className="close-btn"></div>
 							</div>
 
 						</div>
-						<div className="windowBox-name">崔某某</div>
-						<div className="windowBox-work">百度 高级架构</div>
+						<div className="windowBox-name">{data.name}</div>
+						<div className="windowBox-work">{data.company} {data.position}</div>
 						<div className="windowBox-date">
 							<div className="windowBox-date-l">
 								<span className="windowBox-date-l-icon"></span>
-								<span>运维专场</span>
-								<span>三楼308a</span>
+								<span>{data.meet}</span>
+								<span>{data.meetaddr}</span>
 							</div>
 							<div className="windowBox-date-r">
 								<span className="windowBox-date-r-icon"></span>
-								<span>11月23日</span>
-								<span>9:00-10:00</span>
+								<span>{this.state.day}</span>
+								<span>{data.stime}</span>
 							</div>
 						</div>
 						<div className="win-l">
-							<div className="windowBox-title">演讲主题:互联网行业领袖</div>
+							<div className="windowBox-title">演讲主题:{data.stheme}</div>
 						</div>
 
 						<p className="windowBox-text" onTouchStart={this.mounse}
-							onTouchEnd={this.mounout} style={{ borderColor: this.state.linkColor ? "" : "#ccc" }}>主题介绍：GITC2017全球互联网技术大会北京站热点议题全覆盖，众多互联网行业领袖和技术精英们探讨架构、前端开发等探讨架构、前端开发等探讨架构、前端开发等探讨架构、前端开发等将共同探讨架构、前端开发等领域的技术热点；共同发现运维、IoT、移动互联网等领域技术热点IoT技术热点；共同发现运维...</p>
+							onTouchEnd={this.mounout} style={{ borderColor: this.state.linkColor ? "" : "#ccc" }}>主题介绍:{data.sintroduce}</p>
 						<p className="windowBox-text" onTouchStart={this.mounse2}
-							onTouchEnd={this.mounout2} style={{ borderColor: this.state.linkColor2 ? "" : "#ccc" }}>个人简介：GITC2017全球互联网技术大会北京站热点议题全覆盖，众多互联网行业领袖和技术精英们将共同探讨架构、前端开发等领域的技术热点；共同发现运维、IoT、移动互联网等领域的发展趋势。</p>
+							onTouchEnd={this.mounout2} style={{ borderColor: this.state.linkColor2 ? "" : "#ccc" }}>个人简介:{data.summary}</p>
 						<div className="windowBox-icon-content">
 							<div className="windowBox-icon">
 								<div style={{ borderColor: this.state.link1 ? '#ccc' : 'blue' }} className="windowBox-iconlink   windowBox-icon-mln" onClick={() => this._collect('guest')}><div className="windowBox-iconlink-l1"></div></div><div style={{ width: '0.8rem' }}>	</div>

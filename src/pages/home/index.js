@@ -48,9 +48,6 @@ export default class Activity extends Component {
             baseguest:[],
             // menuVisible: 'hidden',
             datatoggle:[],
-
-
-
             zhc23:[],
             yw23:[],
             dsj23:[],
@@ -58,11 +55,9 @@ export default class Activity extends Component {
             qd23:[],
             ydhl23:[],
             tot23:[],
-             jsgl23:[],
-              lxfh23 :[],
+            jsgl23:[],
+            lxfh23 :[],
             qyzc23:[],
-
-
             zhc24:[],
             yw24:[],
             dsj24:[],
@@ -112,7 +107,6 @@ export default class Activity extends Component {
             })
         pagepople('person-6', phone).then(res => res.json())
             .then(data => {
-                console.log(data.data)
                 this.setState({
                     // datatoggle:data.data[0].data,
                     zhc24: data.data[0].data,
@@ -128,7 +122,6 @@ export default class Activity extends Component {
             })
 pagepople('person-4', phone).then(res => res.json())
             .then(data => {
-                    console.log(data.data,'ldddlll')
                 this.setState({
                     datatoggle:data.data[0].data,
                     zhc23: data.data[0].data,
@@ -196,33 +189,6 @@ pagepople('person-4', phone).then(res => res.json())
             data1: this.state.data[e.target.getAttribute('name')]
         })
     }
-
-    /* closeMenu = () => {
-       this.setState({
-         menuVisible: 'hidden'
-       })
-     }*/
-// switch(n)
-// {
-// case 1:
-// //   执行代码块 1
-//   break;
-// case 2:
-// //   执行代码块 2
-//   break;
-// default:
-  
-// }
-// ywfn(){
-//    this.setState({
-//        datatoggle:this.state.yw23
-//    })
-// }
-// dsj(){
-//    this.setState({
-//        datatoggle:this.state.dsj23
-//    })
-// }
 
 handleToggle = key => {
     this.setState({
@@ -355,23 +321,23 @@ handleToggle = key => {
     
                                 <div className="agenda-ul-toggle-box agenda-ul-toggle-box2" style={{display: this.state.toggle ? 'none' : 'block'}}>
                                 <p className="agenda-ul-toggle-box-one">
-    <span onClick={()=>this.handleToggle('zhc24')} className="agenda-btn agenda-btnon">主会场</span >
-    <span  onClick={()=>this.handleToggle('yw24')}>运维专场</span>
-    <span  onClick={()=>this.handleToggle('dsj24')}>大数据专场</span>
-    <span  onClick={()=>this.handleToggle('jcjg24')}>基础架构专场</span>
-    </p>
-    <p className="agenda-ul-toggle-box-two">
-    <span  onClick={()=>this.handleToggle('zlcs24')}>质量和测试专场</span>
-    <span  onClick={()=>this.handleToggle('wlaq24')}>网络安全专场</span>
-    <span  onClick={()=>this.handleToggle('hlwjr24')}>互联网金融峰会</span>
-    </p>
-    <p className="agenda-ul-toggle-box-three-r">
-    <span  onClick={()=>this.handleToggle('qyzc24')}>智慧物流论坛</span>
-    <span  onClick={()=>this.handleToggle(' zhwl24')}>企业专场</span>
+                                    <span onClick={()=>this.handleToggle('zhc24')} className="agenda-btn agenda-btnon">主会场</span >
+                                    <span  onClick={()=>this.handleToggle('yw24')}>运维专场</span>
+                                    <span  onClick={()=>this.handleToggle('dsj24')}>大数据专场</span>
+                                    <span  onClick={()=>this.handleToggle('jcjg24')}>基础架构专场</span>
+                                    </p>
+                                    <p className="agenda-ul-toggle-box-two">
+                                    <span  onClick={()=>this.handleToggle('zlcs24')}>质量和测试专场</span>
+                                    <span  onClick={()=>this.handleToggle('wlaq24')}>网络安全专场</span>
+                                    <span  onClick={()=>this.handleToggle('hlwjr24')}>互联网金融峰会</span>
+                                    </p>
+                                    <p className="agenda-ul-toggle-box-three-r">
+                                    <span  onClick={()=>this.handleToggle('qyzc24')}>智慧物流论坛</span>
+                                    <span  onClick={()=>this.handleToggle(' zhwl24')}>企业专场</span>
                                 </p>
                                 </div>
     
-                                {/*}*/}
+                               
                               <div className="agenda-pople-box agenda-pople-box-btn1">
                                     <ul className="agenda-pople">
 
@@ -477,7 +443,7 @@ handleToggle = key => {
 
                         <BackTop />
                     </div>
-                    <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>
+                    {/*<strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>*/}
 
 
                     <a href="https://www.baidu.com" className="live">直播</a>
