@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery'
-import './AgendaPople.css';
+import './AgendaPople.scss';
 import storage from '../../helper/storage'
 import {TOKEN} from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
@@ -14,12 +14,14 @@ class AgendaPople extends Component {
 		super(props);
 		this.state = {
 			collectModelVisible: 'none',
+			guestStatus: false,
+			fileStatus: false,
 			a: false,
 			linkColor: true,
 			linkColor2: true,
-			link1: true,
+			/*link1: true,
 			link2: true,
-			link3: true
+			link3: true*/
 		}
 		this._handleClick = this._handleClick.bind(this)
 		this._handleOffClick = this._handleOffClick.bind(this)
@@ -73,7 +75,7 @@ class AgendaPople extends Component {
 	unmounseup(e) {
 		$('body').css('overflow', 'auto')
 	}
-	toggleLink1(e) {
+	/*toggleLink1(e) {
 		this.setState({
 			link1: !this.state.link1
 		})
@@ -82,62 +84,97 @@ class AgendaPople extends Component {
 		this.setState({
 			link2: !this.state.link2
 		})
-	}
+	}*/
 	toggleLink3(e) {
-		this.setState({
-			link3: !this.state.link3
-		})
+		let {files__url} = this.props.data
+		if (!files__url) {
+			message.info('没有相应文档~')
+		}
 	}
 	
-	// 收藏嘉宾或者文档
-	_collect = (obj) => {
-    let id = this.props.data.id
-		let fileId = this.props.data.ppl_id
+	
+	componentWillMount () {
+		document.title = "大会议程"
+	}
+	// 收藏嘉宾
+	_collectGuest = () => {
+    let {id, collect} = this.props.data.id
     let {openPop, setLoginCb, closePop} = this.props
     let phone = storage.get(storage.PHONE_KEY)
-    let cb = this._collect
-   
+    let cb = this._collectGuest
+		if (collect || this.state.guestStatus) {
+    	return
+		}
     const failure = (msg) => {
     	openPop()
     	setLoginCb(cb)
 			message.info(msg)
   	}
-		 /* if(!phone) {
-				openPop()
-				setLoginCb(cb)
-				return
-			}*/
+  	
+  	if(!phone) {
+      openPop()
+      setLoginCb(cb)
+    	return
+		}
+		
   	const success = (data) => {
       if (data.status) {
         // closePop()
         this.setState({
           // 打开收藏成功模态框
-          collectModelVisible: 'block'
-        }, () => {
-          console.log(this.state.collectModelVisible);
+          collectModelVisible: 'block',
+					guestStatus: true,
         })
-				if (obj === 'guest') {
-        	this.setState({
-            link1: !this.state.link1,
-          })
-				} else if (obj === 'document') {
-          this.setState({
-            link2: !this.state.link2
-          })
-				}
       } else {
         failure(data.msg)
       }
 		}
-		if (obj == 'guest') {
-      collectGuest({phone, person: id, token: TOKEN})
-      .then(res => res && res.json())
-      .then(success)
-		} else {
-      collectDocument({phone, file: fileId, token: TOKEN})
-      .then(res => res && res.json())
-      .then(success)
+    collectGuest({phone, person: id, token: TOKEN})
+    .then(res => res && res.json())
+    .then(success)
+	}
+	
+	// 收藏文档
+	_collectDocument = () => {
+    let {files__id, file_collect} = this.props.data
+    let {openPop, setLoginCb} = this.props
+    let phone = storage.get(storage.PHONE_KEY)
+    let cb = this._collectDocument
+    
+		if (this.state.documentStatus || file_collect) {
+    	return
 		}
+    const failure = (msg) => {
+      openPop()
+      setLoginCb(cb)
+      message.info(msg)
+    }
+    
+    if(!phone) {
+      openPop()
+      setLoginCb(cb)
+      return
+    }
+    
+    const success = (data) => {
+      if (data.status) {
+        // closePop()
+        this.setState({
+          // 打开收藏成功模态框
+          collectModelVisible: 'block',
+          documentStatus: true,
+        })
+      } else {
+        failure(data.msg)
+      }
+    }
+    
+    if (!files__id) {
+      message.info('没有相应文档~')
+    }
+    collectDocument({phone, file: files__id, token: TOKEN})
+    .then(res => res && res.json())
+    .then(success)
 	}
 	
   // 关闭收藏成功的模态框
@@ -155,10 +192,10 @@ class AgendaPople extends Component {
 					{data ? <img src={data.pic} alt="" className="header-img" /> : ""}
 					<div className="header-icon">
 						<span className="l">
-							<div className="popele-box-1"></div>
+							<div className={"popele-box-1 " + (this.state.guestStatus || data.collect ? 'collected' : '')}></div>
 						</span>
 						<span className="c">
-							<div className="popele-box-2"></div>
+							<div className={"popele-box-2 " + (this.state.fileStatus || data.file_collect ? 'collected' : '')}></div>
 						</span>
 						<span className="r">
 							<div className="popele-box-3"></div>
@@ -214,11 +251,11 @@ class AgendaPople extends Component {
 							onTouchEnd={this.mounout2} style={{ borderColor: this.state.linkColor2 ? "" : "#ccc" }}>个人简介：GITC2017全球互联网技术大会北京站热点议题全覆盖，众多互联网行业领袖和技术精英们将共同探讨架构、前端开发等领域的技术热点；共同发现运维、IoT、移动互联网等领域的发展趋势。</p>
 						<div className="windowBox-icon-content">
 							<div className="windowBox-icon">
-								<div style={{ borderColor: this.state.link1 ? '#ccc' : 'blue' }} className="windowBox-iconlink   windowBox-icon-mln" onClick={() => this._collect('guest')}><div className="windowBox-iconlink-l1"></div></div><div style={{ width: '0.8rem' }}>	</div>
-								<div style={{ borderColor: this.state.link2 ? '#ccc' : 'blue' }} className="windowBox-iconlink  windowBox-icon-mlnr" onClick={() => this._collect('document')}><div className="windowBox-iconlink-l2"></div></div><div style={{ width: '0.8rem' }}></div>
+								<div className="windowBox-iconlink   windowBox-icon-mln" onClick={this._collectGuest}><div className={'windowBox-iconlink-l1 ' + (this.state.guestStatus || data.collect ? 'collected' : '')} ></div></div><div style={{ width: '0.8rem' }}>	</div>
+								<div className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this._collectDocument}><div className={"windowBox-iconlink-l2 " + (this.state.fileStatus || data.file_collect ? 'collected' : '')}></div></div><div style={{ width: '0.8rem' }}></div>
 								{/*<div style={{ borderColor: this.state.link3 ? '#ccc' : 'blue' }} className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}><div className="windowBox-iconlink-l3"></div></div>*/}
-								<div style={{ borderColor: this.state.link3 ? '#ccc' : 'blue' }} className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}>
-									<a className="windowBox-iconlink-l3" href={data.pic}></a>
+								<div className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}>
+									<a className="windowBox-iconlink-l3" href={data.files__url}></a>
 								</div>
 							</div>
 						</div>

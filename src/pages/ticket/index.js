@@ -13,18 +13,16 @@ export default class extends Component {
       ticketList: []
     }
   }
-  componentWillMount () {
-    // 设置二级页面标题
-    document.title = "门票"
-    
+  
+  renderTicketList = () => {
     let phone = storage.get(storage.PHONE_KEY)
-  
-    /*if (!iphone) {
-      this.props.history.push('/')
-    } else {
-      this.iphone = iphone
-    }*/
-  
+    let cb = this.renderTicketList
+    let {openPop, setLoginCb} = this.props.history
+    if (!phone) {
+      openPop()
+      setLoginCb(cb)
+      return
+    }
     getTicketList({phone, token: TOKEN})
     .then(res => {
       if (res) {
@@ -36,11 +34,18 @@ export default class extends Component {
         this.setState({
           ticketList: data.data
         })
-     } else {
+      } else {
         message.info(data.msg)
+        openPop()
+        setLoginCb(cb)
       }
     })
-  
+  }
+  componentWillMount () {
+    // 设置二级页面标题
+    document.title = "我的门票"
+    
+    this.renderTicketList()
   }
   render () {
     return (

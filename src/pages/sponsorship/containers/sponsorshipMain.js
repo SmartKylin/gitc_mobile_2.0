@@ -48,7 +48,7 @@ export default class extends Component {
   post = () => {
     let {name, company, phone, position, email, intention} = this.state;
     phone = phone + '';
-    sponsor({name, company, phone, position, email, intention})
+    sponsor({name, company, phone, position, email, intention, ds_id: 3})
     .then(res => res.json())
     .then(data => {
       message.info(data.msg)

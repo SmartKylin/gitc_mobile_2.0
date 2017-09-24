@@ -14,10 +14,8 @@ export default class extends Component {
     }
   }
   componentWillMount () {
+    document.title = "个人中心"
     let phone = storage.get(storage.PHONE_KEY)
-    /*if (!phone) {
-      this.props.history.goBack()
-    }*/
     this.phone = phone
     
     if (phone) {
