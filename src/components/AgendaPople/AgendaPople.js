@@ -20,8 +20,8 @@ class AgendaPople extends Component {
 			linkColor: true,
 			linkColor2: true,
 			/*link1: true,
-			link2: true,*/
-			link3: true
+			link2: true,
+			link3: true*/
 		}
 		this._handleClick = this._handleClick.bind(this)
 		this._handleOffClick = this._handleOffClick.bind(this)
@@ -86,9 +86,10 @@ class AgendaPople extends Component {
 		})
 	}*/
 	toggleLink3(e) {
-		this.setState({
-			link3: !this.state.link3
-		})
+		let {files__url} = this.props.data
+		if (!files__url) {
+			message.info('没有相应文档~')
+		}
 	}
 	
 	
@@ -97,11 +98,13 @@ class AgendaPople extends Component {
 	}
 	// 收藏嘉宾
 	_collectGuest = () => {
-    let id = this.props.data.id
+    let {id, collect} = this.props.data.id
     let {openPop, setLoginCb, closePop} = this.props
     let phone = storage.get(storage.PHONE_KEY)
     let cb = this._collectGuest
-   
+		if (collect || this.state.guestStatus) {
+    	return
+		}
     const failure = (msg) => {
     	openPop()
     	setLoginCb(cb)
@@ -133,11 +136,14 @@ class AgendaPople extends Component {
 	
 	// 收藏文档
 	_collectDocument = () => {
-    let fileId = this.props.data.files__id
+    let {files__id, file_collect} = this.props.data
     let {openPop, setLoginCb} = this.props
     let phone = storage.get(storage.PHONE_KEY)
     let cb = this._collectDocument
     
+		if (this.state.documentStatus || file_collect) {
+    	return
+		}
     const failure = (msg) => {
       openPop()
       setLoginCb(cb)
@@ -163,10 +169,10 @@ class AgendaPople extends Component {
       }
     }
     
-    if (!fileId) {
+    if (!files__id) {
       message.info('没有相应文档~')
     }
-    collectDocument({phone, file: fileId, token: TOKEN})
+    collectDocument({phone, file: files__id, token: TOKEN})
     .then(res => res && res.json())
     .then(success)
 	}
@@ -248,8 +254,8 @@ class AgendaPople extends Component {
 								<div className="windowBox-iconlink   windowBox-icon-mln" onClick={this._collectGuest}><div className={'windowBox-iconlink-l1 ' + (this.state.guestStatus || data.collect ? 'collected' : '')} ></div></div><div style={{ width: '0.8rem' }}>	</div>
 								<div className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this._collectDocument}><div className={"windowBox-iconlink-l2 " + (this.state.fileStatus || data.file_collect ? 'collected' : '')}></div></div><div style={{ width: '0.8rem' }}></div>
 								{/*<div style={{ borderColor: this.state.link3 ? '#ccc' : 'blue' }} className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}><div className="windowBox-iconlink-l3"></div></div>*/}
-								<div style={{ borderColor: this.state.link3 ? '#ccc' : 'blue' }} className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}>
-									<a className="windowBox-iconlink-l3" href={data.pic}></a>
+								<div className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}>
+									<a className="windowBox-iconlink-l3" href={data.files__url}></a>
 								</div>
 							</div>
 						</div>
