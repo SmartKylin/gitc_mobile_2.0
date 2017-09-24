@@ -1,6 +1,6 @@
 import React from 'react'
 import Uploader from '../../../components/Uploader/index'
-
+import './index.scss'
 class UploaderPage extends React.Component {
     constructor (props) {
         super(props);
@@ -47,7 +47,7 @@ class UploaderPage extends React.Component {
     render () {
         const {uploadList1} = this.state;
         return (
-            <div className=''>
+            <div className='xingBox'>
                 <Uploader
                     data={uploadList1}
                     uploadUrl={"http://120.92.10.182:8000/api/gitc/meetissue/upload.json?token=1afb756d16740266efde290917ca1a8e?doamin=3"}
@@ -55,6 +55,7 @@ class UploaderPage extends React.Component {
                     onDelete={this.handleDelete}
                     max={5}
                 />
+                <div className="xing">*</div>
             </div>
         )
     }

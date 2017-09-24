@@ -35,7 +35,11 @@ export default class extends Component {
       position: '',
       email: '',
       intention: '',
-      edit: ''
+      edit: '',
+      // 表单是否全部验证通过
+      validated: true,
+      // 是否正在提交数据
+      isPosting: false
     }
   }
   // 改变input值
@@ -43,15 +47,29 @@ export default class extends Component {
     this.setState({
       [name]:value
     })
+    console.log(name);
   }
   // 提交赞助
-  post = () => {
+  post = async () => {
+    if (this.state.isPosting) {
+      return
+    }
     let {name, company, phone, position, email, intention} = this.state;
     phone = phone + '';
+    if (!this.state.validated) {
+      // 未通过校验，不发请求
+      return
+    }
+    await this.setState({
+      isPosting: true
+    })
     sponsor({name, company, phone, position, email, intention, ds_id: 3})
     .then(res => res.json())
     .then(data => {
       message.info(data.msg)
+      this.setState({
+        isPosting: false
+      })
     })
   }
   render() {

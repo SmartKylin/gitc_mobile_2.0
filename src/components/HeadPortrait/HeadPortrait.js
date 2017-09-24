@@ -35,6 +35,7 @@ img:require('../images/陈洋.jpg')
 				</div>
 
 			</div>
+			
 
 		);
 	}

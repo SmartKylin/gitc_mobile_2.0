@@ -462,7 +462,7 @@ html,body{height:100%;overflow:auto}*/
     height: 26px;
     background: url(../../components/images/m.png);
     background-size: cover;
-    position: absolute;
+    position: relative;
     left: 12px;
     top: 8px;
 }
