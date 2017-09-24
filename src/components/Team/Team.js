@@ -7,7 +7,7 @@ class Team extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle:true
+      toggle:false
     }
   }
   static propTypes = {
@@ -27,7 +27,6 @@ toggle:!this.state.toggle
   }
   render() {
     const { name, data,basedata } = this.props;
-    console.log(basedata,789)
     return (
       <div>
         <span className="title-btn "> {name}	</span>
