@@ -29,6 +29,18 @@ let btnStyle = {
     marginTop: '30px',
     borderRadius: '15px'
 }
+let btnStyle1 = {
+    width: '112px',
+    height: '30px',
+    color: "#fff",
+    background: '#ccc',
+    lineHeight: '30px',
+    fontSize: '12px',
+    textAlign: 'center',
+    marginTop: '30px',
+    borderRadius: '15px'
+}
+
 
 
 export default class Issus extends Component {
@@ -54,11 +66,14 @@ export default class Issus extends Component {
             hot_topic:'',//话题热度
             experience:'',//实战经验
             generality:'',//通用性
-            suggest:'',//意见建议
+            suggest:'',//意见建议,
+            flag:true,
+            posting: false
         }
     }
 
     componentWillMount(){
+       // document.title='议题提交'
         this.setState({
             minHeight:document.documentElement?document.documentElement.clientHeight:document.body.clientHeight
         })
@@ -69,29 +84,122 @@ export default class Issus extends Component {
         await this.setState({
             [name]:value
         })
+       /* if((name =='name'||name =='company'||name =='position'||name =='photonew'||name =='theme'||name =='content')&& value==''){
+            console.log(name,"ceshiname")
+            this.setState({
+                flag:false
+            })
+        }else {
+            this.setState({
+                flag:true
+            })
+        }*/
+
         console.log('父组件', value ,name, this.state[name])
     }
 
+    check = obj =>{
+        for( let key in obj){
+            if( key =="name" && this.state.name == ''){
+                message.info("姓名不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="company" && this.state.company == ''){
+                message.info("公司不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="position" && this.state.position == ''){
+                message.info("职位不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key=="phone" && !(/^1[34578]\d{9}$/.test(this.state.phone))){
+                message.info("手机号码有误，请重填");
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key=="email" && !(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(this.state.email))){
+                message.info("邮箱格式有误，请重填");
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="addr" && this.state.addr == ''){
+                message.info("地址不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="photonew" && this.state.photonew == ''){
+                message.info("请上传照片")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="theme" && this.state.theme == ''){
+                message.info("演讲主题不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="content" && this.state.content == ''){
+                message.info("内容简介不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            this.setState({
+                flag:true
+            })
+        }
+
+    }
+
+
     // 议题提交
-    post = () => {
+    post = async () => {
+        if (this.state.posting) {
+            return
+        }
         let {name, company, position, phone, email, addr,
             photonew,summary,speech_experience,interest,
             remark,theme,content,innovate,hot_topic,
             experience,generality,suggest
         } = this.state;
-        var dm_id = 3
-        let photo = photonew&&photonew.length>0?photonew.pop().dataUrl:""
 
-        issue({name,company, position, phone, email,
-            addr,photo,summary,speech_experience,interest,remark,theme,content,innovate,hot_topic,
-            experience,generality,suggest,dm_id})
-            .then(res => res.json())
-            .then(data => {
-                message.info(data.msg)
+        await this.check({name, company, position, phone, email, addr,
+            photonew,summary,speech_experience,interest,
+            remark,theme,content,innovate,hot_topic,
+            experience,generality,suggest
+        })
+
+        var dm_id = 3;
+        let photo = photonew&&photonew.length>0?photonew.pop().dataUrl:""
+        if(this.state.flag){
+            this.setState({
+                posting: true
             })
+            issue({name,company, position, phone, email,
+                addr,photo,summary,speech_experience,interest,remark,theme,content,innovate,hot_topic,
+                experience,generality,suggest,dm_id})
+                .then(res => res.json())
+                .then(data => {
+                    message.info(data.msg)
+                    this.setState({
+                        posting: false
+                    })
+                })
+        }
+
     }
-    render() {
-        let {name, company, position, phone, email, addr,
+        render() {
+            let {name, company, position, phone, email, addr,
             photo,summary,speech_experience,interest,
             remark,theme,content,innovate,hot_topic,
             experience,generality,suggest
@@ -133,7 +241,7 @@ export default class Issus extends Component {
 
 
                     <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
-                        <div  style={btnStyle} onClick={() => this.post()}>确定提交</div>
+                        <div  style={!this.state.posting?btnStyle:btnStyle1}  onClick={() => this.post()}>确定提交</div>
                     </div>
                 </div>
 

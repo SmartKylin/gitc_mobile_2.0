@@ -3,6 +3,7 @@ import ConferenceNewsItem from "../components/index";
 import ChildCotainer from 'containers/child_container'
 import {getListNews} from "../../../services/getListNews";
 
+
 export default class ConferenceNews extends React.Component {
   constructor(props) {
     super(props);
