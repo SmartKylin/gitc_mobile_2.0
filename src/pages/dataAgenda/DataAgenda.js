@@ -15,6 +15,7 @@ class DataAgenda extends Component {
 		this.tapBtn=this.tapBtn.bind(this);
 	}
 componentWillMount() {
+	document.title = '大会议程'
 	pagepople('person-4').then(res => res.json())
     .then(data => {
 			

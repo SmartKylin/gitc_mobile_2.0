@@ -54,7 +54,8 @@ export default class Activity extends Component {
         
         let phone = storage.get(storage.PHONE_KEY)
         if (!phone) {
-            this.props.history.openPop()
+            // this.props.history.openPop()
+          phone = '13800138000'
         }
 
         pople('45', phone).then(res => res.json())
