@@ -94,7 +94,7 @@ class AgendaPople extends Component {
 	
 	// 收藏嘉宾
 	_collectGuest = () => {
-    let {id, collect} = this.props.data.id
+    let {id, collect} = this.props.data
     let {openPop, setLoginCb, closePop} = this.props
     let phone = storage.get(storage.PHONE_KEY)
     let cb = this._collectGuest
