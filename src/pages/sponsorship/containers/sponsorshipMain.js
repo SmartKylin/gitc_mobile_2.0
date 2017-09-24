@@ -35,7 +35,8 @@ export default class extends Component {
       position: '',
       email: '',
       intention: '',
-      edit: ''
+      edit: '',
+      validated: true
     }
   }
   // 改变input值
@@ -43,11 +44,16 @@ export default class extends Component {
     this.setState({
       [name]:value
     })
+    console.log(name);
   }
   // 提交赞助
   post = () => {
     let {name, company, phone, position, email, intention} = this.state;
     phone = phone + '';
+    if (!this.state.validated) {
+      // 未通过校验，不发请求
+      return
+    }
     sponsor({name, company, phone, position, email, intention, ds_id: 3})
     .then(res => res.json())
     .then(data => {
