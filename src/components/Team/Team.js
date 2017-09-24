@@ -17,6 +17,7 @@ class Team extends Component {
     this.setState({
 toggle:!this.state.toggle
     })
+    // $(e.target).addClass('rosition-fix')
     if(this.state.toggle){
  $(e.target).children(":first").addClass('rotate')
     }else{

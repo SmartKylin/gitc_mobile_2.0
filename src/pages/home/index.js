@@ -371,8 +371,8 @@ export default class Activity extends Component {
                                     <img src={blink} alt="" className="blue-link"/>
                                 </div>
                                 <Team name='大会主席团' basedata={this.state.basedata} data={this.state.chairman}></Team>
-                                <Team name="专家顾问团" basedata={this.state.baseexpert} data={this.state.expert}></Team>
-                               <Team name="演讲嘉宾" basedata={this.state.baseguest} data={this.state.guest}></Team>
+                                {/*<Team name="专家顾问团" basedata={this.state.baseexpert} data={this.state.expert}></Team>
+                               <Team name="演讲嘉宾" basedata={this.state.baseguest} data={this.state.guest}></Team>*/}
                             </div>
                             <div className="logo">
                                 <div className="highlights">
