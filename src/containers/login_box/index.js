@@ -19,7 +19,9 @@ export default class extends Component {
     this.state = {
       coding: false,
       time: TIME,
-      mobileRight: false
+      mobileRight: false,
+      mobile: '',
+      code: ''
     }
   }
   // 发送验证码
@@ -61,6 +63,9 @@ export default class extends Component {
   }
   // 验证手机号
   validateMobile() {
+    this.setState({
+      mobile: this.mobile.value
+    })
     let reg = /^1[3|4|5|7|8][0-9]{9}$/;
     let mobile = this.mobile.value;
     let mobileRight =  reg.test(mobile)
@@ -88,7 +93,7 @@ export default class extends Component {
       if (data.status) {
         storage.set(storage.PHONE_KEY, this.mobile.value)
         storage.set(storage.DATA_KEY, data.data)
-        this.props.closePop()
+        this.closeLoginBox()
         cb && cb()
       }
     }
@@ -102,23 +107,31 @@ export default class extends Component {
       this.mobile.value.length = this.mobile.value.length.slice(0, 11)
     }
   }*/
+  // 关闭登录框，并清空数据
+  closeLoginBox = () => {
+    this.setState({
+      mobile: '',
+      code: ''
+    })
+    this.props.closePop()
+  }
   render () {
     return (
     <div className="loginbox">
       <div className="close--area">
-        <div alt="" className="close--icon" onClick={() => this.props.closePop()}></div>
+        <div alt="" className="close--icon" onClick={this.closeLoginBox}></div>
       </div>
       <div className="form--wrap">
         <div className="mobile--area">
           <div className="mobile--wrap">
             <img src={iconIphone} alt="" className="icon--phone"/>
             {/*<input type="number"  onChange={(e) => this.validateMobile(e)} ref={mobile => this.mobile = mobile} onInput={() => this.trimLength()} value={this.mobile.value}/>*/}
-            <input type="number"  onChange={(e) => this.validateMobile(e)} ref={mobile => this.mobile = mobile}/>
+            <input type="number"  onChange={(e) => this.validateMobile(e)} ref={mobile => this.mobile = mobile} value={this.state.mobile}/>
           </div>
         </div>
   
         <div className="code--area">
-          <input type="text" style={inputStyle} ref={code => this.code = code}/>
+          <input type="text" style={inputStyle} ref={code => this.code = code} value={this.state.code} onChange={() => this.setState({code: this.code.value})}/>
           {
             this.state.coding ? <div className="send--code">重新发送{this.state.time}s</div> : <div className={'send--code ' + (this.state.mobileRight ? 'active' : '')} onClick={() => this.sendcode()}>发送验证码</div>
           }
