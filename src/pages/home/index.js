@@ -19,6 +19,7 @@ import Menu from 'containers/menu'
 
 import { pople } from "../../services/pople";
 import { pagepople } from "../../services/pagepople";
+import storage from '../../helper/storage'
 
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
@@ -49,9 +50,12 @@ export default class Activity extends Component {
         }
     }
     componentWillMount() {
+        let phone = storage.get(storage.PHONE_KEY)
+        if (!phone) {
+            this.props.openPop()
+        }
 
-
-        pople('45').then(res => res.json())
+        pople('45', phone).then(res => res.json())
             .then(data => {
 
                 this.setState({
@@ -61,7 +65,7 @@ export default class Activity extends Component {
                 })
 
             })
-        pople('46').then(res => res.json())
+        pople('46', phone).then(res => res.json())
             .then(data => {
 
                 this.setState({
@@ -70,7 +74,7 @@ export default class Activity extends Component {
                 })
 
             })
-        pople('47').then(res => res.json())
+        pople('47', phone).then(res => res.json())
             .then(data => {
 
                 this.setState({
@@ -79,7 +83,7 @@ export default class Activity extends Component {
                 })
 
             })
-        pagepople('person-4').then(res => res.json())
+        pagepople('person-4', phone).then(res => res.json())
             .then(data => {
 
                 this.setState({
@@ -89,7 +93,6 @@ export default class Activity extends Component {
 
             })
 
-        console.log(this.props.history);
         let rooms = require("../../mock/data.json");
         this.setState({
             data: rooms,
