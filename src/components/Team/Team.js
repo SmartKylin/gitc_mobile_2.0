@@ -37,10 +37,10 @@ toggle:!this.state.toggle
           {
              this.props.data.length&&this.props.basedata.length&&this.state.toggle?
            this.props.data.map((data, index) => (
-            <HeadPortrait name={data.name} show={data.position} pics={data.pic} style={{ margin: '15px', float: 'left' }} />
+            <HeadPortrait key={index} name={data.name} show={data.position} pics={data.pic} style={{ margin: '15px', float: 'left' }} />
           )) :
            this.props.basedata.map((data, index) => (
-            <HeadPortrait name={data.name} show={data.position} pics={data.pic} style={{ margin: '15px', float: 'left' }} />
+            <HeadPortrait key={index} name={data.name} show={data.position} pics={data.pic} style={{ margin: '15px', float: 'left' }} />
           )) 
           }
 
