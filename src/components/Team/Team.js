@@ -44,8 +44,8 @@ class Team extends Component {
         let c = $(that).prev().offset().top
         let c_height = $(that).prev().height()
         console.log(c_height, 'hemoxing')
-        if ((parseInt(a) <= parseInt(c)+100) || (parseInt(a) >= parseInt(c) + c_height-200)) {
-          console.log(1)
+        if ((parseInt(a) <= parseInt(c)) || (parseInt(a) >= parseInt(c) + c_height)) {
+          // console.log(1)
           _this.setState({
             positionbtn: true
           })
@@ -53,7 +53,7 @@ class Team extends Component {
           _this.setState({
             positionbtn: false
           })
-          console.log(2)
+          // console.log(2)
         }
       }
     }
