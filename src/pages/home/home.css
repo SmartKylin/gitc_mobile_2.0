@@ -14,7 +14,7 @@
 .index-banner{
     width: 16rem;
     height: 23.425rem;
-    background:url(../../components/images/weizhanshouye.png);
+    background:url(../../components/images/1微站首页1_03.png);
     background-size: cover;
     /*position: relative;*/
 }
@@ -110,10 +110,10 @@ html,body{
     margin-right: 0.4rem
 }
 .highlights-icon1{
-    width: 1.6rem;
-    height: 1.4rem;
+    width: 1.8rem;
+    height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/icon001.png);
+    background:url(../../components/images/会议.svg);
     background-size: cover;
     float: left;
 }
@@ -121,7 +121,7 @@ html,body{
     width: 1.8rem;
     height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/icon003.png);
+    background:url(../../components/images/行业领袖.svg);
     background-size: cover;
     float: left;
 }
@@ -129,55 +129,55 @@ html,body{
     width: 1.8rem;
     height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/icon004.png);
+    background:url(../../components/images/行业专家.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon4{
-    width: 1.85rem;
-    height: 1.85rem;
+    width: 1.8rem;
+    height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/icon005.png);
+    background:url(../../components/images/shanhgjia.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon5{
-    width: 1.85rem;
-    height: 1.85rem;
+    width: 1.8rem;
+    height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/icon006.png);
+    background:url(../../components/images/对话.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon6{
-    width: 1.85rem;
-    height: 1.85rem;
+    width: 1.80rem;
+    height: 1.80rem;
     display: inline-block;
-    background:url(../../components/images/icon007.png);
+    background:url(../../components/images/tea.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon7{
-    width: 1.85rem;
-    height: 1.85rem;
+    width: 1.80rem;
+    height: 1.80rem;
     display: inline-block;
-    background:url(../../components/images/icon008.png);
+    background:url(../../components/images/奖杯.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon8{
-    width: 1.85rem;
-    height: 1.85rem;
+    width: 1.80rem;
+    height: 1.80rem;
     display: inline-block;
-    background:url(../../components/images/icon009.png);
+    background:url(../../components/images/hei.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon9{
-    width: 1.85rem;
-    height: 1.65rem;
+    width: 1.80rem;
+    height: 1.80rem;
     display: inline-block;
-    background:url(../../components/images/icon002.png);
+    background:url(../../components/images/hg.svg);
     background-size: cover;
     float: left;
 }

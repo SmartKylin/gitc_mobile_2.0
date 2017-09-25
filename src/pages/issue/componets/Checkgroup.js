@@ -1,6 +1,6 @@
 import {Checkbox} from 'antd';
 import React, {Component} from 'react'
-let CheckboxGroup = Checkbox.Group
+// let CheckboxGroup = Checkbox.Group
 
 /*const options = [
     '主会场',

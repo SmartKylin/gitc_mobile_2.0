@@ -64,7 +64,6 @@ export default class extends Component {
     this.setState({
       [name]:value
     })
-    console.log(name);
   }
   // 提交赞助
   post = async () => {
@@ -73,6 +72,7 @@ export default class extends Component {
     }
     let {name, company, phone, position, email, intention} = this.state;
     phone = phone + '';
+    console.log(this.state.validated);
     if (!this.state.validated) {
       // 未通过校验，不发请求
       return

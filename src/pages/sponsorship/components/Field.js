@@ -10,7 +10,8 @@ let FieldWrap = {
   display: 'flex',
   flexDirection: 'column',
   borderBottom: '1px solid #e3e3e3',
-  flex: 1
+  flex: 1,
+  position: 'relative'
 }
 
 let inputStyle = {
@@ -34,12 +35,16 @@ export default class extends Component {
         if (!phoneReg.test(value)) {
           changeValue('validated', false)
           message.info('手机号格式不正确~')
+        } else {
+          changeValue('validated', true)
         }
         return;
       case 'email':
         if (!emailReg.test(value)) {
           changeValue('validated', false)
           message.info('邮箱格式不正确~')
+        } else {
+          changeValue('validated', true)
         }
         return;
     }
