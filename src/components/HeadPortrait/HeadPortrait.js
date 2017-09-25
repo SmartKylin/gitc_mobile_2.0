@@ -55,21 +55,22 @@ class HeadPortrait extends Component {
   
   render() {
     const {
+      company,
       pics,
       name,
       show,
       style,
       data,
       // 是否为演讲嘉宾栏
-      speech
+      speech,
+      position
     } = this.props
-    // console.log(data, 'headePrtrait');
     return (
     <div className="headportrait-content" style={style} onClick={this._handleOnClick}>
       <img src={this.state.img} alt="" className="headportrait-img"/>
       <div className="headportrait-font">
         <div className="headportrait-font-title">{name}</div>
-        <div>{show}</div>
+        <div>{data.company}{data.position}</div>
       </div>
       
       <div className="windowPop" style={{display: this.state.guestPopDisplay ? "block" : 'none'}}
