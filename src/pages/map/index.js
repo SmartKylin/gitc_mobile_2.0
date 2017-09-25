@@ -41,8 +41,8 @@ export default class Map extends Component {
         </div>
         
         <div className="map-btn" onClick={this._heandeClick.bind(this)}>
-          <div name="三">3F</div>
-          <div name="二">2F</div>
+          <div name="三">4F</div>
+          <div name="二">3F</div>
           <div name="一" className="btn">1F</div>
         </div>
       </div>

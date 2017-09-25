@@ -1,8 +1,29 @@
 .map-img{
   width:100%;
   display: block;
-  margin: 0 auto
+  margin: 0 auto;
+  height: 400px;
 }
+
+@media screen and (max-width:375px){
+  .map-img{
+    width:100%;
+    display: block;
+    margin: 0 auto;
+    height: 400px;
+  }
+}
+
+
+@media screen and (max-width:320px){
+  .map-img{
+    width:100%;
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+  }
+}
+
 .map-box{
   width: 100%;
 }
