@@ -64,9 +64,9 @@ export default class extends Component {
     })
     .then( async data => {
       await this.setState({
-        ticket: data.data && data.data.bt__name || '基础架构专场票',
-        barcodeString: data.data && data.data.code || '5848540983250432',
-        name: data.data && data.data.name || '程潇'
+        ticket: data.data && data.data.bt__name,
+        barcodeString: data.data && data.data.code,
+        name: data.data && data.data.name
       })
       
       // 生成条形码

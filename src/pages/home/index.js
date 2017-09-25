@@ -7,15 +7,15 @@ import {BackTop} from 'antd';
 // import { PREFIX_URL,request } from "../common"
 // import { getShopList, handlePhone } from "../common"
 import ClassDetails from "components/ClassRooms/ClassDetails/ClassDetails"
-import ClassRooms from "components/ClassRooms/ClassRooms"
+// import ClassRooms from "components/ClassRooms/ClassRooms"
 import AgendaPople from "components/AgendaPople/AgendaPople"
 import Team from "../../components/Team/Team"
 // import BackgroundAll from "components/BackgroundAll/BackgroundAll"
 // // import fetchJsonp from 'fetch-jsonp';
 import './home.css';
 // import StgItem from "components/stg.item";
-import {getPopleList} from "../../services/home";
-import Menu from 'containers/menu'
+// import {getPopleList} from "../../services/home";
+// import Menu from 'containers/menu'
 
 import { pople } from "../../services/pople";
 import { pagepople } from "../../services/pagepople";
