@@ -76,8 +76,8 @@ export default class extends Component {
                     <div className='boximg'>
                       <div ><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>
                       <div className='boxiner'>
-                        <div className='boxinerTextA'><span>前端开发等领域的技术热点</span></div>
-                        <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.name}   {item.user__company}|{item.user__position}</span></div>
+                        <div className='boxinerTextA'><span>{item.name}</span></div>
+                        <div className='boxinerTextB'><span style={{fontSize:"8px"}}>{item.user__name}   {item.user__company}|{item.user__position}</span></div>
                       </div>
                     </div>
                     <div> <a href={item.url}>查看</a></div>
