@@ -111,9 +111,9 @@ html,body{
 }
 .highlights-icon1{
     width: 1.6rem;
-    height: 1.4rem;
+    height: 1.6rem;
     display: inline-block;
-    background:url(../../components/images/icon001.png);
+    background:url(../../components/images/会议.svg);
     background-size: cover;
     float: left;
 }
@@ -121,7 +121,7 @@ html,body{
     width: 1.8rem;
     height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/icon003.png);
+    background:url(../../components/images/行业领袖.svg);
     background-size: cover;
     float: left;
 }
@@ -129,15 +129,15 @@ html,body{
     width: 1.8rem;
     height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/icon004.png);
+    background:url(../../components/images/行业专家.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon4{
-    width: 1.85rem;
-    height: 1.85rem;
+    width: 1.8rem;
+    height: 1.8rem;
     display: inline-block;
-    background:url(../../components/images/icon005.png);
+    background:url(../../components/images/商家.svg);
     background-size: cover;
     float: left;
 }
@@ -145,7 +145,7 @@ html,body{
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    background:url(../../components/images/icon006.png);
+    background:url(../../components/images/对话.svg);
     background-size: cover;
     float: left;
 }
@@ -153,15 +153,15 @@ html,body{
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    background:url(../../components/images/icon007.png);
+    background:url(../../components/images/黑科技.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon7{
-    width: 1.85rem;
+    width: 1.80rem;
     height: 1.85rem;
     display: inline-block;
-    background:url(../../components/images/icon008.png);
+    background:url(../../components/images/奖杯.svg);
     background-size: cover;
     float: left;
 }
@@ -169,15 +169,15 @@ html,body{
     width: 1.85rem;
     height: 1.85rem;
     display: inline-block;
-    background:url(../../components/images/icon009.png);
+    background:url(../../components/images/黑科技.svg);
     background-size: cover;
     float: left;
 }
 .highlights-icon9{
-    width: 1.85rem;
+    width: 1.89rem;
     height: 1.65rem;
     display: inline-block;
-    background:url(../../components/images/icon002.png);
+    background:url(../../components/images/皇冠.svg);
     background-size: cover;
     float: left;
 }
