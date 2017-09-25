@@ -14,7 +14,7 @@
 .index-banner{
     width: 16rem;
     height: 23.425rem;
-    background:url(../../components/images/1微站首页1_03.png);
+    background:url(../../components/images/背景_03.png) #0d1428;
     background-size: cover;
     /*position: relative;*/
 }
@@ -427,7 +427,7 @@ html,body{height:100%;overflow:auto}*/
    font-weight: bold
 }
 .highlights-name {
-    margin-top: 20px
+    margin-top: 41px
 }
 .linkbgtg{
     width: 100%;
