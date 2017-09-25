@@ -256,7 +256,8 @@ background:url(../../components/images/vip2.svg);
     height: 1.2rem;
     border: 0.025rem solid #2b67ff;
     border-radius: 0.25rem;
-    margin: 0.8rem auto
+    margin: 0.8rem auto;
+    display: none
 }
 .time1{
     display: inline-block;
@@ -300,7 +301,7 @@ background:url(../../components/images/vip2.svg);
     border-radius:0.4rem;
 }*/
 .agenda-ul-toggle{
-    display: none
+    display: none !important
 }
 .agenda-pople{
     display: flex;
@@ -346,15 +347,15 @@ background:url(../../components/images/vip2.svg);
     /*width: 3.6rem;
     height: 1.2rem;*/
     margin: 1.2rem auto 0rem;
-    line-height: 14px;
+    line-height: 18px;
     text-align: center;
     display: block;
     /*background: #215df7;*/
     color: #fff;
     /*background: url(../../components/images/dh.png);
     background-size: cover;*/
-    width: 63.5px;
-  height:18px;
+    width: 65px;
+  height:20px;
   border-radius: 7.5px;
   border: 2.5px  solid #272b36;
   /*borderRadius: ;*/
@@ -566,4 +567,32 @@ margin-left: 0.4rem
 }
 .content .ant-back-top{
     right: 12px;
+}
+/*logo*/
+.logo-contnet li{
+    float: left;
+    display: inline-block;
+    
+}
+.logo_modu{
+    width:2.432rem;
+    height: 0.6826rem;
+    background: url(../../components/images/目睹视频.svg);
+    background-size: cover;
+    margin-left: 0.58rem;
+}
+.logo_hdb{
+    width:3rem;
+    height: 0.84rem;
+background: url(../../components/images/互动吧.svg);
+    background-size: cover;
+    margin-left: 0.3rem;
+}
+.logo_bghd{
+     margin-left: 0.64rem;
+    width:2.6rem;
+    height: 0.64rem;
+background: url(../../components/images/百格活动.svg);
+    background-size: cover;
+   
 }

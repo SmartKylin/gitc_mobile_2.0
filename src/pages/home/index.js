@@ -222,7 +222,6 @@ export default class Activity extends Component {
                                 <div className="highlights-li-font  pr"> 领袖峰会<div
                                 className="pa-icon pa-icon1"></div></div>
                                 <div className="highlights-li-fonts">触电行业最强大脑
-
                                 </div>
                             </li>
                             <li className="highlights-li ">
@@ -286,7 +285,7 @@ export default class Activity extends Component {
                            <ClassDetails  taxt="222" titleName="主会场4"/>*/}
                         </ul>
                     </div>
-                    <div className="pr big">
+                    <div style={{"display":'none'}} className="pr big">
                         <h3 className="agenda-name">大会议程</h3>
                         <p className="agenda-title">GENERAL ASSEMBLY AGENDA</p>
                         <img src={blink} alt="" className="blue-link"/>
@@ -413,11 +412,27 @@ export default class Activity extends Component {
                                 </div>
                             </div>
                             <div className="logo-contnet">
-                                <p>钻石赞助</p>
+                                <p>官方视频直播平台</p>
+                                <div className="live_video">
+                                    <ul className="clearfix">
+                                        <li className="logo_modu"></li>
+                                    </ul>
+                                </div>
+                                <p>官方票务合作平台</p>
+                                <div className="buy_tickets">
+                                    <ul className="clearfix">
+                                        <li className="logo_hdb"></li>
+                                        <li className="logo_bghd"></li>
+                                    </ul>
+                                </div>
+                                {/*<p>钻石赞助</p>
                                 <img src={LOGO_1} alt=""/>
                                 <p>媒体合作</p>
-                                <img src={LOGO_2} alt=""/>
-                                <Link to={"/sponsorship"} className="btn-all btn-all-bottoms">赞助机会 <div
+
+                                <img src={LOGO_2} alt=""/>*/}
+                                <Link to="./sponsorship" href="" className="btn-all btn-all-bottoms">赞助机会 <div
+                                
+
                                 className="batn-r"></div>  </Link>
                             </div>
                             <div className="bg-b">
@@ -438,11 +453,11 @@ export default class Activity extends Component {
                                         <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
                                         <img src={blink} alt="" className="blue-link"/>
                                     </div>
-                                    <p className="one">赞助大会&展览展示咨询：business@kylinclub.org</p>
-                                    <p>合作单位&合作媒体咨询：gitc@kylinclub.org</p>
-                                    <p>麒麟会会员申请咨询：mrnmber@kylinclub.org</p>
-                                    <p>志愿者招募：staff@kylinclub.org</p>
-                                    <p>致电电话：010-88323888</p>
+                                    <p className="one">赞助大会&展览展示咨:business@kylinclub.org</p>
+                                    <p>合作单位&合作媒体咨询:gitc@kylinclub.org</p>
+                                    <p>麒麟会会员申请咨询:mrnmber@kylinclub.org</p>
+                                    <p>志愿者招募:staff@kylinclub.org</p>
+                                    <p>致电电话:010-88323888</p>
                                     <span className="code"></span>
                                 </div>
                             </div>
