@@ -10,7 +10,8 @@ class Team extends Component {
     this.state = {
       toggle: false,
       positionbtn: true,
-      top:''
+      top:'',
+      taxt:'查看更多'
 
     }
   }
@@ -25,6 +26,9 @@ class Team extends Component {
     })
     // $(e.target).addClass('rosition-fix')
     if (this.state.toggle) {
+      this.setState({
+        taxt:"查看更多"
+      })
       $(window).scrollTop(this.state.top)
      $(e.target).children(":first").removeClass('z')
       $(e.target).removeClass('rosition-fix')
@@ -33,7 +37,9 @@ class Team extends Component {
       this.setState({
 top:$(window).scrollTop()
       })
-      
+      this.setState({
+        taxt:"收起"
+      })
       $(e.target).children(":first").addClass('z')
       // $('body').scrollTop = this.state.top
       
@@ -111,7 +117,7 @@ top:$(window).scrollTop()
           <HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />
           <HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />*/}
       </ul>
-      <div style={{ display: this.state.positionbtn ? 'block' : 'none' }} className="btn-all btn-all-bottoms" onClick={this._heandToggle.bind(this)}>查看更多<div className="batn-t "></div>   </div>
+      <div style={{ display: this.state.positionbtn ? 'block' : 'none' }} className="btn-all btn-all-bottoms" onClick={this._heandToggle.bind(this)}>{this.state.taxt}<div className="batn-t "></div>   </div>
         {/*<div style={{  visibility: this.state.positionbtn ? 'hidden' :  'visible'}} className="btn-all btn-all-bottoms rosition-fix  disnone" onClick={this._heandToggle.bind(this)}>查看更多<div className="batn-t"></div>   </div>*/}
     </div>
     );
