@@ -65,13 +65,13 @@ export default class extends Component {
           changeValue('flag', false)
       }
       if( name =="theme" && e.target.value == ''){
-          message.info("演讲主题不能为空!")
+          message.info("演讲主题不能为空")
           changeValue('flag', false)
       }
-      if( name =="content" && e.target.value == ''){
+     /* if( name =="content" && e.target.value == ''){
           message.info("内容简介不能为空!")
           changeValue('flag', false)
-      }
+      }*/
   }
   render () {
 

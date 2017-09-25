@@ -394,7 +394,7 @@ export default class Activity extends Component {
                                     </ul>
                                 </div>
                             </div>*/}
-                            <div className="btn-all btn-all-bottom "><Link to={'/issue'}>议题提交</Link> <i className="batn-r"></i> </div>
+                            <div className="btn-all btn-all-bottom "><Link to={'/issue'} style={{color:"#fff"}}>议题提交</Link> <i className="batn-r"></i> </div>
                             <div className="guests-popole">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">大会嘉宾</h3>

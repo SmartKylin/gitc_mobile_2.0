@@ -67,6 +67,7 @@ export default class Issus extends Component {
             experience:'',//实战经验
             generality:'',//通用性
             suggest:'',//意见建议,
+            referee:'',//推荐人,
             flag:true,
             posting: false
         }
@@ -149,14 +150,46 @@ export default class Issus extends Component {
                 })
             }
 
+            if( key =="interest" && this.state.interest == ''){
+                message.info("至少选择两个专场")
+                this.setState({
+                    flag:false
+                })
+            }
+
             if( key =="theme" && this.state.theme == ''){
                 message.info("演讲主题不能为空!")
                 this.setState({
                     flag:false
                 })
             }
+
             if( key =="content" && this.state.content == ''){
                 message.info("内容简介不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="innovate" && this.state.innovate == ''){
+                message.info("主题创新不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="hot_topic" && this.state.hot_topic == ''){
+                message.info("话题热度不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="experience" && this.state.experience == ''){
+                message.info("实战经验不能为空!")
+                this.setState({
+                    flag:false
+                })
+            }
+            if( key =="generality" && this.state.generality == ''){
+                message.info("通用性不能为空!")
                 this.setState({
                     flag:false
                 })
@@ -177,13 +210,13 @@ export default class Issus extends Component {
         let {name, company, position, phone, email, addr,
             photonew,summary,speech_experience,interest,
             remark,theme,content,innovate,hot_topic,
-            experience,generality,suggest
+            experience,generality,suggest,referee
         } = this.state;
 
         await this.check({name, company, position, phone, email, addr,
             photonew,summary,speech_experience,interest,
             remark,theme,content,innovate,hot_topic,
-            experience,generality,suggest
+            experience,generality,suggest,referee
         })
 
         var dm_id = 3;
@@ -194,7 +227,7 @@ export default class Issus extends Component {
             })
             issue({name,company, position, phone, email,
                 addr,photo,summary,speech_experience,interest,remark,theme,content,innovate,hot_topic,
-                experience,generality,suggest,dm_id})
+                experience,generality,suggest,referee,dm_id})
                 .then(res => res.json())
                 .then(data => {
                     message.info(data.msg)
@@ -225,25 +258,27 @@ export default class Issus extends Component {
                     </div>
                     <Field title='个人简介'  required={true} textArea={{type:"yes"}} rows="3" placeholder=" (200字即可)" model={summary} changeValue={this.changeValue}  name={'summary'}></Field>
                     <Field title='演讲经验' textArea={{type:"yes"}} rows="5" placeholder=" (在行业会议、论坛等的演讲、主持或荣誉简介)"   model={speech_experience} changeValue={this.changeValue}  name={'speech_experience'}></Field>
-                    <div style={{padding: '13px'}}>
+                    <div className="zhuchangdingwei" style={{padding: '13px'}}>
                         <div style={{fontSize: '13px', borderBottom: '1px solid rgb(227, 227, 227)'}}>
                             <span>选择你感兴趣的专场</span>
                             <span style={{color: "#2f72ff", marginLeft: '5px'}}>(选择1-2个)</span>
                             <Checkgroup name="interest" changeValue={this.changeValue}/>
+                            <div className="dingweixing">*</div>
                         </div>
                     </div>
-                    <Field title='备注'textArea={{type:"yes"}} rows="1" changeValue={this.changeValue}  name={'remark'}></Field>
+                    <Field title='备注  'changeValue={this.changeValue}  name={'remark'}></Field>
                     <Field title='演讲主题' required={true} textArea={{type:"yes"}} rows="2" placeholder=" (请确保该主题未在其他公开场合分享过)" changeValue={this.changeValue}  name={'theme'}></Field>
                     <Field title='内容简介' required={true} textArea={{type:"yes"}} rows="5"placeholder=" (用于演讲内容审核，200字左右即可)" changeValue={this.changeValue}  name={'content'}></Field>
-                    <div style={{padding: '10px 13px'}}>
-                        <div style={{borderBottom: '1px solid rgb(227, 227, 227)', padding: '10px 0'}}>
+                    <div className="zhutudingwei" style={{padding: '10px 0px 14 10px'}}>
+                        <div style={{borderBottom: '1px solid rgb(227, 227, 227)', margin: '0 15px',padding:'10px 0px'}} >
                             <Star title="主题创新" changeValue={this.changeValue} name="innovate"/>
                             <Star title="话题热度" changeValue={this.changeValue} name="hot_topic"/>
                             <Star title="实战经验" changeValue={this.changeValue} name="experience"/>
                             <Star title="内容通用性" changeValue={this.changeValue} name="generality"/>
                         </div>
+                        <div className="zhutidingweixing">*</div>
                     </div>
-                    <Field title='推荐人 :' changeValue={this.changeValue}  name={'content'}></Field>
+                    <Field title='推荐人 :' changeValue={this.changeValue}  name={'referee'}></Field>
                     <Field title='意见建议 :' textArea={{type:"yes"}} rows="5" changeValue={this.changeValue}  name={'suggest'}></Field>
 
 
