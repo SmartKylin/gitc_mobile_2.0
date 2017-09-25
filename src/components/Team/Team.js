@@ -30,7 +30,7 @@ class Team extends Component {
   
   render() {
     const {name, data, basedata} = this.props;
-    console.log(data, 'team');
+    // console.log(data, 'team');
     return (
     <div>
       <span className="title-btn "> {name}	</span>

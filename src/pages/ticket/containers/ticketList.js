@@ -21,7 +21,8 @@ export default class extends Component {
                   <span style={{width: '70px', display: 'inline-block'}}>{item.name}</span>
                   <span>{item.bt__name}</span>
                 </div>
-                <div className={'to--detail'}/>
+                {/*<div className={'to--detail'}/>*/}
+                <i className="iconfont">&#xe660;</i>
               </Link>
             )
           ) : (

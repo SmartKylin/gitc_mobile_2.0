@@ -63,7 +63,7 @@ class HeadPortrait extends Component {
       // 是否为演讲嘉宾栏
       speech
     } = this.props
-    console.log(data, 'headePrtrait');
+    // console.log(data, 'headePrtrait');
     return (
     <div className="headportrait-content" style={style} onClick={this._handleOnClick}>
       <img src={this.state.img} alt="" className="headportrait-img"/>
