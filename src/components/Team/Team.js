@@ -29,7 +29,7 @@ class Team extends Component {
       $(e.target).removeClass('rosition-fix')
 
     } else {
-      $('body').scrollTop = this.state.top
+      // $('body').scrollTop = this.state.top
       $(e.target).children(":first").removeClass('rotate')
       //  $(e.target).addClass('rosition-fix');
       $('.rosition-fix').css('display', 'none')
@@ -38,8 +38,8 @@ class Team extends Component {
       let that = e.target;
       let _this = this;
       document.onscroll = function () {
-        console.log(parseInt($(that).next().offset().top), 'a');
-        console.log(parseInt($(that).prev().offset().top), 'c');
+        // console.log(parseInt($(that).next().offset().top), 'a');
+        // console.log(parseInt($(that).prev().offset().top), 'c');
         let a = $(that).next().offset().top;
         let c = $(that).prev().offset().top
         let c_height = $(that).prev().height()
