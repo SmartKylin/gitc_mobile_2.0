@@ -387,7 +387,7 @@ handleToggle = key => {
                                     </ul>
                                 </div>
                             </div>*/}
-                            <a href="javascript:;" className="btn-all btn-all-bottom ">议题提交 <i className="batn-r"></i> </a>
+                            <div className="btn-all btn-all-bottom "><Link to={'/issue'}>议题提交</Link> <i className="batn-r"></i> </div>
                             <div className="guests-popole">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">大会嘉宾</h3>

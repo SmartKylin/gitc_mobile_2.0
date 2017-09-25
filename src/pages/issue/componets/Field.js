@@ -60,6 +60,10 @@ export default class extends Component {
           message.info("请上传照片")
           changeValue('flag', false)
       }
+      if( name =="summary" && e.target.value == ''){
+          message.info("个人简介不能为空")
+          changeValue('flag', false)
+      }
       if( name =="theme" && e.target.value == ''){
           message.info("演讲主题不能为空!")
           changeValue('flag', false)
@@ -73,7 +77,7 @@ export default class extends Component {
 
     return (
       <div style={FieldWrap}>
-            <div>
+            <div className="weizhidingwei">
                 <span>{this.props.title}<span style={{color:"#ccc", fontSize: '13px'}}>{this.props.placeholder}</span></span>
                 <i className={classNames({'required--star weizhi': this.props.required})}/><i className={classNames({'required--star weizhi': this.props.required})}/>
                 {this.props.textArea ? null : <input type={this.props.type || 'text'} style={inputStyle} onInput={ (e) => this.changeValue(e)} onBlur={this.validate}/>}
