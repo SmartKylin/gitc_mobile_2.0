@@ -66,7 +66,7 @@ class HeadPortrait extends Component {
       position
     } = this.props
     return (
-    <div className="headportrait-content" style={style} onClick={this._handleOnClick}>
+    <div className="headportrait-content" style={style} onClick={this.props.speech ? this._handleOnClick : null}>
       <img src={this.state.img} alt="" className="headportrait-img"/>
       <div className="headportrait-font">
         <div className="headportrait-font-title">{name}</div>
@@ -77,14 +77,14 @@ class HeadPortrait extends Component {
            onTouchStart={this.mounseup.bind(this)}
            onTouchEnd={this.unmounseup.bind(this)}
       >
-        <GuestDetailPop
-          _handleOffClick={this._handleOffClick}
-          data={data}
-          speech={this.props.speech}
-          openPop={this.props.openPop}
-          closePop={this.props.closePop}
-          setLoginCb={this.props.setLoginCb}
-        />
+          {this.props.speech ? <GuestDetailPop
+              _handleOffClick={this._handleOffClick}
+              data={data}
+              speech={this.props.speech}
+              openPop={this.props.openPop}
+              closePop={this.props.closePop}
+              setLoginCb={this.props.setLoginCb}
+          /> : null }
       </div>
     
     </div>
