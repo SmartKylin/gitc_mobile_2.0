@@ -406,12 +406,26 @@ handleToggle = key => {
                                 </div>
                             </div>
                             <div className="logo-contnet">
-                                <p>钻石赞助</p>
+                                <p>官方视频直播平台</p>
+                                <div className="live_video">
+                                    <ul className="clearfix">
+                                        <li className="logo_modu"></li>
+                                    </ul>
+                                </div>
+                                <p>官方票务合作平台</p>
+                                <div className="buy_tickets">
+                                    <ul className="clearfix">
+                                        <li className="logo_hdb"></li>
+                                        <li className="logo_bghd"></li>
+                                    </ul>
+                                </div>
+                                {/*<p>钻石赞助</p>
                                 <img src={LOGO_1} alt=""/>
                                 <p>媒体合作</p>
-                                <img src={LOGO_2} alt=""/>
-                                <a href="#" className="btn-all btn-all-bottoms">赞助机会 <div
-                                className="batn-r"></div>  </a>
+                                <img src={LOGO_2} alt=""/>*/}
+                                <Link to="./sponsorship" href="" className="btn-all btn-all-bottoms">赞助机会 <div
+                                
+                                className="batn-r"></div>  </Link>
                             </div>
                             <div className="bg-b">
                                 <div className="maps">

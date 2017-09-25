@@ -567,3 +567,31 @@ margin-left: 0.4rem
 .content .ant-back-top{
     right: 12px;
 }
+/*logo*/
+.logo-contnet li{
+    float: left;
+    display: inline-block;
+    
+}
+.logo_modu{
+    width:2.432rem;
+    height: 0.6826rem;
+    background: url(../../components/images/目睹视频.svg);
+    background-size: cover;
+    margin-left: 0.58rem;
+}
+.logo_hdb{
+    width:3rem;
+    height: 0.84rem;
+background: url(../../components/images/互动吧.svg);
+    background-size: cover;
+    margin-left: 0.3rem;
+}
+.logo_bghd{
+     margin-left: 0.64rem;
+    width:2.6rem;
+    height: 0.64rem;
+background: url(../../components/images/百格活动.svg);
+    background-size: cover;
+   
+}
