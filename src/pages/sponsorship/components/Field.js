@@ -10,7 +10,8 @@ let FieldWrap = {
   display: 'flex',
   flexDirection: 'column',
   borderBottom: '1px solid #e3e3e3',
-  flex: 1
+  flex: 1,
+  position: 'relative'
 }
 
 let inputStyle = {

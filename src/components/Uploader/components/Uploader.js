@@ -2,7 +2,7 @@
  * Created by Aus on 2017/7/4.
  */
 import React from 'react'
-import classNames from 'classnames'
+// import classNames from 'classnames'
 import Touchable from 'rc-touchable'
 import Figure from './Figure'
 import Toast from '../../Toast/index'
