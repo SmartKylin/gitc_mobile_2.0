@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {message} from 'antd'
+import './index.scss'
 
 let FieldWrap = {
   margin: '0 13px',
@@ -64,7 +65,7 @@ export default class extends Component {
     return (
       <div style={FieldWrap}>
         <div>
-          <span>{this.props.title}：</span>
+          <span className="field--title">{this.props.title}：</span>
           {this.props.textArea ? null : <input value={this.state.value} type={this.props.type || 'text'} style={inputStyle} onInput={ (e) => this.changeValue(e)} onBlur={this.inputValidate}/>}
         </div>
         {this.props.textArea ? <textarea name="" id="" cols="30" rows="8" maxLength={200} style={{resize: 'none'}} onInput={ (e) => this.changeValue(e)} value={this.state.value}></textarea> : null}
