@@ -3,3 +3,21 @@
   margin: 0 13px;
   border-bottom: 1px solid rgb(227, 227, 227);
 }
+.zhuchangdingwei{
+  position: relative;
+  .dingweixing{
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    color: red;
+  }
+}
+.zhutudingwei{
+  position: relative;
+  .zhutidingweixing{
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    color: red;
+  }
+}
