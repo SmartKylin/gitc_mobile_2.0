@@ -18,7 +18,7 @@ export default class extends Component {
                   <img className="avatar--icon" src={avatarIcon} alt=""/>
                 </span>
                 <span style={{width: '70px', }}>{item.name}</span>
-                <span>{item.ticket}</span>
+                <span>{item.bt__name}</span>
               </Link>
             )
           ) : (
