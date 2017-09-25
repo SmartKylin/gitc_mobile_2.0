@@ -42,6 +42,7 @@ export default class GuestDetailPop extends Component {
       linkColor: false
     })
   }
+  
   mounse2(e) {
     this.setState({
       linkColor2: false
@@ -172,64 +173,72 @@ export default class GuestDetailPop extends Component {
   render() {
     const {data} = this.props;
     return (
-      <div className="windowBox">
-        <div className="windowBox-header">
-          {/*<img src="" alt=""  className="header-img"/>*/}
-          <img src={(data && data.pic) || defaultAvatar} className="header-img" alt=""/>
-          <div className="windowBox-btn-color" onClick={this._handleOffClick}>
-            <div className="close-btn"/>
-          </div>
-        
+    <div className="windowBox">
+      <div className="windowBox-header">
+        {/*<img src="" alt=""  className="header-img"/>*/}
+        <img src={(data && data.pic) || defaultAvatar} className="header-img" alt=""/>
+        <div className="windowBox-btn-color" onClick={this._handleOffClick}>
+          <div className="close-btn"/>
         </div>
-        <div className="windowBox-name">{data.name}</div>
-        <div className="windowBox-work">{data.company} {data.position}</div>
-        { this.props.speech ? <div>
-          <div className="windowBox-date">
-            <div className="windowBox-date-l">
-              <span className="windowBox-date-l-icon"></span>
-              <span>{data.meet}</span>
-              <span>{data.meetaddr}</span>
-            </div>
-            <div className="windowBox-date-r">
-              <span className="windowBox-date-r-icon"></span>
-              <span>{this.state.day}</span>
-              <span>{data.stime}</span>
-            </div>
-          </div>
-          <div className="win-l">
-            <div className="windowBox-title">演讲主题:{data.stheme}</div>
-          </div>
-  
-          <p className="windowBox-text" onTouchStart={this.mounse}
-             onTouchEnd={this.mounout} style={{borderColor: this.state.linkColor ? "" : "#ccc"}}>主题介绍:{data.sintroduce}
-          </p>
-        </div> : null}
-        <p className="windowBox-text" onTouchStart={this.mounse2}
-           onTouchEnd={this.mounout2} style={{borderColor: this.state.linkColor2 ? "" : "#ccc"}}>个人简介:{data.summary}</p>
-        {
-          this.props.speech ?
-          <div className="windowBox-icon-content">
-            <div className="windowBox-icon">
-              <div className="windowBox-iconlink   windowBox-icon-mln" onClick={this._collectGuest}>
-                <div
-                className={'windowBox-iconlink-l1 ' + (this.state.guestStatus || data.collect ? 'collected' : '')}/>
-              </div>
-              <div style={{width: '0.8rem'}}/>
-              <div className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this._collectDocument}>
-                <div
-                className={"windowBox-iconlink-l2 " + (this.state.fileStatus || data.file_collect ? 'collected' : '')}/>
-              </div>
-              <div style={{width: '0.8rem'}}/>
-              <div className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}>
-                <a className="windowBox-iconlink-l3" href={data.files__url}/>
-              </div>
-            </div>
-            <CollectedModal closeModal={this.closeModal} display={this.state.collectModelVisible}/>
-          </div> :
-          null
-        }
-  
+      
       </div>
+      <div className="windowBox-name">{data.name}</div>
+      <div className="windowBox-work">{data.company} {data.position}</div>
+      
+      {
+        this.props.speech ? <div className="windowBox-date">
+        <div className="windowBox-date-l">
+          <span className="windowBox-date-l-icon"></span>
+          <span>{data.meet || '会议地点'}</span>
+          <span>{data.meetaddr || '国家会议中心'}</span>
+        </div>
+        <div className="windowBox-date-r">
+          <span className="windowBox-date-r-icon"></span>
+          <span>{this.state.day || '11月23，11月24'}</span>
+          <span>{data.stime || '9点-10点'}</span>
+        </div>
+        </div> : null
+      }
+      {
+        this.props.speech ?
+        <div className="win-l">
+          <div className="windowBox-title">演讲主题:{data.stheme}</div>
+        </div> : null
+      }
+      
+      {
+        this.props.speech ?
+        <p className="windowBox-text" onTouchStart={this.mounse}
+           onTouchEnd={this.mounout} style={{borderColor: this.state.linkColor ? "" : "#ccc"}}>主题介绍:{data.sintroduce}
+        </p> : null
+      }
+      
+      <p className="windowBox-text" onTouchStart={this.mounse2}
+         onTouchEnd={this.mounout2} style={{borderColor: this.state.linkColor2 ? "" : "#ccc"}}>个人简介:{data.summary}</p>
+      {
+        this.props.speech ?
+        <div className="windowBox-icon-content">
+          <div className="windowBox-icon">
+            <div className="windowBox-iconlink   windowBox-icon-mln" onClick={this._collectGuest}>
+              <div
+              className={'windowBox-iconlink-l1 ' + (this.state.guestStatus || data.collect ? 'collected' : '')}/>
+            </div>
+            <div style={{width: '0.8rem'}}/>
+            <div className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this._collectDocument}>
+              <div
+              className={"windowBox-iconlink-l2 " + (this.state.fileStatus || data.file_collect ? 'collected' : '')}/>
+            </div>
+            <div style={{width: '0.8rem'}}/>
+            <div className="windowBox-iconlink  windowBox-icon-mlnr" onClick={this.toggleLink3.bind(this)}>
+              <a className="windowBox-iconlink-l3" href={data.files__url}/>
+            </div>
+          </div>
+          <CollectedModal closeModal={this.closeModal} display={this.state.collectModelVisible}/>
+        </div> :
+        null
+      }
+    
+    </div>
     );
   }
 }
