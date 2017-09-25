@@ -410,8 +410,8 @@ handleToggle = key => {
                                 <img src={LOGO_1} alt=""/>
                                 <p>媒体合作</p>
                                 <img src={LOGO_2} alt=""/>
-                                <a href="#" className="btn-all btn-all-bottoms">赞助机会 <div
-                                className="batn-r"></div>  </a>
+                                <Link to={"/sponsorship"} className="btn-all btn-all-bottoms">赞助机会 <div
+                                className="batn-r"></div>  </Link>
                             </div>
                             <div className="bg-b">
                                 <div className="maps">
