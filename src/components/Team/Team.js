@@ -25,10 +25,15 @@ class Team extends Component {
     })
     // $(e.target).addClass('rosition-fix')
     if (this.state.toggle) {
+      $(window).scrollTop(this.state.top)
      $(e.target).children(":first").removeClass('z')
       $(e.target).removeClass('rosition-fix')
 
     } else {
+      this.setState({
+top:$(window).scrollTop()
+      })
+      
       $(e.target).children(":first").addClass('z')
       // $('body').scrollTop = this.state.top
       
