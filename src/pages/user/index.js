@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import ChildBackground from 'containers/child_container'
 import UserMenu from './container/usermenu/userMenu'
 import storage from '../../helper/storage'
-import {getDocumentList, getGuestList} from "../../services/collect";
+import {getGuestList} from "../../services/collect";
 import {TOKEN} from "../../helper/login";
 import './index.scss'
 

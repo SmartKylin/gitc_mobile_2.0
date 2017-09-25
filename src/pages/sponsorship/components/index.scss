@@ -1,0 +1,9 @@
+.field--title:before {
+  content: '*';
+  font-size: 18px;
+  color: red;
+  height: 100%;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}

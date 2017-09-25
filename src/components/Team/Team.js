@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './Team.scss';
 import $ from 'jquery';
 import HeadPortrait from '../HeadPortrait/HeadPortrait'
+
 class Team extends Component {
   constructor(props) {
     super(props);
@@ -10,13 +11,15 @@ class Team extends Component {
       toggle: false,
       positionbtn: true,
       top:''
+
     }
   }
+  
   static propTypes = {
     type: PropTypes.string,
   };
   _heandToggle(e) {
-    console.log($(document).scrollTop(),'lllllllllllll')
+    // console.log($(document).scrollTop(),'lllllllllllll')
     this.setState({
       toggle: !this.state.toggle,
     })
@@ -54,32 +57,57 @@ class Team extends Component {
         }
       }
     }
+
   }
+  
   render() {
-    const { name, data, basedata } = this.props;
+
+
+    const {name, data, basedata} = this.props;
+    // console.log(data, 'team');
     return (
-      <div>
-        <span className="title-btn "> {name}	</span>
-        <ul className="guests-popole-ul clearfix">
-          {
-            this.props.data.length && this.props.basedata.length && this.state.toggle ?
-              this.props.data.map((data, index) => (
-                <HeadPortrait name={data.name} show={data.position} pics={data.pic} style={{ margin: '15px', float: 'left' }} />
-              )) :
-              this.props.basedata.map((data, index) => (
-                <HeadPortrait name={data.name} show={data.position} pics={data.pic} style={{ margin: '15px', float: 'left' }} />
-              ))
-          }
-          {/*{this.props.basedata ? : ''}*/}
-          {/*<HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />
+    <div>
+      <span className="title-btn "> {name}	</span>
+      <ul className="guests-popole-ul clearfix">
+        {
+          this.props.data.length && this.props.basedata.length && this.state.toggle ?
+          this.props.data.map((data, index) => (
+          <HeadPortrait key={index} name={data.name}
+                        show={data.position}
+                        pics={data.pic}
+                        style={{margin: '15px', float: 'left'}}
+                        data={data}
+                        speech={this.props.name === '演讲嘉宾'}
+                        openPop={this.props.openPop}
+                        closePop={this.props.closePop}
+                        setLoginCb={this.props.setLoginCb}
+          />
+          )) :
+          this.props.basedata.map((data, index) => (
+          <HeadPortrait key={index}
+                        name={data.name}
+                        show={data.position}
+                        pics={data.pic}
+                        style={{margin: '15px', float: 'left'}}
+                        data={data}
+                        speech={this.props.name === '演讲嘉宾'}
+                        openPop={this.props.openPop}
+                        closePop={this.props.closePop}
+                        setLoginCb={this.props.setLoginCb}
+          />
+          ))
+        }
+        
+        
+        {/*{this.props.basedata ? : ''}*/}
+        {/*<HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />
           <HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />
           <HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />
           <HeadPortrait name="lp" show="携程网携程网携程网" style={{ margin: '15px', float: 'left' }} />*/}
-        </ul>
-        <div style={{ display: this.state.positionbtn ? 'block' : 'none' }} className="btn-all btn-all-bottoms" onClick={this._heandToggle.bind(this)}>查看更多<div className="batn-t"></div>   </div>
+      </ul>
+      <div style={{ display: this.state.positionbtn ? 'block' : 'none' }} className="btn-all btn-all-bottoms" onClick={this._heandToggle.bind(this)}>查看更多<div className="batn-t"></div>   </div>
         <div style={{  visibility: this.state.positionbtn ? 'hidden' :  'visible'}} className="btn-all btn-all-bottoms rosition-fix  disnone" onClick={this._heandToggle.bind(this)}>查看更多<div className="batn-t"></div>   </div>
-      </div>
-
+    </div>
     );
   }
 }
