@@ -96,7 +96,7 @@ class AgendaPople extends Component {
 	
 	
 	componentWillMount () {
-		document.title = "大会议程";
+		// document.title = "大会议程";
 	}
 	componentDidMount(){
 		let a=this.props.data.sdata;
