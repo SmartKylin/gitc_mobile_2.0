@@ -21,9 +21,13 @@ export default class extends Component {
        style={{background: '#fff', marginTop: '35px', borderRadius: '5px',paddingBottom:'3px'}}
        >
          <SubMenu key="sub1" title={<span style={subMenuStyle}><Icon type="file-text" style={{color: '#336cfa', fontSize: '17px'}}/><span>我的收藏</span></span>}>
-           <Menu.Item>
-             <div><div className='collectionItemtime'>11月23日</div><div className='xian'></div></div>
-           </Menu.Item>
+           {
+             this.props.userData && this.props.userData.mycollect && this.props.userData.mycollect[0].length ?
+             <Menu.Item>
+               <div><div className='collectionItemtime'>11月23日</div><div className='xian'></div></div>
+             </Menu.Item> : null
+           }
+         
            {
              this.props.userData && this.props.userData.mycollect && this.props.userData.mycollect[0].data && this.props.userData.mycollect[0].data.map((item, index) => (
              <Menu.Item key={index}>
