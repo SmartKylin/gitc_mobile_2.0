@@ -25,22 +25,25 @@ let btnStyle = {
   marginTop: '30px',
   borderRadius: '15px'
 }
+
+
+const initialState = {
+  name: '',
+  company: '',
+  phone: '',
+  position: '',
+  email: '',
+  intention: '',
+  edit: '',
+  // 表单是否全部验证通过
+  validated: true,
+  // 是否正在提交数据
+  isPosting: false
+}
 export default class extends Component {
   constructor () {
     super()
-    this.state = {
-      name: '',
-      company: '',
-      phone: '',
-      position: '',
-      email: '',
-      intention: '',
-      edit: '',
-      // 表单是否全部验证通过
-      validated: true,
-      // 是否正在提交数据
-      isPosting: false
-    }
+    this.state = initialState
   }
   // 改变input值
   changeValue = (name, value) => {
@@ -67,9 +70,7 @@ export default class extends Component {
     .then(res => res.json())
     .then(data => {
       message.info(data.msg)
-      this.setState({
-        isPosting: false
-      })
+      this.setState(initialState)
     })
   }
   render() {
