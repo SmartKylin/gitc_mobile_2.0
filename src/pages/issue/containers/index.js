@@ -142,6 +142,13 @@ export default class Issus extends Component {
                     flag:false
                 })
             }
+            if( key =="summary" && this.state.summary == ''){
+                message.info("个人简介不能为空")
+                this.setState({
+                    flag:false
+                })
+            }
+
             if( key =="theme" && this.state.theme == ''){
                 message.info("演讲主题不能为空!")
                 this.setState({
@@ -216,7 +223,7 @@ export default class Issus extends Component {
                     <div className="shangchang">
                         <UploaderPage changeValue={this.changeValue} name="photonew"/>
                     </div>
-                    <Field title='简介'    textArea={{type:"yes"}} rows="3" placeholder=" (200字即可)" model={summary} changeValue={this.changeValue}  name={'summary'}></Field>
+                    <Field title='个人简介'  required={true} textArea={{type:"yes"}} rows="3" placeholder=" (200字即可)" model={summary} changeValue={this.changeValue}  name={'summary'}></Field>
                     <Field title='演讲经验' textArea={{type:"yes"}} rows="5" placeholder=" (在行业会议、论坛等的演讲、主持或荣誉简介)"   model={speech_experience} changeValue={this.changeValue}  name={'speech_experience'}></Field>
                     <div style={{padding: '13px'}}>
                         <div style={{fontSize: '13px', borderBottom: '1px solid rgb(227, 227, 227)'}}>
