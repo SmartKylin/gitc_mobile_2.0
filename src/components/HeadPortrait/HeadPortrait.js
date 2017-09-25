@@ -79,7 +79,7 @@ class HeadPortrait extends Component {
         <GuestDetailPop
           _handleOffClick={this._handleOffClick}
           data={data}
-          speech={true}
+          speech={this.props.speech}
           openPop={this.props.openPop}
           closePop={this.props.closePop}
           setLoginCb={this.props.setLoginCb}

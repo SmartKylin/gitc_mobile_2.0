@@ -171,7 +171,7 @@ export default class GuestDetailPop extends Component {
   }
   
   render() {
-    const {data} = this.props;
+    const {data, speech} = this.props;
     return (
     <div className="windowBox">
       <div className="windowBox-header">
@@ -186,7 +186,7 @@ export default class GuestDetailPop extends Component {
       <div className="windowBox-work">{data.company} {data.position}</div>
       
       {
-        this.props.speech ? <div className="windowBox-date">
+        speech ? <div className="windowBox-date">
         <div className="windowBox-date-l">
           <span className="windowBox-date-l-icon"></span>
           <span>{data.meet || '会议地点'}</span>
@@ -200,14 +200,14 @@ export default class GuestDetailPop extends Component {
         </div> : null
       }
       {
-        this.props.speech ?
+        speech ?
         <div className="win-l">
           <div className="windowBox-title">演讲主题:{data.stheme}</div>
         </div> : null
       }
       
       {
-        this.props.speech ?
+        speech ?
         <p className="windowBox-text" onTouchStart={this.mounse}
            onTouchEnd={this.mounout} style={{borderColor: this.state.linkColor ? "" : "#ccc"}}>主题介绍:{data.sintroduce}
         </p> : null
@@ -216,7 +216,7 @@ export default class GuestDetailPop extends Component {
       <p className="windowBox-text" onTouchStart={this.mounse2}
          onTouchEnd={this.mounout2} style={{borderColor: this.state.linkColor2 ? "" : "#ccc"}}>个人简介:{data.summary}</p>
       {
-        this.props.speech ?
+        speech ?
         <div className="windowBox-icon-content">
           <div className="windowBox-icon">
             <div className="windowBox-iconlink   windowBox-icon-mln" onClick={this._collectGuest}>
