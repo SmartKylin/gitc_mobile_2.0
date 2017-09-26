@@ -20,17 +20,18 @@ import './home.css';
 import {pople} from "../../services/pople";
 import {pagepople} from "../../services/pagepople";
 import storage from '../../helper/storage'
-
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
 // const HEADER = require('components/images/logo2.jpg')
 // const LOGO_01 = require('components/images/01.png')
 const MAP = require('components/images/map.png')
-const blink = require('components/images/b_link.png')
+const blink = require('components/images/icon装饰物切图_28.png')
 export default class Activity extends Component {
   
   constructor(...args) {
     super(...args);
+      this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.onFetch = this.onFetch.bind(this)
     this.state = {
       data: null,
