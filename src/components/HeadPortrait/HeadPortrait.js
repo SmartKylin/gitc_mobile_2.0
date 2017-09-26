@@ -30,27 +30,33 @@ class HeadPortrait extends Component {
     type: PropTypes.string,
   };
   
-  mounseup(e) {
+  stopBgScroll() {
+
     $('html').css('height', '100%')
     $('body').css('height', '100%')
     $('body').css('overflow', 'hidden')
     $('html').css('overflow', 'hidden')
   }
   
-  unmounseup(e) {
-    $('body').css('overflow', 'auto')
+  recoveryBgScroll() {
+    $('html').css('overflow', 'visible').scrollTop(this.top)
+    $('body').css('overflow', 'visible').scrollTop(this.top)
   }
   
-  _handleOnClick = () => {
-    this.setState({
+  _handleOnClick = async () => {
+    await this.setState({
       guestPopDisplay: true
     })
+    console.log($('body').scrollTop())
+    this.top = $('body').scrollTop()
+    this.stopBgScroll()
   }
-  _handleOffClick = (e) => {
+  _handleOffClick = async (e) => {
     e.stopPropagation()
-    this.setState({
+    await this.setState({
       guestPopDisplay: false
     })
+    this.recoveryBgScroll()
   }
   
   render() {
@@ -70,13 +76,10 @@ class HeadPortrait extends Component {
       <img src={this.state.img} alt="" className="headportrait-img"/>
       <div className="headportrait-font">
         <div className="headportrait-font-title">{name}</div>
-        <div>{data.company}{data.position}</div>
+        <div>{data.company} {data.position}</div>
       </div>
       
-      <div className="windowPop" style={{display: this.state.guestPopDisplay ? "block" : 'none'}}
-           onTouchStart={this.mounseup.bind(this)}
-           onTouchEnd={this.unmounseup.bind(this)}
-      >
+      <div className="windowPop" style={{display: this.state.guestPopDisplay ? "block" : 'none'}}>
           {this.props.speech ? <GuestDetailPop
               _handleOffClick={this._handleOffClick}
               data={data}

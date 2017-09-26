@@ -44,6 +44,7 @@ const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
 const {getIP} = require('./utils')
 
 const HOST = getIP() || process.env.HOST || '0.0.0.0';
+// const HOST =process.env.HOST || '0.0.0.0';
 // We attempt to use the default port but if it is busy, we offer the user to
 // run on a different port. `detect()` Promise resolves to the next free port.
 choosePort(HOST, DEFAULT_PORT)

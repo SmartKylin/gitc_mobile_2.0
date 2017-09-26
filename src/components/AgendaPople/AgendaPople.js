@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import $ from 'jquery'
 import './AgendaPople.scss';
 import storage from '../../helper/storage'
-import {TOKEN} from "../../helper/login";
+import { TOKEN } from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
-import {message} from 'antd'
+import { message } from 'antd'
 
-import {collectDocument, collectGuest} from "../../services/collect";
+import { collectDocument, collectGuest } from "../../services/collect";
 
 class AgendaPople extends Component {
 	constructor(props) {
@@ -23,7 +23,7 @@ class AgendaPople extends Component {
 			link2: true,
 			link3: true,
 			link3: true*/
-			day:''
+			day: ''
 		}
 		this._handleClick = this._handleClick.bind(this)
 		this._handleOffClick = this._handleOffClick.bind(this)
@@ -69,13 +69,13 @@ class AgendaPople extends Component {
 		})
 	}
 	mounseup(e) {
-		$('html').css('height', '100%')
-		$('body').css('height', '100%')
-		$('body').css('overflow', 'hidden')
-		$('html').css('overflow', 'hidden')
+		// $('html').css('height', '100%')
+		// $('body').css('height', '100%')
+		// $('body').css('overflow', 'hidden')
+		// $('html').css('overflow', 'hidden')
 	}
 	unmounseup(e) {
-		$('body').css('overflow', 'auto')
+		// $('body').css('overflow', 'auto')
 	}
 	/*toggleLink1(e) {
 		this.setState({
@@ -88,114 +88,114 @@ class AgendaPople extends Component {
 		})
 	}*/
 	toggleLink3(e) {
-		let {files__url} = this.props.data
+		let { files__url } = this.props.data
 		if (!files__url) {
 			message.info('没有相应文档~')
 		}
 	}
-	
-	
-	componentWillMount () {
+
+
+	componentWillMount() {
 		// document.title = "大会议程";
 	}
-	componentDidMount(){
-		let a=this.props.data.sdata;
-		let b=a.substring(5) 
-		let c=b.replace('-', '月');
+	componentDidMount() {
+		let a = this.props.data.sdata;
+		let b = a.substring(5)
+		let c = b.replace('-', '月');
 		this.setState({
-			day:c+='日'
+			day: c += '日'
 		})
 	}
 	// 收藏嘉宾
 	_collectGuest = () => {
-    let {id, collect} = this.props.data
-    let {openPop, setLoginCb, closePop} = this.props
-    let phone = storage.get(storage.PHONE_KEY)
-    let cb = this._collectGuest
+		let { id, collect } = this.props.data
+		let { openPop, setLoginCb, closePop } = this.props
+		let phone = storage.get(storage.PHONE_KEY)
+		let cb = this._collectGuest
 		if (collect || this.state.guestStatus) {
-    	return
+			return
 		}
-    const failure = (msg) => {
-    	openPop()
-    	setLoginCb(cb)
+		const failure = (msg) => {
+			openPop()
+			setLoginCb(cb)
 			message.info(msg)
-  	}
-  	
-  	if(!phone) {
-      openPop()
-      setLoginCb(cb)
-    	return
 		}
-		
-  	const success = (data) => {
-      if (data.status) {
-        // closePop()
-        this.setState({
-          // 打开收藏成功模态框
-          collectModelVisible: 'block',
+
+		if (!phone) {
+			openPop()
+			setLoginCb(cb)
+			return
+		}
+
+		const success = (data) => {
+			if (data.status) {
+				// closePop()
+				this.setState({
+					// 打开收藏成功模态框
+					collectModelVisible: 'block',
 					guestStatus: true,
-        })
-      } else {
-        failure(data.msg)
-      }
+				})
+			} else {
+				failure(data.msg)
+			}
 		}
-    collectGuest({phone, person: id, token: TOKEN})
-    .then(res => res && res.json())
-    .then(success)
+		collectGuest({ phone, person: id, token: TOKEN })
+			.then(res => res && res.json())
+			.then(success)
 	}
-	
+
 	// 收藏文档
 	_collectDocument = () => {
-    let {files__id, file_collect} = this.props.data
-    let {openPop, setLoginCb} = this.props
-    let phone = storage.get(storage.PHONE_KEY)
-    let cb = this._collectDocument
-    
+		let { files__id, file_collect } = this.props.data
+		let { openPop, setLoginCb } = this.props
+		let phone = storage.get(storage.PHONE_KEY)
+		let cb = this._collectDocument
+
 		if (this.state.documentStatus || file_collect) {
-    	return
+			return
 		}
-    const failure = (msg) => {
-      openPop()
-      setLoginCb(cb)
-      message.info(msg)
-    }
-    
-    if(!phone) {
-      openPop()
-      setLoginCb(cb)
-      return
-    }
-    
-    const success = (data) => {
-      if (data.status) {
-        // closePop()
-        this.setState({
-          // 打开收藏成功模态框
-          collectModelVisible: 'block',
-          documentStatus: true,
-        })
-      } else {
-        failure(data.msg)
-      }
-    }
-    
-    if (!files__id) {
-      message.info('没有相应文档~')
-    }
-    collectDocument({phone, file: files__id, token: TOKEN})
-    .then(res => res && res.json())
-    .then(success)
+		const failure = (msg) => {
+			openPop()
+			setLoginCb(cb)
+			message.info(msg)
+		}
+
+		if (!phone) {
+			openPop()
+			setLoginCb(cb)
+			return
+		}
+
+		const success = (data) => {
+			if (data.status) {
+				// closePop()
+				this.setState({
+					// 打开收藏成功模态框
+					collectModelVisible: 'block',
+					documentStatus: true,
+				})
+			} else {
+				failure(data.msg)
+			}
+		}
+
+		if (!files__id) {
+			message.info('没有相应文档~')
+		}
+		collectDocument({ phone, file: files__id, token: TOKEN })
+			.then(res => res && res.json())
+			.then(success)
 	}
-	
-  // 关闭收藏成功的模态框
-  closeModal = () => {
-    this.setState({
-      collectModelVisible: 'none'
-    })
-  }
+
+	// 关闭收藏成功的模态框
+	closeModal = () => {
+		this.setState({
+			collectModelVisible: 'none'
+		})
+	}
 	render() {
 		const { data } = this.props;
-    return (
+		return (
 			<li className="popele-box" id="a" onClick={this._handleClick}>
 
 				<div className="popele-box-left">
@@ -231,7 +231,7 @@ class AgendaPople extends Component {
 					<div className="windowBox">
 						<div className="windowBox-header">
 							{/*<img src="" alt=""  className="header-img"/>*/}
-							<img src={data.pic } className="header-img" alt=""/>
+							<img src={data.pic} className="header-img" alt="" />
 							<div className="windowBox-btn-color" onClick={this._handleOffClick}>
 								<div className="close-btn"></div>
 							</div>
@@ -271,7 +271,7 @@ class AgendaPople extends Component {
 						</div>
 					</div>
 				</div>
-				<CollectedModal closeModal={this.closeModal} display={this.state.collectModelVisible}/>
+				<CollectedModal closeModal={this.closeModal} display={this.state.collectModelVisible} />
 			</li>
 		);
 	}
