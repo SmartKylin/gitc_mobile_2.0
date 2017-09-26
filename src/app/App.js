@@ -5,10 +5,12 @@ import RouterMap from '../router';
 
 import Popup from 'components/popup'
 import LoginBox from 'containers/login_box'
-
+import Perf from 'react-addons-perf'
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 class App extends Component {
   constructor (props) {
     super(props)
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.state = {
       loginBoxDisplay: 'none',
       cb: null
@@ -29,6 +31,9 @@ class App extends Component {
     this.setState({
       cb: fn
     })
+  }
+  componentDidMount(){
+      window.Perf = Perf
   }
   render() {
     return (

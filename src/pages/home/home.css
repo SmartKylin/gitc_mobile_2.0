@@ -13,8 +13,8 @@
 
 .index-banner{
     width: 16rem;
-    height: 23.425rem;
-    background:url(../../components/images/背景_03.png) #0d1428;
+    height: 27.425rem;
+    background:url(../../components/images/背景_01.png) #0d1428;
     background-size: cover;
     /*position: relative;*/
 }
@@ -242,7 +242,8 @@ background:url(../../components/images/vip2.svg);
     position: fixed;
     right: 0.5rem;
     bottom: 6rem;
-    color: #fff
+    color: #fff;
+    opacity: 0.7;
 }
 
 .look-all{
@@ -459,9 +460,9 @@ html,body{height:100%;overflow:auto}*/
     background-size: cover;
 }
 .ban{
-    width: 100px;
-    height: 26px;
-    background: url(../../components/images/m.png);
+    width: 132px;
+    height: 31px;
+    background: url(../../components/images/全球互联网大会图标最新_03.png);
     background-size: cover;
     position: relative;
     left: 12px;
