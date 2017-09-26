@@ -137,7 +137,7 @@ export default class extends Component {
           }
         </div>
         <div className="btn--area">
-          <div className="btn--ensure" onClick={() => this.signIn(this.props.loginSuccess)}>确定</div>
+          <div className="btn--ensure" onClick={() => this.signIn(this.props.loginSuccess)}>登录</div>
         </div>
       </div>
     </div>

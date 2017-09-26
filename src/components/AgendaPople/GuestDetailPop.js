@@ -5,7 +5,7 @@ import storage from '../../helper/storage'
 import {TOKEN} from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
 import {message} from 'antd'
-import defaultAvatar from '../../images/yueguangjifeng.jpg'
+import defaultAvatar from '../../images/default-avatar.png'
 // import $ from 'jquery'
 
 import {collectDocument, collectGuest} from "../../services/collect";
