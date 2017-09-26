@@ -412,7 +412,7 @@ export default class Activity extends Component {
                                 </div>
                             </div>
                             <div className="logo-contnet">
-                                {/*<p>官方视频直播平台</p>
+                                <p>官方视频直播平台</p>
                                 <div className="live_video">
                                     <ul className="clearfix">
                                         <li className="logo_modu"></li>
@@ -423,8 +423,8 @@ export default class Activity extends Component {
                                     <ul className="clearfix">
                                         <li className="logo_hdb"></li>
                                         <li className="logo_bghd"></li>
-                                    </ul>*/}
-                                {/*</div>*/}
+                                    </ul>
+                                </div>
                                 {/*<p>钻石赞助</p>
                                 <img src={LOGO_1} alt=""/>
                                 <p>媒体合作</p>
