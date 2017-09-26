@@ -450,8 +450,10 @@ html,body{height:100%;overflow:auto}*/
     display: inline-block;
     width: 0.6rem;
     height: 0.5rem;
-    background: url(../../components/images/箭头1.png);
+    background: url(../../components/images/xiangxia1.svg);
     background-size: cover;
+    margin-left: 0.1rem;
+    vertical-align: initial;
 }
 .batn-add{
     display: inline-block;
