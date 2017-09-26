@@ -80,6 +80,10 @@ export default class Issus extends Component {
         })
     }
 
+    componentDidMount(){
+        window.parent.scrollTo(0, 0);
+        //window.location.href = "#top";
+    }
     // 子组件改变state相应的值
     changeValue = async (name, value) => {
         await this.setState({

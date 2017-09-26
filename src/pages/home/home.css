@@ -13,8 +13,8 @@
 
 .index-banner{
     width: 16rem;
-    height: 23.425rem;
-    background:url(../../components/images/背景_03.png) #0d1428;
+    height: 27.425rem;
+    background:url(../../components/images/背景_01.png) #0d1428;
     background-size: cover;
     /*position: relative;*/
 }
@@ -243,6 +243,7 @@ background:url(../../components/images/vip2.svg);
     right: 0.5rem;
     bottom: 6rem;
     color: #fff;
+    opacity: 0.7;
     z-index: 999
 }
 
@@ -460,9 +461,9 @@ html,body{height:100%;overflow:auto}*/
     background-size: cover;
 }
 .ban{
-    width: 100px;
-    height: 26px;
-    background: url(../../components/images/m.png);
+    width: 132px;
+    height: 31px;
+    background: url(../../components/images/全球互联网大会图标最新_03.png);
     background-size: cover;
     position: relative;
     left: 12px;
@@ -576,24 +577,24 @@ margin-left: 0.4rem
     
 }
 .logo_modu{
-    width:2.432rem;
-    height: 0.6826rem;
-    background: url(../../components/images/目睹视频.svg);
+    width:3.2rem;
+    height:1.064rem;
+    background: url(../../components/images/目睹视频.png);
     background-size: cover;
     margin-left: 0.58rem;
 }
 .logo_hdb{
-    width:3rem;
-    height: 0.84rem;
-background: url(../../components/images/互动吧.svg);
+    width:3.2rem;
+    height:1.064rem;
+background: url(../../components/images/百格活动.png);
     background-size: cover;
-    margin-left: 0.3rem;
+    margin-left: 0.58rem;
 }
 .logo_bghd{
      margin-left: 0.64rem;
-    width:2.6rem;
-    height: 0.64rem;
-background: url(../../components/images/百格活动.svg);
+    width:3.2rem;
+    height:1.064rem;
+background: url(../../components/images/互动吧.png);
     background-size: cover;
    
 }
