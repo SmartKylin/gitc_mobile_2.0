@@ -5,9 +5,9 @@ import ChildBackground from 'containers/child_container'
 import './index.scss'
 import $ from 'jquery'
 
-const img1 = require('components/images/floor1.png')
-const img3 = require('components/images/floor3.png')
-const img4 = require('components/images/floor4.png')
+const img1 = require('components/images/map1.jpg')
+const img3 = require('components/images/map2.jpg')
+const img4 = require('components/images/map3.jpg')
 export default class Map extends Component {
   constructor(...args) {
     super(...args)

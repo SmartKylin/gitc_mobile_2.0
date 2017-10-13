@@ -23,7 +23,13 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import Map from '../pages/map/index'
 
 let history = createBrowserHistory();
-
+// containers
+// components 
+// pages
+// this.props.children;
+// async
+// await
+// params参数
 const RouterMap = class extends Component {
   render() {
     history.openPop = this.props.openPop

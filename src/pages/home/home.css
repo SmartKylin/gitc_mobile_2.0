@@ -134,52 +134,58 @@ html,body{
     float: left;
 }
 .highlights-icon4{
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: .2rem;
     display: inline-block;
-    background:url(../../components/images/shanhgjia.svg);
+    background:url(../../components/images/品牌.png);
     background-size: cover;
     float: left;
 }
 .highlights-icon5{
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
     display: inline-block;
-    background:url(../../components/images/对话.svg);
+    background:url(../../components/images/tech_tutor.png);
     background-size: cover;
     float: left;
+    margin-top: .2rem;
 }
 .highlights-icon6{
-    width: 1.80rem;
-    height: 1.80rem;
+    width: 1.2rem;
+    height: 1.2rem;
     display: inline-block;
-    background:url(../../components/images/tea.svg);
+    background:url(../../components/images/teach.png);
     background-size: cover;
     float: left;
+    margin-top: .2rem;
 }
 .highlights-icon7{
-    width: 1.80rem;
-    height: 1.80rem;
+    width: 1.2rem;
+    height: 1.2rem;
     display: inline-block;
-    background:url(../../components/images/奖杯.svg);
+    background:url(../../components/images/颁奖典礼.png);
     background-size: cover;
     float: left;
+    margin-top: .2rem;
 }
 .highlights-icon8{
-    width: 1.80rem;
-    height: 1.80rem;
+    width: 1.2rem;
+    height: 1.2rem;
     display: inline-block;
-    background:url(../../components/images/hei.svg);
+    background:url(../../components/images/黑科技游乐园.png);
     background-size: cover;
     float: left;
+    margin-top: .2rem;
 }
 .highlights-icon9{
-    width: 1.80rem;
-    height: 1.80rem;
+    width: 1.2rem;
+    height: 1.2rem;
     display: inline-block;
-    background:url(../../components/images/hg.svg);
+    background:url(../../components/images/晚宴.png);
     background-size: cover;
     float: left;
+    margin-top: .2rem;
 }
 .pa-icon{
     position: absolute;

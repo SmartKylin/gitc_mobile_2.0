@@ -217,24 +217,7 @@ export default class Activity extends Component {
                         <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
                         <img src={blink} alt="" className="blue-link"/>
                         <ul className="highlights-ul clearfix">
-                            <li className="highlights-li ">
-                                {/*<span className="highlights-icon1"></span>*/}
-                              <span className="highlights-icon1"></span>
-                                <div className="highlights-li-font  pr"> 领袖峰会<div
-                                className="pa-icon pa-icon1"></div></div>
-                                <div className="highlights-li-fonts">触电行业最强大脑
-                                </div>
-                            </li>
-                            <li className="highlights-li ">
-                                <span className="highlights-icon2"></span>
-                                <div className="highlights-li-font ">行业领袖</div>
-                                <div className="highlights-li-fonts ">技术军团旗帜人物</div>
-                            </li>
-                            <li className="highlights-li ">
-                                <span className="highlights-icon3"></span>
-                                <div className="highlights-li-font "> 技术专家</div>
-                                <div className="highlights-li-fonts ">分享最前沿的技术观点</div>
-                            </li>
+                       
                             <li className="highlights-li ">
                                 <span className="highlights-icon4"></span>
                                 <div className="highlights-li-font ">品牌专场</div>
@@ -262,12 +245,12 @@ export default class Activity extends Component {
                                 <div className="highlights-li-font ">黑科技游乐园</div>
                                 <div className="highlights-li-fonts ">感受游戏魅力,最真实表演</div>
                             </li>
-                            <li className="highlights-li " style={{width: '60%'}}>
+                            <li className="highlights-li " >
                                 <span className="highlights-icon9"></span>
                                 <div className="highlights-li-font pr">邀请晚宴
                                     <div className="pa-icon pa-icon3"></div>
                                 </div>
-                                <div className="highlights-li-fonts ">真人王者荣誉互联网社交重头戏</div>
+                                <div className="highlights-li-fonts ">互联网社交重头戏</div>
                             </li>
                         </ul>
                     </div>

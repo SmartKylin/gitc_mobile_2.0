@@ -66,7 +66,7 @@ export default class extends Component {
     })
   }
   // 提交赞助
-  post = async () => {
+  post =  async () => {
     if (this.state.isPosting) {
       return
     }
