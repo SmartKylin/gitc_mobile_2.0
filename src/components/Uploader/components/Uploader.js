@@ -206,11 +206,11 @@ class Uploader extends React.Component{
                 activeClassName={'zby-upload-img-active'}
                 onPress={()=>{_this.refs.input.click();}}>
                 <div className="zhaopian">
-                    <div  className="geren"><span>个人照片</span></div>
+                    <div  className="geren"><span style={{fontSize:'13px'}}>个人照片</span></div>
                     <div  className="zby-upload-img">
                         <img className="xiangji" src={zhaoxiangji} alt=""/>
                     </div>
-                    <div><span className="text">高清个人半身照，不戴墨镜、帽子，职业照最佳</span></div>
+                    <div><span className="text" style={{fontSize:'10px'}}>高清个人半身照，不戴墨镜、帽子，职业照最佳</span></div>
                 </div>
             </Touchable>
         );
