@@ -11,6 +11,7 @@ import './home.scss';
 import {pople} from "../../services/pople";
 import storage from '../../helper/storage'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import cloneDeep from 'lodash/cloneDeep'
 
 import {
   getDate1,
@@ -56,7 +57,7 @@ export default class Activity extends Component {
         0: [],
         1: []
       },
-      guestList: {}
+      guestList: {},
     }
   }
   
@@ -114,7 +115,7 @@ export default class Activity extends Component {
     })
     await this.setState({
       topicGroup,
-      guestList: topicGroup[this.state.whichDay][0].data
+      guestList: topicGroup[this.state.whichDay][0].data,
     })
   
   }
@@ -129,23 +130,18 @@ export default class Activity extends Component {
   
   
   async switchDay (index) {
-    await this.setState({
-      whichDay: index,
-    })
-    this.setState({
-      guestList: this.state.topicGroup[this.state.whichDay][0].data
-    })
-  }
-  componentDidMount() {
-    $('.agenda-ul-toggle-box1 span').on('click', function (e) {
-      $('.agenda-ul-toggle-box1 span').removeClass('agenda-btn')
-      $(e.target).addClass('agenda-btn')
-    })
-    $('.agenda-ul-toggle-box2 span').on('click', function (e) {
-      $('.agenda-ul-toggle-box2 span').removeClass('agenda-btn')
-      $(e.target).addClass('agenda-btn')
-    })
-    
+    if (index !== this.state.whichDay) {
+      await this.setState({
+        whichDay: index,
+      })
+      await this.setState({
+        guestList: this.state.lastGuestList || this.state.topicGroup[this.state.whichDay][0].data,
+        lastGuestList: this.state.guestList
+      })
+     /* await this.setState({
+        guestList: this.state.topicGroup[this.state.whichDay][0].data,
+      })*/
+    }
   }
   
   render() {
@@ -225,11 +221,11 @@ export default class Activity extends Component {
                         <div className="time">
                           {
                             dateAry.map((item, index) => (
-                            <span
-                            className={classNames('time1', {catbtn: this.state.whichDay === index})}
-                            key={index}
-                            onClick={() => this.switchDay(index)}
-                            >{item}</span>
+                              <span
+                              className={classNames('time1', {catbtn: this.state.whichDay === index})}
+                              key={index}
+                              onClick={() => this.switchDay(index)}
+                              >{item}</span>
                             ))
                           }
                         </div>
