@@ -4,20 +4,11 @@ import {
 } from 'react-router-dom';
 import $ from 'jquery'
 import {BackTop} from 'antd';
-// import { PREFIX_URL,request } from "../common"
-// import { getShopList, handlePhone } from "../common"
 import ClassDetails from "components/ClassRooms/ClassDetails/ClassDetails"
-// import ClassRooms from "components/ClassRooms/ClassRooms"
 import AgendaPople from "components/AgendaPople/AgendaPople"
 import Team from "../../components/Team/Team"
-// import BackgroundAll from "components/BackgroundAll/BackgroundAll"
-// // import fetchJsonp from 'fetch-jsonp';
 import './home.scss';
-// import StgItem from "components/stg.item";
-// import {getPopleList} from "../../services/home";
-// import Menu from 'containers/menu'
 import {pople} from "../../services/pople";
-import {pagepople} from "../../services/pagepople";
 import storage from '../../helper/storage'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
@@ -42,6 +33,7 @@ export default class Activity extends Component {
   constructor(...args) {
     super(...args);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+    this.switchDay = this.switchDay.bind(this)
     this.state = {
       data: null,
       data1: [],
@@ -77,7 +69,8 @@ export default class Activity extends Component {
       phone = '13800138000'
     }
     
-    pople('45', phone).then(res => res.json())
+    pople('45', phone)
+    .then(res => res.json())
     .then(data => {
       
       this.setState({
@@ -87,7 +80,8 @@ export default class Activity extends Component {
       })
       
     })
-    pople('46', phone).then(res => res.json())
+    pople('46', phone)
+    .then(res => res.json())
     .then(data => {
       
       this.setState({
@@ -96,9 +90,9 @@ export default class Activity extends Component {
       })
       
     })
-    pople('47', phone).then(res => res.json())
+    pople('47', phone)
+    .then(res => res.json())
     .then(data => {
-      
       this.setState({
         guest: data.data,
         baseguest: data.data.slice(0, 6)
@@ -107,25 +101,22 @@ export default class Activity extends Component {
     })
     
     let topicGroup = {}
-    let gusetList = {}
     await getDate1()
     .then(res => res && res.json())
     .then(data => {
-      console.log(data.data);
       topicGroup[0] = data.data
-      gusetList = data.data[0].data
     })
     
     await getDate2()
     .then(res => res && res.json())
     .then(data => {
-      console.log(data.data);
       topicGroup[1] = data.data
     })
     await this.setState({
-      topicGroup
+      topicGroup,
+      guestList: topicGroup[this.state.whichDay][0].data
     })
-    
+  
   }
   fn = () => {
     let add = this.state.dadas.find((obj) => {
@@ -137,6 +128,14 @@ export default class Activity extends Component {
   }
   
   
+  async switchDay (index) {
+    await this.setState({
+      whichDay: index,
+    })
+    this.setState({
+      guestList: this.state.topicGroup[this.state.whichDay][0].data
+    })
+  }
   componentDidMount() {
     $('.agenda-ul-toggle-box1 span').on('click', function (e) {
       $('.agenda-ul-toggle-box1 span').removeClass('agenda-btn')
@@ -246,7 +245,7 @@ export default class Activity extends Component {
                             <span
                             className={classNames('time1', {catbtn: this.state.whichDay === index})}
                             key={index}
-                            onClick={() => this.setState({whichDay: index})}
+                            onClick={() => this.switchDay(index)}
                             >{item}</span>
                             ))
                           }

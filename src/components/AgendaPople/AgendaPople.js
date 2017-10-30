@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import $ from 'jquery'
+// import $ from 'jquery'
 import './AgendaPople.scss';
 import storage from '../../helper/storage'
 import { TOKEN } from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
 import { message } from 'antd'
+import defaultAvatar from '../../images/default-avatar.png'
+
 
 import { collectDocument, collectGuest } from "../../services/collect";
 
@@ -199,7 +201,7 @@ class AgendaPople extends Component {
 			<li className="popele-box" id="a" onClick={this._handleClick}>
 
 				<div className="popele-box-left">
-					{data ? <img src={data.pic} alt="" className="header-img" /> : ""}
+					{data ? <img src={data.pic || defaultAvatar} alt="" className="header-img" /> : ""}
 					<div className="header-icon">
 						<span className="l">
 							<div className={"popele-box-1 " + (this.state.guestStatus || data.collect ? 'collected' : '')}></div>
@@ -214,7 +216,7 @@ class AgendaPople extends Component {
 				</div>
 				<div className="popele-box-right">
 					<div className="popele-box-title">
-						<span className="popele-box-l">演讲嘉宾的主题</span>
+						<span className="popele-box-l">{data.stheme}</span>
 						{data ? <span className="popele-box-r">{data.stime}</span> : ''}
 					</div>
 					<div className="popele-name-title">
@@ -231,7 +233,7 @@ class AgendaPople extends Component {
 					<div className="windowBox">
 						<div className="windowBox-header">
 							{/*<img src="" alt=""  className="header-img"/>*/}
-							<img src={data.pic} className="header-img" alt="" />
+							<img src={data.pic || defaultAvatar} className="header-img" alt="" />
 							<div className="windowBox-btn-color" onClick={this._handleOffClick}>
 								<div className="close-btn"></div>
 							</div>

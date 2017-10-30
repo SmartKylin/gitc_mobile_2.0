@@ -135,7 +135,7 @@
 /*pop*/
 .windowPop {
   /*display: none;*/
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -229,8 +229,8 @@
   height: 1rem;
   display: flex;
   justify-content: center;
-}*/
-/*.windowBox-icon>div>div{
+}
+.windowBox-icon>div>div{
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 50%;
