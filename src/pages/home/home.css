@@ -1,0 +1,608 @@
+/*.movie_vipim_img{
+    width:0.8rem;
+    height: 0.6rem;
+    display: inline-block;
+    background: url(../components/images/2.png);
+    background-size:cover;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    margin-top: 0.1rem
+}*/
+
+
+
+.index-banner{
+    width: 16rem;
+    height: 27.425rem;
+    background:url(../../components/images/背景_01.png) #0d1428;
+    background-size: cover;
+    /*position: relative;*/
+}
+
+
+/* 超小设备（手机，小于 768px） */
+/* Bootstrap 中默认情况下没有媒体查询 */
+.content{
+    width: 16rem;
+    height:100%;
+    padding: 1rem 0 0 0;
+    background: #0d1428;
+    /*background:url(../../components/images/bg-center.jpg);*/
+    /*background-size: cover;*/
+}
+html,body{
+    /*width: 100%;
+    height: 100%;*/
+}
+.highlights,.special{
+    width: 16rem;
+    color: #fff; 
+}
+.agenda-name,.highlights-name,.special-name{
+    width: 15rem;
+    height: 1.2rem;
+    font-size: 18px;
+    margin: 0 auto;
+    color: #fff
+}
+.agenda-title,.highlights-title,.special-title{
+    font-size: 12px;
+    width: 15rem;
+    margin: 0 auto;
+    color: #fff
+}
+.agenda-name{
+    margin-top: 1.5rem;
+}
+.special-li{
+    width: 15rem;
+    height: 2rem;
+    border-bottom: 1px solid rgba(27, 45, 76, 0.8);
+    font-size: 15px;
+    line-height: 2rem;
+    margin: 0 0.5rem;
+}
+.special-show-font{
+    padding: 0.6rem 0.5rem;
+    font-size: 12px;
+    background: #121d35;
+    width: 16rem;
+}
+
+.z{
+    transition: 1s all ease;
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); 	/* IE 9 */
+    -moz-transform:rotate(180deg); 	/* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg); 	/* Opera */
+    }
+    .b{
+    transition: 1s all ease;
+    transform:rotate(0deg);
+    -ms-transform:rotate(0deg); 	/* IE 9 */
+    -moz-transform:rotate(0deg); 	/* Firefox */
+    -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+    -o-transform:rotate(0deg); 	/* Opera */
+    }
+
+.highlights{
+    width: 16rem;
+    color: #fff;
+    position: relative;
+    top:-47px
+}
+.highlightsa{
+    top:0px !important
+}
+.highlights-ul{
+    width: 15rem;
+    margin: 0 auto;
+    padding-left: 0.3rem
+}
+.highlights-li{
+    width: 50%;
+    float: left;
+    height: 2.5rem;
+    margin-top: 0.4rem
+}
+.highlights-li  span{
+    margin-right: 0.4rem
+}
+.highlights-icon1{
+    width: 1.8rem;
+    height: 1.8rem;
+    display: inline-block;
+    background:url(../../components/images/会议.svg);
+    background-size: cover;
+    float: left;
+}
+.highlights-icon2{
+    width: 1.8rem;
+    height: 1.8rem;
+    display: inline-block;
+    background:url(../../components/images/行业领袖.svg);
+    background-size: cover;
+    float: left;
+}
+.highlights-icon3{
+    width: 1.8rem;
+    height: 1.8rem;
+    display: inline-block;
+    background:url(../../components/images/行业专家.svg);
+    background-size: cover;
+    float: left;
+}
+.highlights-icon4{
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: .2rem;
+    display: inline-block;
+    background:url(../../components/images/品牌.png);
+    background-size: cover;
+    float: left;
+}
+.highlights-icon5{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    background:url(../../components/images/tech_tutor.png);
+    background-size: cover;
+    float: left;
+    margin-top: .2rem;
+}
+.highlights-icon6{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    background:url(../../components/images/teach.png);
+    background-size: cover;
+    float: left;
+    margin-top: .2rem;
+}
+.highlights-icon7{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    background:url(../../components/images/颁奖典礼.png);
+    background-size: cover;
+    float: left;
+    margin-top: .2rem;
+}
+.highlights-icon8{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    background:url(../../components/images/黑科技游乐园.png);
+    background-size: cover;
+    float: left;
+    margin-top: .2rem;
+}
+.highlights-icon9{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    background:url(../../components/images/晚宴.png);
+    background-size: cover;
+    float: left;
+    margin-top: .2rem;
+}
+.pa-icon{
+    position: absolute;
+    right: -1rem;
+    top:0.2rem;
+    width: 12px;
+    height: 12px;
+}
+.pa-icon1{
+background:url(../../components/images/vip1.svg);
+    background-size: cover;
+}
+.pa-icon2{
+background:url(../../components/images/vip2.svg);
+    background-size: cover;
+}
+.pa-icon3{
+background:url(../../components/images/vip2.svg);
+    background-size: cover;
+}
+.highlights-li div{
+    float: left
+}
+.highlights-li-font{
+    font-size: 15px;
+}
+@keyframes change{
+    0% {
+        width: 2.125rem;
+        height: 2.125rem;
+    }
+    100% {
+        width: 2.225rem;
+       height: 2.225rem;
+    }
+    }
+    /* #loading{
+        width:2rem;
+        height:2rem;
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin:-1rem;
+        background: url(../images/loading.png) no-repeat;
+        background-size:cover;
+        animation:change 2s infinite linear;
+        z-index: 9
+    } */
+.live{
+    width: 2.125rem;
+    height: 2.125rem;
+    line-height: 2.125rem;
+    text-align: center;
+    font-size: 0.7rem;
+    display: inline-block;
+    background: #0538db;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0.8rem #0538db;
+    /*animation:change 1s infinite linear;*/
+    position: fixed;
+    right: 0.5rem;
+    bottom: 6rem;
+    color: #fff;
+    opacity: 0.7;
+    z-index: 999
+}
+
+.look-all{
+    position: absolute;
+    right: 0.5rem;
+    top:0.8rem;
+    color: #2b67ff
+}
+.time{
+    width: 12.24rem;
+    height: 1.2rem;
+    border: 0.025rem solid #2b67ff;
+    border-radius: 0.25rem;
+    margin: 0.8rem auto;
+    display: none
+}
+.time1{
+    display: inline-block;
+    width:6rem;
+    text-align: center;
+    line-height: 1.2rem;
+    height: 1.2rem;
+    border-right: 0.02rem solid #2b67ff;
+    color: #2b67ff;
+}
+.time2{
+    width: 6rem;
+    height: 1.2rem;
+    text-align: center;
+    line-height: 1.2rem;
+    display: inline-block;
+    color: #2b67ff;
+}
+.agenda-ul{
+    width: 15rem;
+    padding: 0.5rem;
+}
+.agenda-ul li{
+    padding: 0.2rem 0.4rem;
+    float: left;
+    background: #1b2d4c;
+    border-radius:0.4rem;
+    margin: 0.2rem 0.3rem;
+    color: #ccc
+}
+
+.catbtn{
+    color: #fff
+}
+/*.agenda-pople li{
+    width: 15rem;
+    height: 4.5rem;
+    margin: 0 auto;
+    background: #ccc;
+    margin-top: 0.4rem;
+    border-radius:0.4rem;
+}*/
+.agenda-ul-toggle{
+    display: none !important
+}
+.agenda-pople{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.toggle-bg{
+    color: #fff !important;
+    background:#2b67ff !important
+}
+.btn-all{
+    border: 0.025rem solid #4676ff;
+    border-radius:1rem;
+    font-size: 0.6rem;
+    width: 108px;
+    height:30px;
+    margin: 36px auto 48px;
+    line-height: 30px;
+    text-align: center;
+    display: block;
+    color: #fff;
+}
+.btn-all-bottom{
+    /*margin-bottom: 2.8rem;*/
+}
+.btn-all-bottoms{
+    /*margin-bottom: 1.6rem;*/
+}
+.about-me .highlights ,.maps .highlights ,.logo .highlights ,.guests-popole .highlights{
+    top:0
+}
+.pas{
+    position: relative;
+    top:-12px;
+}
+.about-me{
+    margin: 0px 0 0.0px 0
+}
+.title-btn{
+    /*border: 0.05rem solid #ccc;
+    border-radius:1rem;*/
+    font-size: 10px;
+    /*width: 3.6rem;
+    height: 1.2rem;*/
+    margin: 1.2rem auto 0rem;
+    line-height: 25px;
+    text-align: center;
+    display: block;
+    /*background: #215df7;*/
+    color: #fff;
+    /*background: url(../../components/images/dh.png);
+    background-size: cover;*/
+    width: 108px;
+  height:30px;
+  border-radius: 7.5px;
+  border: 2.5px  solid #272b36;
+  /*borderRadius: ;*/
+  /*borderStyle: "solid";
+  borderWidth: 2.5px;
+  borderColor: #272b36;*/
+  background: linear-gradient(#376ffe, #1050f2);
+}
+.bg-b{
+    background: url(../../components/images/bg-b.png);
+    background-size: cover;
+    padding-bottom: 1rem
+}
+.guests-popole-ul li{
+    width: 4rem;
+    height: 6rem;
+    background: #ccc;
+    margin: 0.9rem 0 0 1rem ;
+    float: left;
+    border-radius: 0.2rem;
+}
+.logo-contnet p{
+   color:#fff;
+   font-size: 0.6rem;
+    margin: 0.8rem 0.5rem;
+    }
+.maps .img,.logo-contnet img{
+    width: 15rem;
+    margin: 0 auto;
+    }
+.about-me p,.maps p{
+    width: 15rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 12px;
+}
+/*.about-me .one{
+    margin-top:1rem
+    }*/
+.about-me{
+    position: relative
+}
+.about-me .code{
+    position: absolute;
+    bottom: 26px;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    background: url(../../components/images/code.jpg);
+    background-size: cover;
+    z-index: 1
+}
+.highlights-li-fonts {
+font-size: 10px;
+}
+/*html{height:100%;overflow:hidden}
+html,body{height:100%;overflow:auto}*/
+/*link*/
+.blue-link{
+    margin-left: 0.5rem;
+    margin-top: 7px;
+    margin-bottom: 16px;
+}
+.tolink{
+   background:  -webkit-gradient(linear, 0 0, 0 bottom, from(#28406e), to(rgb(34, 53, 90)));  
+   font-weight: bold
+}
+.highlights-name {
+    margin-top: 41px
+}
+.linkbgtg{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: url(../../components/images/bannerlink.png);
+    background-size: cover;
+}
+.batn-r{
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(../../components/images/add.png);
+    background-size: cover;
+}
+.batn-t{
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.5rem;
+    background: url(../../components/images/xiangxia1.svg);
+    background-size: cover;
+    margin-left: 0.1rem;
+    vertical-align: initial;
+}
+.batn-add{
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url(../../components/images/add-r.png);
+    background-size: cover;
+}
+.ban{
+    width: 132px;
+    height: 31px;
+    background: url(../../components/images/全球互联网大会图标最新_03.png);
+    background-size: cover;
+    position: relative;
+    left: 12px;
+    top: 8px;
+}
+/*日期toggle*/
+.agenda-ul-toggle-box{
+    width: 15rem;
+    height:118px;
+    margin:0 auto;
+    display: none
+}
+.agenda-ul-toggle-box span{
+    height: 0.9rem;
+line-height: 0.9rem;
+text-align: center;
+border-radius: .5rem;
+font-size: 12px;
+color: #bfc1c8;
+background: #1b2d4c
+}
+.agenda-ul-toggle-box-one,.agenda-ul-toggle-box-two {
+    margin-bottom: 11px;
+}
+.agenda-ul-toggle-box-one :nth-child(1){
+width: 2.9rem;
+height: 0.9rem;
+line-height: 0.9rem;
+text-align: center;
+display: inline-block
+}
+.agenda-ul-toggle-box-one :nth-child(2){
+width: 3.325rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.3rem
+}
+.agenda-ul-toggle-box-one :nth-child(3){
+width: 3.6rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.3rem
+}
+.agenda-ul-toggle-box-one :nth-child(4){
+width: 4.2rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.3rem
+}
+.agenda-ul-toggle-box-two :nth-child(1){
+width: 4.95rem;
+height: 0.9rem;
+display: inline-block;
+}
+.agenda-ul-toggle-box-two :nth-child(2){
+width: 4.95rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-ul-toggle-box-two :nth-child(3){
+width: 4.3rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-ul-toggle-box-three :nth-child(1){
+width: 4.95rem;
+height: 0.9rem;
+display: inline-block;
+}
+.agenda-ul-toggle-box-three :nth-child(2){
+width: 4.95rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-ul-toggle-box-three :nth-child(3){
+width: 4.3rem;
+height: 0.9rem;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-ul-toggle-box-three-r :nth-child(1){
+width:4.9rem;
+height: 0.9rem;
+line-height: 0.9rem;
+text-align: center;
+display: inline-block;
+margin-left: 2.38rem
+}
+.agenda-ul-toggle-box-three-r :nth-child(2){
+width:4.8rem;
+height: 0.9rem;
+line-height: 0.9rem;
+text-align: center;
+display: inline-block;
+margin-left: 0.4rem
+}
+.agenda-btn{
+    background: #2b67ff !important;
+    color: #fff !important
+}
+.content .ant-back-top{
+    right: 12px;
+}
+/*logo*/
+.logo-contnet li{
+    float: left;
+    display: inline-block;
+    
+}
+.logo_modu{
+    width:3.2rem;
+    height:1.064rem;
+    background: url(../../components/images/目睹视频.png);
+    background-size: cover;
+    margin-left: 0.58rem;
+}
+.logo_hdb{
+    width:3.2rem;
+    height:1.064rem;
+background: url(../../components/images/百格活动.png);
+    background-size: cover;
+    margin-left: 0.58rem;
+}
+.logo_bghd{
+     margin-left: 0.64rem;
+    width:3.2rem;
+    height:1.064rem;
+background: url(../../components/images/互动吧.png);
+    background-size: cover;
+   
+}

@@ -13,7 +13,7 @@ export default class extends Component {
   componentWillMount () {
     document.title = "现场活动"
   
-    getListNews(27).then(res => res && res.json())
+    getListNews(50).then(res => res && res.json())
     .then(data => {
       this.setState({
         datas: data.data,

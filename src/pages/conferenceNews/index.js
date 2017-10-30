@@ -9,7 +9,6 @@ export default  class  extends React.Component {
     render() {
 
         return (
-        
                <ConferenceNews history={this.props.history}/>
         );
     }

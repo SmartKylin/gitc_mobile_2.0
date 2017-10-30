@@ -20,6 +20,7 @@ export default class ConferenceNewsDetalis extends React.Component {
                })
             })
     }
+    // async await params this.props.children
     componentDidMount(){
     }
     render() {

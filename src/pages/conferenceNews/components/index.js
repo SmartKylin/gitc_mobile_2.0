@@ -19,7 +19,8 @@ export default class ConferenceNewsItem extends React.Component {
             <div  className="ConferenceNewsItemMain" onClick={()=>{this.props.history.push(`/conferencenewsdetails/${id}`)}}>
                 <div className="conferenceNewsImg">
                     {
-                        img?<img src={img} alt=""/>:<img src={xinwen} style={{width:"100%",height:"100%"}} alt=""/>
+                        // img?<img className="ImgSize" src={img} alt=""/>:<img src={xinwen} style={{width:"100%",height:"100%"}} alt=""/>
+                        <img src={img || xinwen} className="ImgSize" alt=""/>
                     }
                 </div>
                 <div className="conferenceNewsTextBox">
