@@ -217,7 +217,8 @@ class AgendaPople extends Component {
 				<div className="popele-box-right">
 					<div className="popele-box-title">
 						<span className="popele-box-l">{data.stheme}</span>
-						{data ? <span className="popele-box-r">{data.stime}</span> : ''}
+						{/*王杰修改将后台待定隐藏*/}
+						{data ? <span className="popele-box-r">{data.stime=='待定'?"":data.stime}</span> : ''}
 					</div>
 					<div className="popele-name-title">
 						{data ? <span className="popele-name-l">{data.name}</span> : ""}

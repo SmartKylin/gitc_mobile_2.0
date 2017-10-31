@@ -227,7 +227,7 @@ export default class Activity extends Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="special pas">
+                  {/*  <div className="special pas">
                         <h3 className="special-name">大会专题</h3>
                         <p className="special-title">GENERAL ASSEMBLY TOPICS</p>
                         <img src={blink} alt="" className="blue-link"/>
@@ -237,7 +237,7 @@ export default class Activity extends Component {
                               return <ClassDetails key={index} text={data.text} titleName={data.name}/>
                             }) : ""}
                         </ul>
-                    </div>
+                    </div>*/}
                     <div className="pr big">
                         <h3 className="agenda-name">大会议程</h3>
                         <p className="agenda-title">GENERAL ASSEMBLY AGENDA</p>
