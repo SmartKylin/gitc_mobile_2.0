@@ -1,0 +1,18 @@
+.AddGroupContainer-{
+   width: 100%;
+  .AddGroupContainer-Box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .AddGroupContainer-Item{
+      width: 96%;
+      display: flex;
+      justify-content: flex-start;
+      div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}

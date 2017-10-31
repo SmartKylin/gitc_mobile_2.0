@@ -21,6 +21,7 @@ import Activity from 'pages/activity'
 import Issue from 'pages/issue'
 import createBrowserHistory from 'history/createBrowserHistory'
 import Map from '../pages/map/index'
+import AddGroup from '../pages/addgroup/index'
 
 let history = createBrowserHistory();
 // containers
@@ -54,6 +55,8 @@ const RouterMap = class extends Component {
         <Route path="/activity" component={Activity}></Route>
         <Route path="/issue" component={Issue}></Route>
         <Route path="/map" component={Map}></Route>
+
+        <Route path="/addgroup" component={AddGroup}></Route>
       </Wrapper>
     </Router>
     )

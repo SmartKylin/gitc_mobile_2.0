@@ -102,13 +102,13 @@ export default class Activity extends Component {
     })
     
     let topicGroup = {}
-    await getDate1()
+    await getDate1(phone)
     .then(res => res && res.json())
     .then(data => {
       topicGroup[0] = data.data
     })
     
-    await getDate2()
+    await getDate2(phone)
     .then(res => res && res.json())
     .then(data => {
       topicGroup[1] = data.data
@@ -158,6 +158,34 @@ export default class Activity extends Component {
                 </div>
                 <div className="content">
                     <div className="highlights highlights">
+                       {/* <div className="Home-Link">
+                            <div className="Home-Link-Inner">
+                                <div className="Home-Link-Box">
+                                <div className="Home-Link-Box-Img">
+                                    <Link to={'/ticket'}><div style={{color:'#000000',fontSize:'38px'}} className="iconfont icon-menpiao"></div></Link>
+                                </div>
+                                <div className="Home-Link-Box-Text">我的门票</div>
+                            </div>
+                             <div className="Home-Link-Box">
+                                <div className="Home-Link-Box-Img">
+                                    <Link to={'/addgroup'}>  <div style={{color:'#000000',fontSize:'38px'}} className="iconfont icon-erweima"></div></Link>
+                                </div>
+                                <div className="Home-Link-Box-Text">现场加群</div>
+                            </div>
+                             <div className="Home-Link-Box">
+                                <div className="Home-Link-Box-Img">
+                                    <div style={{color:'#000000',fontSize:'38px'}} className="iconfont icon-xiangce"></div>
+                                </div>
+                                <div className="Home-Link-Box-Text">大会相册</div>
+                            </div>
+                             <div className="Home-Link-Box">
+                                <div className="Home-Link-Box-Img">
+                                    <Link to={'/activity'}><div style={{color:'#000000',fontSize:'38px'}} className="iconfont icon-huodongxianchang"></div></Link>
+                                </div>
+                                <div className="Home-Link-Box-Text">现场活动</div>
+                            </div>
+                            </div>
+                        </div>*/}
                         <h3 className="highlights-name ">大会亮点</h3>
                         <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
                         <img src={blink} alt="" className="blue-link"/>

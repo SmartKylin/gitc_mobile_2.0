@@ -95,7 +95,36 @@ html, body {
   width: 16rem;
   color: #fff;
   position: relative;
-  top: -47px
+  top: -47px;
+  .Home-Link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    .Home-Link-Inner{
+      display: flex;
+      width: 626px;
+      height: 44px;
+      justify-content:space-around;
+      .Home-Link-Box-Img{
+        width: 73px;
+        height:73px;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .Home-Link-Box{
+        .Home-Link-Box-Text{
+          margin-top: 10px;
+          text-align: center;
+          font-size: 15px;
+        }
+      }
+    }
+  }
 }
 
 .highlightsa {

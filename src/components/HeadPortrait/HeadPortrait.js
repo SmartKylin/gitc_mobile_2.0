@@ -50,14 +50,14 @@ class HeadPortrait extends Component {
     })
     console.log($('body').scrollTop())
     this.top = $('body').scrollTop()
-    this.stopBgScroll()
+    //this.stopBgScroll()
   }
   _handleOffClick = async (e) => {
     e.stopPropagation()
     await this.setState({
       guestPopDisplay: false
     })
-    this.recoveryBgScroll()
+    //this.recoveryBgScroll()
   }
   
   render() {

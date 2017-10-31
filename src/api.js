@@ -17,6 +17,10 @@ export default (config => {
 
   //大会新闻列表
   'getListNews':'/api/gitc/article-',
+
+  //图片
+  'getListImgs':'/api/gitc/page/img-',
+
   //  大会新闻详情页
   'getDetalisNews':'/api/gitc/article',
   'popleList':'/api/gitc/person-',
