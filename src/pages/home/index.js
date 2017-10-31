@@ -366,8 +366,6 @@ export default class Activity extends Component {
                         <BackTop/>
                     </div>
                   {/*<strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>*/}
-  
-  
                   <a href="https://www.bagevent.com/event/768490" className="live">购票</a>
                 </div>
 

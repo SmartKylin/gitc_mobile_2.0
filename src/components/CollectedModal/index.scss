@@ -1,8 +1,8 @@
 .collection--wrap {
   width: 225px;
   height: 180px;
-  position: absolute;
-  z-index: 100;
+  position: fixed;
+  z-index: 1001;
   left: 50%;
   top: 300px;
   font-size: 13px;

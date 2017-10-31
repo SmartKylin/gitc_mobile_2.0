@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import GuestDetailPop from '../AgendaPople/GuestDetailPop'
+// import AgendaPople from '../AgendaPople/AgendaPople'
 // import CollectedModal from '../CollectedModal'
 import './HeadPortrait.scss';
 import $ from 'jquery'

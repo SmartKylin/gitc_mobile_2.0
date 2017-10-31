@@ -5,7 +5,7 @@ import storage from '../../helper/storage'
 import {TOKEN} from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
 import {message} from 'antd'
-import defaultAvatar from '../../images/default-avatar.png'
+import defaultAvatar from '../../images/default-avatar.jpg'
 // import $ from 'jquery'
 
 import {collectDocument, collectGuest} from "../../services/collect";
@@ -190,13 +190,13 @@ export default class GuestDetailPop extends Component {
         speech ? <div className="windowBox-date">
         <div className="windowBox-date-l">
           <span className="windowBox-date-l-icon"></span>
-          <span>{data.meet || '会议地点'}</span>
-          <span>{data.meetaddr || '国家会议中心'}</span>
+          {/*<span>{data.meet || '会议地点'}</span>*/}
+          <span>{data.meetaddr || '待定'}</span>
         </div>
         <div className="windowBox-date-r">
           <span className="windowBox-date-r-icon"></span>
-          <span>{this.state.day || '11月23，11月24'}</span>
-          <span>{data.stime || '9点-10点'}</span>
+          <span>{data.sdata}</span>
+          <span>{data.stime || '待定'}</span>
         </div>
         </div> : null
       }

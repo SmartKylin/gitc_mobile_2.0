@@ -140,7 +140,8 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(000, 000, 000, 0.6)
+  background: rgba(000, 000, 000, 0.6);
+  z-index: 1000;
 }
 
 .windowBox {
@@ -169,12 +170,14 @@
 }
 
 .windowBox-name {
-  font-size: 0.8rem;
+  color: #0d1428;
+  font-size: 16px;
   margin-top: 0.6rem
 }
 
 .windowBox-work {
-  font-size: 0.6rem;
+  font-size: 12px;
+  color: #0d1428;
 }
 
 .windowBox-date {
@@ -189,10 +192,15 @@
 
 .windowBox-date-l, .windowBox-date-r {
   /*width: 50%;*/
+  display: flex;
+  align-items: center;
+  > span {
+    margin-left: 3px;
+  }
 }
 
 .windowBox-title {
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 0.6rem;
   margin-left: 0.3rem
 }

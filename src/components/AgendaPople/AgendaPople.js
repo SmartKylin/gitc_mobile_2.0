@@ -6,11 +6,19 @@ import storage from '../../helper/storage'
 import { TOKEN } from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
 import { message } from 'antd'
-import defaultAvatar from '../../images/default-avatar.png'
+import defaultAvatar from '../../images/default-avatar.jpg'
 
 
 import { collectDocument, collectGuest } from "../../services/collect";
 
+const formatDate = (str) => {
+	if (!str) return '待定'
+	let date = new Date(str).toLocaleDateString()
+	let dateAry = date.split('/').slice(1)
+	let res = dateAry[0] + '月' + dateAry[1] + '号'
+	return res
+  console.log(res);
+}
 class AgendaPople extends Component {
 	constructor(props) {
 		super(props);
@@ -25,7 +33,6 @@ class AgendaPople extends Component {
 			link2: true,
 			link3: true,
 			link3: true*/
-			day: ''
 		}
 		this._handleClick = this._handleClick.bind(this)
 		this._handleOffClick = this._handleOffClick.bind(this)
@@ -101,12 +108,6 @@ class AgendaPople extends Component {
 		// document.title = "大会议程";
 	}
 	componentDidMount() {
-		let a = this.props.data.sdata;
-		let b = a.substring(5)
-		let c = b.replace('-', '月');
-		this.setState({
-			day: c += '日'
-		})
 	}
 	// 收藏嘉宾
 	_collectGuest = () => {
@@ -199,7 +200,6 @@ class AgendaPople extends Component {
 		const { data } = this.props;
 		return (
 			<li className="popele-box" id="a" onClick={this._handleClick}>
-
 				<div className="popele-box-left">
 					{data ? <img src={data.pic || defaultAvatar} alt="" className="header-img" /> : ""}
 					<div className="header-icon">
@@ -245,22 +245,29 @@ class AgendaPople extends Component {
 							<div className="windowBox-date-l">
 								<span className="windowBox-date-l-icon"></span>
 								<span>{data.meet}</span>
-								<span>{data.meetaddr}</span>
+								<span>{data.meetaddr || '待定'}</span>
 							</div>
 							<div className="windowBox-date-r">
 								<span className="windowBox-date-r-icon"></span>
-								<span>{this.state.day}</span>
-								<span>{data.stime}</span>
+								<span>{formatDate(data.sdata)}</span>
+								<span style={{marginLeft: '3px'}}>{data.stime || '待定'}</span>
 							</div>
 						</div>
 						<div className="win-l">
-							<div className="windowBox-title">演讲主题:{data.stheme}</div>
+							<div className="windowBox-title">
+								<span style={{color: '#0d1428'}}>演讲主题：</span>
+								{data.stheme}
+								</div>
 						</div>
 
 						<p className="windowBox-text" onTouchStart={this.mounse}
-							onTouchEnd={this.mounout} style={{ borderColor: this.state.linkColor ? "" : "#ccc" }}>主题介绍:{data.sintroduce}</p>
+							onTouchEnd={this.mounout} style={{ borderColor: this.state.linkColor ? "" : "#ccc" }}>
+							<span style={{color: '#0d1428'}}>主题介绍：</span>
+							{data.sintroduce || '待定'}</p>
 						<p className="windowBox-text" onTouchStart={this.mounse2}
-							onTouchEnd={this.mounout2} style={{ borderColor: this.state.linkColor2 ? "" : "#ccc" }}>个人简介:{data.summary}</p>
+							onTouchEnd={this.mounout2} style={{ borderColor: this.state.linkColor2 ? "" : "#ccc" }}>
+							<span style={{color: '#0d1428' ,fontWeight: '600'}}>个人简介:</span>
+							{data.summary}</p>
 						<div className="windowBox-icon-content">
 							<div className="windowBox-icon">
 								<div className="windowBox-iconlink   windowBox-icon-mln" onClick={this._collectGuest}><div className={'windowBox-iconlink-l1 ' + (this.state.guestStatus || data.collect ? 'collected' : '')} ></div></div><div style={{ width: '0.8rem' }}>	</div>

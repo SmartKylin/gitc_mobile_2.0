@@ -12,7 +12,6 @@ class Team extends Component {
       positionbtn: true,
       top:'',
       taxt:'查看更多'
-
     }
   }
   
