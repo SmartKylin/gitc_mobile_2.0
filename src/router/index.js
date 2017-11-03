@@ -22,6 +22,7 @@ import Issue from 'pages/issue'
 import createBrowserHistory from 'history/createBrowserHistory'
 import Map from '../pages/map/index'
 import AddGroup from '../pages/addgroup/index'
+import Awards from '../pages/awards/index'
 
 let history = createBrowserHistory();
 // containers
@@ -57,6 +58,8 @@ const RouterMap = class extends Component {
         <Route path="/map" component={Map}></Route>
 
         <Route path="/addgroup" component={AddGroup}></Route>
+
+        <Route path="/awards" component={Awards }></Route>
       </Wrapper>
     </Router>
     )

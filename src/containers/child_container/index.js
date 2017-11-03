@@ -27,7 +27,7 @@ export default class extends Component {
     }*/
     const style={position: "static",minHeight:`${this.state.minHeight}px`, paddingBottom: "10px"}
       return (
-      <div className="container" style={style}>
+      <div className={this.props.Awards?"containerAwards":"container"} style={style}>
         <div style={{color: '#fff', display: 'flex', height: '40px', marginBottom: '15px', justifyContent: 'space-between'}}>
           <img src={logIcon} alt="logo" className="logo--icon"/>
           {/*<div style={{display: 'flex', alignItems: 'center'}}>
