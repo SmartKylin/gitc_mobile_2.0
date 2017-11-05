@@ -21,11 +21,11 @@ let getBgByTicket = (ticket) => {
       return vip;
     case '专业观众票':
       return zhuanye;
-    case '基础架构票':
+    case '基础架构专场票':
       return jichu;
     case '大会通票':
       return dahui;
-    case '大数据专场票':
+    case '大数据&人工智能专场票':
       return dashuju;
     case '运维专场票':
       return yunwei;
@@ -98,19 +98,15 @@ export default class extends Component {
               <svg ref={ barcde => this.barcode = barcde}></svg>
             </div>
             <div style={{position: 'absolute', top: '20%'}}>{this.state.barcodeString}</div>
-            <div  className='menpiaoImg'>
-              <img src={menpiao} alt=""/>
-            </div>
             <div className='menpiaoText1'>
-              <div><span className='danhang'>白云山科技提醒您：到展位抽奖</span></div>
-              <div><span className='danhang'>展位地址：3楼387q</span></div>
+              <div><span className='danhang'>官网：www.thegitc.com</span></div>
+              <div><span className='danhang'>客服：010-88323888</span></div>
             </div>
           </div>
           <div className="ticket--instructions">
             <div>使用说明</div>
             <div>1、本活动凭票入场，一人一票一次性使用；</div>
             <div>2、请截屏保存此条形码，保持条形码清晰，以便作为入场凭证。</div>
-            <div>官网：www.thegitc.com 客服：010-88323888</div>
           </div>
           <div className="ticket--rights">
             <img className='ticketImg' src={getBgByTicket(this.state.ticket)} alt=""/>
