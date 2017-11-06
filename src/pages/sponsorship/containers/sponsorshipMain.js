@@ -50,7 +50,6 @@ export default class extends Component {
     this.ary = []
   }
   dispatch = () => {
-    console.log(this.ary);
     this.ary.map(fn => fn())
   }
   describe = (fn) => {
@@ -72,7 +71,6 @@ export default class extends Component {
     }
     let {name, company, phone, position, email, intention} = this.state;
     phone = phone + '';
-    console.log(this.state.validated);
     if (!this.state.validated) {
       // 未通过校验，不发请求
       return

@@ -17,7 +17,6 @@ const formatDate = (str) => {
 	let dateAry = date.split('/').slice(1)
 	let res = dateAry[0] + '月' + dateAry[1] + '号'
 	return res
-  console.log(res);
 }
 class AgendaPople extends Component {
 	constructor(props) {

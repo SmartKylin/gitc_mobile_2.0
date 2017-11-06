@@ -108,7 +108,7 @@ export default class extends Component {
     }
   }*/
   // 关闭登录框，并清空数据
-  closeLoginBox = () => {
+  closeLoginBox = (cb) => {
     this.setState({
       mobile: '',
       code: ''

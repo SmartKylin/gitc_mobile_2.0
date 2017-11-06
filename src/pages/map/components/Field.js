@@ -40,6 +40,5 @@ export default class extends Component {
     )
   }
   componentWillMount () {
-    console.log(this.props.model);
   }
 }

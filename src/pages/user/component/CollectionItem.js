@@ -3,7 +3,7 @@ import {Icon} from 'antd'
 import "./index.scss"
 export default class CollectionItem extends Component {
   render () {
-    console.log(this.props.data.id,"12312312");
+    // console.log(this.props.data.id,"12312312");
     return (
     <div>
       {this.props.data.id==4?<div><div className='collectionItemtime'>11月23日</div><div className='xian'></div></div>:""}
