@@ -26,9 +26,12 @@ right:0;
 .arrange-btn-23{
     flex: 1;
     border-right: 0.025rem solid #ccc;
+    font-size: 16px;
 }
 .arrange-btn-24{
     flex: 1;
+    font-size: 16px;
+    font-family: "Courier New";
 }
 /*TITILE*/
 .arrange-titile{

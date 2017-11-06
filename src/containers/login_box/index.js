@@ -11,7 +11,8 @@ let iconIphone = require('../../images/icon-phone.svg')
 const TIME = 60
 let inputStyle = {
   appearance: 'none',
-  borderRadius: 0
+  borderRadius: 0,
+  fontSize:'14px'
 }
 export default class extends Component {
   constructor (props) {
