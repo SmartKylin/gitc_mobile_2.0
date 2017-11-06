@@ -306,7 +306,8 @@ html, body {
   position: absolute;
   right: 0.5rem;
   top: 0.8rem;
-  color: #2b67ff
+  color: #2b67ff;
+  font-size: 14px;
 }
 
 .time {
@@ -315,6 +316,7 @@ html, body {
   border: 0.025rem solid #2b67ff;
   border-radius: 0.25rem;
   margin: 0.8rem auto;
+  font-size: 12px;
   /*display: none*/
 }
 
@@ -325,6 +327,7 @@ html, body {
   text-align: center;
   line-height: 1.2rem;
   color: #2b67ff;
+  font-size: 16px;
   &:first-child {
     border-right: 0.02rem solid #2b67ff;
   }

@@ -196,16 +196,16 @@ export default class Activity extends Component {
                                 <div className="highlights-li-font ">品牌专场</div>
                                 <div className="highlights-li-fonts ">重新定义品牌价值</div>
                             </li>
-                            <li className="highlights-li ">
+{/*                            <li className="highlights-li ">
                                 <span className="highlights-icon5"></span>
                                 <div className="highlights-li-font "> Tech Tutor</div>
                                 <div className="highlights-li-fonts ">掌握最强最先进技术大触</div>
-                            </li>
-                            <li className="highlights-li ">
+                            </li>*/}
+                       {/*     <li className="highlights-li ">
                                 <span className="highlights-icon6"></span>
                                 <div className="highlights-li-font ">Tech+</div>
                                 <div className="highlights-li-fonts ">技术带你感受游戏魅力</div>
-                            </li>
+                            </li>*/}
                             <li className="highlights-li ">
                                 <span className="highlights-icon7"></span>
                                 <div className="highlights-li-font pr">颁奖典礼
