@@ -71,11 +71,12 @@ export default class extends Component {
       // 生成条形码
       JsBarcode(this.barcode, this.state.barcodeString,
       {
-        displayValue: false,  //  不显示原始值
+        displayValue: true,  //  不显示原始值
         // background: '#4b8b7f',  //  背景色
         blank: 100,
         lineColor: 'rgba(255,255,255)', // 线条颜色
-        width: 1.5  // 线条宽度
+        width: 1.5,  // 线条宽度
+        height: 50
       })
     })
     .catch(() => {
@@ -96,7 +97,7 @@ export default class extends Component {
             <div className="ticket--barcode">
               <svg ref={ barcde => this.barcode = barcde}></svg>
             </div>
-            <div style={{position: 'absolute', top: '20%'}}>{this.state.barcodeString}</div>
+            {/*<div style={{position: 'absolute', top: '20%',left:'20%'}}>{this.state.barcodeString}</div>*/}
             <div className='menpiaoText1'>
               <div><span className='danhang'>官网：www.thegthegitcitc.com</span></div>
               <div><span className='danhang'>客服：010-88323888</span></div>
