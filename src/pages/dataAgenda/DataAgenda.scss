@@ -37,21 +37,24 @@ width: 14px;
 height: 14px;
 background: red;
 margin-right: 4px;
-
+font-size: 14px;
  }
  
  .dataicon23{
 background: url(../../components/images/data1.png);
-   background-size: cover
+   background-size: cover;
+   font-size: 14px;
  }
  .btntoggle{
 .dataicon23{
    background: url(../../components/images/data2.png);
    background-size: cover;
 color: #abc0ff;
+  font-size: 14px;
  }
  .btncolor{
-    color:#4479ff
+    color:#4479ff;
+   font-size: 14px;
   }
  } 
   }
