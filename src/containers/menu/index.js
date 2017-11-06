@@ -39,7 +39,6 @@ export default class extends Component {
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '17px'}} className="nav--group">
           <Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>
-          {/*<Link to={"/user"} onClick={() => this.handleClickUser()}>个人中心</Link>*/}
           <a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
           <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>
           {/*<a href="#">大会会刊</a>*/}
