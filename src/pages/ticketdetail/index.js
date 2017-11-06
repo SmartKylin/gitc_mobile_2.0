@@ -9,7 +9,6 @@ import dahui from '../../images/大会通票.jpg'
 import dashuju from '../../images/大数据&人工智能专场票.jpg'
 import yunwei from '../../images/运维专场票.jpg'
 import zhanlan from '../../images/展览票.jpg'
-import menpiao from '../../images/2门票_03.png'
 import './index.scss'
 import JsBarcode from 'jsbarcode'
 import storage from '../../helper/storage'
@@ -80,7 +79,7 @@ export default class extends Component {
       })
     })
     .catch(() => {
-      this.history.goBack()
+      this.props.history.goBack()
     })
     
   }
@@ -99,7 +98,7 @@ export default class extends Component {
             </div>
             <div style={{position: 'absolute', top: '20%'}}>{this.state.barcodeString}</div>
             <div className='menpiaoText1'>
-              <div><span className='danhang'>官网：www.thegitc.com</span></div>
+              <div><span className='danhang'>官网：www.thegthegitcitc.com</span></div>
               <div><span className='danhang'>客服：010-88323888</span></div>
             </div>
           </div>
