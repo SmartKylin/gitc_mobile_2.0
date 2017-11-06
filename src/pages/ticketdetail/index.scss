@@ -69,6 +69,12 @@
       overflow: hidden;
     }
   }
+  .ticket--barcode {
+    position: absolute;
+    height: 15%;
+    top: 4%;
+    left: 20%;
+  }
 }
 
 
@@ -93,6 +99,14 @@
       overflow: hidden;
     }
   }
+
+  .ticket--barcode {
+    position: absolute;
+    height: 15%;
+    top: 4%;
+    left: 15%;
+  }
+
 }
 
 
