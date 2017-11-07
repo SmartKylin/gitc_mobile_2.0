@@ -188,7 +188,7 @@ export default class Activity extends Component {
                             </div>
                         </div>*/}
                         <h3 className="highlights-name ">大会亮点</h3>
-                        <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
+                        <p className="highlights-title">THE HIGHLIGHTS</p>
                         <img src={blink} alt="" className="blue-link"/>
                         <ul className="highlights-ul clearfix">
                        
@@ -241,7 +241,7 @@ export default class Activity extends Component {
                     </div>*/}
                     <div className="pr big">
                         <h3 className="agenda-name">大会议程</h3>
-                        <p className="agenda-title">GENERAL ASSEMBLY AGENDA</p>
+                        <p className="agenda-title">CONFERENCE AGENDA</p>
                         <img src={blink} alt="" className="blue-link"/>
                         <Link to="./dataagenda" className="look-all">查看全部 <i className="batn-add"></i></Link>
                     </div>
@@ -299,7 +299,7 @@ export default class Activity extends Component {
                             </div>
                           <div className="btn-all btn-all-bottom ">
                             <Link to={'/issue'}
-                                  style={{color: "#fff"}}
+                                  style={{color: "#fff",fontSize:"14px"}}
                             >议题提交</Link>
                             <i className="batn-r"/>
                           </div>
@@ -307,7 +307,7 @@ export default class Activity extends Component {
                               <div
                                 className="highlights">
                                 <h3 className="highlights-name ">大会嘉宾</h3>
-                                <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
+                                <p className="highlights-title">CONFERENCE GUESTS</p>
                                 <img src={blink} alt="" className="blue-link"/>
                               </div>
                               <Team
@@ -368,7 +368,7 @@ export default class Activity extends Component {
                                 <div className="maps">
                                     <div className="highlights">
                                         <h3 className="highlights-name ">参会指南</h3>
-                                        <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
+                                        <p className="highlights-title">CONFERENCE GUIDANCE</p>
                                         <img src={blink} alt="" className="blue-link"/>
                                     </div>
                                     <img src={MAP} alt="" className="img"/>
@@ -379,7 +379,7 @@ export default class Activity extends Component {
                                 <div className="about-me">
                                     <div className="highlights">
                                         <h3 className="highlights-name ">联系我们</h3>
-                                        <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
+                                        <p className="highlights-title">CONTACT US</p>
                                         <img src={blink} alt="" className="blue-link"/>
                                     </div>
                                     <p className="one">赞助大会&展览展示咨:business@kylinclub.org</p>

@@ -54,7 +54,7 @@ html, body {
 }
 
 .agenda-name {
-  margin-top: 1.5rem;
+  margin-top: 5px;
 }
 
 .special-li {
@@ -95,7 +95,7 @@ html, body {
   width: 16rem;
   color: #fff;
   position: relative;
-  top: -47px;
+  top: -53px;
   .Home-Link{
     display: flex;
     justify-content: center;
@@ -390,7 +390,6 @@ html, body {
 .btn-all {
   border: 0.025rem solid #4676ff;
   border-radius: 1rem;
-  font-size: 0.6rem;
   width: 108px;
   height: 30px;
   margin: 36px auto 48px;
@@ -398,6 +397,7 @@ html, body {
   text-align: center;
   display: block;
   color: #fff;
+  font-size:13px;
 }
 
 .btn-all-bottom {
@@ -444,6 +444,7 @@ html, body {
   borderWidth: 2.5px;
   borderColor: #272b36;*/
   background: linear-gradient(#376ffe, #1050f2);
+  border-radius: 51px;
 }
 
 .bg-b {

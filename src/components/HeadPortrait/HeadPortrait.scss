@@ -23,5 +23,21 @@
   .headportrait-font-title{
     margin-top: 7px;
     font-weight: bolder !important;
+    font-size: 13px;
   }
+
+  .headportrait-font-text{
+      font-size: 8px;
+  }
+  @media screen and (max-width: 375px) {
+    .headportrait-font-title{
+      margin-top: 7px;
+      font-weight: bolder !important;
+      font-size: 8px;
+    }
+    .headportrait-font-text{
+      font-size: 7px;
+    }
+  }
+
 }

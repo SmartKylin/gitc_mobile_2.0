@@ -16,6 +16,7 @@ class HeadPortrait extends Component {
   }
   
   componentDidMount() {
+    this.devWidth = document.documentElement.clientWidth || document.body.clientWidth
     if (this.props.pics) {
       this.setState({
         img: this.props.pics
@@ -77,7 +78,18 @@ class HeadPortrait extends Component {
       <img src={this.state.img} alt="" className="headportrait-img"/>
       <div className="headportrait-font">
         <div className="headportrait-font-title">{name}</div>
-        <div>{data.company} {data.position}</div>
+          {
+            this.devWidth >
+            375 ?
+                <div>
+                  <div className="headportrait-font-text">{data.company}</div>
+                  <div className="headportrait-font-text">{data.position}</div>
+                </div>
+                :
+                <div className="headportrait-font-text">{data.company}{data.position}</div>
+
+          }
+
       </div>
       
       <div className="windowPop" style={{display: this.state.guestPopDisplay ? "block" : 'none'}}>
