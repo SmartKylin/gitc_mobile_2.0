@@ -28,6 +28,7 @@ class AgendaPople extends Component {
 			a: false,
 			linkColor: true,
 			linkColor2: true,
+			wtop:''
 			/*link1: true,
 			link2: true,
 			link3: true,
@@ -47,14 +48,28 @@ class AgendaPople extends Component {
 
 	_handleClick() {
 		this.setState({
-			a: true
+			a: true,
+            wtop:document.documentElement.scrollTop || document.body.scrollTop
 		})
-	}
+        console.log(document.documentElement.scrollTop,'123123');
+        document.body.style.height = '100%'
+        document.documentElement.style.height = '100%'
+        document.body.style.overflow = 'hidden'
+		document.documentElement.style.overflow = 'hidden'
+    }
 	_handleOffClick(e) {
 		e.stopPropagation()
 		this.setState({
 			a: false
 		})
+        document.body.style.height = '100%'
+        document.documentElement.style.height = '100%'
+        document.body.style.overflow = 'visible'
+        document.documentElement.style.overflow = 'visible'
+        document.documentElement.scrollTop = this.state.wtop
+        document.body.scrollTop = this.state.wtop
+
+
 	}
 	mounse(e) {
 		this.setState({

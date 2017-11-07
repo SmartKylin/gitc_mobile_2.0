@@ -287,7 +287,6 @@ export default class Activity extends Component {
                                   <AgendaPople
                                     key={index}
                                     data={data}
-                                    onClick={this.selectedTopic}
                                     openPop={this.props.history.openPop}
                                     closePop={this.props.history.closePop}
                                     setLoginCb={this.props.history.setLoginCb}
