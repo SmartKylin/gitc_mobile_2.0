@@ -17,6 +17,7 @@ import DataAgenda from '../pages/dataAgenda/DataAgenda'
 
 import Ticket from 'pages/ticket'
 import TicketDetail from 'pages/ticketdetail'
+import MiHuiTicketDetail from 'pages/mihuiticketdetail'
 import Activity from 'pages/activity'
 import Issue from 'pages/issue'
 import createBrowserHistory from 'history/createBrowserHistory'
@@ -53,6 +54,7 @@ const RouterMap = class extends Component {
         
         <Route path="/ticket" component={Ticket}></Route>
         <Route path="/ticketdetail/:id" component={TicketDetail}></Route>
+        <Route path="/mihuiticketdetail/:id" component={MiHuiTicketDetail}></Route>
         <Route path="/activity" component={Activity}></Route>
         <Route path="/issue" component={Issue}></Route>
         <Route path="/map" component={Map}></Route>

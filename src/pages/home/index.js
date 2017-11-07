@@ -12,6 +12,7 @@ import {pople} from "../../services/pople";
 import storage from '../../helper/storage'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import cloneDeep from 'lodash/cloneDeep'
+import zanzhushang from '../../images/赞助商.png'
 
 import {
   getDate1,
@@ -334,12 +335,12 @@ export default class Activity extends Component {
                             <div className="logo">
                                 <div className="highlights">
                                     <h3 className="highlights-name ">合作伙伴</h3>
-                                    <p className="highlights-title">ASSEMBLY HIGHLIGHTS</p>
+                                    <p className="highlights-title">COOPERATIVE PARTNERS</p>
                                     <img src={blink} alt="" className="blue-link"/>
                                 </div>
                             </div>
                             <div className="logo-contnet">
-                                <p>官方视频直播平台</p>
+                            {/*    <p>官方视频直播平台</p>
                                 <div className="live_video">
                                     <ul className="clearfix">
                                         <li className="logo_modu"></li>
@@ -351,16 +352,17 @@ export default class Activity extends Component {
                                         <li className="logo_hdb"></li>
                                         <li className="logo_bghd"></li>
                                     </ul>
-                                </div>
+                                </div>*/}
                               {/*<p>钻石赞助</p>
                                 <img src={LOGO_1} alt=""/>
                                 <p>媒体合作</p>
 
                                 <img src={LOGO_2} alt=""/>*/}
+                                <img style={{width:'100%',height:'100%'}} src={zanzhushang} alt=""/>
                               <Link to="./sponsorship" href="" className="btn-all btn-all-bottoms">赞助机会 <div
   
   
-                              className="batn-r"></div>  </Link>
+                              className="batn-r"></div></Link>
                             </div>
                             <div className="bg-b">
                                 <div className="maps">

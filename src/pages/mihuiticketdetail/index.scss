@@ -1,0 +1,133 @@
+.ticket--bg {
+  //background: url(../../images/ticket-bg.png);
+  position: relative;
+  width: 83%;
+  //height: 410px;
+  height: 61%;
+}
+
+.ticket--type {
+  //width: 50px;
+  height: 30px;
+  color: #000;
+  position: absolute;
+  left: 16%;
+  top: 51%;
+  font-size: 16px;
+}
+.menpiaoImg{
+  width: 13%;
+  height: 9%;
+  position: absolute;
+  top:83%;
+  right: 68%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+}
+.menpiaoText1{
+  position: absolute;
+  top:83%;
+  right:38%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  .danhang{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+
+}
+
+.ticket--barcode {
+  position: absolute;
+  height: 15%;
+  top: 4%;
+  left: 23%;
+}
+
+@media only screen and (max-width: 375px) {
+  .menpiaoImg{
+    width: 20%;
+    height: 16%;
+    position: absolute;
+    top:81%;
+    right: 34%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .menpiaoText1{
+    position: absolute;
+    top:83%;
+    right: 33%;
+    .danhang{
+      overflow: hidden;
+    }
+  }
+  .ticket--barcode {
+    position: absolute;
+    height: 15%;
+    top: 4%;
+    left: 20%;
+  }
+}
+
+
+@media only screen and (max-width: 320px) {
+  .menpiaoImg{
+    width: 20%;
+    height: 16%;
+    position: absolute;
+    top:81%;
+    right: 68%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .menpiaoText1{
+    position: absolute;
+    top:83%;
+    right: 24%;
+    .danhang{
+      overflow: hidden;
+    }
+  }
+
+  .ticket--barcode {
+    position: absolute;
+    height: 15%;
+    top: 4%;
+    left: 15%;
+  }
+
+}
+
+
+.ticket--instructions {
+  position: relative;
+  color: #fff;
+  font-size: 10px;
+  padding-left: 10%;
+  margin-top: 17px;
+}
+
+.ticket--rights {
+  margin-top: 28px;
+  width: 100%;
+  min-height: 100%;
+  .ticketImg{
+    width:100%;
+    height: 100%;
+  }
+}
+
+.rights--row {
+  display: flex;
+}
