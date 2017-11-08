@@ -51,9 +51,7 @@ export default class extends Component {
         document.title = "我的门票"
     }
     componentDidMount () {
-
-        let phone = storage.get(storage.PHONE_KEY)
-        //code 码
+        let phone = this.props.match.params.phone
         let code = this.props.match.params.code
         let token='1afb756d16740266efde290917ca1a8e'
         getTicketDetail({phone,code, token })
