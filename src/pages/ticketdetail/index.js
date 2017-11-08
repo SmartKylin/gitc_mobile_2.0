@@ -53,23 +53,24 @@ export default class extends Component {
   componentDidMount () {
     
     let phone = storage.get(storage.PHONE_KEY)
-    // 门票ID
-    let cid = this.props.match.params.id
-    getTicketDetail({phone, cid})
+    //code 码
+    let code = this.props.match.params.code
+    let token='1afb756d16740266efde290917ca1a8e'
+    getTicketDetail({phone,code, token })
     .then(res => {
-      if (res) {
+        if (res) {
         return res.json()
       }
     })
     .then( async data => {
-      await this.setState({
+        await this.setState({
         ticket: data.data && data.data.bt__name,
         barcodeString: data.data && data.data.code,
         name: data.data && data.data.name
       })
       
       // 生成条形码
-      JsBarcode(this.barcode, this.state.barcodeString,
+      JsBarcode(this.barcode, code,
       {
         displayValue: true,  //  不显示原始值
         // background: '#4b8b7f',  //  背景色
@@ -79,8 +80,8 @@ export default class extends Component {
         height: 50
       })
     })
-    .catch(() => {
-      this.props.history.goBack()
+    .catch((err) => {
+        this.props.history.goBack()
     })
     
   }

@@ -13,7 +13,8 @@ export default class extends Component {
       <div style={{background: '#fff', marginTop: '10%', height: minHeight + 'px', borderRadius: '4px', padding: '0 16px'}}>
         {
           this.props.ticketList && this.props.ticketList.length > 0 ? this.props.ticketList.map((item, index) => (
-              <Link key={index} to={`/ticketdetail/${item.id}`} style={{borderBottom: '1px solid #ccc', height: '54px', fontSize: '14px', lineHeight: '54px', color: '#000', display: 'flex', alignItems: 'center', fontWeight: 'bold', justifyContent: 'space-between'}}>
+              item && item.sign_staus != 0?
+              <Link key={index} to={`/ticketdetail/${item.id}/${item.code}`} style={{borderBottom: '1px solid #ccc', height: '54px', fontSize: '14px', lineHeight: '54px', color: '#000', display: 'flex', alignItems: 'center', fontWeight: 'bold', justifyContent: 'space-between'}}>
                 <div>
                   <span className="ticket--avatar">
                     <img className="avatar--icon" src={avatarIcon} alt=""/>
@@ -23,7 +24,7 @@ export default class extends Component {
                 </div>
                 {/*<div className={'to--detail'}/>*/}
                 <i className="iconfont">&#xe660;</i>
-              </Link>
+              </Link>:""
             )
           ) : (
             <div className="no--ticket">

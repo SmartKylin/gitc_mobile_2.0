@@ -69,7 +69,7 @@ export default class MiHuiTicketDetail extends Component {
       })
       
       // 生成条形码
-      JsBarcode(this.barcode, this.state.barcodeString,
+      JsBarcode(this.barcode, cid,
       {
         displayValue: true,  //  不显示原始值
         // background: '#4b8b7f',  //  背景色
