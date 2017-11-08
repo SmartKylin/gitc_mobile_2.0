@@ -20,7 +20,6 @@ export default class extends Component {
       this.props.setLoginCb(cb)
     }
   }
-  
   signOut = () => {
     let phone = storage.get(storage.PHONE_KEY)
     if (phone) {
@@ -51,7 +50,9 @@ export default class extends Component {
           {/*<Link to={"/issue"} onClick={() => this.props.closeMenu()}>议题提交</Link>*/}
           {/*<Link to={"/sponsorship"} onClick={() => this.props.closeMenu()}>赞助合作</Link>*/}
           <Link to={"/awards"} onClick={() => this.props.closeMenu()}>奖项评选</Link>
-          <a href="javascript:;" onClick={this.signOut}>注销</a>
+            {
+                storage.get(storage.PHONE_KEY) && <a href="javascript:;" onClick={this.signOut}>注销</a>
+            }
         </div>
       </div>
     )
