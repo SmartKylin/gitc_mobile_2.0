@@ -38,6 +38,9 @@
     line-heght: 32px;
   }
 }
+.ant-checkbox-wrapper + .ant-checkbox-wrapper{
+  margin-left: 0px;
+}
 .xingBox{
   position: relative;
   .xing{
