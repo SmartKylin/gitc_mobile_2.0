@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.a7fa3d37.css",
   "main.css.map": "static/css/main.a7fa3d37.css.map",
-  "main.js": "static/js/main.2b98b6cc.js",
-  "main.js.map": "static/js/main.2b98b6cc.js.map",
+  "main.js": "static/js/main.3d378439.js",
+  "main.js.map": "static/js/main.3d378439.js.map",
   "static/media/VIP票.jpg": "static/media/VIP票.39222e17.jpg",
   "static/media/banner.png": "static/media/banner.3223141e.png",
   "static/media/bannerlink.png": "static/media/bannerlink.d044d448.png",
@@ -17,7 +17,9 @@
   "static/media/map2.jpg": "static/media/map2.15ec69e4.jpg",
   "static/media/map3.jpg": "static/media/map3.5bd1296f.jpg",
   "static/media/ticket-bg.png": "static/media/ticket-bg.a427aa62.png",
+  "static/media/yidonglogo.png": "static/media/yidonglogo.79a1865e.png",
   "static/media/yueguangjifeng.jpg": "static/media/yueguangjifeng.5ae6e998.jpg",
+  "static/media/zhibotupian.jpg": "static/media/zhibotupian.d7e70dff.jpg",
   "static/media/专业观众票.jpg": "static/media/专业观众票.9f0695e3.jpg",
   "static/media/前去报名.png": "static/media/前去报名.5affba84.png",
   "static/media/基础架构专场票.jpg": "static/media/基础架构专场票.8814b812.jpg",
@@ -30,7 +32,6 @@
   "static/media/活动介绍2.png": "static/media/活动介绍2.32a8ce55.png",
   "static/media/活动介绍3.png": "static/media/活动介绍3.616f1b5e.png",
   "static/media/背景_01.png": "static/media/背景_01.33cbac23.png",
-  "static/media/赞助商.png": "static/media/赞助商.7c7a8972.png",
   "static/media/运维专场票.jpg": "static/media/运维专场票.ea0e8f6e.jpg",
   "static/media/陈洋.jpg": "static/media/陈洋.3ec486a9.jpg"
 }

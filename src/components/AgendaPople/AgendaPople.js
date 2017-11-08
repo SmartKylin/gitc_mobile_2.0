@@ -7,6 +7,7 @@ import { TOKEN } from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
 import { message } from 'antd'
 import defaultAvatar from '../../images/default-avatar.jpg'
+import zhibo from '../../images/zhibotupian.jpg'
 
 
 import { collectDocument, collectGuest } from "../../services/collect";
@@ -213,9 +214,9 @@ class AgendaPople extends Component {
 	render() {
 		const { data } = this.props;
 		return (
-			<li className="popele-box" id="a" onClick={this._handleClick}>
+			<li className="popele-box" id="a" onClick={this.props.flag || this.props.flag1 ?"":this._handleClick}>
 				<div className="popele-box-left">
-					{data ? <img src={data.pic || defaultAvatar} alt="" className="header-img" /> : ""}
+					{data ? <img src={data.pic ? data.pic : this.props.flag?zhibo:defaultAvatar} alt="" className="header-img" /> : ""}
 					<div className="header-icon">
 						<span className="l">
 							<div className={"popele-box-1 " + (this.state.guestStatus || data.collect ? 'collected' : '')}></div>
@@ -234,10 +235,12 @@ class AgendaPople extends Component {
 						{data ? <span className="popele-box-r">{data.stime}</span> : ''}
 					</div>
 					<div className="popele-name-title">
-						{data ? <span className="popele-name-l">{data.name}</span> : ""}
-						{data ? <span className="popele-name-r">{data.company}丨{data.position}</span> : ''}
+						{data && this.props.flag ?(<span className="popele-name-lA">全程直播开幕盛况</span>): (<span className="popele-name-l">{data.name}</span>: "")}
+						{data && this.props.flag ?(<span className="popele-name-r"></span>): (<span className="popele-name-r">{data.company}丨{data.position}</span>: '')}
 					</div>
-					{data ? <p className="popele-box-text sl">演讲内容:{data.sintroduce}</p> : ''}
+
+					{data && this.props.flag  ? (<p className="popele-box-text sl">主办方、协办方致辞，大会主席团成员共同亮相启动仪式，正式开启GITC年度盛典。</p>): (<p className="popele-box-text sl">演讲内容:{data.sintroduce}</p> : '')}
+
 				</div>
 				<div className="windowPop" style={{ display: this.state.a ? "block" : 'none' }}
 					onTouchStart={this.mounseup.bind(this)}

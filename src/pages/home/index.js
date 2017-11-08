@@ -12,7 +12,7 @@ import {pople} from "../../services/pople";
 import storage from '../../helper/storage'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import cloneDeep from 'lodash/cloneDeep'
-import zanzhushang from '../../images/赞助商.png'
+import zanzhushang from '../../images/yidonglogo.png'
 
 import {
   getDate1,
@@ -59,6 +59,7 @@ export default class Activity extends Component {
         1: []
       },
       guestList: {},
+        currentTopic: ''
     }
   }
   
@@ -150,7 +151,42 @@ export default class Activity extends Component {
     
     // }
     let {whichDay, topicGroup, guestList} = this.state
-    
+    let obj = {
+        collect: false,
+        company: "思科",
+        file_collect: false,
+        files__id: null,
+        files__url: null,
+        id: 502,
+        meet: "基础架构专场",
+        meetaddr: "3F· 309B",
+        name: "待定",
+        pic: "",
+        position: "待定",
+        sdata: "2017-11-23",
+        sintroduce: "待定",
+        stheme: "开场致辞",
+        stime: "10:00-10:10",
+        summary: "待定",
+    }
+      let obj1 = {
+          collect: false,
+          company: "麒麟会",
+          file_collect: false,
+          files__id: null,
+          files__url: null,
+          id: 502,
+          meet: "主会场",
+          meetaddr: "1F· 大宴会厅C",
+          name: "王铮铮",
+          pic: "",
+          position: "CEO",
+          sdata: "2017-11-23",
+          sintroduce: "",
+          stheme: "开幕式直播",
+          stime: "09:00-10:00",
+          summary: "",
+      }
     return (
     <span>
 
@@ -272,7 +308,8 @@ export default class Activity extends Component {
                                   <span
                                     key={index}
                                     onClick={() => this.setState({
-                                      guestList: item.data
+                                      guestList: item.data,
+                                        currentTopic: item.name
                                     })}
                                     className={classNames('agenda-btn', {active: guestList === item.data})}
                                     >{item.name}</span>
@@ -282,7 +319,15 @@ export default class Activity extends Component {
                               
                               <div className="agenda-pople-box agenda-pople-box-btn1">
                                 <ul className="agenda-pople">
-                                {
+                                  {
+                                      this.state.currentTopic && this.state.currentTopic  != '主会场' && this.state.whichDay == 0 &&
+                                      <AgendaPople data={obj1} flag="1"/>
+                                  }
+                                 {
+                                        this.state.currentTopic == '基础架构专场' && this.state.whichDay == 0 &&
+                                        <AgendaPople data={obj} flag1="1"/>
+                                 }
+                                 {
                                   guestList.length && guestList.map((data, index) => (
                                   <AgendaPople
                                     key={index}
@@ -292,7 +337,7 @@ export default class Activity extends Component {
                                     setLoginCb={this.props.history.setLoginCb}
                                   />
                                   ))
-                                }
+                                 }
                                 </ul>
                               </div>
                             </div>
