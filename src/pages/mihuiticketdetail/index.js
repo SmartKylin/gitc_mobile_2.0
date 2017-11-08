@@ -15,104 +15,105 @@ import storage from '../../helper/storage'
 
 // 根据票种得到对应门票的权益背景图
 let getBgByTicket = (ticket) => {
-  switch (ticket) {
-    case 'VIP票':
-      return vip;
-    case '专业观众票':
-      return zhuanye;
-    case '基础架构专场票':
-      return jichu;
-    case '大会通票':
-      return dahui;
-    case '大数据&人工智能专场票':
-      return dashuju;
-    case '运维专场票':
-      return yunwei;
-    case '展览票':
-      return zhanlan;
-    default:
-      return dahui;
-  }
+    switch (ticket) {
+        case 'VIP票':
+            return vip;
+        case '专业观众票':
+            return zhuanye;
+        case '基础架构专场票':
+            return jichu;
+        case '大会通票':
+            return dahui;
+        case '大数据&人工智能专场票':
+            return dashuju;
+        case '运维专场票':
+            return yunwei;
+        case '展览票':
+            return zhanlan;
+        default:
+            return dahui;
+    }
 }
 
 
-export default class MiHuiTicketDetail extends Component {
-  constructor () {
-    super();
-    this.state = {
-      minHeight: document.documentElement?document.documentElement.clientHeight:document.body.clientHeight,
-      barcodeString: '',
-      name: '',
-      ticket: ''
+export default class extends Component {
+    constructor () {
+        super();
+        this.state = {
+            minHeight: document.documentElement?document.documentElement.clientHeight:document.body.clientHeight,
+            barcodeString: '',
+            name: '',
+            ticket: ''
+        }
     }
-  }
-  componentWillMount () {
-    // 设置门票标题
-    document.title = "我的门票"
-  }
-  componentDidMount () {
-    
-    let phone = storage.get(storage.PHONE_KEY)
-    // 门票ID
-    let cid = this.props.match.params.id
-    getTicketDetail({phone, cid})
-    .then(res => {
-      if (res) {
-        return res.json()
-      }
-    })
-    .then( async data => {
-      await this.setState({
-        ticket: data.data && data.data.bt__name,
-        barcodeString: data.data && data.data.code,
-        name: data.data && data.data.name
-      })
-      
-      // 生成条形码
-      JsBarcode(this.barcode, cid,
-      {
-        displayValue: true,  //  不显示原始值
-        // background: '#4b8b7f',  //  背景色
-        blank: 100,
-        lineColor: 'rgba(255,255,255)', // 线条颜色
-        width: 1.5,  // 线条宽度
-        height: 50
-      })
-    })
-    .catch(() => {
-      this.props.history.goBack()
-    })
-    
-  }
-  render() {
-    return (
-      <div>
-        <ChildContainer>
-          <div style={{background: 'rgba(0, 0, 0, 0)', marginTop: '10.5%', position: 'relative', display: 'flex', justifyContent: 'center'}}>
-            <img src={ticketBg} alt="" className="ticket--bg"/>
-            <div className="ticket--type">
-              <div style={{fontSize: '13px', fontWeight: 'bold'}}>{this.state.name}</div>
-              <div>{this.state.ticket}</div>
+    componentWillMount () {
+        // 设置门票标题
+        document.title = "我的门票"
+    }
+    componentDidMount () {
+
+        let phone = storage.get(storage.PHONE_KEY)
+        //code 码
+        let code = this.props.match.params.code
+        let token='1afb756d16740266efde290917ca1a8e'
+        getTicketDetail({phone,code, token })
+            .then(res => {
+                if (res) {
+                    return res.json()
+                }
+            })
+            .then( async data => {
+                await this.setState({
+                    ticket: data.data && data.data.bt__name,
+                    barcodeString: data.data && data.data.code,
+                    name: data.data && data.data.name
+                })
+
+                // 生成条形码
+                JsBarcode(this.barcode, code,
+                    {
+                        displayValue: true,  //  不显示原始值
+                        // background: '#4b8b7f',  //  背景色
+                        blank: 100,
+                        lineColor: 'rgba(255,255,255)', // 线条颜色
+                        width: 1.5,  // 线条宽度
+                        height: 50
+                    })
+            })
+            .catch((err) => {
+                this.props.history.goBack()
+            })
+
+    }
+    render() {
+        return (
+            <div>
+              <ChildContainer>
+                <div style={{background: 'rgba(0, 0, 0, 0)', marginTop: '10.5%', position: 'relative', display: 'flex', justifyContent: 'center'}}>
+                  <img src={ticketBg} alt="" className="ticket--bg"/>
+                  <div className="ticket--type">
+                    <div style={{fontSize: '13px', fontWeight: 'bold'}}>{this.state.name}</div>
+                    <div>{this.state.ticket}</div>
+                  </div>
+                  <div className="ticket--barcode">
+                    <svg ref={ barcde => this.barcode = barcde}></svg>
+                  </div>
+                    {/*<div style={{position: 'absolute', top: '20%',left:'20%'}}>{this.state.barcodeString}</div>*/}
+                  <div className='menpiaoText1'>
+                    <div><span className='danhang'>官网：www.thegthegitcitc.com</span></div>
+                    <div><span className='danhang'>客服：010-88323888</span></div>
+                  </div>
+                </div>
+                <div className="ticket--instructions">
+                  <div>使用说明</div>
+                  <div>1、本活动凭票入场，一人一票一次性使用；</div>
+                  <div>2、请截屏保存此条形码，保持条形码清晰，以便作为入场凭证。</div>
+                </div>
+                <div className="ticket--rights">
+                  <img className='ticketImg' src={getBgByTicket(this.state.ticket)} alt=""/>
+                </div>
+              </ChildContainer>
             </div>
-            <div className="ticket--barcode">
-              <svg ref={ barcde => this.barcode = barcde}></svg>
-            </div>
-            {/*<div style={{position: 'absolute', top: '20%',left:'20%'}}>{this.state.barcodeString}</div>*/}
-            <div className='menpiaoText1'>
-              <div><span className='danhang'>官网：www.thegthegitcitc.com</span></div>
-              <div><span className='danhang'>客服：010-88323888</span></div>
-            </div>
-          </div>
-          <div className="ticket--instructions">
-            <div>使用说明</div>
-            <div>1、本活动凭票入场，一人一票一次性使用；</div>
-            <div>2、请截屏保存此条形码，保持条形码清晰，以便作为入场凭证。</div>
-          </div>
-          <div className="ticket--rights">
-            <img className='ticketImg' src={getBgByTicket(this.state.ticket)} alt=""/>
-          </div>
-        </ChildContainer>
-      </div>
-    )
-  }
+        )
+    }
 }
