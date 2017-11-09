@@ -12,7 +12,8 @@ import {pople} from "../../services/pople";
 import storage from '../../helper/storage'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import cloneDeep from 'lodash/cloneDeep'
-import zanzhushang from '../../images/yidonglogo.png'
+import zanzhushang1 from '../../images/1赞助商logo移动端.png'
+import zanzhushang2 from '../../images/2媒体移动端logo 2.png'
 
 import {
   getDate1,
@@ -402,7 +403,8 @@ export default class Activity extends Component {
                                 <p>媒体合作</p>
 
                                 <img src={LOGO_2} alt=""/>*/}
-                                <img style={{width:'100%',height:'100%'}} src={zanzhushang} alt=""/>
+                                <img style={{width:'100%',height:'100%'}} src={zanzhushang1} alt=""/>
+                                <img style={{width:'100%',height:'100%'}} src={zanzhushang2} alt=""/>
                               <Link to="./sponsorship" href="" className="btn-all btn-all-bottoms">赞助机会 <div
   
   
