@@ -7,10 +7,21 @@ import noTicket from 'images/no-ticket.png'
 let colorAry = ['#ff1854', '#0078ffi', '#273e6a', '#11daff'];
 
 export default class extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+        minHeight:""
+    }
+  }
+  componentDidMount(){
+    this.setState({
+        minHeight:parseInt(document.documentElement? document.documentElement.clientHeight : document.body.clientHeight)
+    })
+  }
+
   render () {
-    let minHeight = parseInt(document.documentElement? document.documentElement.clientHeight : document.body.clientHeight) -100
     return (
-      <div style={{background: '#fff', marginTop: '10%', height: minHeight + 'px', borderRadius: '4px', padding: '0 16px'}}>
+      <div style={{background: '#fff', marginTop: '10%', minHeight: this.state.minHeight + 'px', borderRadius: '4px', padding: '0 16px'}}>
         {
           this.props.ticketList && this.props.ticketList.length > 0 ? this.props.ticketList.map((item, index) => (
               item && item.sign_staus != 0?

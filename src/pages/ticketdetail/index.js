@@ -9,6 +9,7 @@ import dahui from '../../images/大会通票.jpg'
 import dashuju from '../../images/大数据&人工智能专场票.jpg'
 import yunwei from '../../images/运维专场票.jpg'
 import zhanlan from '../../images/展览票.jpg'
+import quanqiuhua from '../../images/全球化专场票.jpg'
 import './index.scss'
 import JsBarcode from 'jsbarcode'
 import storage from '../../helper/storage'
@@ -16,7 +17,7 @@ import storage from '../../helper/storage'
 // 根据票种得到对应门票的权益背景图
 let getBgByTicket = (ticket) => {
   switch (ticket) {
-    case 'VIP票':
+    case 'VIP门票':
       return vip;
     case '专业观众票':
       return zhuanye;
@@ -30,6 +31,8 @@ let getBgByTicket = (ticket) => {
       return yunwei;
     case '展览票':
       return zhanlan;
+      case '全球化专场票':
+          return quanqiuhua;
     default:
       return dahui;
   }
