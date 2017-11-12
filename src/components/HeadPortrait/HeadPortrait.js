@@ -5,6 +5,7 @@ import GuestDetailPop from '../AgendaPople/GuestDetailPop'
 // import CollectedModal from '../CollectedModal'
 import './HeadPortrait.scss';
 import $ from 'jquery'
+import defaultPic from '../../images/default-avatar.jpg'
 
 class HeadPortrait extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class HeadPortrait extends Component {
       })
     } else {
       this.setState({
-        img: require('../images/陈洋.jpg')
+        img: defaultPic
       })
     }
   }
