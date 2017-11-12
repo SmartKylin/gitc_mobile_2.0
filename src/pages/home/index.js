@@ -19,7 +19,6 @@ import {
   getDate2
 } from "../../services/home";
 
-
 const LOGO_1 = require('components/images/logo1.jpg')
 const LOGO_2 = require('components/images/logo2.jpg')
 // const HEADER = require('components/images/logo2.jpg')
