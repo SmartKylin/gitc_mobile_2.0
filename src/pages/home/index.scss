@@ -43,22 +43,22 @@
     padding: 0 12px;
     .accordion {
       margin-top: .32rem;
-      background: url(../../images2/accordion_bg.jpg) no-repeat center;
+      //background: url(../../images2/accordion_bg.jpg) no-repeat center;
     }
-    .am-accordion.my-accordion {
-      .am-accordion-item {
-        background: rgba(0, 0, 0, 0);
-        color: #fff;
-
-      }
-
-      .am-accordion-header {
-        background: rgba(255, 255, 255, 0.0);
-        color: #fff;
-        border-bottom: 1px solid #0b1220;
-        height: .48rem!important;
-      }
-    }
+    //.am-accordion.my-accordion {
+    //  .am-accordion-item {
+    //    background: rgba(0, 0, 0, 0);
+    //    color: #fff;
+    //
+    //  }
+    //
+    //  .am-accordion-header {
+    //    background: rgba(255, 255, 255, 0.0);
+    //    color: #fff;
+    //    border-bottom: 1px solid #0b1220;
+    //    height: .48rem!important;
+    //  }
+    //}
   }
 
   .light-dot-img {

@@ -6,7 +6,7 @@ import contact_us from '../../images2/contact-us.png'
 import {Accordion, List} from 'antd-mobile'
 // import 'antd-mobile/dist/antd-mobile.css'
 
-import {getDate1, getLightDot} from "../../services/home";
+import {getAgenda, getLightDot} from "../../services/home";
 import Accor from '../../components2/Accordion'
 import LightImg from '../../images2/light_dot.png'
 import HighLight from '../../components2/Highlight'
@@ -14,7 +14,19 @@ import NineSquare from '../../components2/NineSquare'
 import MeetingGuide from '../../components2/MeetingGuide'
 import AllPeople from '../../components2/AllPeople'
 
+
 import PointDiv from '../newHome/componets/PointDiv'
+
+const generateImgAry = () => {
+  let ary = [];
+  for (let i = 1; i < 17; i++) {
+    ary.push(require(`../../images2/accordion_bg${i}.png`))
+  }
+  return ary
+}
+
+let imgAry = generateImgAry()
+
 
 export default class extends Component {
   constructor(props) {
@@ -25,7 +37,7 @@ export default class extends Component {
     }
   }
   async componentWillMount () {
-    let res = await getDate1()
+    let res = await getAgenda()
     .then(res => res.json())
     await this.setState({
       agendaData: res.data
@@ -35,9 +47,11 @@ export default class extends Component {
       highlightData: data.data
     })
     console.log(this.state.highlightData);
+    console.log(this.state.agendaData, 'fdsafjdso;fj');
   }
   
   render () {
+    
     let {agendaData, highlightData} = this.state
     return (
       <div className="entry-page">
@@ -49,7 +63,7 @@ export default class extends Component {
         <NineSquare/>
         
         
-        {/*大会议程*/}
+        {/*大会日程*/}
         <div className="agenda-wrapper">
           <img src={agenda_title} alt=""/>
         </div>
@@ -57,7 +71,7 @@ export default class extends Component {
           <div className="accordion">
             {
               agendaData.map((item, ind) => (
-                <Accor key={ind} agenda={item}/>
+                <Accor key={ind} agenda={item} bgImg={imgAry[ind]}/>
               ))
             }
           </div>
@@ -72,7 +86,7 @@ export default class extends Component {
           <div className="accordion">
             {
               highlightData.map((item, ind) => (
-               <HighLight key={ind} light={item}/>
+               <HighLight key={ind} light={item} bgImg={imgAry[ind]}/>
               ))
             }
           </div>
