@@ -29,7 +29,7 @@ export default class extends Component {
     }
     return (
       <div className="my-accordion">
-  
+
         <AccordionHeader
           name={light.name}
           changeCollapse={this.changeCollapse}
