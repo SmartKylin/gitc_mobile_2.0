@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import defaultAvatar from '../../images/default-avatar.jpg'
-import GuestDetailPop from '../../components/AgendaPople/GuestDetailPop'
+// import GuestDetailPop from '../../components/AgendaPople/GuestDetailPop'
 import './index.scss'
 import PeoplePop from '../../components2/PeoplePop'
 import {allowScroll, forbiddenScroll} from "../../helper/scrollSetting";
@@ -32,7 +32,10 @@ export default class extends Component {
   render() {
     let {speecher} = this.props
     let {popVisible} = this.state
-    console.log(popVisible, 'spper');
+    // console.log(popVisible, 'spper');
+    let {openPop, closePop, setLoginCb} = this.props
+    // console.log(openPop, 'speech openPop');
+  
     return (
       <div className="speech-item" onClick={this.openGuestPop}>
         <div className="item-left">
@@ -58,7 +61,13 @@ export default class extends Component {
           popVisible
           ? <div className="popup">
             {
-              <PeoplePop closeGuestPop={this.closeGuestPop} speecher={speecher}/>
+              <PeoplePop
+                closeGuestPop={this.closeGuestPop}
+                speecher={speecher}
+                openPop={this.props.openPop}
+                closePop={this.props.closePop}
+                setLoginCb={this.props.setLoginCb}
+              />
             }
           </div>
           : null

@@ -7,7 +7,7 @@ export default class extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      collapsed: false,
+      collapsed: true,
     }
   }
   
@@ -19,6 +19,7 @@ export default class extends Component {
   render () {
     let {collapsed} = this.state
     let {agenda, bgImg} = this.props
+    let {openPop, closePop, setLoginCb} = this.props
     // let json = JSON.parse(agenda.json)
     // console.log(json);
     let obj = {
@@ -31,11 +32,6 @@ export default class extends Component {
     }
     return (
       <div className="my-accordion">
-        {/*<div className="accor-header" onClick={this.changeCollapse} style={{background: `url(${bgImg}) no-repeat center`}}>
-          <div className="main-title">{agenda.name}</div>
-          <div className="en-title">{agenda.json.en || '英文标题'} </div>
-          <i className={collapsed ? 'iconfont icon-xiangshang' : 'iconfont icon-xiangxia'} />
-        </div>*/}
         <AccordionHeader
           name={agenda.name}
           changeCollapse={this.changeCollapse}
@@ -43,20 +39,24 @@ export default class extends Component {
           enName={agenda.json.en || agenda.ename}
           collapsed={collapsed}
         />
-        {
-          collapsed
-          ? (<div className="accor-content">
-              <SpeechItem  style='yes' speecher={obj}/>
-            {
-              agenda.data && agenda.data.length
-              ? agenda.data.map((item, ind) => (
-                <SpeechItem key={ind} speecher={item}/>
-              ))
-              : null
-            }
-          </div>)
-          : null
-        }
+  
+        <div className={collapsed ? 'accor-content hidden-style' : 'accor-content'}>
+          <SpeechItem  style='yes' speecher={obj}/>
+          {
+            agenda.data && agenda.data.length
+            ? agenda.data.map((item, ind) => (
+            <SpeechItem
+            key={ind}
+            speecher={item}
+      
+            openPop={openPop}
+            closePop={closePop}
+            setLoginCb={setLoginCb}
+            />
+            ))
+            : null
+          }
+        </div>
       </div>
     )
   }
