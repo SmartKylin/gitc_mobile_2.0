@@ -23,9 +23,7 @@ export default class extends Component {
   }
   render() {
     return (
-      <div className="map-page" id="container">
-      
-      </div>
+      <div className="map-page" id="container"/>
     )
   }
 }

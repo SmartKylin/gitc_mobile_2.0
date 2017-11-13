@@ -18,7 +18,7 @@ export default class extends Component {
   render () {
     let {collapsed} = this.state
     let {light} = this.props
-    console.log(light);
+    // console.log(light);
     let content = null
     try {
       content = JSON.parse(light.content)
@@ -30,7 +30,7 @@ export default class extends Component {
         <div className="accor-header" onClick={this.changeCollapse}>
           <div className="main-title">{light.name}</div>
           <div className="en-title">{light.summary || '英文标题'} </div>
-          <i className={collapsed ? "iconfont icon-xiangxia" : "iconfont icon-xiangshang"}/>
+          <i className={collapsed ? 'iconfont icon-xiangshang' : 'iconfont icon-xiangxia'} />
         </div>
         {
           collapsed
