@@ -4,7 +4,7 @@
   align-items: center;
   font-size: 9px;
   color: #fff;
-  margin-bottom: 20px;
+  margin: 0 .05rem 20px .05rem;
 
   .img-wrapper {
     width: .72rem;
@@ -25,7 +25,16 @@
   }
   .name {
     font-size: 13px;
+    font-weight: 600;
+
   }
 
-
+  .company {
+    text-align: center;
+    max-width: 72px;
+  }
+  .position {
+    text-align: center;
+    max-width: 72px;
+  }
 }

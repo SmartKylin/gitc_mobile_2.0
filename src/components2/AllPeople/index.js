@@ -13,25 +13,45 @@ export default class extends Component {
     this.state = {
       presidentData: [],
       expertData: [],
-      speecherData: []
     }
   }
   async componentWillMount () {
     
     let presidentData = await getPopleList(45).then(res => res.json())
     await this.setState({
-      presidentData: presidentData.data
+      presidentData: presidentData.data,
     })
-    console.log(this.state.presidentData, 'dsata');
+    let expertData = await getPopleList(46).then(res => res.json())
+    await this.setState({
+      expertData: expertData.data
+    })
+    // console.log(this.state.presidentData, 'dsata');
+    // console.log(this.state.expertData, 'fdfsd');
   }
   render () {
+    let {presidentData, expertData} = this.state
     return (
-      <div>
+      <div className="all-people">
         <img src={PresidentImg} alt="" className="item-header"/>
-        {
-        
-        }
+        <div className="people-group">
+          {
+            presidentData.length
+            ? presidentData.map((item, index) => (
+              <GuestItem data={item}/>
+            ))
+            : null
+          }
+        </div>
         <img src={ExpertImg} alt="" className="item-header"/>
+        <div className="people-group">
+          {
+            expertData.length
+            ? expertData.map((item, index) => (
+            <GuestItem data={item}/>
+            ))
+            : null
+          }
+        </div>
       </div>
     )
   }
