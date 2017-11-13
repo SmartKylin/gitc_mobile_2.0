@@ -1,6 +1,6 @@
 .ConferenceBox{
   width: 100%;
-  padding-top: .5rem;
+  padding-top:60px;
   .ConferenceBoxShang{
     width: 100%;
     .ConferenceBoxShangBox{
@@ -15,9 +15,39 @@
           width: 2rem;
           height: .42rem;
           background: url("./images/分会场.png") no-repeat;
-          font-size: 16px;
+          font-size: 24px;
           font-weight: 800;
+          color: black;
         }
+      }
+      .ConferenceYw{
+        margin: 0 auto;
+        font-size: 18px;
+        text-align: center;
+        color: #ffffff;
+        line-height: 18px;
+      }
+      .ConferenceTime{
+        margin: 0 auto;
+        font-size: 16px;
+        text-align: center;
+        color: #ffffff;
+        line-height: 20px;
+        margin-top: 30px;
+      }
+      .ConferenceDd{
+        margin: 0 auto;
+        font-size: 16px;
+        text-align: center;
+        color: #ffffff;
+        line-height: 20px;
+      }
+      .ConferenceContest{
+        padding: 8px 10px 0 10px;
+        margin: 0 auto;
+        font-size: 16px;
+        color: #ffffff;
+        margin-top: 20px;
       }
 
     }

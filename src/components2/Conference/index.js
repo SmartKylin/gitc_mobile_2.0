@@ -22,9 +22,18 @@ export default class Conference extends React.Component{
                     主会场
                   </div>
                 </div>
-                 <div className="ConferenceYw"></div>
-                 <div className="ConferenceTime"></div>
-                 <div className="ConferenceDd"></div>
+                 <div className="ConferenceYw">
+                   PRESIDIUM
+                 </div>
+                 <div className="ConferenceTime">
+                    时间: 11.23 09:30-12:20 / 11.24 09:30-16:50
+                 </div>
+                 <div className="ConferenceDd">
+                    地点: 1F - 大宴会厅C
+                 </div>
+                <div className="ConferenceContest">
+阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇阿达瓦大武当哇
+                </div>
               </div>
           </div>
           <div className="ConferenceBoxXia">
