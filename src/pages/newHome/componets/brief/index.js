@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.scss'
-import dahuijianjie from './images/大会介绍.png'
+import dahuijianjie from './images/大会简介.png'
 export default class Brief extends React.Component{
 
 
