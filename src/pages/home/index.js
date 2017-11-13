@@ -12,6 +12,7 @@ import LightImg from '../../images2/light_dot.png'
 import HighLight from '../../components2/Highlight'
 import NineSquare from '../../components2/NineSquare'
 import MeetingGuide from '../../components2/MeetingGuide'
+import AllPeople from '../../components2/AllPeople'
 
 
 export default class extends Component {
@@ -84,32 +85,33 @@ export default class extends Component {
         <div className="contact-us">
           <img src={contact_us} alt=""/>
         </div>
+        
+        {/*<AllPeople/>*/}
   
-  
-        {/*<div className="accordion-wrapper">*/}
-          {/*<Accordion defaultActiveKey="0" className="my-accordion" onChange={this.onChange}>*/}
-            {/*<Accordion.Panel header="Title 1">*/}
-              {/*<List className="my-list">*/}
-                {/*<List.Item>content 1</List.Item>*/}
-                {/*<List.Item>content 2</List.Item>*/}
-                {/*<List.Item>content 3</List.Item>*/}
-              {/*</List>*/}
-            {/*</Accordion.Panel>*/}
-            {/*{*/}
-              {/*agendaData.map((item, ind) => (*/}
-                {/*<Accordion.Panel key={ind}>*/}
-                  {/*<List className="my-list">*/}
-                    {/*{*/}
-                      {/*item.data.map((v, k) => (*/}
-                        {/*<List.Item>{v.name}</List.Item>*/}
-                      {/*))*/}
-                    {/*}*/}
-                  {/*</List>*/}
-                {/*</Accordion.Panel>*/}
-              {/*))*/}
-            {/*}*/}
-          {/*</Accordion>*/}
-        {/*</div>*/}
+       {/* <div className="accordion-wrapper">
+          <Accordion defaultActiveKey="0" className="my-accordion" onChange={this.onChange}>
+            <Accordion.Panel header="Title 1">
+              <List className="my-list">
+                <List.Item>content 1</List.Item>
+                <List.Item>content 2</List.Item>
+                <List.Item>content 3</List.Item>
+              </List>
+            </Accordion.Panel>
+            {
+              agendaData.map((item, ind) => (
+                <Accordion.Panel key={ind}>
+                  <List className="my-list">
+                    {
+                      item.data.map((v, k) => (
+                        <List.Item>{v.name}</List.Item>
+                      ))
+                    }
+                  </List>
+                </Accordion.Panel>
+              ))
+            }
+          </Accordion>
+        </div>*/}
       </div>
     )
   }

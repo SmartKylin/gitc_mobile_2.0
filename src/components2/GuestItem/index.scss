@@ -1,0 +1,31 @@
+.guest-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 9px;
+  color: #fff;
+  margin-bottom: 20px;
+
+  .img-wrapper {
+    width: .72rem;
+    height: .72rem;
+    background: #0b1220;
+    border: 2px solid #646974;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 8px;
+
+  }
+  img {
+    width: .63rem;
+    height: .63rem;
+    border-radius: 50%;
+  }
+  .name {
+    font-size: 13px;
+  }
+
+
+}

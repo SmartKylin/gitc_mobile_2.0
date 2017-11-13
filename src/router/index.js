@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import Wrapper from 'components/Wrapper'
 import Home from 'pages/home'
+// import OldHome from 'pages/home/index.bak.js'
 
 import NewHome from 'pages/newHome'
 
@@ -45,8 +46,8 @@ const RouterMap = class extends Component {
     return (
     <Router history={history}>
       <Wrapper openPop={this.props.openPop} history={history} setLoginCb={this.props.setLoginCb}>
-        <Route exact path="/" component={NewHome}/>
-        <Route path="/home" component={Home}></Route>
+        <Route exact path="/" component={Home}/>
+        <Route path="/home" component={NewHome}></Route>
         <Route path="/newhome" component={NewHome}></Route>
 
         <Route path="/meetingdetails/:id" component={MeetingDetails}></Route>
@@ -69,6 +70,7 @@ const RouterMap = class extends Component {
         <Route path="/addgroup" component={AddGroup}></Route>
 
         <Route path="/awards" component={Awards }></Route>
+        {/*<Route path="/oldhome" component={OldHome }></Route>*/}
       </Wrapper>
     </Router>
     )
