@@ -6,9 +6,18 @@ import agenda_title from '../../images2/大会日程.png'
 import contact_us from '../../images2/contact-us.png'
 import {Accordion, List} from 'antd-mobile'
 import {getDate1, getLightDot} from "../../services/home";
+import Accor from '../../components2/Accordion'
 
 import 'antd-mobile/dist/antd-mobile.css'
 
+const AccrodionHeader = (props) => (
+  <div style={{fontSize: '16px', color: '#fff', height: '.48rem!important'}} >
+    {/*<div>{props.name}</div>*/}
+    {/*<div style={{fontSize: '9px'}}>{props.enName}</div>*/}
+    <div style={{height: '16px!important'}}>主会场</div>
+    <div style={{fontSize: '9px', height: '10px!important'}}>MAIN MEETING</div>
+  </div>
+)
 
 const generateNineAry = () => {
   let ary = []
@@ -32,8 +41,9 @@ export default class extends Component {
     await this.setState({
       agendaData: res.data
     })
-    // let res = await getLightDot().then(res => res.json())
+    let data = await getLightDot().then(res => res.json())
     console.log(this.state.agendaData);
+    console.log(data);
   }
   
   render () {
@@ -58,12 +68,17 @@ export default class extends Component {
         </div>
         {/*手风琴*/}
         {
-          agendaData.length
+          [].length
           ? <div className="accordion-wrapper">
               <Accordion defaultActiveKey="0" className="my-accordion" onChange={this.onChange}>
                 {
-                  agendaData.map(item => (
-                    <Accordion.Panel header="Title 1">
+                  agendaData.map((item, ind) => (
+                    <Accordion.Panel
+                      header={
+                        <AccrodionHeader name={item.name} enName={item.other.en}/>
+                      }
+                      key={ind}
+                    >
                       <List className="my-list">
                         <List.Item>content 1</List.Item>
                         <List.Item>content 2</List.Item>
@@ -78,6 +93,10 @@ export default class extends Component {
         }
         <div className="contact-us">
           <img src={contact_us} alt=""/>
+        </div>
+  
+        <div className="accordion-wrapper">
+          <Accor/>
         </div>
       </div>
     )
