@@ -35,6 +35,7 @@ export default class Activity extends Component {
     super(...args);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.switchDay = this.switchDay.bind(this)
+    this.Bombbox = this.Bombbox.bind(this)
     this.state = {
       data: null,
       data1: [],
@@ -58,7 +59,8 @@ export default class Activity extends Component {
         1: []
       },
       guestList: {},
-        currentTopic: ''
+      currentTopic: '',
+      isBombbox:false
     }
   }
   
@@ -144,11 +146,15 @@ export default class Activity extends Component {
       })*/
     }
   }
-  
+
+  Bombbox(){
+    console.log(this.state.isBombbox)
+    this.setState({
+      isBombbox: !this.state.isBombbox
+    })
+  }
+
   render() {
-    // if(){
-    
-    // }
     let {whichDay, topicGroup, guestList} = this.state
     let obj = {
         collect: false,
@@ -168,7 +174,7 @@ export default class Activity extends Component {
         stime: "10:00-10:10",
         summary: "待定",
     }
-      let obj1 = {
+    let obj1= {
           collect: false,
           company: "麒麟会",
           file_collect: false,
@@ -187,14 +193,13 @@ export default class Activity extends Component {
           summary: "",
       }
     return (
-    <span>
-
+            <span>
                 <div className="index-banner">
                     <div className="ban"></div>
                 </div>
                 <div className="content">
                     <div className="highlights highlights">
-                       {/* <div className="Home-Link">
+                        <div className="Home-Link">
                             <div className="Home-Link-Inner">
                                 <div className="Home-Link-Box">
                                 <div className="Home-Link-Box-Img">
@@ -221,7 +226,7 @@ export default class Activity extends Component {
                                 <div className="Home-Link-Box-Text">现场活动</div>
                             </div>
                             </div>
-                        </div>*/}
+                        </div>
                         <h3 className="highlights-name ">大会亮点</h3>
                         <p className="highlights-title">THE HIGHLIGHTS</p>
                         <img src={blink} alt="" className="blue-link"/>
@@ -401,10 +406,8 @@ export default class Activity extends Component {
                                 <p>媒体合作</p>
 
                                 <img src={LOGO_2} alt=""/>*/}
-                                <img style={{width:'100%',height:'100%'}} src={zanzhushang1} alt=""/>
+                              <img style={{width:'100%',height:'100%'}} src={zanzhushang1} alt=""/>
                               <Link to="./sponsorship" href="" className="btn-all btn-all-bottoms">赞助机会 <div
-  
-  
                               className="batn-r"></div></Link>
                             </div>
                             <div className="bg-b">
@@ -440,8 +443,14 @@ export default class Activity extends Component {
                     </div>
                   {/*<strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>*/}
                   <a href="https://www.bagevent.com/event/768490" className="live">购票</a>
-                </div>
+                  <div className="weixin iconfont" onClick={this.Bombbox}>微</div>
+                  {
+                    this.state.isBombbox ?
+                    <div className="show">
 
+                    </div>:""
+                  }
+                </div>
             </span>
     );
   }

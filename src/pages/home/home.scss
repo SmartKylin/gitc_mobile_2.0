@@ -301,6 +301,35 @@ html, body {
   opacity: 0.7;
   z-index: 999
 }
+.weixin{
+  width: 1.125rem;
+  height: 1.125rem;
+  line-height: 1.125rem;
+  text-align: center;
+  font-size: 0.3rem;
+  display: inline-block;
+  background: #0538db;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0.8rem #0538db;
+  /*animation:change 1s infinite linear;*/
+  position: fixed;
+  right: 0.5rem;
+  bottom: 4rem;
+  color: #fff;
+  opacity: 0.7;
+  z-index: 999
+}
+
+.show{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  right: 2.5rem;
+  bottom: 4rem;
+  background: red;
+  color: red;
+  z-index: 1000
+}
 
 .look-all {
   position: absolute;

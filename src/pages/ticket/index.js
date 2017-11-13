@@ -3,12 +3,13 @@ import ChildBackground from 'containers/child_container'
 import TicketList from './containers/ticketList'
 import {getTicketList} from "../../services/ticket";
 import storage from '../../helper/storage'
-import {message, Spin} from 'antd'
+import {message, Spin,Alert} from 'antd'
 import {TOKEN} from "../../helper/login";
 
 export default class extends Component {
   constructor () {
     super()
+    this.onClose = this.onClose.bind(this)
     this.state = {
       ticketList: []
     }
@@ -47,14 +48,29 @@ export default class extends Component {
     
     this.renderTicketList()
   }
+
+  onClose (e) {
+    this.props.history.goBack()
+  };
+
+
   render () {
+
     return (
       <ChildBackground>
         { this.state.ticketList && this.state.ticketList.length ?
         <TicketList ticketList={this.state.ticketList}/> :
-        <div style={{display: 'flex', justifyContent: 'center', height: '400px', alignItems: 'center'}}>
-          <Spin size="large" tip="Loading..."/>
-        </div>
+          <div>
+            <Alert
+                message="！ 暂无票务信息"
+
+                description="原因：主办方还未将您的门票导入该系统，或您还未购买门票。
+                             若您已购票请耐心等待~"
+                type="error"
+                closable
+                onClose={this.onClose}
+            />
+          </div>
         }
       </ChildBackground>
     )
