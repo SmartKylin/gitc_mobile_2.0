@@ -11,7 +11,7 @@ export default class Brief extends React.Component{
             <div className="BriefBoxImg">
               <img src={dahuijianjie} alt=""/>
             </div>
-            
+
         </div>
     )
   }
