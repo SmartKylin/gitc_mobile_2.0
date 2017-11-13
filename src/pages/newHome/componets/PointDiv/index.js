@@ -28,7 +28,7 @@ export default class PointDiv extends React.Component{
             </a>
           </div>
 
-          <div className="PointDivBoxWx iconfont icon-weixin1" onClick={this.Bombbox}>
+          <div className="PointDivBoxWx iconfont icon-weixin" onClick={this.Bombbox}>
             {
               this.state.isBombbox ?
                   <div className="PointDivBoxWxshow">

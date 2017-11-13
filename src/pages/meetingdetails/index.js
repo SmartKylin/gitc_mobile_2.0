@@ -16,7 +16,6 @@ export default class MeetingDetails extends React.Component{
       id:this.props.match.params.id
     })
     gatMeetingDetails(19).then(res => res.json()).then(data => {
-          console.log(data,"data");
        this.setState({
          data:data
        })

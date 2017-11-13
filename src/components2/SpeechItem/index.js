@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import defaultAvatar from '../../images/default-avatar.jpg'
+import GuestDetailPop from '../../components/AgendaPople/GuestDetailPop'
 import './index.scss'
 
 export default class extends Component {
@@ -22,6 +23,7 @@ export default class extends Component {
             </div>
           </div>
         </div>
+        
       </div>
     )
   }

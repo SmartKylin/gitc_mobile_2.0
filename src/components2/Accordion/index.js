@@ -23,11 +23,17 @@ export default class extends Component {
     // console.log(json);
     return (
       <div className="my-accordion">
-        <div className="accor-header" onClick={this.changeCollapse} style={{background: `url(${bgImg}) no-repeat center`}}>
-          <div className="main-title">{agenda.name.name}</div>
+        {/*<div className="accor-header" onClick={this.changeCollapse} style={{background: `url(${bgImg}) no-repeat center`}}>
+          <div className="main-title">{agenda.name}</div>
           <div className="en-title">{agenda.json.en || '英文标题'} </div>
           <i className={collapsed ? 'iconfont icon-xiangshang' : 'iconfont icon-xiangxia'} />
-        </div>
+        </div>*/}
+        <AccordionHeader
+          name={agenda.name}
+          changeCollapse={this.changeCollapse}
+          bgImg={bgImg} enName={agenda.json.en}
+          collapsed={collapsed}
+        />
         {
           collapsed
           ? <div className="accor-content">
