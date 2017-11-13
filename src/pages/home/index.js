@@ -195,7 +195,6 @@ export default class Activity extends Component {
     return (
             <span>
                 <div className="index-banner">
-                    <div className="ban"></div>
                 </div>
                 <div className="content">
                     <div className="highlights highlights">
@@ -443,9 +442,9 @@ export default class Activity extends Component {
                     </div>
                   {/*<strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>*/}
                   <a href="https://www.bagevent.com/event/768490" className="live">购票</a>
-                  <div className="weixin iconfont" onClick={this.Bombbox}>微</div>
+                  <div className="weixin" onClick={this.Bombbox}>微信</div>
                   {
-                    this.state.isBombbox ?
+                    this.state.Bombbox ?
                     <div className="show">
 
                     </div>:""
