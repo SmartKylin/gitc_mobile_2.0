@@ -86,7 +86,6 @@ export default class extends Component {
           <img src={contact_us} alt=""/>
         </div>
         
-        {/*<AllPeople/>*/}
   
        {/* <div className="accordion-wrapper">
           <Accordion defaultActiveKey="0" className="my-accordion" onChange={this.onChange}>
