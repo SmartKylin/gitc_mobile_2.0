@@ -1,0 +1,36 @@
+.speech-item {
+  padding: 6px 4px;
+  color: #000;
+  border-radius: 4px;
+  background: #fff;
+  display: flex;
+  margin-bottom: 3px;
+  .item-left {
+    font-size: 9px;
+    //width: .55rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    img {
+      //margin-bottom: 6px;
+      width: .38rem;
+      height: .38rem;
+      border-radius: 50%;
+    }
+
+  }
+
+  .item-right {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .theme {
+      font-size: 13px;
+    }
+    .speecher {
+      display: flex;
+    }
+  }
+}

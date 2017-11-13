@@ -1,0 +1,17 @@
+.my-accordion {
+  background: url(../../images2/accordion_bg.jpg) no-repeat center;
+  width: 100%;
+  color: #fff;
+  height: 8rem;
+  .accor-header {
+    height: .48rem;
+    border-radius: 4px;
+    .main-title {
+      font-size: 16px;
+    }
+
+    .en-title {
+      font-size: 9px;
+    }
+  }
+}

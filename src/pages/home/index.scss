@@ -1,0 +1,59 @@
+.entry-page {
+  min-height: calc(100vh);
+  background: #0b1220;
+  .banner-wrapper {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .nine-square {
+    margin-top: .15rem;
+    height: 1.5rem;
+    width: 100%;
+    background: #0b1220;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    img {
+      width: 1.06rem;
+      height: .35rem;
+    }
+  }
+
+   .agenda-wrapper{
+     margin-top: .45rem;
+    img {
+      width: 100%;
+    }
+  }
+
+  .contact-us {
+    height: 4rem;
+    img {
+      width: 100%;
+    }
+  }
+
+  .accordion-wrapper {
+    //background: url(../../images2/accordion_bg.jpg) no-repeat center;
+    background-size: cover;
+    padding: 0 12px;
+    .am-accordion.my-accordion {
+      .am-accordion-item {
+        background: rgba(0, 0, 0, 0);
+        color: #fff;
+
+      }
+
+      .am-accordion-header {
+        background: rgba(255, 255, 255, 0.0);
+        color: #fff;
+        border-bottom: 1px solid #0b1220;
+        height: .48rem!important;
+      }
+    }
+  }
+}
