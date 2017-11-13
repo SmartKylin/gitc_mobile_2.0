@@ -1,0 +1,36 @@
+.PointDivBox{
+  position: fixed;
+  .PointDivBoxXc{
+    position: fixed;
+    right: 40px;
+    bottom: 100px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .PointDivBoxXcT{
+      display: flex;
+      flex-direction: column;
+      div{
+        line-height: 13px;
+      }
+    }
+    a{
+      color: #fff;
+      display: block;
+    }
+    background:#2b67ff;
+  }
+  .PointDivBoxWx{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background:#ccc;
+  }
+}

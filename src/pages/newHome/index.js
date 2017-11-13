@@ -10,6 +10,7 @@ import ListMeetings from './componets/listmeetings'
 import Cooperative from './componets/cooperative'
 import MapWJ from './componets/Mapwj/index'
 import Footer1 from './componets/ContactUs/index'
+import PointDiv from './componets/PointDiv/index'
 
 export default class NewHome extends React.Component{
   constructor(props){
@@ -41,6 +42,8 @@ export default class NewHome extends React.Component{
           <MapWJ/>
           {/*联系我们*/}
           <Footer1/>
+           {/*定位组件*/}
+          <PointDiv/>
         </div>
     )
   }
