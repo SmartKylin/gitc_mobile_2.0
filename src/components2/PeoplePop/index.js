@@ -4,6 +4,9 @@ import defaultImg from '../../images/default-avatar.jpg'
 
 
 const formatDate = (str) => {
+  if (!str) {
+    return '待定'
+  }
   let ary = str.split('-').slice(1)
   return ary[0] + '月' + ary[1] + '号'
 }
@@ -31,7 +34,7 @@ export default class extends Component {
           </div>
           <div>
             <i className="iconfont icon-shijian"/>
-            <span>{formatDate(speecher.sdata)}</span>
+            <span>{speecher && formatDate(speecher.sdata)}</span>
             <span>{speecher.stime}</span>
           </div>
         </div>

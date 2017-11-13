@@ -2,8 +2,8 @@ import React from 'react'
 import Conference from '../../components2/Conference'
 import './index.scss'
 import {gatMeetingDetails} from "../../services/meetingDetails";
-import AccordionHeader from '../../components2/AccordionHeader'
-import Accor from '../../components2/Accordion'
+// import AccordionHeader from '../../components2/AccordionHeader'
+import Accor from './component/Accordion'
 
 export default class MeetingDetails extends React.Component{
 
@@ -30,16 +30,33 @@ export default class MeetingDetails extends React.Component{
   }
 
   render(){
-    console.log(this.state.id);
-    console.log(this.state.data, 'fjdsjf');
     let data = this.state.data
+    console.log(data);
     return(
         <div className="MeetingDetailsBox">
           this.state.data && this.state.data.length > 0
             ? <Conference  id={this.state.id} data={this.state.data? this.state.data : ""}/>
   
-          {/*<Accor agenda={item} bgImg={require('../../images2/accordion_bg1.png')}/>*/}
-          {/*<Accor agenda={item} bgImg={require('../../images2/accordion_bg1.png')}/>*/}
+          {
+            data && data['23']
+            ? <Accor
+              list={data.last}
+              bgImg={require('../../images2/accordion_bg1.png')}
+              name={data.data.name + '(23号)'}
+              enName={data.data.summary}
+            />
+            : null
+          }
+          {
+            data && data['24']
+            ? <Accor
+                list={data.last}
+                bgImg={require('../../images2/accordion_bg2.png')}
+                name={data.data.name + '(24号)'}
+                enName={data.data.summary}
+            />
+            : null
+          }
 
         </div>
     )
