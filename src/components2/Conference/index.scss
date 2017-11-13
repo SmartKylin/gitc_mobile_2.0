@@ -1,3 +1,25 @@
 .ConferenceBox{
+  width: 100%;
+  padding-top: .5rem;
+  .ConferenceBoxShang{
+    width: 100%;
+    .ConferenceBoxShangBox{
+      width: 100%;
+      .ConferenceBoxShangLogoBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .ConferenceBgLogo{
+          line-height: .42rem;
+          text-align: center;
+          width: 2rem;
+          height: .42rem;
+          background: url("./images/分会场.png") no-repeat;
+          font-size: 16px;
+          font-weight: 800;
+        }
+      }
 
+    }
+  }
 }

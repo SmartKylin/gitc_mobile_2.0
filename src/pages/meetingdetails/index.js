@@ -17,8 +17,12 @@ export default class MeetingDetails extends React.Component{
     })
     gatMeetingDetails(19).then(res => res.json()).then(data => {
           console.log(data,"data");
+       this.setState({
+         data:data
+       })
 
-        })
+
+    })
   }
 
 
@@ -27,7 +31,7 @@ export default class MeetingDetails extends React.Component{
     console.log(this.state.id);
     return(
         <div className="MeetingDetailsBox">
-            <Conference  id={this.state.id} data={[]}/>
+            <Conference  id={this.state.id} data={this.state.data? this.state.data : []}/>
         </div>
     )
   }
