@@ -8,7 +8,8 @@ export default class ListMeetings extends React.Component{
         <div className="ListMeetingsBox">
            <div className="ListMeetingsBoxImg">
              <img src={dahuizhuxi} alt=""/>
-           </div>git
+           </div>
+
         </div>
     )
   }

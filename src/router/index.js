@@ -27,6 +27,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import Map from '../pages/map/index'
 import AddGroup from '../pages/addgroup/index'
 import Awards from '../pages/awards/index'
+import MeetingDetails from '../pages/meetingdetails/index'
 
 let history = createBrowserHistory();
 // containers
@@ -47,6 +48,8 @@ const RouterMap = class extends Component {
         <Route exact path="/" component={NewHome}/>
         <Route path="/home" component={Home}></Route>
         <Route path="/newhome" component={NewHome}></Route>
+
+        <Route path="/meetingdetails/:id" component={MeetingDetails}></Route>
         <Route path="/sponsorship" component={SponsorShip}></Route>
     
         <Route path="/conferencenews" component={conferenceNews}></Route>

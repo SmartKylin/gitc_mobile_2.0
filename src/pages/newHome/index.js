@@ -8,6 +8,8 @@ import Brief from './componets/brief'
 import ListMeetings from './componets/listmeetings'
 
 import Cooperative from './componets/cooperative'
+import MapWJ from './componets/Mapwj/index'
+import Footer1 from './componets/ContactUs/index'
 
 export default class NewHome extends React.Component{
   constructor(props){
@@ -35,7 +37,10 @@ export default class NewHome extends React.Component{
           <ListMeetings/>
           {/*合作伙伴*/}
           <Cooperative/>
-
+          {/*Map*/}
+          <MapWJ/>
+          {/*联系我们*/}
+          <Footer1/>
         </div>
     )
   }
