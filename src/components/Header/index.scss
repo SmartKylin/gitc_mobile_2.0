@@ -38,7 +38,10 @@
         font-size: 11px;
         color: #fff;
         background-image:-webkit-linear-gradient(to bottom, #2b4474, #1f3051);
-        background-image: linear-gradient(to bottom, #1f3051, #1f3051)
+        background-image: linear-gradient(to bottom, #1f3051, #1f3051);
+        a{
+          color: #fff;
+        }
       }
       .gradientA {
         font-weight:800;
@@ -50,7 +53,10 @@
         font-size: 11px;
         color: #fff;
         background-image:-webkit-linear-gradient(to bottom, #1d2d4e, #28406e);
-        background-image: linear-gradient(to bottom, #0f1829, #1d2e4e)
+        background-image: linear-gradient(to bottom, #0f1829, #1d2e4e);
+        a{
+          color: #fff;
+        }
       }
     }
   }
