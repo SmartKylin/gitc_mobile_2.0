@@ -3,6 +3,7 @@ import defaultAvatar from '../../images/default-avatar.jpg'
 import GuestDetailPop from '../../components/AgendaPople/GuestDetailPop'
 import './index.scss'
 import PeoplePop from '../../components2/PeoplePop'
+import {allowScroll, forbiddenScroll} from "../../helper/scrollSetting";
 
 export default class extends Component {
   constructor(props) {
@@ -15,10 +16,14 @@ export default class extends Component {
     this.setState({
       popVisible: true
     })
+    this.top = document.documentElement.scrollTop || document.body.scrollTop
+    forbiddenScroll()
   }
   
   closeGuestPop = (e) => {
     e.stopPropagation()
+    
+    allowScroll(this.top)
     this.setState({
       popVisible: false
     })
