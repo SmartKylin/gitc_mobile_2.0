@@ -51,7 +51,9 @@ export default (config => {
   // 收藏嘉宾
   'collectGuest': '/api/gitc/collect/add/',
   //大会简介
-  'getBriefList': '/api/gitc/article-'
+  'getBriefList': '/api/gitc/article-',
+  //分会场详情
+  'gatMeetingDetails': '/api/gitc/article/beijing/'
 
 })
 

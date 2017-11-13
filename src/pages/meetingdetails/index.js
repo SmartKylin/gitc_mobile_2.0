@@ -1,6 +1,7 @@
 import React from 'react'
 import Conference from '../../components2/Conference'
 import './index.scss'
+import {gatMeetingDetails} from "../../services/meetingDetails";
 export default class MeetingDetails extends React.Component{
 
   constructor(props) {
@@ -14,6 +15,10 @@ export default class MeetingDetails extends React.Component{
     this.setState({
       id:this.props.match.params.id
     })
+    gatMeetingDetails(19).then(res => res.json()).then(data => {
+          console.log(data,"data");
+
+        })
   }
 
 
