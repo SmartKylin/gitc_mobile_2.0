@@ -31,7 +31,8 @@ export default class extends Component {
         <AccordionHeader
           name={agenda.name}
           changeCollapse={this.changeCollapse}
-          bgImg={bgImg} enName={agenda.json.en}
+          bgImg={bgImg}
+          enName={agenda.json.en}
           collapsed={collapsed}
         />
         {

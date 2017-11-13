@@ -26,7 +26,7 @@ export default class Brief extends React.Component{
     }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     getBriefList(68).then(res => res.json())
         .then(data => {
           // console.log(data);
@@ -37,7 +37,6 @@ export default class Brief extends React.Component{
   }
 
   render(){
-    console.log(imgAry, 'brei');
     return(
         <div className="BriefBox">
             <div className="BriefBoxImg">

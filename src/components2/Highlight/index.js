@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import './index.scss'
 import AccordionHeader from '../../components2/AccordionHeader'
-import SpeechItem from '../../components2/SpeechItem'
+import {Link} from 'react-router-dom'
+// import SpeechItem from '../../components2/SpeechItem'
 
 export default class extends Component {
   constructor(props) {
@@ -50,6 +51,10 @@ export default class extends Component {
             <div className="summary">
               <span className="light-item-title">介绍</span>
               {content.summary}
+              {
+                light.author != 0
+                ? <Link to={''}>查看详情</Link> : null
+              }
             </div>
           </div>
           : null
