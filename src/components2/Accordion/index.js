@@ -23,7 +23,7 @@ export default class extends Component {
         <div className="accor-header" onClick={this.changeCollapse}>
           <div className="main-title">{agenda.name}</div>
           <div className="en-title">{agenda.json.en || '英文标题'} </div>
-          <i className={collapsed ? "iconfont icon-xiangxia" : "iconfont icon-xiangshang"}/>
+          <i className={collapsed ? 'iconfont icon-xiangshang' : 'iconfont icon-xiangxia'} />
         </div>
         {
           collapsed
