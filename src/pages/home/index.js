@@ -80,6 +80,7 @@ export default class extends Component {
         <div className="light-dot-img">
           <img src={LightImg} alt=""/>
         </div>
+
         <div className="accordion-wrapper">
           <div className="accordion">
             {

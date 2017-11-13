@@ -6,6 +6,9 @@ import {
 } from 'react-router-dom'
 import Wrapper from 'components/Wrapper'
 import Home from 'pages/home'
+
+import NewHome from 'pages/newHome'
+
 import Login from 'pages/login'
 import SponsorShip from 'pages/sponsorship'
 import User from 'pages/user'
@@ -41,8 +44,9 @@ const RouterMap = class extends Component {
     return (
     <Router history={history}>
       <Wrapper openPop={this.props.openPop} history={history} setLoginCb={this.props.setLoginCb}>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={NewHome}/>
         <Route path="/home" component={Home}></Route>
+        <Route path="/newhome" component={NewHome}></Route>
         <Route path="/sponsorship" component={SponsorShip}></Route>
     
         <Route path="/conferencenews" component={conferenceNews}></Route>
