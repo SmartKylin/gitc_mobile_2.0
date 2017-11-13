@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import './index.scss'
 import agenda_title from '../../images2/大会日程.png'
 import contact_us from '../../images2/contact-us.png'
-// import {Accordion, List} from 'antd-mobile'
+import {Accordion, List} from 'antd-mobile'
 import {getDate1, getLightDot} from "../../services/home";
 import Accor from '../../components2/Accordion'
 import LightImg from '../../images2/light_dot.png'
@@ -71,7 +71,7 @@ export default class extends Component {
           <div className="accordion">
             {
               agendaData.map((item, ind) => (
-              <Accor key={ind} agenda={item}/>
+                <Accor key={ind} agenda={item}/>
               ))
             }
           </div>
@@ -100,7 +100,32 @@ export default class extends Component {
         <div className="contact-us">
           <img src={contact_us} alt=""/>
         </div>
-       
+  
+  
+        {/*<div className="accordion-wrapper">*/}
+          {/*<Accordion defaultActiveKey="0" className="my-accordion" onChange={this.onChange}>*/}
+            {/*<Accordion.Panel header="Title 1">*/}
+              {/*<List className="my-list">*/}
+                {/*<List.Item>content 1</List.Item>*/}
+                {/*<List.Item>content 2</List.Item>*/}
+                {/*<List.Item>content 3</List.Item>*/}
+              {/*</List>*/}
+            {/*</Accordion.Panel>*/}
+            {/*{*/}
+              {/*agendaData.map((item, ind) => (*/}
+                {/*<Accordion.Panel key={ind}>*/}
+                  {/*<List className="my-list">*/}
+                    {/*{*/}
+                      {/*item.data.map((v, k) => (*/}
+                        {/*<List.Item>{v.name}</List.Item>*/}
+                      {/*))*/}
+                    {/*}*/}
+                  {/*</List>*/}
+                {/*</Accordion.Panel>*/}
+              {/*))*/}
+            {/*}*/}
+          {/*</Accordion>*/}
+        {/*</div>*/}
       </div>
     )
   }

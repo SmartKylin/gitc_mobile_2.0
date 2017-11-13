@@ -19,13 +19,18 @@ export default class extends Component {
     let {collapsed} = this.state
     let {light} = this.props
     console.log(light);
-    let content = JSON.parse(light.content)
-    console.log(content, 'light');
+    let content = null
+    try {
+      content = JSON.parse(light.content)
+    } catch (e) {
+      console.log(e);
+    }
     return (
       <div className="my-accordion">
         <div className="accor-header" onClick={this.changeCollapse}>
           <div className="main-title">{light.name}</div>
           <div className="en-title">{light.summary || '英文标题'} </div>
+          <i className={collapsed ? "iconfont icon-xiangxia" : "iconfont icon-xiangshang"}/>
         </div>
         {
           collapsed
