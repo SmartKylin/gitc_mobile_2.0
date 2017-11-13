@@ -1,5 +1,7 @@
 import React from 'react'
 import './index.scss'
+import {BackTop} from 'antd';
+import weixin from './images/weixin.png'
 export default class PointDiv extends React.Component{
   constructor(props){
     super(props)
@@ -26,15 +28,15 @@ export default class PointDiv extends React.Component{
             </a>
           </div>
 
-          <div className="PointDivBoxWx" onClick={this.Bombbox}>
+          <div className="PointDivBoxWx iconfont icon-weixin1" onClick={this.Bombbox}>
             {
               this.state.isBombbox ?
-                  <div className="show">
-
+                  <div className="PointDivBoxWxshow">
+                    <img src={weixin} alt=""/>
                   </div>:""
             }
           </div>
-
+          <BackTop style={{marginLeft:"20px"}}/>
         </div>
     )
   }

@@ -55,21 +55,24 @@ export default class extends Component {
 
 
   render () {
-
+    console.log(this.props,"123123123123");
     return (
       <ChildBackground>
         { this.state.ticketList && this.state.ticketList.length ?
         <TicketList ticketList={this.state.ticketList}/> :
           <div>
-            <Alert
-                message="！ 暂无票务信息"
+            {
+              !this.props.match.params.flag?
+              <Alert
+                  message="！ 暂无票务信息"
 
-                description="原因：主办方还未将您的门票导入该系统，或您还未购买门票。
+                  description="原因：主办方还未将您的门票导入该系统，或您还未购买门票。
                              若您已购票请耐心等待~"
-                type="error"
-                closable
-                onClose={this.onClose}
-            />
+                  type="error"
+                  closable
+                  onClose={this.onClose}
+              />:""
+            }
           </div>
         }
       </ChildBackground>

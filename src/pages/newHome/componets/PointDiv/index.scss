@@ -1,9 +1,8 @@
 .PointDivBox{
-  position: fixed;
   .PointDivBoxXc{
     position: fixed;
     right: 40px;
-    bottom: 100px;
+    bottom: 170px;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -25,12 +24,32 @@
     background:#2b67ff;
   }
   .PointDivBoxWx{
+    font-size:30px;
     position: fixed;
     right: 40px;
-    bottom: 40px;
+    bottom: 100px;
     width: 50px;
     height: 50px;
+    text-align: center;
+    line-height: 50px;
     border-radius: 50%;
-    background:#ccc;
+    color: #fff;
+
+    background: rgba(0,0,0,0.7);
+    .PointDivBoxWxshow{
+      position: fixed;
+      width: 120px;
+      height: 120px;
+      right: 100px;
+      bottom: 110px;
+      z-index: 99;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .ant-back-top{
+    right: 45px;
   }
 }

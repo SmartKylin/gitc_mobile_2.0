@@ -14,6 +14,7 @@ import NineSquare from '../../components2/NineSquare'
 import MeetingGuide from '../../components2/MeetingGuide'
 import AllPeople from '../../components2/AllPeople'
 
+import PointDiv from '../newHome/componets/PointDiv'
 
 export default class extends Component {
   constructor(props) {
@@ -85,7 +86,7 @@ export default class extends Component {
         <div className="contact-us">
           <img src={contact_us} alt=""/>
         </div>
-        
+        <PointDiv/>
   
        {/* <div className="accordion-wrapper">
           <Accordion defaultActiveKey="0" className="my-accordion" onChange={this.onChange}>

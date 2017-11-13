@@ -68,8 +68,8 @@ export default class Header extends React.Component{
             <div className="HeaderBoxLogo">
             </div>
             <div className="HeaderBoxGPBox">
-              <Link className={this.state.falg ? 'gradientA': 'gradient'} to={'/ticket'}>我的门票</Link>
-              <a className={this.state.falg ? 'gradientA': 'gradient'}  href={'https://www.bagevent.com/event/768490'}  onClick={this.gradient}>现场购票</a>
+              <Link to={'/ticket'}><a  className={this.state.falg ? 'gradientA': 'gradient'} >我的门票</a></Link>
+              <a  href={'https://www.bagevent.com/event/768490'} className={this.state.falg ? 'gradientA': 'gradient'} onClick={this.gradient}>现场购票</a>
               <div className="HeaderBoxGPBox-sangang" onClick={() => this.setState({menuVisible: true})}/>
               <Menu visibility={this.state.menuVisible} closeMenu={this.closeMenu} openPop={this.props.openPop} history={this.props.history} setLoginCb={this.props.setLoginCb}/>
             </div>
