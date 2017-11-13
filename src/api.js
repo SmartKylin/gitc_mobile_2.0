@@ -49,7 +49,9 @@ export default (config => {
   // 收藏文档
   'collectDocument': '/api/gitc/file/add/',
   // 收藏嘉宾
-  'collectGuest': '/api/gitc/collect/add/'
+  'collectGuest': '/api/gitc/collect/add/',
+  //大会简介
+  'getBriefList': '/api/gitc/article-'
 
 })
 
