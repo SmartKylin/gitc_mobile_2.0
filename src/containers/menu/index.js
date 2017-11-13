@@ -46,11 +46,11 @@ export default class extends Component {
           {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会商店</Link>*/}
           {/*<Link to={"/activity"} onClick={() => this.props.closeMenu()}>现场活动</Link>*/}
           {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会相册</Link>*/}
-          <Link to={"/conferencenews"} onClick={() => this.props.closeMenu()}>大会新闻</Link>
+          {/*<Link to={"/conferencenews"} onClick={() => this.props.closeMenu()}>大会新闻</Link>*/}
           <Link to={"/map"} onClick={() => this.props.closeMenu()}>场馆地图</Link>
           {/*<Link to={"/issue"} onClick={() => this.props.closeMenu()}>议题提交</Link>*/}
           {/*<Link to={"/sponsorship"} onClick={() => this.props.closeMenu()}>赞助合作</Link>*/}
-          <Link to={"/awards"} onClick={() => this.props.closeMenu()}>奖项评选</Link>
+         {/* <Link to={"/awards"} onClick={() => this.props.closeMenu()}>奖项评选</Link>*/}
             {
                 storage.get(storage.PHONE_KEY) && <a href="javascript:;" onClick={this.signOut}>注销</a>
             }

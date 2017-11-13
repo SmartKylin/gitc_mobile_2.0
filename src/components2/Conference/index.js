@@ -29,10 +29,10 @@ export default class Conference extends React.Component {
               {list.data.summary}
             </div>
             <div className="ConferenceTime">
-              时间: {list.time}
+              <i className="iconfont icon-shijian" style={{color:"#30508e",marginRight:"3px"}}/>时间: {list.time}
             </div>
             <div className="ConferenceDd">
-              地点: {list.addr}
+              <i className="iconfont icon-positioning" style={{color:"#30508e",marginRight:"3px"}}/>地点: {list.addr}
             </div>
             <div className="ConferenceContest">
               {list.data.content}
