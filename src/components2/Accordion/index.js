@@ -40,7 +40,7 @@ export default class extends Component {
           name={agenda.name}
           changeCollapse={this.changeCollapse}
           bgImg={bgImg}
-          enName={agenda.json.en}
+          enName={agenda.json.en || agenda.ename}
           collapsed={collapsed}
         />
         {
