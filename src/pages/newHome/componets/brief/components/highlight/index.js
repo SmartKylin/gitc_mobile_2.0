@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './index.scss'
 import {Link} from 'react-router-dom'
+import AccordionHeader from '../../../../../../components2/AccordionHeader'
 
 export default class extends Component {
   constructor(props) {
@@ -17,22 +18,24 @@ export default class extends Component {
   }
   render () {
     let {collapsed} = this.state
-    let {data} = this.props
-    console.log(data);
+    let {data, bgImg} = this.props
     let content = null
-    try {
-      content = JSON.parse(data.content)
-    } catch (e) {
-      console.log(e);
-    }
-    console.log(data,"data");
+    // try {
+    //   content = JSON.parse(data.content)
+    // } catch (e) {
+    //   console.log(e);
+    // }
+    // console.log(data,"data");
     return (
       <div className="my-accordion">
-        <div className="accor-header" onClick={this.changeCollapse}>
-          <div className="main-title">{data.name}</div>
-          <div className="en-title">{data.summary || '英文标题'} </div>
-          <i className={collapsed ? "iconfont icon-xiangxia" : "iconfont icon-xiangshang"}/>
-        </div>
+  
+        <AccordionHeader
+          name={data.name}
+          changeCollapse={this.changeCollapse}
+          bgImg={bgImg}
+          enName={data.summary}
+          collapsed={collapsed}
+        />
         {
           collapsed
           ? <div  className="Mycontent">

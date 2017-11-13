@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './index.scss'
+import AccordionHeader from '../../components2/AccordionHeader'
 import SpeechItem from '../../components2/SpeechItem'
 
 export default class extends Component {
@@ -27,11 +28,14 @@ export default class extends Component {
     }
     return (
       <div className="my-accordion">
-        <div className="accor-header" onClick={this.changeCollapse} style={{background: `url(${bgImg}) no-repeat center`}}>
-          <div className="main-title">{light.name}</div>
-          <div className="en-title">{light.summary || '英文标题'} </div>
-          <i className={collapsed ? 'iconfont icon-xiangshang' : 'iconfont icon-xiangxia'} />
-        </div>
+  
+        <AccordionHeader
+          name={light.name}
+          changeCollapse={this.changeCollapse}
+          bgImg={bgImg}
+          enName={light.summary}
+          collapsed={collapsed}
+        />
         {
           collapsed
           ? <div className="light-content">
