@@ -4,20 +4,16 @@ import {Link} from 'react-router-dom'
 import './index.scss'
 import agenda_title from '../../images2/大会日程.png'
 import contact_us from '../../images2/contact-us.png'
-import {Accordion, List} from 'antd-mobile'
+// import {Accordion, List} from 'antd-mobile'
 import {getDate1, getLightDot} from "../../services/home";
 import Accor from '../../components2/Accordion'
+import LightImg from '../../images2/light_dot.png'
+import HighLight from '../../components2/Highlight'
+import MeetingImg from '../../images2/navigation_title.png'
+import Map from '../../components2/Map'
 
 import 'antd-mobile/dist/antd-mobile.css'
 
-const AccrodionHeader = (props) => (
-  <div style={{fontSize: '16px', color: '#fff', height: '.48rem!important'}} >
-    {/*<div>{props.name}</div>*/}
-    {/*<div style={{fontSize: '9px'}}>{props.enName}</div>*/}
-    <div style={{height: '16px!important'}}>主会场</div>
-    <div style={{fontSize: '9px', height: '10px!important'}}>MAIN MEETING</div>
-  </div>
-)
 
 const generateNineAry = () => {
   let ary = []
@@ -32,7 +28,8 @@ export default class extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      agendaData: []
+      agendaData: [],
+      highlightData: [],
     }
   }
   async componentWillMount () {
@@ -42,17 +39,21 @@ export default class extends Component {
       agendaData: res.data
     })
     let data = await getLightDot().then(res => res.json())
-    console.log(this.state.agendaData);
-    console.log(data);
+    await this.setState({
+      highlightData: data.data
+    })
+    console.log(this.state.highlightData);
   }
   
   render () {
-    let {agendaData} = this.state
+    let {agendaData, highlightData} = this.state
     return (
       <div className="entry-page">
         <div className="banner-wrapper">
           <img src={BannerImg} alt=""/>
         </div>
+        
+        {/*九宫格*/}
         <div className="nine-square">
         {
           nine_imgs.map((item, index) => (
@@ -66,38 +67,40 @@ export default class extends Component {
         <div className="agenda-wrapper">
           <img src={agenda_title} alt=""/>
         </div>
-        {/*手风琴*/}
-        {
-          [].length
-          ? <div className="accordion-wrapper">
-              <Accordion defaultActiveKey="0" className="my-accordion" onChange={this.onChange}>
-                {
-                  agendaData.map((item, ind) => (
-                    <Accordion.Panel
-                      header={
-                        <AccrodionHeader name={item.name} enName={item.other.en}/>
-                      }
-                      key={ind}
-                    >
-                      <List className="my-list">
-                        <List.Item>content 1</List.Item>
-                        <List.Item>content 2</List.Item>
-                        <List.Item>content 3</List.Item>
-                      </List>
-                    </Accordion.Panel>
-                  ))
-                }
-              </Accordion>
-            </div>
-          : null
-        }
-        <div className="contact-us">
-          <img src={contact_us} alt=""/>
+        <div className="accordion-wrapper">
+          <div className="accordion">
+            {
+              agendaData.map((item, ind) => (
+              <Accor key={ind} agenda={item}/>
+              ))
+            }
+          </div>
+        </div>
+        {/*大会亮点*/}
+        <div className="light-dot-img">
+          <img src={LightImg} alt=""/>
         </div>
 
         <div className="accordion-wrapper">
-          <Accor/>
+          <div className="accordion">
+            {
+              highlightData.map((item, ind) => (
+               <HighLight key={ind} light={item}/>
+              ))
+            }
+          </div>
         </div>
+        {/*参会指南*/}
+        <div className="light-dot-img">
+          <img src={MeetingImg} alt=""/>
+        </div>
+        
+        <Map/>
+        {/*联系我们*/}
+        <div className="contact-us">
+          <img src={contact_us} alt=""/>
+        </div>
+       
       </div>
     )
   }

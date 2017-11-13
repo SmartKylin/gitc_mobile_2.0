@@ -41,6 +41,10 @@
     //background: url(../../images2/accordion_bg.jpg) no-repeat center;
     background-size: cover;
     padding: 0 12px;
+    .accordion {
+      margin-top: .32rem;
+      background: url(../../images2/accordion_bg.jpg) no-repeat center;
+    }
     .am-accordion.my-accordion {
       .am-accordion-item {
         background: rgba(0, 0, 0, 0);
@@ -54,6 +58,12 @@
         border-bottom: 1px solid #0b1220;
         height: .48rem!important;
       }
+    }
+  }
+
+  .light-dot-img {
+    img {
+      width: 100%;
     }
   }
 }

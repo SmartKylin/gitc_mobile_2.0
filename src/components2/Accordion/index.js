@@ -6,7 +6,7 @@ export default class extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      collapsed: true,
+      collapsed: false,
     }
   }
   
@@ -17,20 +17,22 @@ export default class extends Component {
   }
   render () {
     let {collapsed} = this.state
+    let {agenda} = this.props
     return (
       <div className="my-accordion">
         <div className="accor-header" onClick={this.changeCollapse}>
-          <div className="main-title">主会场</div>
-          <div className="en-title">Main Meeting</div>
-          <img src="" alt=""/>
+          <div className="main-title">{agenda.name}</div>
+          <div className="en-title">{agenda.json.en || '英文标题'} </div>
         </div>
         {
           collapsed
           ? <div className="accor-content">
             {
-              [1, 2, 3, 4].map(item => (
-                <SpeechItem/>
+              agenda.data && agenda.data.length
+              ? agenda.data.map((item, ind) => (
+                <SpeechItem key={ind} speecher={item}/>
               ))
+              : null
             }
           </div>
           : null

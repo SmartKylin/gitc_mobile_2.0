@@ -28,9 +28,20 @@
     justify-content: flex-end;
     .theme {
       font-size: 13px;
+      margin-bottom: 13px;
     }
     .speecher {
       display: flex;
+      .name {
+        margin-right: .25rem;
+      }
+      .company-position {
+        .company {
+          border-right: 2px solid #d6d7d9;
+          padding-right: 4px;
+          margin-right: 4px;
+        }
+      }
     }
   }
 }
