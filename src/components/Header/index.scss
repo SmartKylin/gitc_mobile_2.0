@@ -1,0 +1,54 @@
+.HeaderBox{
+  .HeaderInner{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    .HeaderBoxLogo{
+      width: 139px;
+      height: 31px;
+      background: url(./images/logo.png);
+      background-size: cover;
+    }
+    .HeaderBoxGPBox{
+      display:flex;
+      justify-content: space-between;
+      height: 31px;
+      width: 113px;
+      margin-right: 20px;
+      .HeaderBoxGPBox-sangang{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: url(./images/menu-icon.svg) no-repeat center #263c66;
+        background-size: 80%;
+      }
+      .gradient {
+        font-weight:800;
+        width: 75px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 12px;
+        font-size: 11px;
+        color: #fff;
+        background-image:-webkit-linear-gradient(to bottom, #2b4474, #1f3051);
+        background-image: linear-gradient(to bottom, #1f3051, #1f3051)
+      }
+      .gradientA {
+        font-weight:800;
+        width: 75px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 12px;
+        font-size: 11px;
+        color: #fff;
+        background-image:-webkit-linear-gradient(to bottom, #1d2d4e, #28406e);
+        background-image: linear-gradient(to bottom, #0f1829, #1d2e4e)
+      }
+    }
+  }
+}
