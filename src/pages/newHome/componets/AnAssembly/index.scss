@@ -1,0 +1,39 @@
+.AnAssemblyBox{
+  padding: .1rem;
+  width: 100%;
+  height: 100%;
+  .AnAssemblyBox-img{
+    width:100%;
+    height:100%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .AnAssemblyBox-Square{
+    width: 100%;
+    background: #0b1220;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    img {
+      width: .8rem;
+      height: 1rem;
+    }
+  }
+  .nine-square {
+    margin-top: .15rem;
+    height: 1.5rem;
+    width: 100%;
+    background: #0b1220;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    img {
+      width: 1.06rem;
+      height: .35rem;
+    }
+  }
+}

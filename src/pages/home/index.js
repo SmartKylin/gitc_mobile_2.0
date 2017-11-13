@@ -54,13 +54,13 @@ export default class extends Component {
           <img src={BannerImg} alt=""/>
         </div>
         <div className="nine-square">
-          {
-            nine_imgs.map((item, index) => (
+        {
+          nine_imgs.map((item, index) => (
               <Link to={''} key={index}>
                 <img src={item} alt=""/>
               </Link>
-            ))
-          }
+          ))
+        }
         </div>
         {/*大会议程*/}
         <div className="agenda-wrapper">
