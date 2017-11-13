@@ -50,7 +50,7 @@ export default class extends Component {
   }
 
   onClose (e) {
-    this.props.history.goBack()
+    this.props.history.push('/')
   };
 
 

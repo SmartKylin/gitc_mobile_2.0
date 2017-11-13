@@ -267,7 +267,7 @@ export default class Activity extends Component {
                             </li>
                         </ul>
                     </div>
-                  {/*  <div className="special pas">
+                   {/* <div className="special pas">
                         <h3 className="special-name">大会专题</h3>
                         <p className="special-title">GENERAL ASSEMBLY TOPICS</p>
                         <img src={blink} alt="" className="blue-link"/>
@@ -387,7 +387,7 @@ export default class Activity extends Component {
                                 </div>
                             </div>
                             <div className="logo-contnet">
-                            {/*    <p>官方视频直播平台</p>
+                                <p>官方视频直播平台</p>
                                 <div className="live_video">
                                     <ul className="clearfix">
                                         <li className="logo_modu"></li>
@@ -399,12 +399,12 @@ export default class Activity extends Component {
                                         <li className="logo_hdb"></li>
                                         <li className="logo_bghd"></li>
                                     </ul>
-                                </div>*/}
-                              {/*<p>钻石赞助</p>
+                                </div>
+                              <p>钻石赞助</p>
                                 <img src={LOGO_1} alt=""/>
                                 <p>媒体合作</p>
 
-                                <img src={LOGO_2} alt=""/>*/}
+                                <img src={LOGO_2} alt=""/>
                               <img style={{width:'100%',height:'100%'}} src={zanzhushang1} alt=""/>
                               <Link to="./sponsorship" href="" className="btn-all btn-all-bottoms">赞助机会 <div
                               className="batn-r"></div></Link>

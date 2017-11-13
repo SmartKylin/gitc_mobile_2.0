@@ -1,6 +1,6 @@
 import React from 'react';
-
-
+import Logo from './images/homeLogo.png'
+import './index.scss'
 export default class NewHome extends React.Component{
   constructor(props){
     super(props)
@@ -11,7 +11,11 @@ export default class NewHome extends React.Component{
 
   render(){
     return(
-        <div>
+        <div className="NewHomeBox">
+          <div className="bg">
+            <img src={Logo} alt=""/>
+          </div>
+          {/*大会亮点*/}
 
         </div>
     )
