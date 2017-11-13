@@ -30,7 +30,7 @@ export default class MeetingDetails extends React.Component{
     console.log(this.state.id);
     return(
         <div className="MeetingDetailsBox">
-            <Conference  id={this.state.id} data={this.state.data? this.state.data : []}/>
+            <Conference  id={this.state.id} data={this.state.data? this.state.data : ""}/>
         </div>
     )
   }

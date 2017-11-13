@@ -16,9 +16,10 @@ export default class extends Component {
         <div className="item-right">
           <div className="theme">{speecher.meet}</div>
           <div className="speecher">
-            <div className="name">{speecher.name}</div>
+            {!this.props.style?<div className="name">{speecher.name}</div>:""}
+
             <div className="company-position">
-              <span className="company">{speecher.company}</span>
+              {!this.props.style?<span className="company">{speecher.company}</span>:""}
               <span>{speecher.position}</span>
             </div>
           </div>

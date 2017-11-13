@@ -21,6 +21,14 @@ export default class extends Component {
     let {agenda, bgImg} = this.props
     // let json = JSON.parse(agenda.json)
     // console.log(json);
+    let obj = {
+      pic:"",
+      stime:"09:00-10:00",
+      meet:"开幕式致辞",
+      company:"",
+      position:"主办方、协办方致辞，大会主席团成员共同亮相启动仪式，正式开启GITC年度盛典",
+
+    }
     return (
       <div className="my-accordion">
         {/*<div className="accor-header" onClick={this.changeCollapse} style={{background: `url(${bgImg}) no-repeat center`}}>
@@ -36,7 +44,8 @@ export default class extends Component {
         />
         {
           collapsed
-          ? <div className="accor-content">
+          ? (<div className="accor-content">
+              <SpeechItem  style='yes' speecher={obj}/>
             {
               agenda.data && agenda.data.length
               ? agenda.data.map((item, ind) => (
@@ -44,7 +53,7 @@ export default class extends Component {
               ))
               : null
             }
-          </div>
+          </div>)
           : null
         }
       </div>
