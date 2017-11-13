@@ -5,7 +5,7 @@ import AnAssembly from './componets/AnAssembly'
 import Squared from './componets/squared'
 import Introduction from './componets/introduction'
 import Brief from './componets/brief'
-import ListMeetings from './componets/listmeetings'
+import ListMeetings from '../../components2/AllPeople'
 
 import Cooperative from './componets/cooperative'
 import MapWJ from './componets/Mapwj/index'
