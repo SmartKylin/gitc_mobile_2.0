@@ -4,10 +4,25 @@
     height: .48rem;
     border-radius: 4px;
     padding: 0 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex!important;
+    flex-direction: row!important;
+    justify-content: flex-start;
+    align-items: center;
+    align-items: center;
     z-index:1;
+
+    .header-left {
+      width: 35px;
+      height: 35px;
+      background: #ebebec;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 35px;
+      margin-right: 10px;
+      .iconfont {
+        color: #3f68b7
+      }
+    }
     .main-title {
       font-size: 16px;
     }

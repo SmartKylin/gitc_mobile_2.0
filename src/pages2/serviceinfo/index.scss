@@ -1,4 +1,18 @@
 .router-page {
   background: #0f1927;
   min-height: calc(100vh);
+
+  .accordion-wrapper {
+    background-size: cover;
+    padding: 0 12px;
+    .accordion {
+      margin-top: .32rem;
+    }
+  }
+
+  .light-dot-img {
+    img {
+      width: 100%;
+    }
+  }
 }

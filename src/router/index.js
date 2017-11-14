@@ -37,6 +37,9 @@ import HightLight from '../pages2/hightlight'
 import SpeecherGroup from '../components2/SpeecherGroup'
 import ServiceInfo from '../pages2/serviceinfo'
 import Agenda from '../pages2/meetagenda'
+import Brand from '../pages2/brand'
+import CollectStamp from '../pages2/collectstamp'
+import RoadShow from '../pages2/roadshow'
 
 let history = createBrowserHistory();
 // containers
@@ -84,6 +87,10 @@ const RouterMap = class extends Component {
         <Route path="/light" component={HightLight}></Route>
         <Route path="/service" component={ServiceInfo}></Route>
         <Route path="/agenda" component={Agenda}></Route>
+        <Route path="/brand" component={Brand}></Route>
+        <Route path="/collectstamp" component={CollectStamp}></Route>
+        <Route path="/roadshow" component={RoadShow}></Route>
+        
         {/*<Route path="/oldhome" component={OldHome }></Route>*/}
       </Wrapper>
     </Router>

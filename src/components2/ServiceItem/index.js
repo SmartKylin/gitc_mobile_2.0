@@ -23,6 +23,8 @@ export default class extends Component {
       collapsed: false,
     }
   }
+  componentWillMount () {
+  }
   
   changeCollapse = () => {
     this.setState({
@@ -31,44 +33,49 @@ export default class extends Component {
   }
   render () {
     let {collapsed} = this.state
-    let {light, bgImg} = this.props
-    // console.log(light);
+    let {service, bgImg, index} = this.props
     let content = null
     try {
-      content = JSON.parse(light.content)
+      content = JSON.parse(service.dic_json)
     } catch (e) {
       console.log(e);
     }
+  
     return (
       <div className="my-accordion">
 
         <AccordionHeader
-          name={light.name}
+          name={service.name}
           changeCollapse={this.changeCollapse}
           bgImg={bgImg}
-          enName={light.summary}
+          enName={content.en}
           collapsed={collapsed}
+          // headerIcon={'icon-yongcan'}
+          index={index}
         />
         {
           collapsed
-          ? <div className="light-content">
-            <div className="time">
-              <span className="light-item-title">时间</span>
-              {content.time}
-            </div>
-            <div className="addr">
-              <span className="light-item-title">地点</span>
-              {content.addr}
-            </div>
-            <div className="summary">
-              <span className="light-item-title">介绍</span>
-              {content.summary}
-              <div style={{textAlign: 'right'}}>
-                {
-                  getLinkbyName(light.name)
-                }
-              </div>
-            </div>
+          ? <div>
+            {
+              // service.author
+              service.author != '0'
+              // ? (service.content)
+              ? <div className="light-content">
+                    <div className="time">
+                      <span className="light-item-title">时间</span>
+                      {content.time}
+                    </div>
+                    <div className="addr">
+                      <span className="light-item-title">地点</span>
+                      {content.addr}
+                    </div>
+                    <div className="summary">
+                    <span className="light-item-title">说明</span>
+                    {content.summary}
+                  </div>
+                </div>
+              : <div dangerouslySetInnerHTML={{__html: service.content}} style={{width: '100%'}} />
+            }
           </div>
           : null
         }
