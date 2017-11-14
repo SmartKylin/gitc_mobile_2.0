@@ -9,6 +9,7 @@ export default class AddGroupContainer extends Component {
     constructor(props) {
         super(props)
         this.GroupPop = this.GroupPop.bind(this)
+        this.closePopImg = this.closePopImg.bind(this)
         this.state={
             datas:[],
             flag:false,
@@ -33,7 +34,9 @@ export default class AddGroupContainer extends Component {
         flag:true
       })
     }
-    closePopImg = () => {
+    closePopImg(e){
+      e.stopPropagation();
+      console.log(this.state.flag, 'llllllllllll');
       this.setState({
         flag: false
       })
@@ -67,7 +70,7 @@ export default class AddGroupContainer extends Component {
                             </SubMenu>
                         ))
                     }
-                  {this.state.flag ? <div className="AddGroupContainerBig" onClick={this.closePopImg}><img src={this.state.img} alt=""/></div> :""}
+                  {this.state.flag ? <div className="AddGroupContainerBig"><img src={this.state.img}  onClick={this.closePopImg} alt=""/></div> :""}
                 </Menu>
 
             </div>

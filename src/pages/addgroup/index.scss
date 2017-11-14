@@ -16,14 +16,13 @@
     }
   }
   .AddGroupContainerBig{
-    position: fixed;
-    width: 200px;
-    height:200px;
-    background: red;
-    margin: 50px auto;
-    z-index: 1;
     img{
-      width: 100%;
+      width: 200px;
+      height: 200px;
+      display: block;
+      position: fixed;
+      left: 100px;
+      top: 100px;
     }
   }
 }
