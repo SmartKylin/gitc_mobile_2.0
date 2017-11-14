@@ -35,7 +35,7 @@ export default class NewHome extends React.Component{
           <AnAssembly/>
           {/*大会简介*/}
           <Brief/>
-           {/*大会主席团*/}
+          {/*大会主席团*/}
           <ListMeetings/>
           {/*合作伙伴*/}
           <Cooperative/>
