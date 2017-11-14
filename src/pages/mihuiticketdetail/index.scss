@@ -30,15 +30,6 @@
   position: absolute;
   top:83%;
   right:38%;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-  .danhang{
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-  }
-
 }
 
 .ticket--barcode {
@@ -65,9 +56,6 @@
     position: absolute;
     top:83%;
     right: 33%;
-    .danhang{
-      overflow: hidden;
-    }
   }
   .ticket--barcode {
     position: absolute;
@@ -95,9 +83,6 @@
     position: absolute;
     top:83%;
     right: 24%;
-    .danhang{
-      overflow: hidden;
-    }
   }
 
   .ticket--barcode {

@@ -29,17 +29,18 @@ export default class AddGroupContainer extends Component {
     GroupPop(img){
       console.log(img, 'pop');
       this.setState({
-        curPopImg:img
+        img,
+        flag:true
       })
     }
     closePopImg = () => {
       this.setState({
-        curPopImg: ''
+        flag: false
       })
     }
 
     render() {
-      console.log(this.state.img,);
+      console.log(this.state.curPopImg,"@3423423");
       return (
             <div className="AddGroupContainer-">
                 <Menu
@@ -61,16 +62,14 @@ export default class AddGroupContainer extends Component {
 
                                             })
                                         }
-
-                                      {this.state.curPopImg ? <div className="AddGroupContainerBig" onClick={this.closePopImg}><img src={this.state.curPopImg} alt=""/></div> :""}
-
                                     </div>
                                 </div>
                             </SubMenu>
                         ))
                     }
-
+                  {this.state.flag ? <div className="AddGroupContainerBig" onClick={this.closePopImg}><img src={this.state.img} alt=""/></div> :""}
                 </Menu>
+
             </div>
         )
     }
