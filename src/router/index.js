@@ -35,6 +35,8 @@ import ExpertGroup from '../components2/ExpertGroup'
 import Topic from '../pages/newHome/componets/brief'
 import HightLight from '../pages2/hightlight'
 import SpeecherGroup from '../components2/SpeecherGroup'
+import ServiceInfo from '../pages2/serviceinfo'
+import Agenda from '../pages2/meetagenda'
 
 let history = createBrowserHistory();
 // containers
@@ -80,6 +82,8 @@ const RouterMap = class extends Component {
         <Route path="/speecher" component={SpeecherGroup }></Route>
         <Route path="/topic" component={Topic}></Route>
         <Route path="/light" component={HightLight}></Route>
+        <Route path="/service" component={ServiceInfo}></Route>
+        <Route path="/agenda" component={Agenda}></Route>
         {/*<Route path="/oldhome" component={OldHome }></Route>*/}
       </Wrapper>
     </Router>
