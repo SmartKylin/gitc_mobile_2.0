@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './index.scss'
 import {sendCode} from "../../services/code";
 import {sign} from "../../services/user"
-import {message} from 'antd'
+import {Toast} from 'antd-mobile'
 import storage from '../../helper/storage'
 import {TOKEN} from "../../helper/login";
 
@@ -33,7 +33,7 @@ export default class extends Component {
     sendCode(this.mobile.value, {phone: this.mobile.value, token: TOKEN})
     .then(res => res.json())
     .then(data => {
-      message.info(data.msg)
+      Toast.info(data.msg)
       if (data.status) {
         this.countDown()
       }
@@ -89,7 +89,7 @@ export default class extends Component {
     params.token = TOKEN
     
     const sucesss = (data) => {
-      message.info(data.msg)
+      Toast.success(data.msg)
       // 如果登陆成功，手机号存到localstorage
       if (data.status) {
         storage.set(storage.PHONE_KEY, this.mobile.value)

@@ -2,6 +2,8 @@ import React from 'react'
 import './index.scss'
 import Menu from 'containers/menu'
 import {Link} from 'react-router-dom'
+import storage from '../../helper/storage'
+
 
 export default class Header extends React.Component{
   constructor(props){
@@ -20,6 +22,7 @@ export default class Header extends React.Component{
   }
 
   gradient =() =>{
+    
     this.setState({
       falg: true
     })
@@ -56,8 +59,21 @@ export default class Header extends React.Component{
     }
     return scrollTop;
   }
-
-
+  
+  handleClick = path => {
+    let phone = storage.get(storage.PHONE_KEY)
+    // console.log(phone);
+    
+    if (phone) {
+      this.props.history.push(path)
+    } else {
+      this.props.openPop()
+      let cb = () => {
+        this.props.history.push(path)
+      }
+      this.props.setLoginCb(cb)
+    }
+  }
   render(){
     let styleTop = {
       background: 'rgba(0,0,0,0.5)'
@@ -68,10 +84,20 @@ export default class Header extends React.Component{
             <div className="HeaderBoxLogo">
             </div>
             <div className="HeaderBoxGPBox">
-              <Link  className={this.state.falg ? 'gradientA': 'gradient'}  to={'/ticket'}><a >现场购票</a></Link>
-              <a  href={'https://www.bagevent.com/event/768490'} className={this.state.falg ? 'gradientA': 'gradient'} onClick={this.gradient}>我的门票</a>
+              <a  href={'https://www.bagevent.com/event/768490'} className={this.state.falg ? 'gradientA': 'gradient'} onClick={this.gradient}>现场购票</a>
+              {/*<Link    to={'/ticket'}><a >我的门票</a></Link>*/}
+  
+              <a className={this.state.falg ? 'gradientA': 'gradient'} href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
+  
+          {/*    <Link  className={this.state.falg ? 'gradientA': 'gradient'}  to={'/ticket'}><a >现场购票</a></Link>
+              <a  href={'https://www.bagevent.com/event/768490'} className={this.state.falg ? 'gradientA': 'gradient'} onClick={this.gradient}>我的门票</a>*/}
               <div className="HeaderBoxGPBox-sangang" onClick={() => this.setState({menuVisible: true})}/>
-              <Menu visibility={this.state.menuVisible} closeMenu={this.closeMenu} openPop={this.props.openPop} history={this.props.history} setLoginCb={this.props.setLoginCb}/>
+              <Menu
+                visibility={this.state.menuVisible}
+                closeMenu={this.closeMenu}
+                openPop={this.props.openPop}
+                history={this.props.history}
+                setLoginCb={this.props.setLoginCb}/>
             </div>
           </div>
         </div>

@@ -26,3 +26,9 @@ export function getDate2(phone) {
 export function getLightDot() {
   return http.get(api.getListNews + `66/list.json?token=1afb756d16740266efde290917ca1a8e`)
 }
+
+// 服务信息
+
+export function getServiceInfo() {
+  return http.get(api.getListNews + `69/list.json?token=1afb756d16740266efde290917ca1a8e`)
+}

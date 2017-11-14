@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
-import GuestItem from '../../components2/GuestItem'
-import {getPopleList} from "../../services/home";
-import PresidentImg from '../../images2/president_all_03.png'
-import ExpertImg from '../../images2/expert_all_03.png'
+// import GuestItem from '../../components2/GuestItem'
+// import {getPopleList} from "../../services/home";
+// import PresidentImg from '../../images2/president_all_03.png'
+// import ExpertImg from '../../images2/expert_all_03.png'
 
-
+import ExpertGroup from '../ExpertGroup'
+import PresidentGroup from '../PresidentGroup'
 import './index.scss'
 
 export default class extends Component {
@@ -15,24 +16,29 @@ export default class extends Component {
       expertData: [],
     }
   }
-  async componentWillMount () {
-    
-    let presidentData = await getPopleList(45).then(res => res.json())
-    await this.setState({
-      presidentData: presidentData.data,
-    })
-    let expertData = await getPopleList(46).then(res => res.json())
-    await this.setState({
-      expertData: expertData.data
-    })
-    // console.log(this.state.presidentData, 'dsata');
-    // console.log(this.state.expertData, 'fdfsd');
-  }
+  // async componentWillMount () {
+  //
+  //   let presidentData = await getPopleList(45).then(res => res.json())
+  //   await this.setState({
+  //     presidentData: presidentData.data,
+  //   })
+  //   let expertData = await getPopleList(46).then(res => res.json())
+  //   await this.setState({
+  //     expertData: expertData.data
+  //   })
+  //   // console.log(this.state.presidentData, 'dsata');
+  //   // console.log(this.state.expertData, 'fdfsd');
+  // }
   render () {
     let {presidentData, expertData} = this.state
     return (
-      <div className="all-people">
-        <img src={PresidentImg} alt="" className="item-header"/>
+      <div
+      // className="all-people"
+      >
+        <PresidentGroup/>
+        <ExpertGroup/>
+        
+        {/*<img src={PresidentImg} alt="" className="item-header"/>
         <div className="people-group">
           {
             presidentData.length
@@ -51,7 +57,7 @@ export default class extends Component {
             ))
             : null
           }
-        </div>
+        </div>*/}
       </div>
     )
   }
