@@ -37,6 +37,8 @@ export default class extends Component {
     }
   }
   async componentWillMount () {
+    console.log(this.props.history, 'fdfd');
+    
     let res = await getAgenda()
     .then(res => res.json())
     await this.setState({
@@ -46,12 +48,13 @@ export default class extends Component {
     await this.setState({
       highlightData: data.data
     })
-    console.log(this.state.highlightData);
+
   }
   
   render () {
     
     let {agendaData, highlightData} = this.state
+    let {openPop, closePop, setLoginCb} = this.props.history
     return (
       <div className="entry-page">
         <div className="banner-wrapper">
@@ -70,7 +73,14 @@ export default class extends Component {
           <div className="accordion">
             {
               agendaData.map((item, ind) => (
-                <Accor key={ind} agenda={item} bgImg={imgAry[ind]}/>
+                <Accor
+                  key={ind}
+                  agenda={item}
+                  bgImg={imgAry[ind]}
+                  openPop={openPop}
+                  closePop={closePop}
+                  setLoginCb={setLoginCb}
+                />
               ))
             }
           </div>

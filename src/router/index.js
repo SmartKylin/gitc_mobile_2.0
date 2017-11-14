@@ -48,7 +48,6 @@ const RouterMap = class extends Component {
       <Wrapper openPop={this.props.openPop} history={history} setLoginCb={this.props.setLoginCb}>
         <Route exact path="/" component={Home}/>
         <Route path="/home" component={NewHome}></Route>
-        <Route path="/newhome" component={NewHome}></Route>
 
         <Route path="/meetingdetails/:id" component={MeetingDetails}></Route>
         <Route path="/sponsorship" component={SponsorShip}></Route>

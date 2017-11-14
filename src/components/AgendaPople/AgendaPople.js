@@ -211,6 +211,7 @@ class AgendaPople extends Component {
 			collectModelVisible: 'none'
 		})
 	}
+	
 	render() {
 		const { data } = this.props;
 		return (

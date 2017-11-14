@@ -8,8 +8,11 @@ const {SubMenu} = Menu
 export default class AddGroupContainer extends Component {
     constructor(props) {
         super(props)
+        this.GroupPop = this.GroupPop.bind(this)
         this.state={
-            datas:[]
+            datas:[],
+            flag:false,
+            curPopImg: ''
         }
     }
 
@@ -23,9 +26,21 @@ export default class AddGroupContainer extends Component {
             })
     }
 
-    render() {
+    GroupPop(img){
+      console.log(img, 'pop');
+      this.setState({
+        curPopImg:img
+      })
+    }
+    closePopImg = () => {
+      this.setState({
+        curPopImg: ''
+      })
+    }
 
-        return (
+    render() {
+      console.log(this.state.img,);
+      return (
             <div className="AddGroupContainer-">
                 <Menu
                     mode="inline"
@@ -40,11 +55,15 @@ export default class AddGroupContainer extends Component {
                                             item.data &&  item.data.length>0 && item.data.map( (innerItem,index)=> {
                                                return index < 4 ?
                                                     <div key={index}>
-                                                        <img style={{width: '3.6rem', height: '3.6rem'}} src={innerItem.img} alt=""/>
+                                                        <img style={{width: '0.84rem', height: '0.84rem'}} onClick={() => this.GroupPop(innerItem.img)} src={innerItem.img} alt=""/>
                                                         <div>{innerItem.title}</div>
                                                     </div>:""
+
                                             })
                                         }
+
+                                      {this.state.curPopImg ? <div className="AddGroupContainerBig" onClick={this.closePopImg}><img src={this.state.curPopImg} alt=""/></div> :""}
+
                                     </div>
                                 </div>
                             </SubMenu>

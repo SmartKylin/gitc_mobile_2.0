@@ -35,7 +35,7 @@ export default class MeetingDetails extends React.Component{
           {
             data && data['23']
             ? <Accor
-              list={data.last}
+              list={data.first}
               bgImg={require('../../images2/accordion_bg1.png')}
               name={data.data.name + '(23日)'}
               enName={data.data.summary}
