@@ -38,7 +38,7 @@ export default class Brief extends React.Component{
 
   render(){
     return(
-        <div className="BriefBox">
+        <div className="BriefBox router-page">
             <div className="BriefBoxImg">
               <img src={dahuijianjie} alt=""/>
             </div>
