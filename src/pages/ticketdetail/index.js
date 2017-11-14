@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import ChildContainer from 'containers/child_container'
-import ticketBg from '../../images/ticket-bg.png'
+import ticketBg from '../../images/bj.png'
 import {getTicketDetail} from "../../services/ticket";
 import vip from '../../images/VIP票.jpg'
 import zhuanye from '../../images/专业观众票.jpg'
@@ -103,8 +103,6 @@ export default class extends Component {
             </div>
             {/*<div style={{position: 'absolute', top: '20%',left:'20%'}}>{this.state.barcodeString}</div>*/}
             <div className='menpiaoText1'>
-              <div><span className='danhang'>官网：www.thegthegitcitc.com</span></div>
-              <div><span className='danhang'>客服：010-88323888</span></div>
             </div>
           </div>
           <div className="ticket--instructions">

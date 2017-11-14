@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import BannerImg from '../../images2/banner.png'
 import './index.scss'
 import agenda_title from '../../images2/大会日程.png'
-import contact_us from '../../images2/contact-us.png'
+import contact_us from '../../images2/diye.png'
 import {Accordion, List} from 'antd-mobile'
 // import 'antd-mobile/dist/antd-mobile.css'
 

@@ -21,24 +21,15 @@
   position: absolute;
   top:83%;
   right: 68%;
-    img{
-      width: 100%;
-      height: 100%;
-    }
+  img{
+    width: 100%;
+    height: 100%;
+  }
 }
 .menpiaoText1{
   position: absolute;
-  top:83%;
-  right:38%;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-  .danhang{
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-  }
-
+  left: 70px;
+  bottom: 20px;
 }
 
 .ticket--barcode {
@@ -63,11 +54,8 @@
 
   .menpiaoText1{
     position: absolute;
-    top:83%;
-    right: 33%;
-    .danhang{
-      overflow: hidden;
-    }
+    left: 80px;
+    bottom: 22px;
   }
   .ticket--barcode {
     position: absolute;
@@ -93,11 +81,8 @@
 
   .menpiaoText1{
     position: absolute;
-    top:83%;
-    right: 24%;
-    .danhang{
-      overflow: hidden;
-    }
+    bottom: 20px;
+    left: 73px;
   }
 
   .ticket--barcode {
