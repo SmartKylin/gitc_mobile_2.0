@@ -1,10 +1,11 @@
 import React from 'react'
 // import dahuiYihceng from '../../images/dahuiyicheng.png'
 import './index.scss'
+import {Link} from 'react-router-dom'
 
 export default class HeaderPage extends React.Component {
   render() {
-    let {name, enName, addr} = this.props
+    let {name, enName, addr, link} = this.props
     
     return (
       <div className="HeaderPageBoxBox">
@@ -20,7 +21,7 @@ export default class HeaderPage extends React.Component {
             {addr}
           </div>
         </div>
-        <div className="HeaderzPageBoxXiang">详情>></div>
+        <Link to={`/meetingdetails/${link}`} className="HeaderzPageBoxXiang">详情>></Link>
       </div>
     )
   }
