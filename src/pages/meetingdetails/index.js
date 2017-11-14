@@ -27,6 +27,7 @@ export default class MeetingDetails extends React.Component{
 
   render(){
     let data = this.state.data
+    let {openPop, closePop, setLoginCb} = this.props.history
     return(
         <div className="MeetingDetailsBox">
           this.state.data && this.state.data.length > 0
@@ -39,6 +40,9 @@ export default class MeetingDetails extends React.Component{
               bgImg={require('../../images2/accordion_bg1.png')}
               name={data.data.name + '(23日)'}
               enName={data.data.summary}
+              openPop={openPop}
+              closePop={closePop}
+              setLoginCb={setLoginCb}
             />
             : null
           }
@@ -49,6 +53,10 @@ export default class MeetingDetails extends React.Component{
                 bgImg={require('../../images2/accordion_bg2.png')}
                 name={data.data.name + '(24日)'}
                 enName={data.data.summary}
+                
+                openPop={openPop}
+                closePop={closePop}
+                setLoginCb={setLoginCb}
             />
             : null
           }

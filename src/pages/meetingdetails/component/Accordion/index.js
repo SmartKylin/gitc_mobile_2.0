@@ -18,7 +18,7 @@ export default class extends Component {
   }
   render () {
     let {collapsed} = this.state
-    let {name, enName, list, bgImg} = this.props
+    let {name, enName, list, bgImg, openPop, closePop, setLoginCb} = this.props
     return (
       <div className="my-accordion">
         <AccordionHeader
@@ -34,7 +34,14 @@ export default class extends Component {
               {
                 list && list.length
                 ? list.map((item, ind) => (
-                  <SpeechItem key={ind} speecher={item}/>
+                  <SpeechItem
+                    key={ind}
+                    speecher={item}
+                    
+                    openPop={openPop}
+                    closePop={closePop}
+                    setLoginCb={setLoginCb}
+                  />
                 ))
                 : null
               }

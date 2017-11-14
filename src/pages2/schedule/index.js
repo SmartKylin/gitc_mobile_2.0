@@ -41,16 +41,17 @@ export default class Schedule extends React.Component{
       position:"待定"
     }
     let {openPop, closePop, setLoginCb} = this.props
-    console.log(agendaData, 'shefjdls');
+    // console.log(agendaData, 'shefjdls');
     return(
         <div className="ScheduleBox">
           { agendaData.length
             ? agendaData.map((agenda, index) => (
-              <div>
+              <div key={index}>
                 <Header
                   name={agenda.name}
                   enName={agenda.json.en || agenda.ename}
                   addr={agenda.json.addr }
+                  link={agenda.json.details}
                 />
   
                 <div className='accor-content'>
