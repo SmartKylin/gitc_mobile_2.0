@@ -88,9 +88,9 @@ const RouterMap = class extends Component {
         <Route path="/topic" component={Topic}></Route>
         <Route path="/light" component={HightLight}></Route>
         <Route path="/service" component={ServiceInfo}></Route>
-        <Route path="/agenda" component={Agenda}></Route>
+        <Route path="/agenda" component={Schedule}></Route>
 
-        <Route path="/schedule" component={Schedule}></Route>
+        {/*<Route path="/schedule" component={Schedule}></Route>*/}
         <Route path="/brand" component={Brand}></Route>
         <Route path="/collectstamp" component={CollectStamp}></Route>
         <Route path="/roadshow" component={RoadShow}></Route>
