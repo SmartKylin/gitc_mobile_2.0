@@ -34,6 +34,7 @@ import PresidentGroup from '../components2/PresidentGroup'
 import ExpertGroup from '../components2/ExpertGroup'
 import Topic from '../pages/newHome/componets/brief'
 import HightLight from '../pages2/hightlight'
+import SpeecherGroup from '../components2/SpeecherGroup'
 
 let history = createBrowserHistory();
 // containers
@@ -76,6 +77,7 @@ const RouterMap = class extends Component {
         <Route path="/awards" component={Awards }></Route>
         <Route path="/president" component={PresidentGroup }></Route>
         <Route path="/expert" component={ExpertGroup }></Route>
+        <Route path="/speecher" component={SpeecherGroup }></Route>
         <Route path="/topic" component={Topic}></Route>
         <Route path="/light" component={HightLight}></Route>
         {/*<Route path="/oldhome" component={OldHome }></Route>*/}

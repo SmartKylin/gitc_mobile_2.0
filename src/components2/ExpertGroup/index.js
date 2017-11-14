@@ -21,7 +21,7 @@ export default class extends Component {
     
   }
   render () {
-    let {presidentData, expertData} = this.state
+    let {expertData} = this.state
     return (
       <div className="all-people">
         <img src={ExpertImg} alt="" className="item-header"/>
@@ -29,7 +29,7 @@ export default class extends Component {
           {
             expertData.length
             ? expertData.map((item, index) => (
-            <GuestItem data={item}/>
+            <GuestItem data={item} key={index}/>
             ))
             : null
           }
