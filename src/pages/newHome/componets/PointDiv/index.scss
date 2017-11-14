@@ -16,6 +16,11 @@
       flex-direction: column;
       z-index: 999;
       font-size: 9px;
+      img{
+        width: 100%;
+        height:100%;
+        border-radius: 50%;
+      }
       div{
         line-height: 13px;
         font-size: 9px;

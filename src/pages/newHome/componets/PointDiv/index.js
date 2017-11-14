@@ -2,6 +2,7 @@ import React from 'react'
 import './index.scss'
 import {BackTop} from 'antd';
 import weixin from './images/weixin.png'
+import goupiao from './images/goupiao.png'
 export default class PointDiv extends React.Component{
   constructor(props){
     super(props)
@@ -22,8 +23,7 @@ export default class PointDiv extends React.Component{
           <div className="PointDivBoxXc">
             <a href="https://www.bagevent.com/event/768490">
               <div className="PointDivBoxXcT">
-                <div>现场</div>
-                <div>购票</div>
+                <img src={goupiao} alt=""/>
               </div>
             </a>
           </div>
