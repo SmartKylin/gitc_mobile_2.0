@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import './index.scss'
 import defaultImg from '../../images/default-avatar.jpg'
-import {Toast} from 'antd-mobile'
+// import {message} from 'antd-mobile'
+import {message} from 'antd'
 import storage from '../../helper/storage'
 import { TOKEN } from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
@@ -39,7 +40,7 @@ export default class extends Component {
     const failure = (msg) => {
       openPop()
       setLoginCb(cb)
-      Toast.info(msg)
+      message.info(msg)
     }
     
     if (!phone) {
@@ -70,7 +71,7 @@ export default class extends Component {
     // e.stopPropagation()
     let { files__id, file_collect } = this.props.speecher
     if (!files__id) {
-      Toast.info('没有相应文档')
+      message.info('没有相应文档')
       return
     }
     let { openPop, setLoginCb } = this.props
@@ -84,7 +85,7 @@ export default class extends Component {
     const failure = (msg) => {
       openPop()
       setLoginCb(cb)
-      Toast.info(msg)
+      message.info(msg)
     }
     
     if (!phone) {
@@ -107,7 +108,7 @@ export default class extends Component {
     }
     
     if (!files__id) {
-      Toast.info('没有相应文档~')
+      message.info('没有相应文档~')
     }
     collectDocument({ phone, file: files__id, token: TOKEN })
     .then(res => res && res.json())
@@ -118,7 +119,7 @@ export default class extends Component {
     // e.stopPropagation()
     let { files__url } = this.props.speecher
     if (!files__url) {
-      Toast.info('没有相应文档~')
+      message.info('没有相应文档~')
     }
   }
   
