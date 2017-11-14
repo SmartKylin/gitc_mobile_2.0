@@ -38,9 +38,9 @@ export default class extends Component {
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '17px'}} className="nav--group">
 
-          <Link  style={{fontSize:'20px'}} to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>
-          <a style={{fontSize:'20px'}} href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
-          <a  style={{fontSize:'20px'}} href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>
+          <Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>
+          <a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
+          <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>
           
           {/*<a href="#">大会会刊</a>*/}
           {/*<Link to={"/dataagenda"} onClick={() => this.props.closeMenu()}>全部日程</Link>*/}
@@ -56,7 +56,7 @@ export default class extends Component {
           {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会相册</Link>*/}
           {/*<Link to={"/conferencenews"} onClick={() => this.props.closeMenu()}>大会新闻</Link>*/}
           
-          <Link style={{fontSize:'20px'}} to={"/"} onClick={() => this.props.closeMenu()}>精彩内容</Link>
+          <Link to={"/"} onClick={() => this.props.closeMenu()}>精彩内容</Link>
           <Link to={"/service"} onClick={() => this.props.closeMenu()}>服务信息</Link>
           <Link to={"/map"} onClick={() => this.props.closeMenu()}>场馆地图</Link>
           
