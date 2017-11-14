@@ -1,0 +1,17 @@
+.entry-page {
+  min-height: calc(100vh);
+  background: #0b1220;
+  .accordion-wrapper {
+    background-size: cover;
+    padding: 0 12px;
+    .accordion {
+      margin-top: .32rem;
+    }
+  }
+
+  .light-dot-img {
+    img {
+      width: 100%;
+    }
+  }
+}

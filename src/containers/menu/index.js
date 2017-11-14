@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom'
 import './index.scss'
 import storage from '../../helper/storage'
 import {message} from 'antd'
+// import {getTitle} from "../../helper/getPageTitle";
 
 export default class extends Component {
   handleClick = path => {
     let phone = storage.get(storage.PHONE_KEY)
-    console.log(phone);
+    // console.log(phone);
     this.props.closeMenu()
-    
     if (phone) {
       this.props.history.push(path)
     } else {
@@ -38,16 +38,23 @@ export default class extends Component {
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '17px'}} className="nav--group">
           <Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>
-          <a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
+          {/*<a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>*/}
           <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>
           {/*<a href="#">大会会刊</a>*/}
-          
           {/*<Link to={"/dataagenda"} onClick={() => this.props.closeMenu()}>全部日程</Link>*/}
+          <Link to={"/president" } onClick={() => this.handleClick('/president')}>大会主席团</Link>
+          <Link to={"/expert"} onClick={() => this.handleClick('/expert')}>专家顾问团</Link>
+          <Link to={"/speecher"} onClick={() => this.handleClick('/speecher')}>演讲嘉宾</Link>
+          
+          <Link to={"/agenda"} onClick={() => this.handleClick('/agenda')}>大会日程</Link>
+          <Link to={"/topic"} onClick={() => this.handleClick('/topic')}>大会专题</Link>
+          <Link to={"/light"} onClick={() => this.handleClick('/light')}>亮点环节</Link>
           {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会商店</Link>*/}
           {/*<Link to={"/activity"} onClick={() => this.props.closeMenu()}>现场活动</Link>*/}
           {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会相册</Link>*/}
           {/*<Link to={"/conferencenews"} onClick={() => this.props.closeMenu()}>大会新闻</Link>*/}
           <Link to={"/"} onClick={() => this.props.closeMenu()}>精彩内容</Link>
+          <Link to={"/service"} onClick={() => this.props.closeMenu()}>服务信息</Link>
           <Link to={"/map"} onClick={() => this.props.closeMenu()}>场馆地图</Link>
           {/*<Link to={"/issue"} onClick={() => this.props.closeMenu()}>议题提交</Link>*/}
           {/*<Link to={"/sponsorship"} onClick={() => this.props.closeMenu()}>赞助合作</Link>*/}

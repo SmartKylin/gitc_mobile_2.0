@@ -1,0 +1,17 @@
+.all-people {
+  background: #0f1926;
+  min-height: calc(100vh);
+  padding-top: 20px;
+  .people-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    //justify-content: space-around;
+  }
+  .item-header {
+    width: 100%;
+    //height: 1.67rem;
+  }
+
+}
