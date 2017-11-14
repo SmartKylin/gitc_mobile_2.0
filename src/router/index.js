@@ -37,13 +37,11 @@ import HightLight from '../pages2/hightlight'
 import SpeecherGroup from '../components2/SpeecherGroup'
 import ServiceInfo from '../pages2/serviceinfo'
 import Agenda from '../pages2/meetagenda'
-<<<<<<< HEAD
+
 import Schedule from '../pages2/schedule'
-=======
 import Brand from '../pages2/brand'
 import CollectStamp from '../pages2/collectstamp'
 import RoadShow from '../pages2/roadshow'
->>>>>>> e979c87bd1a86fca37a66d6e9d42cc939126005d
 
 let history = createBrowserHistory();
 // containers
@@ -91,15 +89,11 @@ const RouterMap = class extends Component {
         <Route path="/light" component={HightLight}></Route>
         <Route path="/service" component={ServiceInfo}></Route>
         <Route path="/agenda" component={Agenda}></Route>
-<<<<<<< HEAD
+
         <Route path="/schedule" component={Schedule}></Route>
-=======
         <Route path="/brand" component={Brand}></Route>
         <Route path="/collectstamp" component={CollectStamp}></Route>
         <Route path="/roadshow" component={RoadShow}></Route>
-        
->>>>>>> e979c87bd1a86fca37a66d6e9d42cc939126005d
-        {/*<Route path="/oldhome" component={OldHome }></Route>*/}
       </Wrapper>
     </Router>
     )
