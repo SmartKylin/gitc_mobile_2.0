@@ -4,10 +4,14 @@ import ChildBackground from 'containers/child_container'
 // import CollectedModal from 'components/CollectedModal'
 import './index.scss'
 import $ from 'jquery'
+import {getListImgs} from '../../services/getListNews'
 
-const img1 = require('components/images/map1.jpg')
-const img3 = require('components/images/map2.jpg')
+// const img1 = require('components/images/map1.jpg')
+const img1 = require('../../images/1层地图.jpg')
+const img3 = require('../../images/3层地图.jpg')
+// const img3 = require('components/images/map2.jpg')
 const img4 = require('components/images/map3.jpg')
+
 export default class Map extends Component {
   constructor(...args) {
     super(...args)
