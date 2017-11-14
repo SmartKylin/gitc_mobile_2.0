@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import defaultAvatar from '../../images/default-avatar.jpg'
+import zhibo from '../../images/zhibo1111.svg'
 import GuestDetailPop from '../../components/AgendaPople/GuestDetailPop'
 import './index.scss'
 import PeoplePop from '../../components2/PeoplePop'
@@ -23,19 +24,22 @@ export default class extends Component {
       popVisible: false
     })
   }
-  
+
   render() {
     let {speecher} = this.props
     let {popVisible} = this.state
-    console.log(popVisible, 'spper');
+
     return (
-      <div className="speech-item" onClick={this.openGuestPop}>
+      <div className="speech-item" onClick={ this.props.icon ?"":this.openGuestPop}>
         <div className="item-left">
-          <img src={speecher.pic || defaultAvatar} alt=""/>
+          {
+            this.props.icon ? <img  style={{fontSize:'8px',color:"#ccc"}} src={zhibo} alt=""/>:<img src={speecher.pic || defaultAvatar}/>
+          }
+
           <div className="time">{speecher.stime || '待定'}</div>
         </div>
         <div className="item-right">
-          <div className="theme">{speecher.meet}</div>
+          <div className="theme">{speecher.stheme}</div>
           <div className="speecher">
             {!this.props.style?<div className="name">{speecher.name}</div>:""}
 

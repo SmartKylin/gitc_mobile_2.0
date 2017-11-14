@@ -41,7 +41,7 @@ export default class extends Component {
           ? <div  className="Mycontent">
             <div>
               {data.content}
-              <Link to={`/meetingdetails/${data.id}`} style={{color:"#ccc"}}>&nbsp;&nbsp;&nbsp;专题详情>></Link>
+              <Link to={`/meetingdetails/${data.id}`} style={{color:"#325495"}}>&nbsp;&nbsp;&nbsp;专题详情>></Link>
             </div>
           </div>
           : null

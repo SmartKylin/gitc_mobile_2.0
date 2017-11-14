@@ -24,14 +24,9 @@ export default class MeetingDetails extends React.Component{
        })
     })
   }
-  
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps,"nextProps");
-  }
 
   render(){
     let data = this.state.data
-    console.log(data);
     return(
         <div className="MeetingDetailsBox">
           this.state.data && this.state.data.length > 0
@@ -42,7 +37,7 @@ export default class MeetingDetails extends React.Component{
             ? <Accor
               list={data.last}
               bgImg={require('../../images2/accordion_bg1.png')}
-              name={data.data.name + '(23号)'}
+              name={data.data.name + '(23日)'}
               enName={data.data.summary}
             />
             : null
@@ -52,7 +47,7 @@ export default class MeetingDetails extends React.Component{
             ? <Accor
                 list={data.last}
                 bgImg={require('../../images2/accordion_bg2.png')}
-                name={data.data.name + '(24号)'}
+                name={data.data.name + '(24日)'}
                 enName={data.data.summary}
             />
             : null

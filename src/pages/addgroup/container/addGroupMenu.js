@@ -24,7 +24,7 @@ export default class AddGroupContainer extends Component {
     }
 
     render() {
-        console.log(this.state.datas,'datas');
+
         return (
             <div className="AddGroupContainer-">
                 <Menu

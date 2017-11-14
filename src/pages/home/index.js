@@ -47,7 +47,6 @@ export default class extends Component {
       highlightData: data.data
     })
     console.log(this.state.highlightData);
-    console.log(this.state.agendaData, 'fdsafjdso;fj');
   }
   
   render () {

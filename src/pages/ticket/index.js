@@ -55,7 +55,6 @@ export default class extends Component {
 
 
   render () {
-    console.log(this.props,"123123123123");
     return (
       <ChildBackground>
         { this.state.ticketList && this.state.ticketList.length ?
