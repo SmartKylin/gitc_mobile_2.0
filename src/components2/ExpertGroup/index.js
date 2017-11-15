@@ -3,7 +3,8 @@ import GuestItem from '../../components2/GuestItem'
 import {getPopleList} from "../../services/home";
 import ExpertImg from '../../images2/expert_all_03.png'
 import './index.scss'
-
+import Logo from '../../pages/newHome/images/logo.png'
+import NewFouter from '../../components2/Fouter'
 export default class extends Component {
   constructor(props) {
     super(props)
@@ -24,6 +25,7 @@ export default class extends Component {
     let {expertData} = this.state
     return (
       <div className="all-people">
+        {this.props.bjImg ?  <img src={Logo} alt="" className="item-header"/>:"" }
         <img src={ExpertImg} alt="" className="item-header"/>
         <div className="people-group">
           {
@@ -34,6 +36,9 @@ export default class extends Component {
             : null
           }
         </div>
+        {
+          this.props.fouter?<NewFouter/>:""
+        }
       </div>
     )
   }

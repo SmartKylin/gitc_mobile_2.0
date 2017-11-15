@@ -30,8 +30,6 @@ import AddGroup from '../pages/addgroup/index'
 import Awards from '../pages/awards/index'
 import MeetingDetails from '../pages/meetingdetails/index'
 
-import PresidentGroup from '../components2/PresidentGroup'
-import ExpertGroup from '../components2/ExpertGroup'
 import Topic from '../pages2/topic'
 import HightLight from '../pages2/hightlight'
 import SpeecherGroup from '../components2/SpeecherGroup'
@@ -42,6 +40,8 @@ import Schedule from '../pages2/schedule'
 import Brand from '../pages2/brand'
 import CollectStamp from '../pages2/collectstamp'
 import RoadShow from '../pages2/roadshow'
+import Presidium from '../pages2/presidium'
+import AdvisoryGroup from '../pages2/advisorygroup'
 
 let history = createBrowserHistory();
 // containers
@@ -82,9 +82,11 @@ const RouterMap = class extends Component {
         <Route path="/addgroup" component={AddGroup}></Route>
 
         <Route path="/awards" component={Awards }></Route>
-        <Route path="/president" component={PresidentGroup }></Route>
-        <Route path="/expert" component={ExpertGroup }></Route>
+
+        <Route path="/president" component={Presidium }></Route>
+        <Route path="/expert" component={AdvisoryGroup }></Route>
         <Route path="/speecher" component={SpeecherGroup }></Route>
+
         <Route path="/topic" component={Topic}></Route>
         <Route path="/light" component={HightLight}></Route>
         <Route path="/service" component={ServiceInfo}></Route>

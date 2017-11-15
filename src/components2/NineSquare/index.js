@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-
+import "./indes.scss"
 const generateNineAry = () => {
   let ary = []
   for (let i = 0; i < 9; i++) {
-    ary.push(require(`../../pages/newHome/componets/squared/images/nine_0${i+1}.png`))
+    ary.push(require(`./images/nine_0${i+1}.png`))
   }
   return ary
 }

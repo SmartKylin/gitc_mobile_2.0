@@ -2,7 +2,6 @@ import React from 'react';
 import Logo from './images/logo.png'
 import './index.scss'
 import AnAssembly from './componets/AnAssembly'
-import Squared from './componets/squared'
 import Introduction from './componets/introduction'
 import Brief from './componets/brief'
 import ListMeetings from '../../components2/AllPeople'
@@ -12,14 +11,9 @@ import MapWJ from './componets/Mapwj/index'
 import Footer1 from './componets/ContactUs/index'
 import PointDiv from './componets/PointDiv/index'
 import MeetingGuide from '../../components2/MeetingGuide'
+import NineSquare from '../../components2/NineSquare'
 
 export default class NewHome extends React.Component{
-  constructor(props){
-    super(props)
-    this.state= {
-
-    }
-  }
 
   render(){
     return(
@@ -28,14 +22,14 @@ export default class NewHome extends React.Component{
             <img src={Logo} alt=""/>
           </div>
           {/*九宫格*/}
-          <Squared/>
+          <NineSquare/>
           {/*大会介绍*/}
           <Introduction/>
           {/*大会亮点*/}
           <AnAssembly/>
           {/*大会简介*/}
           <Brief/>
-          {/*大会主席团*/}
+          {/*主席团  ||  顾问团*/}
           <ListMeetings/>
           {/*合作伙伴*/}
           <Cooperative/>
@@ -48,8 +42,4 @@ export default class NewHome extends React.Component{
         </div>
     )
   }
-
-
-
-
 }
