@@ -19,7 +19,7 @@ export default class Map extends Component {
       addColor: '#fff',
       imgPop: 'none',
       imgAry: [],
-      index: 0
+      index: 5
     }
   }
   
