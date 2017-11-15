@@ -32,11 +32,11 @@ import MeetingDetails from '../pages/meetingdetails/index'
 
 import PresidentGroup from '../components2/PresidentGroup'
 import ExpertGroup from '../components2/ExpertGroup'
-import Topic from '../pages/newHome/componets/brief'
+import Topic from '../pages2/topic'
 import HightLight from '../pages2/hightlight'
 import SpeecherGroup from '../components2/SpeecherGroup'
 import ServiceInfo from '../pages2/serviceinfo'
-import Agenda from '../pages2/meetagenda'
+// import Agenda from '../pages2/meetagenda'
 
 import Schedule from '../pages2/schedule'
 import Brand from '../pages2/brand'

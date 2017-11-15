@@ -1,101 +1,121 @@
 import React, {Component} from 'react'
-// import SponsorshipMain from './containers/sponsorshipMain'
 import ChildBackground from 'containers/child_container'
-// import CollectedModal from 'components/CollectedModal'
 import './index.scss'
-import $ from 'jquery'
 import {getListImgs} from '../../services/getListNews'
 
-// const img1 = require('components/images/map1.jpg')
-const img1 = require('../../images/1层地图.jpg')
-const img3 = require('../../images/3层地图.jpg')
-// const img3 = require('components/images/map2.jpg')
-const img4 = require('components/images/map3.jpg')
+// import $ from 'jquery'
+// import img1 from '../../images/floor_1.jpg'
+// import img3 from '../../images/floor_3.jpg'
+// import img4 from '../../images/floor_4.jpg'
+
+const getImg = num => require(`../../images/floor_${num}.jpg`)
+
 
 export default class Map extends Component {
   constructor(...args) {
     super(...args)
     this.state = {
-      add: '一',
-      imgSize:100,
-      addColor:'#fff',
-      imgPop:'none'
+      imgSize: 100,
+      addColor: '#fff',
+      imgPop: 'none',
+      imgAry: [],
+      index: 0
     }
   }
   
-  componentWillMount() {
+  async componentWillMount() {
     document.title = "场馆地图"
-  }
-  
-  _heandeClick(e) {
-    $('.map-btn div').removeClass('btn')
-    $(e.target).addClass('btn');
-    this.setState({
-      add: $(e.target).attr("name")
+    let imgAry = await getListImgs(67).then(res => res.json())
+    // console.log(imgAry.data);
+    await this.setState({
+      imgAry: imgAry.data
     })
   }
-  addClick(e){
+  
+  addClick(e) {
     e.stopPropagation()
-    if(this.state.imgSize>=240){
+    if (this.state.imgSize >= 240) {
+      return false
+    } else {
+      this.setState({
+        imgSize: this.state.imgSize + 50
+      })
+    }
+  }
+  
+  cutClick(e) {
+    e.stopPropagation()
+    if (this.state.imgSize <= 100) {
       
       return false
-    }else{
+    } else {
       this.setState({
-        imgSize:this.state.imgSize+50
+        imgSize: this.state.imgSize - 50
       })
     }
   }
-  cutClick(e){
-    e.stopPropagation()
-    if(this.state.imgSize<=100){
-    
-      return false
-    }else{
-      this.setState({
-        imgSize:this.state.imgSize-50
-      })
-    }
-  }
-  openImg(){
+  
+  openImg() {
     this.setState({
-      imgPop:'block'
+      imgPop: 'block'
     })
   }
-  closeImg(){
+  
+  closeImg() {
     this.setState({
-      imgPop:'none'
+      imgPop: 'none'
+    })
+  }
+  changeMapImg = ind => {
+    this.setState({
+      index: ind
     })
   }
   render() {
+    let {imgSize, imgPop, imgAry, index }= this.state
     return (
-    <ChildBackground>
-      <div className="map-box">
-        <div className="map-img-box">
-          <h4>GITC北京站 一一 {this.state.add}层平面图</h4>
-          
-          {this.state.add == "一" ? <img src={img1} alt="" className="map-img" onClick={this.openImg.bind(this)}/> : ""}
-          {this.state.add == "三" ? <img src={img3} alt="" className="map-img" onClick={this.openImg.bind(this)}/> : ""}
-          {this.state.add == "四" ? <img src={img4} alt="" className="map-img" onClick={this.openImg.bind(this)}/> : ""}
-        </div>
-        
-        <div className="map-btn" onClick={this._heandeClick.bind(this)}>
-          <div name="四">4F</div>
-          <div name="三">3F</div>
-          <div name="一" className="btn">1F</div>
-        </div>
-      </div>
-      <div className="img-pop" style={{display:this.state.imgPop}} onClick={this.closeImg.bind(this)}>
-        <div className="img-container">
-        {this.state.add == "一" ? <img src={img1} alt="" className="map-img img-size" style={{width:`${this.state.imgSize}%`,height:`${this.state.imgSize}%`}}/>: ""}
-        {this.state.add == "三" ? <img src={img3} alt="" className="map-img img-size" style={{width:`${this.state.imgSize}%`,height:`${this.state.imgSize}%`}}/>: ""}
-        {this.state.add == "四" ? <img src={img4} alt="" className="map-img img-size" style={{width:`${this.state.imgSize}%`,height:`${this.state.imgSize}%`}}/>: ""}
-        </div>
-        <div className="map-scal">
-          <div  className="btn-link" onClick={this.addClick.bind(this)} style={{background:this.state.imgSize>='250'?'#ccc':"#fff"}}>+</div>
-          <div className="divbottom" onClick={this.cutClick.bind(this)} style={{background:this.state.imgSize<='100'?'#ccc':"#fff"}}>-</div>
-        </div>
-      </div>
-    </ChildBackground>
+      <ChildBackground>
+        {
+          imgAry.length
+          ? (
+            <div>
+              <div className="map-box">
+                <div className="map-img-box">
+                  <h4>{imgAry[index].content}</h4>
+                  <img src={imgAry[index].img} alt="" className="map-img" onClick={this.openImg.bind(this)}/>
+                </div>
+    
+                <div className="map-btn" >
+                  {
+                    imgAry.map((item, ind) => (
+                      <div key={ind} className={index == ind ? 'btn' : ''} onClick={() => this.changeMapImg(ind)}>{imgAry[ind].title}</div>
+                    ))
+                  }
+                </div>
+              </div>
+              <div className="img-pop" style={{display: imgPop}} onClick={this.closeImg.bind(this)}>
+                <div className="img-container">
+                  <img
+                    // src={getImg(add)}
+                    src={imgAry[index].img}
+                    className="map-img img-size"
+                    style={{width: `${imgSize}%`, height: `${imgSize}%`}}
+                  />
+                </div>
+                <div className="map-scal">
+                  <div className="btn-link" onClick={this.addClick.bind(this)}
+                       style={{background: imgSize >= '250' ? '#ccc' : "#fff"}}>+
+                  </div>
+                  <div className="divbottom" onClick={this.cutClick.bind(this)}
+                       style={{background: imgSize <= '100' ? '#ccc' : "#fff"}}>-
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+          : null
+        }
+      </ChildBackground>
     )
   }
 }

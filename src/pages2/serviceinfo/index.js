@@ -3,7 +3,6 @@ import {getServiceInfo} from '../../services/home'
 import './index.scss'
 import ServiceItem from '../../components2/ServiceItem'
 
-
 const generateImgAry = () => {
   let ary = [];
   for (let i = 1; i < 17; i++) {

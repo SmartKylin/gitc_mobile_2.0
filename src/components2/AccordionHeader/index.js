@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
 import './index.scss'
 
-
 const IconAry = ['', 'icon-yongcan', 'icon-fenhuichangxuanzhong', 'icon-yinshuiji', 'icon-icon', 'icon-shiwuzhaoling']
 
 export default class extends Component {
+  
   render () {
     let {name, enName, bgImg, changeCollapse, collapsed, index} = this.props
     return (
-      <div className="accor-header" onClick={this.props.changeCollapse} style={{background: `url(${bgImg}) no-repeat center`}}>
+      <div className="accor-header" onClick={changeCollapse} style={{background: `url(${bgImg}) no-repeat center`}}>
         {
           index ?
           <div className="header-left">
