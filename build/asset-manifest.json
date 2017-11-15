@@ -1,15 +1,8 @@
 {
-<<<<<<< HEAD
   "main.css": "static/css/main.ae9aee97.css",
   "main.css.map": "static/css/main.ae9aee97.css.map",
-  "main.js": "static/js/main.ea99a96e.js",
-  "main.js.map": "static/js/main.ea99a96e.js.map",
-=======
-  "main.css": "static/css/main.6ca6cc84.css",
-  "main.css.map": "static/css/main.6ca6cc84.css.map",
-  "main.js": "static/js/main.54d1739b.js",
-  "main.js.map": "static/js/main.54d1739b.js.map",
->>>>>>> b75c5bb8fef8712fd4330d7c358a328704578702
+  "main.js": "static/js/main.6ef64f20.js",
+  "main.js.map": "static/js/main.6ef64f20.js.map",
   "static/media/VIP票.jpg": "static/media/VIP票.39222e17.jpg",
   "static/media/accordion_bg1.png": "static/media/accordion_bg1.3fa1a6db.png",
   "static/media/accordion_bg10.png": "static/media/accordion_bg10.98f34c98.png",
