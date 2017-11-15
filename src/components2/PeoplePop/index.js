@@ -53,11 +53,12 @@ export default class extends Component {
     
     let phone = storage.get(storage.PHONE_KEY)
     console.log(phone, 'phone');
+    
     let cb = this._collectGuest
     
     const failure = (msg) => {
-      openPop()
-      setLoginCb(cb)
+      // openPop()
+      // setLoginCb(cb)
       message.info(msg)
     }
     

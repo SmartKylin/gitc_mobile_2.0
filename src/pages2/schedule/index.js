@@ -40,7 +40,7 @@ export default class Schedule extends React.Component{
       name:"待定",
       position:"待定"
     }
-    let {openPop, closePop, setLoginCb} = this.props
+    let {openPop, closePop, setLoginCb} = this.props.history
     // console.log(agendaData, 'shefjdls');
     return(
         <div className="ScheduleBox">
