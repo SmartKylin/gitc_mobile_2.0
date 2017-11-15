@@ -28,3 +28,7 @@ export function cancelCollectGuest (params) {
 export function getDocumentList(params) {
   return http.post(api.getDocumentList + params.phone + `.json?token=1afb756d16740266efde290917ca1a8e`, params)
 }
+
+export function updateCollectStatus(params) {
+  return http.post(`http://120.92.10.182:8000/api/gitc/collect/status/${params.phone}.json?token=1afb756d16740266efde290917ca1a8e`, params)
+}
