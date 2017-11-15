@@ -19,7 +19,7 @@ export default (config => {
   'getListNews':'/api/gitc/article-',
 
   //图片
-  'getListImgs':'/api/gitc/page/img-',
+  'getListImgs':'/api/gitc/img-',
 
   //  大会新闻详情页
   'getDetalisNews':'/api/gitc/article',
@@ -50,6 +50,10 @@ export default (config => {
   'collectDocument': '/api/gitc/file/add/',
   // 收藏嘉宾
   'collectGuest': '/api/gitc/collect/add/',
+  // 取消收藏文档
+  'disCollectDocument': '/api/gitc/file/del/',
+  // 取消收藏嘉宾
+  'disCollectGuest': '/api/gitc/collect/del/',
   //大会简介
   'getBriefList': '/api/gitc/article-',
   //分会场详情

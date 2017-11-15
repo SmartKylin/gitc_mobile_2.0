@@ -6,7 +6,12 @@ import {message} from 'antd'
 import storage from '../../helper/storage'
 import { TOKEN } from "../../helper/login";
 import CollectedModal from 'components/CollectedModal'
-import { collectDocument, collectGuest } from "../../services/collect";
+import {
+  collectDocument,
+  collectGuest,
+  cancelCollectDocument,
+  cancelCollectGuest
+} from "../../services/collect";
 
 
 const formatDate = (str) => {

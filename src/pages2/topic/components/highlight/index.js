@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import './index.scss'
 import {Link} from 'react-router-dom'
-import AccordionHeader from '../../../../../../components2/AccordionHeader'
+import AccordionHeader from '../../../../components2/AccordionHeader'
 
 export default class extends Component {
   constructor(props) {
@@ -19,7 +18,6 @@ export default class extends Component {
   render () {
     let {collapsed} = this.state
     let {data, bgImg} = this.props
-    let content = null
     return (
       <div className="my-accordion">
   
