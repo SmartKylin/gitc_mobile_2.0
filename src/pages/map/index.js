@@ -19,7 +19,7 @@ export default class Map extends Component {
       addColor: '#fff',
       imgPop: 'none',
       imgAry: [],
-      index: 0
+      index: 5
     }
   }
   
@@ -81,12 +81,13 @@ export default class Map extends Component {
             <div>
               <div className="map-box">
                 <div className="map-img-box">
-                  <h4>{imgAry[index].content}</h4>
+                  <h4 className="map-header">{imgAry[index].content}</h4>
                   <img src={imgAry[index].img} alt="" className="map-img" onClick={this.openImg.bind(this)}/>
                 </div>
     
                 <div className="map-btn" >
                   {
+                    
                     imgAry.map((item, ind) => (
                       <div key={ind} className={index == ind ? 'btn' : ''} onClick={() => this.changeMapImg(ind)}>{imgAry[ind].title}</div>
                     ))
