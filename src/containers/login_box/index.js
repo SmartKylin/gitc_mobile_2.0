@@ -144,6 +144,7 @@ export default class extends Component {
             this.state.coding ? <div className="send--code">重新发送{this.state.time}s</div> : <div className={'send--code ' + (this.state.mobileRight ? 'active' : '')} onClick={() => this.sendcode()}>发送验证码</div>
           }
         </div>
+        
         <div className="btn--area">
           <div className="btn--ensure" onClick={() => this.signIn(this.props.loginSuccess)}>登录</div>
         </div>
