@@ -21,7 +21,7 @@ export default class Conference extends React.Component {
         <div className="ConferenceBoxShang">
           <div className="ConferenceBoxShangBox">
             <div className="ConferenceBoxShangLogoBox">
-              <div className="ConferenceBgLogo">
+              <div className={list.data.name=="大数据&人工智能专场"?"ConferenceBgLogoA":"ConferenceBgLogo"}>
                 {list.data.name}
               </div>
             </div>
