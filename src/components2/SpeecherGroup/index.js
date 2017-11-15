@@ -14,6 +14,7 @@ export default class extends Component {
     }
   }
   async componentWillMount () {
+    document.title = "演讲嘉宾"
     let speecherData = await getPopleList(47).then(res => res.json())
     await this.setState({
       speecherData: speecherData.data
