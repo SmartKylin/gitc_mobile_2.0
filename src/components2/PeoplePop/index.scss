@@ -248,6 +248,131 @@
   }
 }
 
+@media screen and (max-width: 360px) {
+  .people-pop {
+    width: 3.25rem;
+    height: 5.03rem;
+    background: #fff;
+    border-radius: 9px;
+    position: relative;
+    color: #0d1428;
+
+    .close-wrapper {
+      display: flex;
+      justify-content: flex-end;
+
+      > div {
+        padding: 10px 10px 0 10px;
+      }
+      .icon-huaban {
+        font-size: 20px;
+      }
+
+      .close-icon {
+        width: .2rem;
+        height: .2rem;
+        position: relative;
+        right: 0;
+        background: url(../../images2/close_icon.png) no-repeat center;
+      }
+
+    }
+
+    .avatar-wrapper {
+      height: .62rem;
+      text-align: center;
+      img {
+        height: .62rem;
+        width: .62rem;
+        border-radius: 50%;
+      }
+    }
+
+    .name {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .company-position {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .addr-time {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      > div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      span {
+        font-size: 10px;
+        margin: 0 3px;
+      }
+    }
+
+    .speech-topic {
+      padding: 0 20px;
+      margin: 3px 0;
+      font-size: 13px;
+    }
+
+    .iconfont {
+      color: #2b67ff;
+    }
+
+    .theme-introduce {
+      padding: 0 20px;
+      //max-height: 1.5rem;
+      overflow-y: scroll;
+      max-height: 90px;
+      font-size: 13px;
+
+    }
+
+    .person-introduce {
+      padding: 0 20px;
+      margin-top: 10px;
+      max-height: 100px;
+      overflow-y: scroll;
+      font-size: 13px;
+
+    }
+
+    .title {
+      font-weight: 600;
+      color: #0d1428
+    }
+
+    .btn-function {
+      position: absolute;
+      display: flex;
+      bottom: 20px;
+      right: 20px;
+      height: 31px;
+
+      .btn {
+        border-radius: 50%;
+        width: 31px;
+        height: 31px;
+        margin: 0 14px;
+        box-shadow: 0 0 12px 0 #2b67ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .iconfont {
+        font-size: 14px;
+      }
+    }
+
+  }
+}
 
 @media screen and (max-width: 320px) {
   .people-pop {

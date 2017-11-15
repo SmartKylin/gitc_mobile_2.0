@@ -15,6 +15,10 @@ import NineSquare from '../../components2/NineSquare'
 
 export default class NewHome extends React.Component{
 
+  componentWillMount () {
+    // 设置二级页面标题
+    document.title = "GITC"
+  }
   render(){
     return(
         <div className="NewHomeBox">

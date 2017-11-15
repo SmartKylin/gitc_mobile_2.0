@@ -8,6 +8,21 @@
     }
   }
 
+  .nine-square {
+    margin-top: .15rem;
+    height: 1.5rem;
+    width: 100%;
+    background: #0b1220;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    img {
+      width: 1.06rem;
+      height: .35rem;
+    }
+  }
+
    .agenda-wrapper{
      margin-top: .45rem;
     img {
@@ -16,7 +31,7 @@
   }
 
   .contact-us {
-    height: 4rem;
+    width: 100%;
     img {
       width: 100%;
     }
@@ -42,7 +57,6 @@
     //    color: #fff;
     //    border-bottom: 1px solid #0b1220;
     //    height: .48rem!important;
-    //  }
     //}
   }
 

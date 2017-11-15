@@ -7,10 +7,9 @@ import './index.scss'
 export default class extends Component {
 
   render () {
-    return (
-      <div>
-        <PresidentGroup />
-        <ExpertGroup/>
+    return (<div>
+         <PresidentGroup />
+         <ExpertGroup/>
       </div>
     )
   }

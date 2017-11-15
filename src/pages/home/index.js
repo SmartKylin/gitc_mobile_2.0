@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import BannerImg from '../../images2/banner.png'
 import './index.scss'
 import agenda_title from '../../images2/大会日程.png'
-import contact_us from '../../images2/diye.png'
+import contact_us from '../../images2/fouterhome_03.png'
 import {Accordion, List} from 'antd-mobile'
 // import 'antd-mobile/dist/antd-mobile.css'
 
@@ -36,8 +36,9 @@ export default class extends Component {
       highlightData: [],
     }
   }
+
   async componentWillMount () {
-    
+    document.title = "GITC"
     let res = await getAgenda()
     .then(res => res.json())
     await this.setState({
@@ -99,14 +100,14 @@ export default class extends Component {
             }
           </div>
         </div>
-        
+
         
         {/*参会指南*/}
         <MeetingGuide/>
         
-        {/*联系我们*/}
+       {/* 联系我们*/}
         <div className="contact-us">
-          <img src={contact_us} alt=""/>
+          <img src={contact_us}/>
         </div>
         <PointDiv/>
   
