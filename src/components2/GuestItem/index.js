@@ -13,6 +13,9 @@ export default class extends Component {
   }
   
   openGuestPop = () => {
+    if (!this.props.hasPop) {
+      return
+    }
     this.setState({
       popVisible: true
     })

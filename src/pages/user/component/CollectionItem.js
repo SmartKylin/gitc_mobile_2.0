@@ -1,23 +1,80 @@
 import React, {Component} from 'react'
-import {Icon} from 'antd'
+// import {Icon} from 'antd'
 import "./index.scss"
+import PeoplePop from '../../../components2/PeoplePop'
+import {allowScroll, forbiddenScroll} from "../../../helper/scrollSetting";
+
 export default class CollectionItem extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      popVisible: false
+    }
+  }
+  openGuestPop = () => {
+    if (!this.props.hasPop) {
+      return
+    }
+    let {data} = this.props
+    if (data.stheme == '开幕致辞') {
+      return
+    }
+    this.setState({
+      popVisible: true
+    })
+    this.top = document.documentElement.scrollTop || document.body.scrollTop
+    forbiddenScroll()
+  }
+  
+  closeGuestPop = (e) => {
+    e.stopPropagation()
+    
+    allowScroll(this.top)
+    this.setState({
+      popVisible: false
+    })
+  }
+  
   render () {
-    // console.log(this.props.data.id,"12312312");
+    let item = this.props.data
+    // console.log(item, 'pic');
+    
+    let {popVisible} = this.state
+    let {openPop, closePop, setLoginCb} = this.props
+  
     return (
-    <div>
-      {this.props.data.id==4?<div><div className='collectionItemtime'>11月23日</div><div className='xian'></div></div>:""}
-      <div className='box'>
+      <div
+        className='box'
+        onClick={this.openGuestPop}
+      >
         <div className='boximg'>
-          <div ><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>
+          {/*<div><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>*/}
+          <div className="avatar--wrap">
+            <img src={item.pic} alt=""/>
+          </div>
           <div className='boxiner'>
-            <div className='boxinerTextA'><span>前端开发等领域的技术热点</span></div>
-            <div className='boxinerTextB'><span style={{fontSize:"8px"}}>崔保秋  小米|首席架构师</span></div>
+            <div className='boxinerTextA'><span style={{fontSize: '12px'}}>{item.stheme || '主题信息未加载~'}</span></div>
+            <div className='boxinerTextB'><span style={{fontSize:"10px"}}>{item.name}   {item.company}|{item.position}</span></div>
           </div>
         </div>
-        <div> <span>2017-01-01</span></div>
+        <div><span style={{fontSize: '10px'}}>{item.stime}</span></div>
+  
+        {/*{
+          popVisible
+          ? <div className="popup">
+            {
+              <PeoplePop
+                closeGuestPop={this.closeGuestPop}
+                speecher={item}
+                openPop={openPop}
+                closePop={closePop}
+                setLoginCb={setLoginCb}
+              />
+            }
+          </div>
+          : null
+        }*/}
       </div>
-    </div>
     )
   }
 }

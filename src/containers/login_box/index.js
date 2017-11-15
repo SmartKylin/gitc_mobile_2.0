@@ -2,9 +2,10 @@ import React, {Component} from 'react'
 import './index.scss'
 import {sendCode} from "../../services/code";
 import {sign} from "../../services/user"
-import {Toast} from 'antd-mobile'
+// import {message} from 'antd-mobile'
 import storage from '../../helper/storage'
 import {TOKEN} from "../../helper/login";
+import {message} from 'antd'
 
 let iconIphone = require('../../images/icon-phone.svg')
 
@@ -33,9 +34,13 @@ export default class extends Component {
     sendCode(this.mobile.value, {phone: this.mobile.value, token: TOKEN})
     .then(res => res.json())
     .then(data => {
-      Toast.info(data.msg)
+      message.info(data.msg)
       if (data.status) {
         this.countDown()
+      } else {
+        this.setState({
+          coding: true
+        })
       }
     })
     // this.countDown()
@@ -89,13 +94,15 @@ export default class extends Component {
     params.token = TOKEN
     
     const sucesss = (data) => {
-      Toast.success(data.msg)
+      message.success(data.msg)
       // 如果登陆成功，手机号存到localstorage
       if (data.status) {
         storage.set(storage.PHONE_KEY, this.mobile.value)
         storage.set(storage.DATA_KEY, data.data)
         this.closeLoginBox()
         cb && cb()
+      } else {
+        message.info(data.msg)
       }
     }
     sign(this.mobile.value, params)

@@ -10,7 +10,8 @@ import {
   collectDocument,
   collectGuest,
   cancelCollectDocument,
-  cancelCollectGuest
+  cancelCollectGuest,
+  updateCollectStatus
 } from "../../services/collect";
 
 
@@ -36,17 +37,24 @@ export default class extends Component {
     this.initialCollectStatus()
   }
   
-  initialCollectStatus = () => {
+  initialCollectStatus = async () => {
     let speecher = this.props.speecher
-    let {collect, file_collect} = speecher
+    let {id, files_id} = speecher
+    let phone = storage.get(storage.PHONE_KEY)
+    let res = await updateCollectStatus({phone, person: id, file: 0}).then(res => res.json())
+    
+    let {collect, file} = res
     this.setState({
       guestStatus: collect,
-      fileStatus: file_collect
+      fileStatus: file
     })
+  
+  
   }
   
   // 收藏嘉宾
   _collectGuest = () => {
+    let _this = this
     // e.stopPropagation()
     let { id, collect } = this.props.speecher
     let { openPop, setLoginCb, closePop } = this.props
@@ -75,7 +83,9 @@ export default class extends Component {
           // 打开收藏成功模态框
           collectModelVisible: 'block',
           guestStatus: true,
-        })
+        },
+        () => setTimeout(()=>_this.setState({collectModelVisible: 'none'}), 500)
+        )
       } else {
         failure(data.msg)
       }

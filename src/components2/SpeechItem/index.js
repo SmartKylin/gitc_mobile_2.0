@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import defaultAvatar from '../../images/default-avatar.jpg'
 import zhibo from '../../images/zhibo1111.svg'
-import GuestDetailPop from '../../components/AgendaPople/GuestDetailPop'
-// import GuestDetailPop from '../../components/AgendaPople/GuestDetailPop'
+
 import './index.scss'
 import PeoplePop from '../../components2/PeoplePop'
 import {allowScroll, forbiddenScroll} from "../../helper/scrollSetting";
@@ -15,6 +14,9 @@ export default class extends Component {
     }
   }
   openGuestPop = () => {
+    if (!this.props.hasPop) {
+      return
+    }
     let {speecher} = this.props
     if (speecher.stheme == '开幕致辞') {
       return
@@ -39,9 +41,8 @@ export default class extends Component {
   render() {
     let {speecher} = this.props
     let {popVisible} = this.state
-    // console.log(popVisible, 'spper');
     let {openPop, closePop, setLoginCb, canPop} = this.props
-    // console.log(openPop, 'speech openPop');
+   
   
     return (
       <div
@@ -76,9 +77,9 @@ export default class extends Component {
               <PeoplePop
                 closeGuestPop={this.closeGuestPop}
                 speecher={speecher}
-                openPop={this.props.openPop}
-                closePop={this.props.closePop}
-                setLoginCb={this.props.setLoginCb}
+                openPop={openPop}
+                closePop={closePop}
+                setLoginCb={setLoginCb}
               />
             }
           </div>
