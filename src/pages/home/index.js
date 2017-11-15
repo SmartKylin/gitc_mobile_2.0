@@ -37,7 +37,6 @@ export default class extends Component {
     }
   }
   async componentWillMount () {
-    console.log(this.props.history, 'fdfd');
     
     let res = await getAgenda()
     .then(res => res.json())
