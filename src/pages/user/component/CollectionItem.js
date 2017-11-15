@@ -44,7 +44,7 @@ export default class CollectionItem extends Component {
   
     return (
       <div
-        className='box'
+        className='user-box'
         onClick={this.openGuestPop}
       >
         <div className='boximg'>
