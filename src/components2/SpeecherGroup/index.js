@@ -20,6 +20,7 @@ export default class extends Component {
   }
   render () {
     let {speecherData} = this.state
+    let {openPop, closePop, setLoginCb} = this.props.history
     return (
       <div className="speecher-group">
         {/*<img src={SpeecherImg} alt="" className="item-header"/>*/}
@@ -28,7 +29,14 @@ export default class extends Component {
           {
             speecherData.length
             ? speecherData.map((item, index) => (
-              <GuestItem data={item} key={index}/>
+              <GuestItem
+                data={item}
+                key={index}
+                hasPop={true}
+                openPop={openPop}
+                closePop={closePop}
+                setLoginCb={setLoginCb}
+              />
             ))
             : null
           }

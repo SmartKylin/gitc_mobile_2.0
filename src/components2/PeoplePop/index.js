@@ -24,12 +24,25 @@ const formatDate = (str) => {
 export default class extends Component {
   constructor(props) {
     super(props)
+    let {collect, file_collect} = props.speecher
     this.state ={
       collectModelVisible: 'none',
-      guestStatus: false,
-      fileStatus: false,
+      guestStatus: collect || false,
+      fileStatus: file_collect || false,
       openPop: props.openPop
     }
+  }
+  componentWillMount() {
+    this.initialCollectStatus()
+  }
+  
+  initialCollectStatus = () => {
+    let speecher = this.props.speecher
+    let {collect, file_collect} = speecher
+    this.setState({
+      guestStatus: collect,
+      fileStatus: file_collect
+    })
   }
   
   // 收藏嘉宾
@@ -37,11 +50,11 @@ export default class extends Component {
     // e.stopPropagation()
     let { id, collect } = this.props.speecher
     let { openPop, setLoginCb, closePop } = this.props
+    
     let phone = storage.get(storage.PHONE_KEY)
+    console.log(phone, 'phone');
     let cb = this._collectGuest
-    if (collect || this.state.guestStatus) {
-      return
-    }
+    
     const failure = (msg) => {
       openPop()
       setLoginCb(cb)
@@ -66,7 +79,47 @@ export default class extends Component {
         failure(data.msg)
       }
     }
+    
     collectGuest({ phone, person: id, token: TOKEN })
+    .then(res => res && res.json())
+    .then(success)
+  }
+  
+  // 取消收藏嘉宾
+  _cancelCollectGuest = () => {
+    console.log('cacelCollect');
+    // e.stopPropagation()
+    let { id, collect } = this.props.speecher
+    let { openPop, setLoginCb, closePop } = this.props
+    let phone = storage.get(storage.PHONE_KEY)
+    
+    let cb = this._cancelCollectGuest
+    
+    const failure = (msg) => {
+      openPop()
+      setLoginCb(cb)
+      message.info(msg)
+    }
+    
+    if (!phone) {
+      openPop()
+      setLoginCb(cb)
+      return
+    }
+    
+    const success = (data) => {
+      if (data.status) {
+        closePop()
+        message.success('取消收藏成功')
+        this.setState({
+          // 打开收藏成功模态框
+          guestStatus: false,
+        })
+      } else {
+        failure(data.msg)
+      }
+    }
+    cancelCollectGuest({ phone, person: id, token: TOKEN })
     .then(res => res && res.json())
     .then(success)
   }
@@ -135,6 +188,24 @@ export default class extends Component {
     })
   }
   
+  changeGuestStatus = () => {
+    let guestStatus = this.state.guestStatus
+    if (guestStatus) {
+      this._cancelCollectGuest()
+    } else {
+      this._collectGuest()
+    }
+    
+  }
+  
+  changeDocumentStatus = () => {
+    let fileStatus = this.state.fileStatus
+    if (fileStatus) {
+    
+    } else {
+      this._collectDocument()
+    }
+  }
   
   render () {
     let speecher = this.props.speecher
@@ -184,7 +255,7 @@ export default class extends Component {
           ? (<div className="btn-function">
             <div
             className="collect btn"
-            onClick={this._collectGuest}
+            onClick={this.changeGuestStatus}
             >
               {
                 speecher.collect || this.state.guestStatus
@@ -194,7 +265,7 @@ export default class extends Component {
             </div>
             <div
             className="collect-file btn"
-            onClick={this._collectDocument}
+            onClick={this.changeDocumentStatus}
             >
               {
                 speecher.file_collect || this.state.fileStatus

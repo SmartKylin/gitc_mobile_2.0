@@ -40,7 +40,11 @@ export default class Brief extends React.Component{
           <div className="topic-img"/>
           {
             this.state.data && this.state.data.map((item,index) =>(
-                <Highlight data={item} bgImg={imgAry[index]} key={index}/>
+              <Highlight
+                data={item}
+                bgImg={imgAry[index]}
+                key={index}
+              />
             ))
           }
 

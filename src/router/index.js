@@ -25,6 +25,7 @@ import MiHuiTicketDetail from 'pages/mihuiticketdetail'
 import Activity from 'pages/activity'
 import Issue from 'pages/issue'
 import createBrowserHistory from 'history/createBrowserHistory'
+import createHashHistory from 'history/createBrowserHistory'
 import Map from '../pages/map/index'
 import AddGroup from '../pages/addgroup/index'
 import Awards from '../pages/awards/index'
@@ -43,7 +44,10 @@ import Brand from '../pages2/brand'
 import CollectStamp from '../pages2/collectstamp'
 import RoadShow from '../pages2/roadshow'
 
-let history = createBrowserHistory();
+// let history = createBrowserHistory();
+
+let history = createHashHistory();
+
 // containers
 // components 
 // pages
