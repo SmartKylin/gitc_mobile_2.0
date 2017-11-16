@@ -73,21 +73,23 @@ const RouterMap = class extends Component {
     
         <Route path="/conferencenews" component={conferenceNews}></Route>
         <Route path="/conferencenewsdetails/:id" component={conferenceNewsdetails}></Route>
-        
-        <Route path="/user" component={User}></Route>
         <Route path="/dataagenda" component={DataAgenda}></Route>
+        <Route path="/activity" component={Activity}></Route>
+        <Route path="/issue" component={Issue}></Route>
+        
+        <Route path="/awards" component={Awards }></Route>
+  
+        <Route path="/user" component={User}></Route>
         <Route path="/login" compoent={Login}></Route>
         
         <Route path="/ticket" component={Ticket}></Route>
         <Route path="/ticketdetail/:id/:code" component={TicketDetail}></Route>
         <Route path="/mihuiticketdetail/:phone/:code" component={MiHuiTicketDetail}></Route>
-        <Route path="/activity" component={Activity}></Route>
-        <Route path="/issue" component={Issue}></Route>
+        
         <Route path="/map" component={Map}></Route>
 
         <Route path="/addgroup" component={AddGroup}></Route>
-
-        <Route path="/awards" component={Awards }></Route>
+        
 
         <Route path="/president" component={Presidium }></Route>
         <Route path="/expert" component={AdvisoryGroup }></Route>
