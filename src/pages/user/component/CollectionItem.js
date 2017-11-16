@@ -59,7 +59,7 @@ export default class CollectionItem extends Component {
         </div>
         <div><span style={{fontSize: '10px'}}>{item.stime}</span></div>
   
-        {/*{
+        {
           popVisible
           ? <div className="popup">
             {
@@ -73,7 +73,7 @@ export default class CollectionItem extends Component {
             }
           </div>
           : null
-        }*/}
+        }
       </div>
     )
   }

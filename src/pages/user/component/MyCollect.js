@@ -22,16 +22,17 @@ export default class extends Component {
     console.log(guestData, 'mucollec');
     let {collapsed} = this.state
     return (
-      <div>
+
+      <div closeName="my-accordion">
         <AccordionHeader
           name={'我的收藏'}
           changeCollapse={this.changeCollapse}
-          
           collapsed={collapsed}
+          iconName={'icon-shoucang1'}
         />
   
         <div className={collapsed ? 'accor-content hidden-style' : 'accor-content'}>
-          <div><div className='collectionItemtime'>11月23日</div><div className='xian'></div></div>
+          <div className='collection-item-time'>11月23日</div><div className='xian'></div>
           {
   
             guestData && guestData[0] && guestData[0].data.map((item, index) => (
@@ -42,10 +43,11 @@ export default class extends Component {
               openPop={openPop}
               closePop={closePop}
               setLoginCb={setLoginCb}
+              hasPop={true}
             />
             ))
           }
-          <div><div className='collectionItemtime'>11月24日</div><div className='xian'></div></div>
+          <div><div className='collection-item-time'>11月24日</div><div className='xian'></div></div>
           {
     
             guestData && guestData[1] && guestData[1].data.map((item, index) => (
@@ -56,6 +58,7 @@ export default class extends Component {
               openPop={openPop}
               closePop={closePop}
               setLoginCb={setLoginCb}
+              hasPop={true}
             />
             ))
           }

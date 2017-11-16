@@ -16,7 +16,7 @@ export default class extends Component {
     let {openPop, closePop, setLoginCb} = this.props.history
     return (
       <ChildBackground>
-        <div style={{display: 'flex', alignItems: 'center'}}>
+        <div style={{display: 'flex', alignItems: 'center', paddingBottom: '.35rem'}}>
           <div alt="" className="avatar"/>
           <div style={{color: '#fff', fontSize: '16px',  marginLeft: '13px'}}>{this.phone}</div>
         </div>

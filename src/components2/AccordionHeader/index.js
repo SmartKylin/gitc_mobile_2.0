@@ -22,8 +22,8 @@ export default class extends Component {
         }
         {
           iconName ?
-          <div className="header-left">
-            <i className={`iconfont ${IconAry[index]}`}/>
+          <div className="header-left-user">
+            <i className={`iconfont ${iconName}`}/>
           </div>
           : null
         }
