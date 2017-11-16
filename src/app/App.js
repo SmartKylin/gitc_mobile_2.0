@@ -8,7 +8,8 @@ import LoginBox from 'containers/login_box'
 import Perf from 'react-addons-perf'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {initWeixinSDK, weixinShare} from "../helper/weixin";
-import {getWeixinConfig} from '../services/user'
+import {getWeixinConfig, getLoginStatus} from '../services/user'
+import storage from '../helper/storage'
 
 
 class App extends Component {
@@ -44,6 +45,16 @@ class App extends Component {
     getWeixinConfig({url}).then(initWeixinSDK)
   
     weixinShare(share)
+  }
+  async componentWillMount () {
+    let phone = storage.get(storage.PHONE_KEY)
+    this.phone = phone
+    if(phone) {
+      let res = await getLoginStatus({phone}).then(res=> res.json())
+      if(!res.status) {
+        storage.remove(storage.PHONE_KEY)
+      }
+    }
   }
   render() {
     return (
