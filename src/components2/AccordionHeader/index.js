@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './index.scss'
 
-const IconAry = ['', 'icon-yongcan', 'icon-fenhuichangxuanzhong', 'icon-yinshuiji', 'icon-icon', 'icon-shiwuzhaoling']
+const IconAry = ['', 'icon-yongcan', 'icon-fenhuichangxuanzhong', 'icon-yinshuiji1', 'icon-SVGtubiaoCopy']
 
 export default class extends Component {
   

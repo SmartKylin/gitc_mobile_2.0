@@ -6,11 +6,11 @@ import {Link} from 'react-router-dom'
 
 function getLinkbyName(name) {
   if (name.indexOf('品牌专场') > -1) {
-    return  <Link to="/brand">查看详情</Link>
+    return  <Link style={{color:"#35a2e8"}} to="/brand">查看详情</Link>
   } else if (name.indexOf('活动路演') > -1) {
-    return <Link to="/roadshow">查看详情</Link>
+    return <Link style={{color:"#35a2e8"}} to="/roadshow">查看详情</Link>
   } else if (name.indexOf('集印章') > -1) {
-    return <Link to="/collectstamp">查看详情</Link>
+    return <Link style={{color:"#35a2e8"}} to="/collectstamp">查看详情</Link>
   } else {
     return null
   }
