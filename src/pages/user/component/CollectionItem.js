@@ -53,8 +53,8 @@ export default class CollectionItem extends Component {
             <img src={item.pic} alt=""/>
           </div>
           <div className='boxiner'>
-            <div className='boxinerTextA'><span style={{fontSize: '12px'}}>{item.stheme || '主题信息未加载~'}</span></div>
-            <div className='boxinerTextB'><span style={{fontSize:"10px"}}>{item.name}   {item.company}|{item.position}</span></div>
+            <div className='boxinerTextAs'><span style={{fontSize: '10px'}}>{item.stheme || '主题信息未加载~'}</span></div>
+            <div className='boxinerTextBs'><span style={{fontSize:"8px"}}>{item.name}   {item.company}|{item.position}</span></div>
           </div>
         </div>
         <div><span style={{fontSize: '10px'}}>{item.stime}</span></div>

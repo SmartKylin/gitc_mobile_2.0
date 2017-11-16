@@ -24,15 +24,30 @@
   .boxiner{
     height: 100%;
     float: left;
-    .boxinerTextA{
+    .boxinerTextAs{
       margin-top: -6px;
       margin-bottom: 6px;
-      height: 10px;
+      height: 8px;
       font-weight: 800;
+      span{
+        width: 200px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+
     }
-    boxinerTextB{
+    .boxinerTextBs{
       height: 8px;
       font-weight: 200;
+      span{
+        width: 200px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
     }
   }
 }
