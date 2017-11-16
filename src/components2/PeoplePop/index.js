@@ -221,7 +221,7 @@ export default class extends Component {
   render () {
     let speecher = this.props.speecher
     const {closeGuestPop, openPop, setLoginCb} = this.props
-  
+    console.log(speecher,"speecher");
     // console.log(openPop, 'openPop');
     return (
       <div className="people-pop">
