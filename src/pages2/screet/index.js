@@ -3,7 +3,7 @@ import {getServiceInfo} from '../../services/home'
 import ServiceItem from './ScreetItem'
 import screetData from './data'
 
-const IconAry = ['', 'icon-yongcan', 'icon-fenhuichangxuanzhong', 'icon-yinshuiji', 'icon-icon', 'icon-shiwuzhaoling']
+const IconAry = ['', 'icon-piaojudengji', 'icon-zixun-copy', 'icon-icon_hetongshangwutiaojianbiao', 'icon-qiandao',]
 
 
 const generateImgAry = () => {
@@ -40,6 +40,7 @@ export default class extends Component {
               />
           ))
         }
+        <div className="router-page-fouter"></div>
       </div>
     )
   }

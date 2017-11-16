@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import "./index.scss"
 import PeoplePop from '../../../components2/PeoplePop'
 import {allowScroll, forbiddenScroll} from "../../../helper/scrollSetting";
-
+import defaultHeaderImg from '../images/default_header_img.jpg'
 export default class CollectionItem extends Component {
   constructor(props) {
     super(props)
@@ -50,7 +50,7 @@ export default class CollectionItem extends Component {
         <div className='boximg'>
           {/*<div><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>*/}
           <div className="avatar--wrap">
-            <img src={item.pic} alt=""/>
+            <img src={item.pic ||defaultHeaderImg } alt=""/>
           </div>
           <div className='boxiner'>
             <div className='boxinerTextAs'><span style={{fontSize: '10px'}}>{item.stheme || '主题信息未加载~'}</span></div>

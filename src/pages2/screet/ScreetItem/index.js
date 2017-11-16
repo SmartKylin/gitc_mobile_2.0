@@ -37,15 +37,26 @@ export default class extends Component {
           ?
             <div className="light-content">
               <div className="time">
-                <span className="light-item-title">时间</span>
+                <span className="light-item-title">时间:</span>
                 {service.time}
               </div>
-              <div className="addr">
-                <span className="light-item-title">电话</span>
-                <a href="tel:18201440272">{service.tel}</a>
+              <div className="time">
+                <span className="light-item-title">联系人:</span>
+                {service.username}
               </div>
-            </div>
-          : null
+              <div className="addr">
+                <span className="light-item-title">TEL:</span>
+                <a href={`tel:${service.tel}`}>{service.tel}</a>
+              </div>
+              {
+                service.email?
+                    <div className="time">
+                      <span className="light-item-title">E-MAIL:</span>
+                      {service.email}
+                      </div>:""
+              }
+
+            </div>: null
         }
       </div>
     )

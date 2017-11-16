@@ -1,24 +1,29 @@
 export default [
   {
-    name: '签到咨询',
-    enName: 'SIGN IN CONSULTATION',
-    tel: '15510151110',
-    time: '23日-24日 08:00-16:00'
+    name: '票务咨询',
+    enName: 'TICKET CONSULTING',
+    tel: '13241224880',
+    time: '周一至周日  09:00-18:00 ',
+    username:'文君'
   },
   {
-    name: '场馆引导',
-    enName: 'PAVILONS',
-    tel: '18201440272',
-    time: '23日-24日 08:00-16:00'
+    name: '媒体合作咨询',
+    enName: 'MEDIA CONSULTING',
+    tel: '18601943715',
+    time: '周一至周日  09:00-18:00',
+    username:'箴言',
   },{
-    name: '嘉宾接待',
-    enName: 'GUEST RECEPTION',
-    tel: '18201440272',
-    time: '23日-24日 08:00-16:00'
+    name: '商务合作咨询',
+    enName: 'BUSINESS COOPERATION CONSULTING',
+    tel: '010-88323888',
+    time: '周一至周日  09:00-18:00',
+    username:"小助手",
+    email:"business@kylinclub.org"
   },{
-    name: '失物招领咨询',
-    enName: 'LOST AND FOUND',
-    tel: '18201440272',
-    time: '23日-24日 08:00-16:00'
+    name: '签到咨询',
+    enName: 'CHECK-IN CONSULTING',
+    tel: '13241224880',
+    time: '周一至周日  09:00-18:00',
+    username:"文君"
   },
 ]
