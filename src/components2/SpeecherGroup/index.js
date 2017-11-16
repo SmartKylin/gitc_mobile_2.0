@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import GuestItem from '../../components2/GuestItem'
-import {getPopleList} from "../../services/home";
+import {getPopleList, getSpeecherGroup} from "../../services/home";
 import SpeecherImg from '../../images2/speecher-header.png'
 import Logo from '../../pages/newHome/images/logo.png'
 import './index.scss'
@@ -15,7 +15,7 @@ export default class extends Component {
   }
   async componentWillMount () {
     document.title = "演讲嘉宾"
-    let speecherData = await getPopleList(47).then(res => res.json())
+    let speecherData = await getSpeecherGroup().then(res => res.json())
     await this.setState({
       speecherData: speecherData.data
     })

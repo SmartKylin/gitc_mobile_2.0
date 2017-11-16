@@ -1,9 +1,14 @@
 import api from '../api'
 import http from '../fetch'
 
+export function getSpeecherGroup(phone) {
+  let phonenew = phone? phone : "13800138000"
+  return http.post(`http://120.92.10.182:8000/api/gitc/person/pages.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}&order_by=ename`)
+}
+
 export function getPopleList(pageId, phone) {
   let phonenew = phone? phone : "13800138000"
-  return http.get(api.popleList + pageId + `/list.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}`)
+  return http.get(api.popleList + pageId + `/list.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}&order_by=ename`)
 }
 
 export function getAgenda(phone) {

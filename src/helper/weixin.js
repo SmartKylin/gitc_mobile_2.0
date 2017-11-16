@@ -1,5 +1,5 @@
 import wx from 'weixin-js-sdk'
-import ShareLog from '../images2/share-log.jpg'
+import ShareLog from '../images2/share-log.png'
 
 export function initWeixinSDK(config) {
   wx.config({

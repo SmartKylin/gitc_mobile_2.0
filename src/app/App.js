@@ -42,7 +42,9 @@ class App extends Component {
     let share = {href: window.location.origin}
     const url = encodeURIComponent(window.location.href.split('/')[0])
     share.title = "GITC2017全球互联网技术大会"
-    getWeixinConfig({url}).then(initWeixinSDK)
+    getWeixinConfig({url})
+    .then(res => res.json())
+    .then(initWeixinSDK)
   
     weixinShare(share)
   }
