@@ -16,10 +16,10 @@ let link = [
   "",
   "",
   "",
-  "",
-  "",
-  "",
-  "",
+  "/light",
+  "/activityinform",
+  "/brand",
+  "/service",
   "",
 ]
 

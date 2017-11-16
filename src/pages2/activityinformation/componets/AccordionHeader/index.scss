@@ -1,0 +1,51 @@
+
+  .accor-header {
+    position: relative;
+    height: .48rem;
+    border-radius: 4px;
+    padding: 0 12px;
+    display: flex!important;
+    flex-direction: row!important;
+    justify-content: flex-start;
+    align-items: center;
+    z-index:1;
+    margin-top: 8px;
+
+    .header-left {
+      width: 35px;
+      height: 35px;
+      background: #ebebec;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 35px;
+      margin-right: 10px;
+      .iconfont {
+        color: #3f68b7
+      }
+    }
+    .header-left-user {
+      width: 35px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      .iconfont {
+        color: #3f68b7;
+        font-size: 20px;
+      }
+    }
+    .main-title {
+      font-size: 16px;
+    }
+
+    .en-title {
+      font-size: 9px;
+    }
+
+    .icon-xiangxia,
+    .icon-xiangshang
+    {
+      position: absolute;
+      right: 6px;
+      top: 25%;
+    }
+  }

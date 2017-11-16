@@ -43,6 +43,7 @@ import CollectStamp from '../pages2/collectstamp'
 import RoadShow from '../pages2/roadshow'
 import Presidium from '../pages2/presidium'
 import AdvisoryGroup from '../pages2/advisorygroup'
+import ActivityInform from '../pages2/activityinformation'
 
 let history = createBrowserHistory();
 
@@ -100,6 +101,7 @@ const RouterMap = class extends Component {
         <Route path="/brand" component={Brand}></Route>
         <Route path="/collectstamp" component={CollectStamp}></Route>
         <Route path="/roadshow" component={RoadShow}></Route>
+        <Route path="/activityinform" component={ActivityInform}></Route>
       </Wrapper>
     </Router>
     )
