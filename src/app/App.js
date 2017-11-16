@@ -39,14 +39,23 @@ class App extends Component {
   }
   componentDidMount(){
     window.Perf = Perf
-    let share = {href: window.location.origin}
-    const url = encodeURIComponent(window.location.href.split('/')[0])
-    share.title = "GITC2017全球互联网技术大会"
+    // let share = {href: window.location.origin}
+    let share = {href: 'http://wz.thegitc.com'}
+    // const url = encodeURIComponent(window.location.href)
+    // const url = encodeURIComponent('http://wz.thegitc.com')
+    const url = window.location.href
+    // const url = window.location.origin
+    // console.log(window.location.href, 'fjdksjfksd');
+  
+    share.title = "GITC2017全球互联网技术大会参会小助手"
     getWeixinConfig({url})
     .then(res => res.json())
-    .then(initWeixinSDK)
+    .then(data => {
+      initWeixinSDK(data.data)
+      weixinShare(share)
   
-    weixinShare(share)
+    })
+  
   }
   async componentWillMount () {
     let phone = storage.get(storage.PHONE_KEY)
