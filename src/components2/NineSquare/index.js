@@ -20,7 +20,7 @@ let link = [
   "/activityinform",
   "/brand",
   "/service",
-  "",
+  "/screet",
 ]
 
 export default class extends Component {

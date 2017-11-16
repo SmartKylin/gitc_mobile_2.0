@@ -35,6 +35,7 @@ import Topic from '../pages2/topic'
 import HightLight from '../pages2/hightlight'
 import SpeecherGroup from '../components2/SpeecherGroup'
 import ServiceInfo from '../pages2/serviceinfo'
+import Screet from '../pages2/screet'
 // import Agenda from '../pages2/meetagenda'
 
 import Schedule from '../pages2/schedule'
@@ -102,6 +103,8 @@ const RouterMap = class extends Component {
         <Route path="/collectstamp" component={CollectStamp}></Route>
         <Route path="/roadshow" component={RoadShow}></Route>
         <Route path="/activityinform" component={ActivityInform}></Route>
+        <Route path="/screet" component={Screet}></Route>
+
       </Wrapper>
     </Router>
     )
