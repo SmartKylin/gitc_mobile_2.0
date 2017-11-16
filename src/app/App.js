@@ -7,6 +7,10 @@ import Popup from 'components/popup'
 import LoginBox from 'containers/login_box'
 import Perf from 'react-addons-perf'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import {initWeixinSDK, weixinShare} from "../helper/weixin";
+import {getWeixinConfig} from '../services/user'
+
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -33,7 +37,13 @@ class App extends Component {
     })
   }
   componentDidMount(){
-      window.Perf = Perf
+    window.Perf = Perf
+    let share = {href: window.location.origin}
+    const url = encodeURIComponent(window.location.href.split('/')[0])
+    share.title = "GITC2017全球互联网技术大会"
+    getWeixinConfig({url}).then(initWeixinSDK)
+  
+    weixinShare(share)
   }
   render() {
     return (

@@ -53,6 +53,7 @@
     "webpack-dev-server": "2.5.0",
     "webpack-manifest-plugin": "1.1.0",
     "webpack-merge": "^4.1.0",
+    "weixin-js-sdk": "^1.2.0",
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
