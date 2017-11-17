@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import ChildContainer from 'containers/child_container'
-import ticketBg from '../../images/ticket-bg.png'
+import ticketBg from '../../images/bj.png'
 import {getTicketDetail} from "../../services/ticket";
 import vip from '../../images/VIP票.jpg'
 import zhuanye from '../../images/专业观众票.jpg'
@@ -12,7 +12,7 @@ import zhanlan from '../../images/展览票.jpg'
 import quanqiuhua from '../../images/全球化专场票.jpg'
 import './index.scss'
 import JsBarcode from 'jsbarcode'
-import storage from '../../helper/storage'
+// import storage from '../../helper/storage'
 
 // 根据票种得到对应门票的权益背景图
 let getBgByTicket = (ticket) => {

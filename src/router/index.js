@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom'
 import Wrapper from 'components/Wrapper'
 import Home from 'pages/home'
-// import OldHome from 'pages/home/index.bak.js'
 
 import NewHome from 'pages/newHome'
 
@@ -14,15 +13,15 @@ import Login from 'pages/login'
 import SponsorShip from 'pages/sponsorship'
 import User from 'pages/user'
 
-import conferenceNews from 'pages/conferenceNews'
-import conferenceNewsdetails from 'pages/conferenceNews/details'
+// import conferenceNews from 'pages/conferenceNews'
+// import conferenceNewsdetails from 'pages/conferenceNews/details'
 
-import DataAgenda from '../pages/dataAgenda/DataAgenda'
+// import DataAgenda from '../pages/dataAgenda/DataAgenda'
 
 import Ticket from 'pages/ticket'
 import TicketDetail from 'pages/ticketdetail'
 import MiHuiTicketDetail from 'pages/mihuiticketdetail'
-import Activity from 'pages/activity'
+// import Activity from 'pages/activity'
 import Issue from 'pages/issue'
 import createBrowserHistory from 'history/createBrowserHistory'
 import createHashHistory from 'history/createHashHistory'
@@ -71,11 +70,11 @@ const RouterMap = class extends Component {
         <Route path="/meetingdetails/:id" component={MeetingDetails}></Route>
         <Route path="/sponsorship" component={SponsorShip}></Route>
     
-        <Route path="/conferencenews" component={conferenceNews}></Route>
-        <Route path="/conferencenewsdetails/:id" component={conferenceNewsdetails}></Route>
-        <Route path="/dataagenda" component={DataAgenda}></Route>
-        <Route path="/activity" component={Activity}></Route>
-        <Route path="/issue" component={Issue}></Route>
+        {/*<Route path="/conferencenews" component={conferenceNews}></Route>*/}
+        {/*<Route path="/conferencenewsdetails/:id" component={conferenceNewsdetails}></Route>*/}
+        {/*<Route path="/dataagenda" component={DataAgenda}></Route>*/}
+        {/*<Route path="/activity" component={Activity}></Route>*/}
+        {/*<Route path="/issue" component={Issue}></Route>*/}
         
         <Route path="/awards" component={Awards }></Route>
   

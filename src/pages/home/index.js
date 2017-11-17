@@ -3,7 +3,7 @@ import BannerImg from '../../images2/banner.png'
 import './index.scss'
 import agenda_title from '../../images2/大会日程.png'
 import contact_us from '../../images2/fouterhome_03.png'
-import {Accordion, List} from 'antd-mobile'
+// import {Accordion, List} from 'antd-mobile'
 // import 'antd-mobile/dist/antd-mobile.css'
 
 import {getAgenda, getLightDot} from "../../services/home";
@@ -110,31 +110,7 @@ export default class extends Component {
           <img src={contact_us}/>
         </div>
         <PointDiv/>
-  
-       {/* <div className="accordion-wrapper">
-          <Accordion defaultActiveKey="0" className="my-accordion" onChange={this.onChange}>
-            <Accordion.Panel header="Title 1">
-              <List className="my-list">
-                <List.Item>content 1</List.Item>
-                <List.Item>content 2</List.Item>
-                <List.Item>content 3</List.Item>
-              </List>
-            </Accordion.Panel>
-            {
-              agendaData.map((item, ind) => (
-                <Accordion.Panel key={ind}>
-                  <List className="my-list">
-                    {
-                      item.data.map((v, k) => (
-                        <List.Item>{v.name}</List.Item>
-                      ))
-                    }
-                  </List>
-                </Accordion.Panel>
-              ))
-            }
-          </Accordion>
-        </div>*/}
+        
       </div>
     )
   }

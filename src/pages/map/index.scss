@@ -91,17 +91,20 @@
   z-index: 999999999999999;
 }
 .img-container{
-  position: absolute;
+  //position: absolute;
   left: 50%;
   top:50%;
-  margin: 0 -1.5rem ;
+  margin: 0 -1.6rem ;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
   border-radius: 4px;
-  width: 3rem;
+  width: 3.2rem;
   height: 3.2rem;
   background: pink;
-  // position: relative;
-  // left: 50%;
-  // top:50%;
+   position: relative;
+   left: 50%;
+   top:50%;
   margin-top: -1.6rem  ;
   overflow: auto
 }

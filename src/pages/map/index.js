@@ -3,11 +3,6 @@ import ChildBackground from 'containers/child_container'
 import './index.scss'
 import {getListImgs} from '../../services/getListNews'
 
-// import $ from 'jquery'
-// import img1 from '../../images/floor_1.jpg'
-// import img3 from '../../images/floor_3.jpg'
-// import img4 from '../../images/floor_4.jpg'
-
 const getImg = num => require(`../../images/floor_${num}.jpg`)
 
 

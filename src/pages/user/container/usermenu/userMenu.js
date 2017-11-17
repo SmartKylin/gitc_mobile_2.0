@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {Menu, Icon} from 'antd'
 import 'antd/dist/antd.css'
 import './index.scss'
-// import avatarIcon from '../../../../images/yueguangjifeng.jpg'
 import storage from '../../../../helper/storage'
 import {getGuestList} from "../../../../services/collect";
 import {TOKEN} from "../../../../helper/login";
