@@ -5,6 +5,16 @@
   height: 61%;
 }
 
+.ticket-stamp {
+  position: absolute;
+  //background-color: blue;
+  width: 107px;
+  height: 76px;
+  top: 15px;
+  right: 100px;
+  z-index: 1000;
+}
+
 .ticket--type {
   //width: 50px;
   height: 30px;
