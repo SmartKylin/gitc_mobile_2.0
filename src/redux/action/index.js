@@ -67,10 +67,18 @@ export const setLoginCb = (loginCb) => {
   }
 }
 
+export const setScrollTop = (top) => {
+  return {
+    type: TYPES.SET_SCROLLTOP,
+    scrollTop: top
+  }
+}
+
 export default {
   loginIn,
   loginOut,
   openLoginPop,
   closeLoginPop,
-  setLoginCb
+  setLoginCb,
+  setScrollTop
 }

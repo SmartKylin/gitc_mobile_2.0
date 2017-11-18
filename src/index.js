@@ -9,7 +9,8 @@ let phone = storage.get(storage.PHONE_KEY)
 let initState = {
   phone,
   loginShow: false,
-  loginCb: null
+  loginCb: null,
+  scrollTop: 0,
 }
 let createProvider = children => <Provider store={createStore(initState)}>{children}</Provider>
 

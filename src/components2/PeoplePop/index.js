@@ -102,7 +102,6 @@ export default class extends Component {
   
   // 取消收藏嘉宾
   _cancelCollectGuest = () => {
-    console.log('cacelCollect');
     // e.stopPropagation()
     let { id, collect } = this.props.speecher
     let { setLoginCb, openLoginPop, closeLoginPop, phone } = this.props
@@ -221,7 +220,7 @@ export default class extends Component {
   render () {
     let speecher = this.props.speecher
     const {closeGuestPop, setLoginCb, openLoginPop, closeLoginPop} = this.props
-    console.log(speecher,"speecher");
+    // console.log(speecher,"speecher");
     
     return (
       <div className="people-pop">

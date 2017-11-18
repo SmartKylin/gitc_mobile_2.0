@@ -29,6 +29,12 @@ const userSign = (state={}, action) => {
         loginCb: action.loginCb
       }
       )
+    case TYPES.SET_SCROLLTOP:
+      return Object.assign({}, state,
+      {
+        scrollTop: action.scrollTop
+      }
+      )
     default:
       return state
   }

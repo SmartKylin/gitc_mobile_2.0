@@ -3,14 +3,16 @@ import ChildContainer from 'containers/child_container'
 import ticketBg from '../../images/ticket_bj.png'
 import ticketUsed from '../../images/ticket_used.png'
 import {getTicketDetail} from "../../services/ticket";
-import vip from '../../images/VIP票.jpg'
-import zhuanye from '../../images/专业观众票.jpg'
-import jichu from '../../images/基础架构专场票.jpg'
-import dahui from '../../images/大会通票.jpg'
-import dashuju from '../../images/大数据&人工智能专场票.jpg'
-import yunwei from '../../images/运维专场票.jpg'
-import zhanlan from '../../images/展览票.jpg'
-import quanqiuhua from '../../images/全球化专场票.jpg'
+
+import vip from '../../images/vip.png'
+import zhuanye from '../../images/专业观众票.png'
+import jichu from '../../images/基础架构.png'
+import dahui from '../../images/通票.png'
+import dashuju from '../../images/大数据.png'
+import yunwei from '../../images/运维.png'
+import zhanlan from '../../images/展览票.png'
+import quanqiuhua from '../../images/全球化.png'
+
 import './index.scss'
 import JsBarcode from 'jsbarcode'
 import storage from '../../helper/storage'
@@ -61,7 +63,9 @@ export default class extends Component {
     let phone = storage.get(storage.PHONE_KEY)
     //code 码
     let code = this.props.match.params.code
+    
     let token='1afb756d16740266efde290917ca1a8e'
+    
     getTicketDetail({phone,code, token })
     .then(res => {
         if (res) {

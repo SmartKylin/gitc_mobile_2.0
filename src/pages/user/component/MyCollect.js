@@ -18,7 +18,7 @@ export default class extends Component {
   }
   render () {
     let {guestData} = this.state
-    console.log(guestData, 'mucollec');
+    // console.log(guestData, 'mucollec');
     let {collapsed} = this.state
     return (
 
