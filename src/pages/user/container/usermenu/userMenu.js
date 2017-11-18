@@ -46,7 +46,6 @@ export default class extends Component {
       marginLeft: '-12px'
     }
     let {guestData, fileData, collapsed} = this.state
-    let {openPop, closePop, setLoginCb} = this.props
     return (
      <div className="user">
   
@@ -54,9 +53,6 @@ export default class extends Component {
          guestData && guestData.length &&
          <MyCollect
            guestData={guestData}
-           openPop={openPop}
-           closePop={closePop}
-           setLoginCb={setLoginCb}
          />
        }
   
@@ -64,9 +60,6 @@ export default class extends Component {
          guestData && guestData.length &&
          <FilesCollect
           fileData={fileData}
-           openPop={openPop}
-           closePop={closePop}
-           setLoginCb={setLoginCb}
          />
        }
      </div>

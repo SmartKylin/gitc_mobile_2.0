@@ -17,7 +17,6 @@ export default class extends Component {
     })
   }
   render () {
-    let {openPop, closePop, setLoginCb } = this.props
     let {fileData} = this.state
     console.log(fileData);
     let {collapsed} = this.state
@@ -38,11 +37,6 @@ export default class extends Component {
           <CollectItem
             key={index}
             data={item}
-            
-            openPop={openPop}
-            closePop={closePop}
-            setLoginCb={setLoginCb}
-            hasPop={true}
           />
           ))
         }

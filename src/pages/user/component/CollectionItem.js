@@ -40,7 +40,6 @@ export default class CollectionItem extends Component {
     // console.log(item, 'pic');
     
     let {popVisible} = this.state
-    let {openPop, closePop, setLoginCb} = this.props
   
     return (
       <div
@@ -66,9 +65,6 @@ export default class CollectionItem extends Component {
               <PeoplePop
                 closeGuestPop={this.closeGuestPop}
                 speecher={item}
-                openPop={openPop}
-                closePop={closePop}
-                setLoginCb={setLoginCb}
               />
             }
           </div>

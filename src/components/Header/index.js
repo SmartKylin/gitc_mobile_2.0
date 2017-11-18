@@ -1,10 +1,18 @@
 import React from 'react'
 import './index.scss'
 import Menu from 'containers/menu'
-import {Link} from 'react-router-dom'
-import storage from '../../helper/storage'
+// import {Link} from 'react-router-dom'
+import {message} from 'antd'
 
+import {connect} from 'react-redux'
+import Actions from '../../redux/action'
 
+@connect(
+  state => ({
+    phone: state.phone
+  }),
+  {...Actions}
+)
 export default class Header extends React.Component{
   constructor(props){
     super(props)
@@ -22,17 +30,14 @@ export default class Header extends React.Component{
   }
 
   gradient =() =>{
-    
     this.setState({
       falg: true
     })
   }
 
-
   componentDidMount(){
     window.addEventListener('scroll', this.handleScroll);
   }
-
 
   handleScroll =() =>{
      let scrollTop =  this.getScrollTop();
@@ -45,8 +50,6 @@ export default class Header extends React.Component{
            styleTop:false,
          })
        }
-
-
   }
 
 
@@ -61,17 +64,18 @@ export default class Header extends React.Component{
   }
   
   handleClick = path => {
-    let phone = storage.get(storage.PHONE_KEY)
+    let {phone, history, openLoginPop, setLoginCb} = this.props
     // console.log(phone);
     
     if (phone) {
-      this.props.history.push(path)
+      history.push(path)
     } else {
-      this.props.openPop()
+      message.info('您还没有登录')
+      openLoginPop()
       let cb = () => {
-        this.props.history.push(path)
+        history.push(path)
       }
-      this.props.setLoginCb(cb)
+      setLoginCb(cb)
     }
   }
   render(){
@@ -95,9 +99,10 @@ export default class Header extends React.Component{
               <Menu
                 visibility={this.state.menuVisible}
                 closeMenu={this.closeMenu}
-                openPop={this.props.openPop}
                 history={this.props.history}
-                setLoginCb={this.props.setLoginCb}/>
+                // openPop={this.props.openPop}
+                // setLoginCb={this.props.setLoginCb}
+                />
             </div>
           </div>
         </div>

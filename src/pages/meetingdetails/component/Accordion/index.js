@@ -18,7 +18,7 @@ export default class extends Component {
   }
   render () {
     let {collapsed} = this.state
-    let {name, enName, list, bgImg, openPop, closePop, setLoginCb} = this.props
+    let {name, enName, list, bgImg} = this.props
     return (
       <div className="my-accordion">
         <AccordionHeader
@@ -38,9 +38,6 @@ export default class extends Component {
                     key={ind}
                     speecher={item}
                     
-                    openPop={openPop}
-                    closePop={closePop}
-                    setLoginCb={setLoginCb}
                   />
                 ))
                 : null

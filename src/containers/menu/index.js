@@ -1,36 +1,50 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './index.scss'
-import storage from '../../helper/storage'
 import {message} from 'antd'
-// import {getTitle} from "../../helper/getPageTitle";
+// import * as Actions from '../../redux/action'
+import Actions from '../../redux/action'
+import {connect} from 'react-redux'
 
+@connect(
+  state => ({
+    phone: state.phone
+  }),
+  {...Actions}
+)
 export default class extends Component {
   handleClick = path => {
-    let phone = storage.get(storage.PHONE_KEY)
-    // console.log(phone);
-    this.props.closeMenu()
+    let {phone, closeMenu, setLoginCb, openLoginPop} = this.props
+    closeMenu()
+    
     if (phone) {
       this.props.history.push(path)
     } else {
-      this.props.openPop()
+      message.info('您还没有登录')
+      openLoginPop && openLoginPop()
+      
       let cb = () => {
         this.props.history.push(path)
       }
-      this.props.setLoginCb(cb)
+      
+      setLoginCb(cb)
     }
   }
   signOut = () => {
-    let phone = storage.get(storage.PHONE_KEY)
-    if (phone) {
-      storage.remove(storage.PHONE_KEY)
-      message.success('注销成功')
+    // let phone = storage.get(storage.PHONE_KEY)
+    // if (phone) {
+    //   storage.remove(storage.PHONE_KEY)
+    //   message.success('注销成功')
+    // }
+    if (this.props.phone) {
+      this.props.loginOut()
     }
     this.props.closeMenu()
     this.props.history.push('/home')
   }
   
   render () {
+    let {phone} = this.props
     return (
       <div style={{with: '100%', height: 'calc(100vh)', backgroundColor: 'rgba(0, 0, 0, .9)', visibility: this.props.visibility, position: 'absolute', top: '0', left: 0, right: 0, bottom: 0, zIndex: '999'}}>
         <div style={{display: 'flex', justifyContent: 'flex-end', padding: '0 15px', marginTop: '17px', marginBottom: '7px'}}>
@@ -66,7 +80,7 @@ export default class extends Component {
           {/*<Link to={"/sponsorship"} onClick={() => this.props.closeMenu()}>赞助合作</Link>*/}
          {/* <Link to={"/awards"} onClick={() => this.props.closeMenu()}>奖项评选</Link>*/}
             {
-                storage.get(storage.PHONE_KEY) && <a  style={{fontSize:'20px'}} href="javascript:;" onClick={this.signOut}>注销</a>
+               phone && <a  style={{fontSize:'20px'}} href="javascript:;" onClick={this.signOut}>注销</a>
             }
         </div>
       </div>

@@ -18,7 +18,6 @@ export default class extends Component {
   render () {
     let {collapsed} = this.state
     let {agenda, bgImg} = this.props
-    let {openPop, closePop, setLoginCb} = this.props
     // let json = JSON.parse(agenda.json)
     // console.log(json);
     let obj = {
@@ -57,10 +56,7 @@ export default class extends Component {
             <SpeechItem
             key={ind}
             speecher={item}
-      
-            openPop={openPop}
-            closePop={closePop}
-            setLoginCb={setLoginCb}
+            
             />
             ))
             : null

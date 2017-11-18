@@ -2,10 +2,19 @@ import React, {Component} from 'react'
 import ChildBackground from 'containers/child_container'
 import TicketList from './containers/ticketList'
 import {getTicketList} from "../../services/ticket";
-import storage from '../../helper/storage'
+// import storage from '../../helper/storage'
 import {message, Spin,Alert} from 'antd'
 import {TOKEN} from "../../helper/login";
 
+import {connect} from 'react-redux'
+import Actions from '../../redux/action'
+
+@connect(
+  state => ({
+    phone: state.phone
+  }),
+  {...Actions}
+)
 export default class extends Component {
   constructor () {
     super()
@@ -16,11 +25,10 @@ export default class extends Component {
   }
   
   renderTicketList = () => {
-    let phone = storage.get(storage.PHONE_KEY)
+    let {phone, openLoginPop, setLoginCb} = this.props
     let cb = this.renderTicketList
-    let {openPop, setLoginCb} = this.props.history
     if (!phone) {
-      openPop()
+      openLoginPop()
       setLoginCb(cb)
       return
     }
@@ -37,7 +45,7 @@ export default class extends Component {
         })
       } else {
         message.info(data.msg)
-        openPop()
+        openLoginPop()
         setLoginCb(cb)
       }
     })

@@ -7,10 +7,13 @@ export default class extends Component {
     super(props)
   }
   render () {
+    let {history, children} = this.props
     return (
     <div>
-      <Header openPop={this.props.openPop} history={this.props.history} setLoginCb={this.props.setLoginCb}/>
-      {this.props.children}
+      <Header
+        history={history}
+      />
+      {children}
     </div>
     
     )

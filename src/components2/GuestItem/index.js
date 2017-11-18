@@ -33,7 +33,7 @@ export default class extends Component {
   
   
   render () {
-    let {data, hasPop, openPop, closePop, setLoginCb} = this.props
+    let {data, hasPop} = this.props
     let {popVisible} = this.state
     return (
       <div
@@ -56,9 +56,6 @@ export default class extends Component {
                   <PeoplePop
                   closeGuestPop={this.closeGuestPop}
                   speecher={data}
-                  openPop={openPop}
-                  closePop={closePop}
-                  setLoginCb={setLoginCb}
                   />
                 }
               </div>

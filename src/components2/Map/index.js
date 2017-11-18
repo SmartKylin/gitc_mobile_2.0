@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './index.scss'
 
 let BMap = window.BMap
+
 export default class extends Component {
   componentDidMount () {
     let map = new BMap.Map("container")
@@ -23,7 +24,13 @@ export default class extends Component {
   }
   render() {
     return (
-      <div className="map-page" id="container"/>
+      <div>
+        {
+          BMap
+          ? <div className="map-page" id="container"/>
+          : null
+        }
+      </div>
     )
   }
 }

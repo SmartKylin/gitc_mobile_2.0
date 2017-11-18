@@ -58,12 +58,16 @@ let history = createBrowserHistory();
 // params参数
 const RouterMap = class extends Component {
   render() {
-    history.openPop = this.props.openPop
-    history.setLoginCb = this.props.setLoginCb
-    history.closePop = this.props.closePop
+    // history.openPop = this.props.openPop
+    // history.setLoginCb = this.props.setLoginCb
+    // history.closePop = this.props.closePop
     return (
     <Router history={history}>
-      <Wrapper openPop={this.props.openPop} history={history} setLoginCb={this.props.setLoginCb}>
+      <Wrapper
+        // openPop={this.props.openPop}
+        // setLoginCb={this.props.setLoginCb}
+        history={history}
+      >
         <Route exact path="/" component={Home}/>
         <Route path="/home" component={NewHome}></Route>
 

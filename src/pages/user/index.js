@@ -13,18 +13,13 @@ export default class extends Component {
     this.phone = phone
   }
   render () {
-    let {openPop, closePop, setLoginCb} = this.props.history
     return (
       <ChildBackground>
         <div style={{display: 'flex', alignItems: 'center', paddingBottom: '.1rem'}}>
           <div alt="" className="avatar"/>
           <div style={{color: '#fff', fontSize: '16px',  marginLeft: '13px'}}>{this.phone}</div>
         </div>
-        <UserMenu
-          openPop={openPop}
-          closePop={closePop}
-          setLoginCb={setLoginCb}
-        />
+        <UserMenu/>
       </ChildBackground>
     )
   }

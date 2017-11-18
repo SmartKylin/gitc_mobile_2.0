@@ -14,6 +14,8 @@ import {
   updateCollectStatus
 } from "../../services/collect";
 
+import Actions from '../../redux/action'
+import {connect} from 'react-redux'
 
 const formatDate = (str) => {
   if (!str) {
@@ -22,6 +24,13 @@ const formatDate = (str) => {
   let ary = str.split('-').slice(1)
   return ary[0] + '月' + ary[1] + '号'
 }
+
+@connect(
+  state => ({
+    phone: state.phone
+  }),
+  {...Actions}
+)
 export default class extends Component {
   constructor(props) {
     super(props)
@@ -30,7 +39,6 @@ export default class extends Component {
       collectModelVisible: 'none',
       guestStatus: collect || false,
       fileStatus: file_collect || false,
-      openPop: props.openPop
     }
   }
   componentWillMount() {
@@ -38,9 +46,8 @@ export default class extends Component {
   }
   
   initialCollectStatus = async () => {
-    let speecher = this.props.speecher
+    let {speecher, phone} = this.props
     let {id, files_id} = speecher
-    let phone = storage.get(storage.PHONE_KEY)
     let res = await updateCollectStatus({phone, person: id, file: 0}).then(res => res.json())
     
     let {collect, file} = res
@@ -49,17 +56,15 @@ export default class extends Component {
       fileStatus: file
     })
   
-  
   }
   
   // 收藏嘉宾
   _collectGuest = () => {
     let _this = this
-    // e.stopPropagation()
     let { id, collect } = this.props.speecher
-    let { openPop, setLoginCb, closePop } = this.props
-    
-    let phone = storage.get(storage.PHONE_KEY)
+    const {openLoginPop, closeLoginPop, setLoginCb, phone} = this.props
+  
+   
     console.log(phone, 'phone');
     
     let cb = this._collectGuest
@@ -71,14 +76,13 @@ export default class extends Component {
     }
     
     if (!phone) {
-      openPop()
+      openLoginPop()
       setLoginCb(cb)
       return
     }
     
     const success = (data) => {
       if (data.status) {
-        // closePop()
         this.setState({
           // 打开收藏成功模态框
           collectModelVisible: 'block',
@@ -101,26 +105,24 @@ export default class extends Component {
     console.log('cacelCollect');
     // e.stopPropagation()
     let { id, collect } = this.props.speecher
-    let { openPop, setLoginCb, closePop } = this.props
-    let phone = storage.get(storage.PHONE_KEY)
-    
+    let { setLoginCb, openLoginPop, closeLoginPop, phone } = this.props
     let cb = this._cancelCollectGuest
     
     const failure = (msg) => {
-      openPop()
+      openLoginPop()
       setLoginCb(cb)
       message.info(msg)
     }
     
     if (!phone) {
-      openPop()
+      openLoginPop()
       setLoginCb(cb)
       return
     }
     
     const success = (data) => {
       if (data.status) {
-        closePop()
+        closeLoginPop()
         message.success('取消收藏成功')
         this.setState({
           // 打开收藏成功模态框
@@ -143,22 +145,20 @@ export default class extends Component {
       message.info('没有相应文档')
       return
     }
-    let { openPop, setLoginCb } = this.props
-    
-    let phone = storage.get(storage.PHONE_KEY)
+    let { openLoginPop, setLoginCb, phone } = this.props
     let cb = this._collectDocument
     
     if (this.state.documentStatus || file_collect) {
       return
     }
     const failure = (msg) => {
-      openPop()
+      openLoginPop()
       setLoginCb(cb)
       message.info(msg)
     }
     
     if (!phone) {
-      openPop()
+      openLoginPop()
       setLoginCb(cb)
       return
     }
@@ -220,9 +220,9 @@ export default class extends Component {
   
   render () {
     let speecher = this.props.speecher
-    const {closeGuestPop, openPop, setLoginCb} = this.props
+    const {closeGuestPop, setLoginCb, openLoginPop, closeLoginPop} = this.props
     console.log(speecher,"speecher");
-    // console.log(openPop, 'openPop');
+    
     return (
       <div className="people-pop">
         <div className="close-wrapper" >
@@ -262,7 +262,7 @@ export default class extends Component {
           {speecher.summary}
         </div>
         {
-          this.state.openPop
+          openLoginPop
           ? (<div className="btn-function">
             <div
             className="collect btn"

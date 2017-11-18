@@ -54,7 +54,6 @@ export default class extends Component {
   render () {
     
     let {agendaData, highlightData} = this.state
-    let {openPop, closePop, setLoginCb} = this.props.history
     return (
       <div className="entry-page">
         <div className="banner-wrapper">
@@ -77,9 +76,6 @@ export default class extends Component {
                   key={ind}
                   agenda={item}
                   bgImg={imgAry[ind]}
-                  openPop={openPop}
-                  closePop={closePop}
-                  setLoginCb={setLoginCb}
                 />
               ))
             }

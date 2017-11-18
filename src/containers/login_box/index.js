@@ -2,10 +2,12 @@ import React, {Component} from 'react'
 import './index.scss'
 import {sendCode} from "../../services/code";
 import {sign} from "../../services/user"
-// import {message} from 'antd-mobile'
-import storage from '../../helper/storage'
+
 import {TOKEN} from "../../helper/login";
 import {message} from 'antd'
+
+import {connect} from 'react-redux'
+import * as Actions from "../../redux/action/index";
 
 let iconIphone = require('../../images/icon-phone.svg')
 
@@ -15,6 +17,11 @@ let inputStyle = {
   borderRadius: 0,
   fontSize:'14px'
 }
+
+@connect(
+  state => ({phone: state.phone}),
+  {...Actions}
+)
 export default class extends Component {
   constructor (props) {
     super(props)
@@ -43,7 +50,6 @@ export default class extends Component {
         })
       }
     })
-    // this.countDown()
   }
   // 倒计时
   countDown() {
@@ -87,41 +93,46 @@ export default class extends Component {
     }
   }
   // 登陆或者注册
-  signIn = (cb) => {
+  signIn = () => {
     let params = {}
     params.code = this.code.value;
     params.phone = this.mobile.value;
     params.token = TOKEN
     
+    let {loginCb, loginIn} = this.props
+  
     const sucesss = (data) => {
-      message.success(data.msg)
       // 如果登陆成功，手机号存到localstorage
       if (data.status) {
-        storage.set(storage.PHONE_KEY, this.mobile.value)
-        storage.set(storage.DATA_KEY, data.data)
         this.closeLoginBox()
-        cb && cb()
+        message.success(data.msg)
+        loginIn(data.data.phone)
+        // cb && cb()
+        loginCb && loginCb()
       } else {
         message.info(data.msg)
       }
     }
+
     sign(this.mobile.value, params)
     .then(res => res.json())
     .then(sucesss)
   }
+  
   /*// 限制手机号长度
   trimLength = () => {
     if (this.mobile.value.length > 11) {
       this.mobile.value.length = this.mobile.value.length.slice(0, 11)
     }
   }*/
+  
   // 关闭登录框，并清空数据
-  closeLoginBox = (cb) => {
+  closeLoginBox = () => {
     this.setState({
       mobile: '',
       code: ''
     })
-    this.props.closePop()
+    this.props.closeLoginPop()
   }
   render () {
     return (
@@ -146,7 +157,7 @@ export default class extends Component {
         </div>
         
         <div className="btn--area">
-          <div className="btn--ensure" onClick={() => this.signIn(this.props.loginSuccess)}>登录</div>
+          <div className="btn--ensure" onClick={() => this.signIn()}>登录</div>
         </div>
       </div>
     </div>

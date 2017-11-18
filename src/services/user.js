@@ -13,3 +13,7 @@ export function getWeixinConfig(params) {
 export function getLoginStatus(params) {
   return http.post('http://120.92.10.182:8000/api/member/islogin.html?token=1afb756d16740266efde290917ca1a8e', params)
 }
+
+export function signOut(phone) {
+  return http.post(`http://120.92.10.182:8000/api/member/logout.html?token=1afb756d16740266efde290917ca1a8e&phone=${phone}`)
+}
