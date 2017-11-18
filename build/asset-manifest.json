@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.6ca6cc84.css",
   "main.css.map": "static/css/main.6ca6cc84.css.map",
-  "main.js": "static/js/main.aa856409.js",
-  "main.js.map": "static/js/main.aa856409.js.map",
+  "main.js": "static/js/main.d1d1d2fc.js",
+  "main.js.map": "static/js/main.d1d1d2fc.js.map",
   "static/media/accordion_bg1.png": "static/media/accordion_bg1.3fa1a6db.png",
   "static/media/accordion_bg10.png": "static/media/accordion_bg10.98f34c98.png",
   "static/media/accordion_bg11.png": "static/media/accordion_bg11.2543fd28.png",
@@ -46,7 +46,6 @@
   "static/media/share-log.png": "static/media/share-log.d5d6a181.png",
   "static/media/speecher-header.png": "static/media/speecher-header.116b3f8b.png",
   "static/media/ticket_bj.png": "static/media/ticket_bj.39d7845c.png",
-  "static/media/ticket_used.png": "static/media/ticket_used.b1f5030b.png",
   "static/media/topic_title.png": "static/media/topic_title.604d6057.png",
   "static/media/vip.png": "static/media/vip.8cf6527a.png",
   "static/media/weixin.png": "static/media/weixin.4ba2062a.png",
