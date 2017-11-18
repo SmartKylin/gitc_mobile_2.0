@@ -22,7 +22,9 @@ export default class extends Component {
     let {collapsed} = this.state
     return (
 
-      <div closeName="my-accordion">
+      <div
+        // className="my-accordion"
+      >
         <AccordionHeader
           name={'我的收藏'}
           changeCollapse={this.changeCollapse}

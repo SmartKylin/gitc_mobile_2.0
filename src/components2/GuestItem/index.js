@@ -12,7 +12,7 @@ export default class extends Component {
     }
   }
   
-  openGuestPop = () => {
+  openGuestPop = (e) => {
     if (!this.props.hasPop) {
       return
     }
