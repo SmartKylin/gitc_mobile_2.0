@@ -6,6 +6,14 @@ import './index.scss'
 import PeoplePop from '../../components2/PeoplePop'
 import {allowScroll, forbiddenScroll} from "../../helper/scrollSetting";
 
+import {connect} from 'react-redux'
+import Actions from '../../redux/action'
+
+@connect(
+  state => ({scrollTop: state.scrollTop}),
+  {...Actions}
+)
+
 export default class extends Component {
   constructor(props) {
     super(props)
@@ -14,6 +22,7 @@ export default class extends Component {
     }
   }
   openGuestPop = () => {
+    
     let {speecher} = this.props
     if (speecher.stheme == '开幕致辞') {
       return
@@ -23,6 +32,7 @@ export default class extends Component {
       popVisible: true
     })
     this.top = document.documentElement.scrollTop || document.body.scrollTop
+    this.props.setScrollTop(this.top)
     forbiddenScroll()
   }
   

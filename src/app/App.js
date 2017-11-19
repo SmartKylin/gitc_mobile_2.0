@@ -12,7 +12,6 @@ import {getWeixinConfig, getLoginStatus} from '../services/user'
 import Actions from '../redux/action'
 import {connect} from 'react-redux'
 
-
 @connect(
   state => ({
     phone: state.phone,

@@ -183,8 +183,8 @@ export default class extends Component {
     .then(success)
   }
   
-  _catDocument = () => {
-    // e.stopPropagation()
+  _catDocument = (e) => {
+    e.stopPropagation()
     let { files__url } = this.props.speecher
     if (!files__url) {
       message.info('没有相应文档~')
@@ -198,7 +198,9 @@ export default class extends Component {
     })
   }
   
-  changeGuestStatus = () => {
+  changeGuestStatus = (e) => {
+    // 此处阻止冒泡很重要，避免面触发父级openGuestPop方法，从而导致重新设置读取scrollTop的值，造成关闭弹窗后，无法回到当前位置的bug
+    e.stopPropagation()
     let guestStatus = this.state.guestStatus
     if (guestStatus) {
       this._cancelCollectGuest()
@@ -208,7 +210,8 @@ export default class extends Component {
     
   }
   
-  changeDocumentStatus = () => {
+  changeDocumentStatus = (e) => {
+    e.stopPropagation()
     let fileStatus = this.state.fileStatus
     if (fileStatus) {
     
