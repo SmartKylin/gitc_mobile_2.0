@@ -91,7 +91,7 @@
   z-index: 999999999999999;
 }
 .img-container{
-  //position: absolute;
+  position: absolute;
   left: 50%;
   top:50%;
   margin: 0 -1.6rem ;
@@ -102,9 +102,7 @@
   width: 3.2rem;
   height: 3.2rem;
   background: pink;
-   position: relative;
-   left: 50%;
-   top:50%;
+   //position: relative;
   margin-top: -1.6rem  ;
   overflow: auto
 }
