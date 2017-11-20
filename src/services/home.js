@@ -33,7 +33,12 @@ export function getLightDot() {
 }
 
 // 服务信息
-
 export function getServiceInfo() {
   return http.get(api.getListNews + `69/list.json?token=1afb756d16740266efde290917ca1a8e`)
 }
+
+// 直播地址
+export function getLiveUrl() {
+  return http.get('http://120.92.10.182:8000/api/video/70/list.json?token=1afb756d16740266efde290917ca1a8e')
+}
+
