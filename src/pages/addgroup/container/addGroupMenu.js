@@ -18,7 +18,8 @@ export default class AddGroupContainer extends Component {
     }
 
     componentWillMount () {
-        getListImgs(8).then(res => res && res.json())
+      console.log('addGroupMenu');
+      getListImgs(8).then(res => res && res.json())
             .then(data => {
                 this.setState({
                     datas: data.data,

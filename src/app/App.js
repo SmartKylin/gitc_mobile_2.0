@@ -32,7 +32,8 @@ class App extends Component {
   }
   componentDidMount(){
     window.Perf = Perf
-    let share = {href: window.location.href}
+    // let share = {href: window.location.href}
+    let share = {href: 'http://wz.thegitc.com'}
     // const url = encodeURIComponent(window.location.href)
     const url = window.location.href
     

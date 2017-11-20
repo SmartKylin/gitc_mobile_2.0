@@ -17,7 +17,7 @@ export default class NewHome extends React.Component{
 
   componentWillMount () {
     // 设置二级页面标题
-    document.title = "GITC"
+    document.title = "GITC2017全球互联网技术大会参会小助手"
   }
   render(){
     return(

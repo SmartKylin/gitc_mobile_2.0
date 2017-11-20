@@ -38,7 +38,7 @@ export default class extends Component {
   }
 
   async componentWillMount () {
-    document.title = "GITC"
+    document.title = "GITC2017全球互联网技术大会参会小助手"
     let res = await getAgenda()
     .then(res => res.json())
     await this.setState({

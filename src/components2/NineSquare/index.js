@@ -14,7 +14,7 @@ let  nine_imgs = generateNineAry()
 let link = [
   "",
   "",
-  "",
+  "/addgroup",
   "",
   "/light",
   "/activityinform",
