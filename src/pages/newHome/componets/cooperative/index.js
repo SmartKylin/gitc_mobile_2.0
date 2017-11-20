@@ -1,7 +1,6 @@
 import React from 'react'
 import './index.scss'
-import hezuohuoban from './iamges/hezuohuoban.png'
-import logo from './iamges/logo.png'
+import logo from './iamges/logo.jpg'
 export default class Cooperative extends React.Component{
 
 
@@ -9,7 +8,6 @@ export default class Cooperative extends React.Component{
     return(
         <div className="CooperativeBox">
           <div className="CooperativeBoxImg">
-            <img src={hezuohuoban} alt=""/>
             <img src={logo} alt=""/>
           </div>
         </div>
