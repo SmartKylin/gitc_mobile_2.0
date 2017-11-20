@@ -4,6 +4,8 @@ import {getAgenda} from "../../services/home";
 import './index.scss'
 import SpeechItem from '../../components2/SpeechItem'
 
+import Sike from '../../images/sike.jpg'
+
 export default class Schedule extends React.Component{
 
   constructor(props){
@@ -33,12 +35,12 @@ export default class Schedule extends React.Component{
     }
   
     let obj1 = {
-      pic:"",
+      pic: Sike,
       stime:"10:00-10:10",
       stheme:"开场致辞",
       company:"思科",
-      name:"待定",
-      position:"待定"
+      name: "柴建",
+      position:"大中华区副总裁兼运营商事业部总经理"
     }
     // console.log(agendaData, 'shefjdls');
     return(

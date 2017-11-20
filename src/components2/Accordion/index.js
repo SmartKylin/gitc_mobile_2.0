@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import './index.scss'
 import SpeechItem from '../../components2/SpeechItem'
 import AccordionHeader from '../AccordionHeader'
+import Sike from '../../images/sike.jpg'
+
 export default class extends Component {
   constructor(props) {
     super(props)
@@ -29,12 +31,12 @@ export default class extends Component {
     }
 
     let obj1 = {
-      pic:"",
+      pic: Sike,
       stime:"10:00-10:10",
       stheme:"开场致辞",
       company:"思科",
-      name:"待定",
-      position:"待定"
+      name:"柴建",
+      position: "大中华区副总裁兼运营商事业部总经理"
     }
     return (
       <div className="my-accordion">
