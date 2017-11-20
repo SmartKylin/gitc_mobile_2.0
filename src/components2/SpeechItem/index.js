@@ -9,12 +9,12 @@ import {allowScroll, forbiddenScroll} from "../../helper/scrollSetting";
 import {connect} from 'react-redux'
 import Actions from '../../redux/action'
 
-@connect(
-  state => ({scrollTop: state.scrollTop}),
-  {...Actions}
-)
+// @connect(
+//   state => ({scrollTop: state.scrollTop}),
+//   {...Actions}
+// )
 
-export default class extends Component {
+class SpeechItem extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -91,3 +91,8 @@ export default class extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({scrollTop: state.scrollTop}),
+  {...Actions}
+)(SpeechItem)

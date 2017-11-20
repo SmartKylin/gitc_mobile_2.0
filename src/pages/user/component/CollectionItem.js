@@ -12,9 +12,9 @@ export default class CollectionItem extends Component {
     }
   }
   openGuestPop = () => {
-    if (!this.props.hasPop) {
-      return
-    }
+    // if (!this.props.hasPop) {
+    //   return
+    // }
     let {data} = this.props
     if (data.stheme == '开幕致辞') {
       return

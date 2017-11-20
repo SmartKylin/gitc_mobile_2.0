@@ -9,13 +9,13 @@ import {TOKEN} from "../../helper/login";
 import {connect} from 'react-redux'
 import Actions from '../../redux/action'
 
-@connect(
-  state => ({
-    phone: state.phone
-  }),
-  {...Actions}
-)
-export default class extends Component {
+// @connect(
+//   state => ({
+//     phone: state.phone
+//   }),
+//   {...Actions}
+// )
+class Ticket extends Component {
   constructor () {
     super()
     this.onClose = this.onClose.bind(this)
@@ -86,3 +86,10 @@ export default class extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({
+    phone: state.phone
+  }),
+  {...Actions}
+)(Ticket)

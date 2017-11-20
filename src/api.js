@@ -6,9 +6,10 @@
 
 // const prefix = window.__CONFIG__.apiPath
 const prefix = 'http://120.92.10.182:8000'
-export default (config => {
-  return Object.keys(config).reduce((copy, name) => {
-    copy[name] = `${prefix}${config[name]}`
+export default (function (config) {
+  return Object.keys(config).reduce(function(copy, name) {
+    // copy[name] = `${prefix}${config[name]}`
+    copy[name] = prefix + config[name] + ''
     return copy
   }, {})
 })({

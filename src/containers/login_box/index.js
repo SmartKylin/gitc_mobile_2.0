@@ -18,11 +18,11 @@ let inputStyle = {
   fontSize:'14px'
 }
 
-@connect(
-  state => ({phone: state.phone}),
-  {...Actions}
-)
-export default class extends Component {
+// @connect(
+//   state => ({phone: state.phone}),
+//   {...Actions}
+// )
+class LoginBox extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -164,3 +164,8 @@ export default class extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({phone: state.phone}),
+  {...Actions}
+)(LoginBox)

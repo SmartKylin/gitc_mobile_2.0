@@ -6,13 +6,14 @@ import {message} from 'antd'
 import Actions from '../../redux/action'
 import {connect} from 'react-redux'
 
-@connect(
-  state => ({
-    phone: state.phone
-  }),
-  {...Actions}
-)
-export default class extends Component {
+// @connect(
+//   state => ({
+//     phone: state.phone
+//   }),
+//   {...Actions}
+// )
+
+class Menu extends Component {
   handleClick = path => {
     let {phone, closeMenu, setLoginCb, openLoginPop} = this.props
     closeMenu()
@@ -87,3 +88,10 @@ export default class extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({
+    phone: state.phone
+  }),
+  {...Actions}
+)(Menu)

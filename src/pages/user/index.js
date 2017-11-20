@@ -6,11 +6,11 @@ import UserMenu from './container/usermenu/userMenu'
 import './index.scss'
 import {connect} from 'react-redux'
 
-@connect(
-  state => ({phone: state.phone}), null
-)
-export default class extends Component {
-  
+// @connect(
+//   state => ({phone: state.phone}), null
+// )
+
+class User extends Component {
   componentWillMount () {
     document.title = "个人中心"
     // let phone = storage.get(storage.PHONE_KEY)
@@ -27,3 +27,6 @@ export default class extends Component {
     )
   }
 }
+
+
+export default connect(state => ({phone: state.phone}), null)(User)

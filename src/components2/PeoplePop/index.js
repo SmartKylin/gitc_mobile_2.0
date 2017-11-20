@@ -25,13 +25,13 @@ const formatDate = (str) => {
   return ary[0] + '月' + ary[1] + '号'
 }
 
-@connect(
-  state => ({
-    phone: state.phone
-  }),
-  {...Actions}
-)
-export default class extends Component {
+// @connect(
+//   state => ({
+//     phone: state.phone
+//   }),
+//   {...Actions}
+// )
+class PeoplePop extends Component {
   constructor(props) {
     super(props)
     let {collect, file_collect} = props.speecher
@@ -299,3 +299,11 @@ export default class extends Component {
     )
   }
 }
+
+
+export default connect(
+  state => ({
+    phone: state.phone
+  }),
+  {...Actions}
+)(PeoplePop)

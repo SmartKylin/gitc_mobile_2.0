@@ -12,14 +12,14 @@ import {getWeixinConfig, getLoginStatus} from '../services/user'
 import Actions from '../redux/action'
 import {connect} from 'react-redux'
 
-@connect(
-  state => ({
-    phone: state.phone,
-    loginShow: state.loginShow,
-    loginCb: state.loginCb
-  }),
-  {...Actions}
-)
+// @connect(
+//   state => ({
+//     phone: state.phone,
+//     loginShow: state.loginShow,
+//     loginCb: state.loginCb
+//   }),
+//   {...Actions}
+// )
 
 class App extends Component {
   constructor (props) {
@@ -67,4 +67,11 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+state => ({
+  phone: state.phone,
+  loginShow: state.loginShow,
+  loginCb: state.loginCb
+}),
+{...Actions}
+)(App);

@@ -7,13 +7,13 @@ import {message} from 'antd'
 import {connect} from 'react-redux'
 import Actions from '../../redux/action'
 
-@connect(
-  state => ({
-    phone: state.phone
-  }),
-  {...Actions}
-)
-export default class Header extends React.Component{
+// @connect(
+//   state => ({
+//     phone: state.phone
+//   }),
+//   {...Actions}
+// )
+class Header extends React.Component{
   constructor(props){
     super(props)
     this.state = {
@@ -109,3 +109,10 @@ export default class Header extends React.Component{
     )
   }
 }
+
+export default connect(
+  state => ({
+    phone: state.phone
+  }),
+  {...Actions}
+)(Header)
