@@ -54,6 +54,15 @@ export default class extends Component {
                 <img src={item} alt="" />
               </a>
             );
+          } else if (index === 1) {
+            return (
+              <a
+                href={'http://www.thegitc.com/static/pdf/wz2017.pdf'}
+                key={index}
+              >
+                <img src={item} alt="" />
+              </a>
+            );
           } else if (index === 2) {
             return (
               <Link to={now >= tar ? '/addgroup' : '/'} key={index}>
