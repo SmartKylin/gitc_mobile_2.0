@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import logo from './iamges/logo.jpg';
+import logo from './images/logo.jpg';
 export default class Cooperative extends React.Component {
   render() {
     return (
