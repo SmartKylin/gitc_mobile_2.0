@@ -22,6 +22,8 @@ let getBgByTicket = ticket => {
   switch (ticket) {
     case 'VIP门票':
       return vip;
+    case '媒体票':
+      return zhuanye;
     case '专业观众票':
       return zhuanye;
     case '基础架构专场票':
