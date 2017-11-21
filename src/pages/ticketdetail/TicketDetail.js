@@ -7,7 +7,7 @@ import { getTicketDetail } from '../../services/ticket';
 import vip from '../../images/vip.png';
 import zhuanye from '../../images/专业观众票.png';
 import jichu from '../../images/基础架构.png';
-import dahui from '../../images/通票.png';
+import dahui from '../../images/大会通票.png';
 import dashuju from '../../images/大数据.png';
 import yunwei from '../../images/运维.png';
 import zhanlan from '../../images/展览票.png';
