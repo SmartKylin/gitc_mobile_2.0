@@ -52,7 +52,9 @@ export default class extends Component {
         <div
           className={collapsed ? 'accor-content hidden-style' : 'accor-content'}
         >
-          {agenda.name.indexOf('23') != -1 && agenda.main != '主会场' ? (
+          {agenda.name.indexOf('23') != -1 &&
+          agenda.main != '主会场' &&
+          agenda.main != '全球化专场' ? (
             <SpeechItem icon="yes" style="yes" speecher={obj} />
           ) : (
             ''

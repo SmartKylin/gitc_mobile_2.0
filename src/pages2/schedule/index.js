@@ -55,7 +55,8 @@ export default class Schedule extends React.Component {
 
                 <div className="accor-content">
                   {agenda.name.indexOf('23') != -1 &&
-                  agenda.main != '主会场' ? (
+                  agenda.main != '主会场' &&
+                  agenda.main != '全球化专场' ? (
                     <SpeechItem icon="yes" style="yes" speecher={obj} />
                   ) : (
                     ''
