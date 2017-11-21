@@ -71,7 +71,7 @@ export default class extends Component {
             );
           } else if (index === 3) {
             return (
-              <a href={link[index]}>
+              <a href={'http://www.pailixiang.com/m/album_ia17363224.html '}>
                 <img src={item} alt="" />
               </a>
             );
