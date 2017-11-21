@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
-import ChildBackground from 'containers/child_container'
-import TicketList from './containers/ticketList'
-import {getTicketList} from "../../services/ticket";
+import React, { Component } from 'react';
+import ChildBackground from 'containers/child_container';
+import TicketList from './containers/ticketList';
+import { getTicketList } from '../../services/ticket';
 // import storage from '../../helper/storage'
-import {message, Spin,Alert} from 'antd'
-import {TOKEN} from "../../helper/login";
+import { message, Spin, Alert } from 'antd';
+import { TOKEN } from '../../helper/login';
 
-import {connect} from 'react-redux'
-import Actions from '../../redux/action'
+import { connect } from 'react-redux';
+import Actions from '../../redux/action';
 
 // @connect(
 //   state => ({
@@ -16,74 +16,74 @@ import Actions from '../../redux/action'
 //   {...Actions}
 // )
 class Ticket extends Component {
-  constructor () {
-    super()
-    this.onClose = this.onClose.bind(this)
+  constructor() {
+    super();
+    this.onClose = this.onClose.bind(this);
     this.state = {
       ticketList: []
-    }
+    };
   }
-  
+
   renderTicketList = () => {
-    let {phone, openLoginPop, setLoginCb} = this.props
-    let cb = this.renderTicketList
+    let { phone, openLoginPop, setLoginCb } = this.props;
+    let cb = this.renderTicketList;
     if (!phone) {
-      openLoginPop()
-      setLoginCb(cb)
-      return
+      openLoginPop();
+      setLoginCb(cb);
+      return;
     }
-    getTicketList({phone, token: TOKEN})
-    .then(res => {
-      if (res) {
-        return res.json()
-      }
-    })
-    .then(data => {
-      if (data.status) {
-        this.setState({
-          ticketList: data.data
-        })
-      } else {
-        message.info(data.msg)
-        openLoginPop()
-        setLoginCb(cb)
-      }
-    })
-  }
-  componentWillMount () {
-    // 设置二级页面标题
-    document.title = "我的门票"
-    
-    this.renderTicketList()
-  }
-
-  onClose (e) {
-    this.props.history.push('/')
+    getTicketList({ phone, token: TOKEN })
+      .then(res => {
+        if (res) {
+          return res.json();
+        }
+      })
+      .then(data => {
+        if (data.status) {
+          this.setState({
+            ticketList: data.data
+          });
+        } else {
+          message.info(data.msg);
+          openLoginPop();
+          setLoginCb(cb);
+        }
+      });
   };
+  componentWillMount() {
+    // 设置二级页面标题
+    document.title = '我的门票';
 
+    this.renderTicketList();
+  }
 
-  render () {
+  onClose(e) {
+    this.props.history.push('/');
+  }
+
+  render() {
     return (
       <ChildBackground>
-        { this.state.ticketList && this.state.ticketList.length ?
-        <TicketList ticketList={this.state.ticketList}/> :
+        {this.state.ticketList && this.state.ticketList.length ? (
+          <TicketList ticketList={this.state.ticketList} />
+        ) : (
           <div>
-            {
-              !this.props.match.params.flag?
+            {!this.props.match.params.flag ? (
               <Alert
-                  message="！ 暂无票务信息"
-
-                  description="原因：主办方还未将您的门票导入该系统，或您还未购买门票。
+                message="！ 暂无票务信息"
+                description="原因：主办方还未将您的门票导入该系统，或您还未购买门票。
                              若您已购票请耐心等待~"
-                  type="error"
-                  closable
-                  onClose={this.onClose}
-              />:""
-            }
+                type="error"
+                closable
+                onClose={this.onClose}
+              />
+            ) : (
+              ''
+            )}
           </div>
-        }
+        )}
       </ChildBackground>
-    )
+    );
   }
 }
 
@@ -91,5 +91,5 @@ export default connect(
   state => ({
     phone: state.phone
   }),
-  {...Actions}
-)(Ticket)
+  { ...Actions }
+)(Ticket);

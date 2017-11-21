@@ -1,12 +1,12 @@
-import wx from 'weixin-js-sdk'
-import ShareLog from '../images2/share-log.png'
+import wx from 'weixin-js-sdk';
+import ShareLog from '../images2/share-log.png';
 
 export function initWeixinSDK(config) {
   // console.log(config, 'config');
   // console.log(typeof timestamp, 'initWixinSdk');
   // console.log(config.appid, 'appid');
   // console.log(config.signature, 'signature');
-  
+
   wx.config({
     // 开启调试模式,调用的所有api的返回值会在客户端alert出来，
     // 若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -20,11 +20,8 @@ export function initWeixinSDK(config) {
     // 必填，签名，见附录1
     signature: config.signature,
     // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-    jsApiList: [
-      'onMenuShareTimeline',
-      'onMenuShareAppMessage'
-    ],
-  })
+    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+  });
 }
 
 /*export function weixinShare(share) {
@@ -39,14 +36,13 @@ export const weixinShare = share => {
       link: share.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
       // imgUrl: 'https://devs.zhongfl.com/jyw/static/images/logo.png', // 分享图标
       imgUrl: 'http://wz.thegitc.com/logo.png',
-      success: function () {
+      success: function() {
         // 用户确认分享后执行的回调函数
- 
       },
-      cancel: function () {
+      cancel: function() {
         // 用户取消分享后执行的回调函数
       }
-    })
+    });
     // 发送给朋友
     wx.onMenuShareAppMessage({
       title: share.title, // 分享标题
@@ -61,6 +57,6 @@ export const weixinShare = share => {
       cancel: () => {
         // 用户取消分享后执行的回调函数
       }
-    })
-  })
-}
+    });
+  });
+};

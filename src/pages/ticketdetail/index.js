@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
-import TicketDetail from './TicketDetail'
-import {connect} from 'react-redux'
-
+import React, { Component } from 'react';
+import TicketDetail from './TicketDetail';
+import { connect } from 'react-redux';
 
 class TicketDetailPage extends Component {
-  componentWillMount () {
+  componentWillMount() {
     // 设置门票标题
-    document.title = "我的门票"
+    document.title = '我的门票';
   }
   render() {
     return (
@@ -14,8 +13,8 @@ class TicketDetailPage extends Component {
         phone={this.props.phone}
         code={this.props.match.params.code}
       />
-    )
+    );
   }
 }
 
-export default connect(state => ({phone: state.phone}))(TicketDetailPage)
+export default connect(state => ({ phone: state.phone }))(TicketDetailPage);

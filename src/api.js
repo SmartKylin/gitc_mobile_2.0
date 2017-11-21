@@ -5,62 +5,60 @@
  */
 
 // const prefix = window.__CONFIG__.apiPath
-const prefix = 'http://120.92.10.182:8000'
-export default (function (config) {
+const prefix = 'http://120.92.10.182:8000';
+export default (function(config) {
   return Object.keys(config).reduce(function(copy, name) {
     // copy[name] = `${prefix}${config[name]}`
-    copy[name] = prefix + config[name] + ''
-    return copy
-  }, {})
+    copy[name] = prefix + config[name] + '';
+    return copy;
+  }, {});
 })({
   // 发送验证码
-  'sendCode': '/api/gitc/code/',
+  sendCode: '/api/gitc/code/',
 
   //大会新闻列表
-  'getListNews':'/api/gitc/article-',
+  getListNews: '/api/gitc/article-',
 
   //图片
-  'getListImgs':'/api/gitc/img-',
+  getListImgs: '/api/gitc/img-',
 
   //  大会新闻详情页
-  'getDetalisNews':'/api/gitc/article',
-  'popleList':'/api/gitc/person-',
+  getDetalisNews: '/api/gitc/article',
+  popleList: '/api/gitc/person-',
   // 注册或者登陆
-  'user': '/api/gitc/user/',
+  user: '/api/gitc/user/',
   // 赞助
-  'sponsor': '/api/gitc/sponsor/',
+  sponsor: '/api/gitc/sponsor/',
   // 调取某页全部人员
   // http://120.92.10.182:8000/api/gitc/person-4/all/list.json?token=1afb756d16740266efde290917ca1a8e
-  'pagepople':'/api/gitc/',
+  pagepople: '/api/gitc/',
 
-   
-   'pople':'/api/gitc/person-',
-// 接口地址：http://120.92.10.182:8000/api/gitc/person-{library_id}/list.json
+  pople: '/api/gitc/person-',
+  // 接口地址：http://120.92.10.182:8000/api/gitc/person-{library_id}/list.json
 
   //议题提交
-   'issue':'/api/gitc/meetissue/',
+  issue: '/api/gitc/meetissue/',
   // 获取门票列表
-  'getTicketList': '/api/gitc/tricket/list/',
+  getTicketList: '/api/gitc/tricket/list/',
   // 获取门票详情
-  'getTicketDetail': '/api/gitc/tricket/',
+  getTicketDetail: '/api/gitc/tricket/',
   // 获取个人收藏文档列表
-  'getDocumentList': '/api/gitc/file/',
+  getDocumentList: '/api/gitc/file/',
   // 获取个人收藏嘉宾列表
-  'getGuestList': '/api/gitc/collect/',
+  getGuestList: '/api/gitc/collect/',
   // 收藏文档
-  'collectDocument': '/api/gitc/file/add/',
+  collectDocument: '/api/gitc/file/add/',
   // 收藏嘉宾
-  'collectGuest': '/api/gitc/collect/add/',
+  collectGuest: '/api/gitc/collect/add/',
   // 取消收藏文档
-  'disCollectDocument': '/api/gitc/file/del/',
+  disCollectDocument: '/api/gitc/file/del/',
   // 取消收藏嘉宾
-  'disCollectGuest': '/api/gitc/collect/del/',
+  disCollectGuest: '/api/gitc/collect/del/',
   //大会简介
-  'getBriefList': '/api/gitc/article-',
+  getBriefList: '/api/gitc/article-',
   //分会场详情
-  'gatMeetingDetails': '/api/gitc/article/beijing/'
-
-})
+  gatMeetingDetails: '/api/gitc/article/beijing/'
+});
 
 // 人员列表
 // http://120.92.10.182:8000/api/gitc/person-{page_id}

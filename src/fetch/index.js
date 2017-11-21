@@ -1,9 +1,9 @@
-import 'whatwg-fetch'
-import 'es6-promise'
+import 'whatwg-fetch';
+import 'es6-promise';
 
 const formatUrlencoded = obj => {
-    let arr = [];
-    for(let key in obj) {
+  let arr = [];
+  for (let key in obj) {
     arr.push(`${key}=${obj[key]}`);
   }
   return arr.join('&');
@@ -17,23 +17,22 @@ export const get = url => {
     credentials: 'include',
     mode: 'cors',
     cache: 'default'
-  })
-}
-
-export const post = (url, obj) => {
-    return fetch(url, {
-        method: "POST",
-        // a=1&b=2&c=3
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        credentials: 'include',
-        body: formatUrlencoded(obj)
-    })
+  });
 };
 
+export const post = (url, obj) => {
+  return fetch(url, {
+    method: 'POST',
+    // a=1&b=2&c=3
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    credentials: 'include',
+    body: formatUrlencoded(obj)
+  });
+};
 
 export default {
   post,
   get
-}
+};

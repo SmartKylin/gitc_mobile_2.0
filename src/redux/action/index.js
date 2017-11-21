@@ -1,6 +1,6 @@
-import * as TYPES from '../action-types'
+import * as TYPES from '../action-types';
 // import {sign, signOut} from "../../services/user";
-import storage from '../../../src/helper/storage'
+import storage from '../../../src/helper/storage';
 
 // 异步action
 // export const loginIn = phone => dispatch => {
@@ -33,46 +33,46 @@ import storage from '../../../src/helper/storage'
 // }
 
 export const loginIn = phone => {
-  storage.set(storage.PHONE_KEY, phone)
+  storage.set(storage.PHONE_KEY, phone);
   return {
     type: TYPES.SIGN_IN,
     phone: phone
-  }
-}
+  };
+};
 
 export const loginOut = () => {
-  storage.remove(storage.PHONE_KEY)
+  storage.remove(storage.PHONE_KEY);
   return {
     type: TYPES.SIGN_OUT,
-    phone: '',
-  }
-}
+    phone: ''
+  };
+};
 
 export const openLoginPop = () => {
   return {
     type: TYPES.OPEN_LOGIN
-  }
-}
+  };
+};
 
 export const closeLoginPop = () => {
   return {
     type: TYPES.CLOSE_LOGIN
-  }
-}
+  };
+};
 
-export const setLoginCb = (loginCb) => {
+export const setLoginCb = loginCb => {
   return {
     type: TYPES.SET_LOGIN_CB,
     loginCb
-  }
-}
+  };
+};
 
-export const setScrollTop = (top) => {
+export const setScrollTop = top => {
   return {
     type: TYPES.SET_SCROLLTOP,
     scrollTop: top
-  }
-}
+  };
+};
 
 export default {
   loginIn,
@@ -81,4 +81,4 @@ export default {
   closeLoginPop,
   setLoginCb,
   setScrollTop
-}
+};

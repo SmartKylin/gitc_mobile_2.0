@@ -1,29 +1,29 @@
-import React, {Component} from 'react'
-import './index.scss'
-import defaultImg from '../../images/default-avatar.jpg'
+import React, { Component } from 'react';
+import './index.scss';
+import defaultImg from '../../images/default-avatar.jpg';
 // import {message} from 'antd-mobile'
-import {message} from 'antd'
-import storage from '../../helper/storage'
-import { TOKEN } from "../../helper/login";
-import CollectedModal from 'components/CollectedModal'
+import { message } from 'antd';
+import storage from '../../helper/storage';
+import { TOKEN } from '../../helper/login';
+import CollectedModal from 'components/CollectedModal';
 import {
   collectDocument,
   collectGuest,
   cancelCollectDocument,
   cancelCollectGuest,
   updateCollectStatus
-} from "../../services/collect";
+} from '../../services/collect';
 
-import Actions from '../../redux/action'
-import {connect} from 'react-redux'
+import Actions from '../../redux/action';
+import { connect } from 'react-redux';
 
-const formatDate = (str) => {
+const formatDate = str => {
   if (!str) {
-    return '待定'
+    return '待定';
   }
-  let ary = str.split('-').slice(1)
-  return ary[0] + '月' + ary[1] + '号'
-}
+  let ary = str.split('-').slice(1);
+  return ary[0] + '月' + ary[1] + '号';
+};
 
 // @connect(
 //   state => ({
@@ -33,218 +33,228 @@ const formatDate = (str) => {
 // )
 class PeoplePop extends Component {
   constructor(props) {
-    super(props)
-    let {collect, file_collect} = props.speecher
-    this.state ={
+    super(props);
+    let { collect, file_collect } = props.speecher;
+    this.state = {
       collectModelVisible: 'none',
       guestStatus: collect || false,
-      fileStatus: file_collect || false,
-    }
+      fileStatus: file_collect || false
+    };
   }
   componentWillMount() {
-    this.initialCollectStatus()
+    this.initialCollectStatus();
   }
-  
+
   initialCollectStatus = async () => {
-    let {speecher, phone} = this.props
-    let {id, files_id} = speecher
-    let res = await updateCollectStatus({phone, person: id, file: 0}).then(res => res.json())
-    
-    let {collect, file} = res
+    let { speecher, phone } = this.props;
+    let { id, files_id } = speecher;
+    let res = await updateCollectStatus({ phone, person: id, file: 0 }).then(
+      res => res.json()
+    );
+
+    let { collect, file } = res;
     this.setState({
       guestStatus: collect,
       fileStatus: file
-    })
-  
-  }
-  
+    });
+  };
+
   // 收藏嘉宾
   _collectGuest = () => {
-    let _this = this
-    let { id, collect } = this.props.speecher
-    const {openLoginPop, closeLoginPop, setLoginCb, phone} = this.props
-  
-   
+    let _this = this;
+    let { id, collect } = this.props.speecher;
+    const { openLoginPop, closeLoginPop, setLoginCb, phone } = this.props;
+
     console.log(phone, 'phone');
-    
-    let cb = this._collectGuest
-    
-    const failure = (msg) => {
+
+    let cb = this._collectGuest;
+
+    const failure = msg => {
       // openPop()
       // setLoginCb(cb)
-      message.info(msg)
-    }
-    
+      message.info(msg);
+    };
+
     if (!phone) {
-      openLoginPop()
-      setLoginCb(cb)
-      return
+      openLoginPop();
+      setLoginCb(cb);
+      return;
     }
-    
-    const success = (data) => {
+
+    const success = data => {
       if (data.status) {
-        this.setState({
-          // 打开收藏成功模态框
-          collectModelVisible: 'block',
-          guestStatus: true,
-        },
-        () => setTimeout(()=>_this.setState({collectModelVisible: 'none'}), 500)
-        )
+        this.setState(
+          {
+            // 打开收藏成功模态框
+            collectModelVisible: 'block',
+            guestStatus: true
+          },
+          () =>
+            setTimeout(
+              () => _this.setState({ collectModelVisible: 'none' }),
+              500
+            )
+        );
       } else {
-        failure(data.msg)
+        failure(data.msg);
       }
-    }
-    
+    };
+
     collectGuest({ phone, person: id, token: TOKEN })
-    .then(res => res && res.json())
-    .then(success)
-  }
-  
+      .then(res => res && res.json())
+      .then(success);
+  };
+
   // 取消收藏嘉宾
   _cancelCollectGuest = () => {
     // e.stopPropagation()
-    let { id, collect } = this.props.speecher
-    let { setLoginCb, openLoginPop, closeLoginPop, phone } = this.props
-    let cb = this._cancelCollectGuest
-    
-    const failure = (msg) => {
-      openLoginPop()
-      setLoginCb(cb)
-      message.info(msg)
-    }
-    
+    let { id, collect } = this.props.speecher;
+    let { setLoginCb, openLoginPop, closeLoginPop, phone } = this.props;
+    let cb = this._cancelCollectGuest;
+
+    const failure = msg => {
+      openLoginPop();
+      setLoginCb(cb);
+      message.info(msg);
+    };
+
     if (!phone) {
-      openLoginPop()
-      setLoginCb(cb)
-      return
+      openLoginPop();
+      setLoginCb(cb);
+      return;
     }
-    
-    const success = (data) => {
+
+    const success = data => {
       if (data.status) {
-        closeLoginPop()
-        message.success('取消收藏成功')
+        closeLoginPop();
+        message.success('取消收藏成功');
         this.setState({
           // 打开收藏成功模态框
-          guestStatus: false,
-        })
+          guestStatus: false
+        });
       } else {
-        failure(data.msg)
+        failure(data.msg);
       }
-    }
+    };
     cancelCollectGuest({ phone, person: id, token: TOKEN })
-    .then(res => res && res.json())
-    .then(success)
-  }
-  
+      .then(res => res && res.json())
+      .then(success);
+  };
+
   // 收藏文档
   _collectDocument = () => {
     // e.stopPropagation()
-    let { files__id, file_collect } = this.props.speecher
+    let { files__id, file_collect } = this.props.speecher;
     if (!files__id) {
-      message.info('没有相应文档')
-      return
+      message.info('没有相应文档');
+      return;
     }
-    let { openLoginPop, setLoginCb, phone } = this.props
-    let cb = this._collectDocument
-    
+    let { openLoginPop, setLoginCb, phone } = this.props;
+    let cb = this._collectDocument;
+
     if (this.state.documentStatus || file_collect) {
-      return
+      return;
     }
-    const failure = (msg) => {
-      openLoginPop()
-      setLoginCb(cb)
-      message.info(msg)
-    }
-    
+    const failure = msg => {
+      openLoginPop();
+      setLoginCb(cb);
+      message.info(msg);
+    };
+
     if (!phone) {
-      openLoginPop()
-      setLoginCb(cb)
-      return
+      openLoginPop();
+      setLoginCb(cb);
+      return;
     }
-    
-    const success = (data) => {
+
+    const success = data => {
       if (data.status) {
         // closePop()
         this.setState({
           // 打开收藏成功模态框
           collectModelVisible: 'block',
-          documentStatus: true,
-        })
+          documentStatus: true
+        });
       } else {
-        failure(data.msg)
+        failure(data.msg);
       }
-    }
-    
+    };
+
     if (!files__id) {
-      message.info('没有相应文档~')
+      message.info('没有相应文档~');
     }
     collectDocument({ phone, file: files__id, token: TOKEN })
-    .then(res => res && res.json())
-    .then(success)
-  }
-  
-  _catDocument = (e) => {
-    e.stopPropagation()
-    let { files__url } = this.props.speecher
+      .then(res => res && res.json())
+      .then(success);
+  };
+
+  _catDocument = e => {
+    e.stopPropagation();
+    let { files__url } = this.props.speecher;
     if (!files__url) {
-      message.info('没有相应文档~')
+      message.info('没有相应文档~');
     }
-  }
-  
+  };
+
   // 关闭收藏成功的模态框
   closeModal = () => {
     this.setState({
       collectModelVisible: 'none'
-    })
-  }
-  
-  changeGuestStatus = (e) => {
+    });
+  };
+
+  changeGuestStatus = e => {
     // 此处阻止冒泡很重要，避免面触发父级openGuestPop方法，从而导致重新设置读取scrollTop的值，造成关闭弹窗后，无法回到当前位置的bug
-    e.stopPropagation()
-    let guestStatus = this.state.guestStatus
+    e.stopPropagation();
+    let guestStatus = this.state.guestStatus;
     if (guestStatus) {
-      this._cancelCollectGuest()
+      this._cancelCollectGuest();
     } else {
-      this._collectGuest()
+      this._collectGuest();
     }
-    
-  }
-  
-  changeDocumentStatus = (e) => {
-    e.stopPropagation()
-    let fileStatus = this.state.fileStatus
+  };
+
+  changeDocumentStatus = e => {
+    e.stopPropagation();
+    let fileStatus = this.state.fileStatus;
     if (fileStatus) {
-    
     } else {
-      this._collectDocument()
+      this._collectDocument();
     }
-  }
-  
-  render () {
-    let speecher = this.props.speecher
-    const {closeGuestPop, setLoginCb, openLoginPop, closeLoginPop} = this.props
+  };
+
+  render() {
+    let speecher = this.props.speecher;
+    const {
+      closeGuestPop,
+      setLoginCb,
+      openLoginPop,
+      closeLoginPop
+    } = this.props;
     // console.log(speecher,"speecher");
-    
+
     return (
       <div className="people-pop">
-        <div className="close-wrapper" >
+        <div className="close-wrapper">
           <div onClick={closeGuestPop}>
-            <i className="iconfont icon-huaban"/>
+            <i className="iconfont icon-huaban" />
           </div>
         </div>
         <div className="avatar-wrapper">
-          <img src={speecher.pic || defaultImg} alt=""/>
+          <img src={speecher.pic || defaultImg} alt="" />
         </div>
         <div className="name">{speecher.name}</div>
-        <div className="company-position">{speecher.company} {speecher.position}</div>
+        <div className="company-position">
+          {speecher.company} {speecher.position}
+        </div>
         <div className="addr-time">
           <div>
-            <i className="iconfont icon-positioning"/>
+            <i className="iconfont icon-positioning" />
             <span>{speecher.meet}</span>
             <span>{speecher.meetaddr}</span>
           </div>
           <div>
-            <i className="iconfont icon-shijian"/>
+            <i className="iconfont icon-shijian" />
             <span>{speecher && formatDate(speecher.sdata)}</span>
             <span>{speecher.stime}</span>
           </div>
@@ -253,57 +263,55 @@ class PeoplePop extends Component {
           <span className="title">演讲主题：</span>
           {speecher.stheme}
         </div>
-        
+
         <div className="theme-introduce">
           <span className="title">主题介绍：</span>
           {speecher.sintroduce}
         </div>
-        
+
         <div className="person-introduce">
           <span className="title">个人简介：</span>
           {speecher.summary}
         </div>
-        {
-          openLoginPop
-          ? (<div className="btn-function">
-            <div
-            className="collect btn"
-            onClick={this.changeGuestStatus}
-            >
-              {
-                speecher.collect || this.state.guestStatus
-                ? <i className="iconfont icon-shoucang1"/>
-                : <i className="iconfont icon-shoucang2"/>
-              }
+        {openLoginPop ? (
+          <div className="btn-function">
+            <div className="collect btn" onClick={this.changeGuestStatus}>
+              {speecher.collect || this.state.guestStatus ? (
+                <i className="iconfont icon-shoucang1" />
+              ) : (
+                <i className="iconfont icon-shoucang2" />
+              )}
             </div>
             <div
-            className="collect-file btn"
-            onClick={this.changeDocumentStatus}
+              className="collect-file btn"
+              onClick={this.changeDocumentStatus}
             >
-              {
-                speecher.file_collect || this.state.fileStatus
-                ? <i className="iconfont icon-wendangtianjiadianjixiaoguo"/>
-                : <i className="iconfont icon-wendangtianjia"/>
-              }
+              {speecher.file_collect || this.state.fileStatus ? (
+                <i className="iconfont icon-wendangtianjiadianjixiaoguo" />
+              ) : (
+                <i className="iconfont icon-wendangtianjia" />
+              )}
             </div>
             <div className="cat-file btn">
-              <a  href={speecher.files__url} onClick={this._catDocument}>
-                <i className="iconfont icon-wendangchakan"/>
+              <a href={speecher.files__url} onClick={this._catDocument}>
+                <i className="iconfont icon-wendangchakan" />
               </a>
             </div>
-          </div>) : null
-        }
-        
-        <CollectedModal closeModal={this.closeModal} display={this.state.collectModelVisible} />
+          </div>
+        ) : null}
+
+        <CollectedModal
+          closeModal={this.closeModal}
+          display={this.state.collectModelVisible}
+        />
       </div>
-    )
+    );
   }
 }
-
 
 export default connect(
   state => ({
     phone: state.phone
   }),
-  {...Actions}
-)(PeoplePop)
+  { ...Actions }
+)(PeoplePop);

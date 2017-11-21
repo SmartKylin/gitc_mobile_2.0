@@ -1,16 +1,16 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 
-import ExpertGroup from '../ExpertGroup'
-import PresidentGroup from '../PresidentGroup'
-import './index.scss'
+import ExpertGroup from '../ExpertGroup';
+import PresidentGroup from '../PresidentGroup';
+import './index.scss';
 
 export default class extends Component {
-
-  render () {
-    return (<div>
-         <PresidentGroup />
-         <ExpertGroup/>
+  render() {
+    return (
+      <div>
+        <PresidentGroup />
+        <ExpertGroup />
       </div>
-    )
+    );
   }
 }

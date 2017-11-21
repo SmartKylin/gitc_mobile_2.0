@@ -1,21 +1,18 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 
-import Header from "../../components/Header";
+import Header from '../../components/Header';
 
 export default class extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
   }
-  render () {
-    let {history, children} = this.props
+  render() {
+    let { history, children } = this.props;
     return (
-    <div>
-      <Header
-        history={history}
-      />
-      {children}
-    </div>
-    
-    )
+      <div>
+        <Header history={history} />
+        {children}
+      </div>
+    );
   }
 }

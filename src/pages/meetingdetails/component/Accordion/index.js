@@ -1,24 +1,24 @@
-import React, {Component} from 'react'
-import './index.scss'
-import SpeechItem from '../../../../components2/SpeechItem'
-import AccordionHeader from '../../../../components2/AccordionHeader'
+import React, { Component } from 'react';
+import './index.scss';
+import SpeechItem from '../../../../components2/SpeechItem';
+import AccordionHeader from '../../../../components2/AccordionHeader';
 
 export default class extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      collapsed: true,
-    }
+      collapsed: true
+    };
   }
-  
+
   changeCollapse = () => {
     this.setState({
       collapsed: !this.state.collapsed
-    })
-  }
-  render () {
-    let {collapsed} = this.state
-    let {name, enName, list, bgImg} = this.props
+    });
+  };
+  render() {
+    let { collapsed } = this.state;
+    let { name, enName, list, bgImg } = this.props;
     return (
       <div className="my-accordion">
         <AccordionHeader
@@ -28,24 +28,16 @@ export default class extends Component {
           enName={enName}
           collapsed={collapsed}
         />
-        {
-          collapsed
-          ? <div className="accor-content">
-              {
-                list && list.length
-                ? list.map((item, ind) => (
-                  <SpeechItem
-                    key={ind}
-                    speecher={item}
-                    
-                  />
+        {collapsed ? (
+          <div className="accor-content">
+            {list && list.length
+              ? list.map((item, ind) => (
+                  <SpeechItem key={ind} speecher={item} />
                 ))
-                : null
-              }
+              : null}
           </div>
-          : null
-        }
+        ) : null}
       </div>
-    )
+    );
   }
 }
