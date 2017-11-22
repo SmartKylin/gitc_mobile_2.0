@@ -41,10 +41,6 @@ export default class extends Component {
   }
   render() {
     let { liveUrl } = this.state;
-    let tar = +new Date(2017, 10, 23, 6, 0, 0);
-    let now = Date.now();
-    // console.log(tar,'tartime');
-    // console.log(now, 'now');
     return (
       <div className="nine-square">
         {nine_imgs.map((item, index) => {
@@ -65,7 +61,7 @@ export default class extends Component {
             );
           } else if (index === 2) {
             return (
-              <Link to={now >= tar ? '/addgroup' : '/'} key={index}>
+              <Link to={'/addgroup'} key={index}>
                 <img src={item} alt="" />
               </Link>
             );
