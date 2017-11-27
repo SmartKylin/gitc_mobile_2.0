@@ -282,7 +282,7 @@ class PeoplePop extends Component {
                 <i className="iconfont icon-shoucang2" />
               )}
             </div>
-            <div
+            {/* <div
               className="collect-file btn"
               onClick={this.changeDocumentStatus}
             >
@@ -291,7 +291,7 @@ class PeoplePop extends Component {
               ) : (
                 <i className="iconfont icon-wendangtianjia" />
               )}
-            </div>
+            </div> */}
             <div className="cat-file btn">
               <a href={speecher.files__url} onClick={this._catDocument}>
                 <i className="iconfont icon-wendangchakan" />

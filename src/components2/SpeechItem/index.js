@@ -44,15 +44,10 @@ class SpeechItem extends Component {
     });
   };
 
-  preventBubble = e => {
-    e.stopPropagation();
-  };
-
   render() {
     let { speecher } = this.props;
     let { popVisible } = this.state;
     let { canPop } = this.props;
-    // speecher.files__url = 1
     return (
       <div
         className="speech-item"
@@ -81,6 +76,9 @@ class SpeechItem extends Component {
             )}
 
             <div className="company-position">
+              {/*  <div className="company">{speecher.company}</div>
+              <div>{speecher.position}</div>*/}
+
               {!this.props.style ? (
                 <span className="company">{speecher.company}</span>
               ) : (
@@ -90,15 +88,6 @@ class SpeechItem extends Component {
             </div>
           </div>
         </div>
-
-        {speecher.files__url ? (
-          <div className="item-right-down">
-            <a href={speecher.files__url} onClick={this.preventBubble}>
-              <i className="iconfont icon-xiazai" />
-            </a>
-          </div>
-        ) : null}
-
         {popVisible ? (
           <div className="popup">
             {

@@ -17,9 +17,8 @@ export default class extends Component {
     });
   };
   render() {
-    // let { fileData } = this.state;
-    let { fileData } = this.props;
-    console.log(fileData, 'fileData');
+    let { fileData } = this.state;
+    console.log(fileData);
     let { collapsed } = this.state;
     return (
       <div
@@ -32,22 +31,15 @@ export default class extends Component {
           iconName={'icon-wendangtianjiadianjixiaoguo'}
         />
 
-        {/*<div
+        <div
           className={collapsed ? 'accor-content hidden-style' : 'accor-content'}
         >
           {fileData &&
-            fileData.map((item, index) => (
-              <CollectItem key={index} data={item} isFile={true}/>
+            fileData.data &&
+            fileData.data.map((item, index) => (
+              <CollectItem key={index} data={item} />
             ))}
-        </div>*/}
-        {collapsed ? (
-          <div>
-            {fileData &&
-              fileData.map((item, index) => (
-                <CollectItem key={index} data={item} isFile={true} />
-              ))}
-          </div>
-        ) : null}
+        </div>
       </div>
     );
   }

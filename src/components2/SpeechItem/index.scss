@@ -6,7 +6,6 @@
   display: flex;
   margin-bottom: 3px;
   justify-content: space-between;
-  align-items: center;
   .item-left {
     width: 20%;
     font-size: 9px;
@@ -24,15 +23,6 @@
       border-radius: 50%;
     }
 
-  }
-
-  .item-right-down {
-    color: #2b67ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 33px;
-    height: 40px;
   }
 
   .item-right {
