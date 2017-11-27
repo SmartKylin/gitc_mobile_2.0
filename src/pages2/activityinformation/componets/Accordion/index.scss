@@ -30,7 +30,8 @@
   }
 
   .accor-content.hidden-style {
-    visibility: hidden;
-    height: 0;
+    /*visibility: hidden;
+    height: 0;*/
+    display: none;
   }
 }

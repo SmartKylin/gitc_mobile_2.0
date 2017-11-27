@@ -46,11 +46,12 @@ export default class extends Component {
       marginLeft: '-12px'
     };
     let { guestData, fileData, collapsed } = this.state;
+    // console.log(fileData, 'fileData');
     return (
       <div className="user">
         {guestData && guestData.length && <MyCollect guestData={guestData} />}
 
-        {guestData && guestData.length && <FilesCollect fileData={fileData} />}
+        {/*{fileData && fileData.length && <FilesCollect fileData={fileData} />}*/}
       </div>
     );
   }

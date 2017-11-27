@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import {Icon} from 'antd'
+import { Icon } from 'antd';
 import './index.scss';
 import PeoplePop from '../../../components2/PeoplePop';
 import { allowScroll, forbiddenScroll } from '../../../helper/scrollSetting';
@@ -44,7 +44,14 @@ export default class CollectionItem extends Component {
     return (
       <div className="user-box" onClick={this.openGuestPop}>
         <div className="boximg">
-          {/*<div><Icon type="file-pdf" style={{fontSize: '20px', color: '#263c68'}}/></div>*/}
+          {this.props.isFile ? (
+            <div>
+              <Icon
+                type="file-pdf"
+                style={{ fontSize: '20px', color: '#263c68' }}
+              />
+            </div>
+          ) : null}
           <div className="avatar--wrap">
             <img src={item.pic || defaultHeaderImg} alt="" />
           </div>
