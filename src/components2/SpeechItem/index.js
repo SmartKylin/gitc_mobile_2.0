@@ -35,6 +35,10 @@ class SpeechItem extends Component {
     forbiddenScroll();
   };
 
+  preventBubble = e => {
+    e.stopPropagation();
+  };
+
   closeGuestPop = e => {
     e.stopPropagation();
 
@@ -48,6 +52,7 @@ class SpeechItem extends Component {
     let { speecher } = this.props;
     let { popVisible } = this.state;
     let { canPop } = this.props;
+    // speecher.files__url = 1
     return (
       <div
         className="speech-item"
@@ -88,6 +93,13 @@ class SpeechItem extends Component {
             </div>
           </div>
         </div>
+        {speecher.files__url ? (
+          <div className="item-right-down" onClick={this.preventBubble}>
+            <a href={speecher.files__url}>
+              <i className="iconfont icon-xiazai" />
+            </a>
+          </div>
+        ) : null}
         {popVisible ? (
           <div className="popup">
             {
