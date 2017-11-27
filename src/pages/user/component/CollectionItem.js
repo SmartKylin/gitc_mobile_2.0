@@ -62,9 +62,18 @@ export default class CollectionItem extends Component {
           </div>
         </div>
         <div>
-          <span style={{ fontSize: '10px' }}>{item.stime}</span>
+          <span style={{ fontSize: '10px', marginRight: '12px' }}>
+            {item.stime}
+          </span>
         </div>
 
+        {item.files__url ? (
+          <div className="box-right" onClick={e => e.stopPropagation()}>
+            <a href={item.files__url}>
+              <i className="iconfont icon-xiazai" />
+            </a>
+          </div>
+        ) : null}
         {popVisible ? (
           <div className="popup">
             {<PeoplePop closeGuestPop={this.closeGuestPop} speecher={item} />}

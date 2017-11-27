@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 0 12px;
+  padding-left: 12px;
   .boximg{
     display: flex;
     align-items: center;
@@ -49,6 +49,17 @@
         text-overflow:ellipsis;
         white-space: nowrap;
       }
+    }
+  }
+
+  .box-right {
+    width: 33px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .iconfont {
+      color: #2b67ff;
     }
   }
 }
