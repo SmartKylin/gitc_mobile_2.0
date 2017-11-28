@@ -292,11 +292,12 @@ class PeoplePop extends Component {
                 <i className="iconfont icon-wendangtianjia" />
               )}
             </div> */}
-            <div className="cat-file btn">
-              <a href={speecher.files__url} onClick={this._catDocument}>
-                <i className="iconfont icon-wendangchakan" />
-              </a>
-            </div>
+
+            {/*<div className="cat-file btn">*/}
+            {/*<a href={speecher.files__url} onClick={this._catDocument}>*/}
+            {/*<i className="iconfont icon-wendangchakan" />*/}
+            {/*</a>*/}
+            {/*</div>*/}
           </div>
         ) : null}
 

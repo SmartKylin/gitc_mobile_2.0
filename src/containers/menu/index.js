@@ -106,7 +106,7 @@ class Menu extends Component {
             演讲嘉宾
           </Link>
           <Link to={'/agenda'} onClick={() => this.props.closeMenu()}>
-            大会日程
+            日程及资料
           </Link>
           <Link to={'/light'} onClick={() => this.props.closeMenu()}>
             亮点环节

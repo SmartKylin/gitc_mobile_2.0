@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.6ca6cc84.css",
   "main.css.map": "static/css/main.6ca6cc84.css.map",
-  "main.js": "static/js/main.9cc6c494.js",
-  "main.js.map": "static/js/main.9cc6c494.js.map",
+  "main.js": "static/js/main.a34e1c6f.js",
+  "main.js.map": "static/js/main.a34e1c6f.js.map",
   "static/media/accordion_bg1.png": "static/media/accordion_bg1.3fa1a6db.png",
   "static/media/accordion_bg10.png": "static/media/accordion_bg10.98f34c98.png",
   "static/media/accordion_bg11.png": "static/media/accordion_bg11.2543fd28.png",
@@ -50,6 +50,7 @@
   "static/media/topic_title.png": "static/media/topic_title.604d6057.png",
   "static/media/vip.png": "static/media/vip.c7b536a2.png",
   "static/media/weixin.png": "static/media/weixin.4ba2062a.png",
+  "static/media/wz_qr_code.png": "static/media/wz_qr_code.87f8ade9.png",
   "static/media/专业观众票.png": "static/media/专业观众票.ff67d819.png",
   "static/media/全球化.png": "static/media/全球化.94efe341.png",
   "static/media/前去报名.png": "static/media/前去报名.5affba84.png",

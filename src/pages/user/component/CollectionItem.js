@@ -67,10 +67,10 @@ export default class CollectionItem extends Component {
           </span>
         </div>
 
-        {item.files__url ? (
+        {item.file ? (
           <div className="box-right" onClick={e => e.stopPropagation()}>
-            <a href={item.files__url}>
-              <i className="iconfont icon-xiazai" />
+            <a href={item.file}>
+              <i className="iconfont icon-down" />
             </a>
           </div>
         ) : null}

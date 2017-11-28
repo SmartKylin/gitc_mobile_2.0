@@ -93,10 +93,10 @@ class SpeechItem extends Component {
             </div>
           </div>
         </div>
-        {speecher.files__url ? (
+        {speecher.file ? (
           <div className="item-right-down" onClick={this.preventBubble}>
-            <a href={speecher.files__url}>
-              <i className="iconfont icon-xiazai" />
+            <a href={speecher.file}>
+              <i className="iconfont icon-down" />
             </a>
           </div>
         ) : null}
