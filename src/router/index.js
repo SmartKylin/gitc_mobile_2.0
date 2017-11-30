@@ -41,6 +41,7 @@ import RoadShow from '../pages2/roadshow';
 import Presidium from '../pages2/presidium';
 import AdvisoryGroup from '../pages2/advisorygroup';
 import ActivityInform from '../pages2/activityinformation';
+import NewsSummary from '../pages2/summary';
 
 let history = createBrowserHistory();
 
@@ -101,6 +102,7 @@ const RouterMap = class extends Component {
           <Route path="/light" component={HightLight} />
           <Route path="/service" component={ServiceInfo} />
           <Route path="/agenda" component={Schedule} />
+          <Route path="/news" component={NewsSummary} />
 
           {/*<Route path="/schedule" component={Schedule}></Route>*/}
           <Route path="/brand" component={Brand} />

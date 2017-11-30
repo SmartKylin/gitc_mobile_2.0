@@ -93,7 +93,9 @@ class Menu extends Component {
           <a href="javascript:" onClick={() => this.handleClick('/user')}>
             个人中心
           </a>
-
+          <Link to={'/news'} onClick={() => this.props.closeMenu()}>
+            盛况回顾
+          </Link>
           {/*<a href="#">大会会刊</a>*/}
           {/*<Link to={"/dataagenda"} onClick={() => this.props.closeMenu()}>全部日程</Link>*/}
           <Link to={'/president'} onClick={() => this.props.closeMenu()}>
