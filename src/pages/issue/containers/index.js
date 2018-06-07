@@ -100,7 +100,7 @@ export default class Issus extends Component {
             })
         }*/
 
-        console.log('父组件', value ,name, this.state[name])
+       /* console.log('父组件', value ,name, this.state[name])*/
     }
 
     check = obj =>{

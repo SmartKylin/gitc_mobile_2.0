@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom'
 export default class HeaderPage extends React.Component {
   render() {
     let {name, enName, addr, link} = this.props
-    console.log(name,"12312");
     return (
       <div className="HeaderPageBoxBox">
         <div className="HeaderzPageBox">
