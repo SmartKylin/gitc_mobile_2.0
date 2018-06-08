@@ -1,14 +1,9 @@
 import React, {Component} from 'react'
 import BannerImg from '../../images2/banner.png'
 import './index.scss'
-import agenda_title from '../../images2/大会日程.png'
 import contact_us from '../../images2/fouterhome_03.png'
-// import {Accordion, List} from 'antd-mobile'
-// import 'antd-mobile/dist/antd-mobile.css'
-
 import {getAgenda, getLightDot} from "../../services/home";
 import Accor from '../../components2/Accordion'
-import LightImg from '../../images2/light_dot.png'
 import HighLight from '../../components2/Highlight'
 import NineSquare from '../../components2/NineSquare'
 import MeetingGuide from '../../components2/MeetingGuide'
@@ -16,11 +11,13 @@ import AllPeople from '../../components2/AllPeople'
 
 
 import PointDiv from '../newHome/componets/PointDiv'
+import Title from "../../components2/Title/index";
+import Footer from "../../components2/Footer/index";
 
 const generateImgAry = () => {
   let ary = [];
-  for (let i = 1; i < 17; i++) {
-    ary.push(require(`../../images2/accordion_bg${i}.png`))
+  for (let i = 1; i < 5; i++) {
+    ary.push(require(`../../images2/tu${i}.png`))
   }
   return ary
 }
@@ -57,18 +54,14 @@ export default class extends Component {
     let {openPop, closePop, setLoginCb} = this.props.history
     return (
       <div className="entry-page">
+
         <div className="banner-wrapper">
           <img src={BannerImg} alt=""/>
         </div>
-        
         {/*九宫格*/}
         <NineSquare/>
-        
-        
-        {/*大会日程*/}
-        <div className="agenda-wrapper">
-          <img src={agenda_title} alt=""/>
-        </div>
+
+        <Title Title="大会议程" EnglishName="AGENDA"/>
         <div className="accordion-wrapper">
           <div className="accordion">
             {
@@ -85,12 +78,8 @@ export default class extends Component {
             }
           </div>
         </div>
-        
-        {/*大会亮点*/}
-        <div className="light-dot-img">
-          <img src={LightImg} alt=""/>
-        </div>
 
+        <Title Title="亮点环节" EnglishName="HIGHLIGHT LINK"/>
         <div className="accordion-wrapper">
           <div className="accordion">
             {
@@ -105,11 +94,7 @@ export default class extends Component {
         {/*参会指南*/}
         <MeetingGuide/>
         
-       {/* 联系我们*/}
-        <div className="contact-us">
-          <img src={contact_us}/>
-        </div>
-        <PointDiv/>
+        <Footer/>
         
       </div>
     )

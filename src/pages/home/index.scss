@@ -1,28 +1,12 @@
 .entry-page {
   min-height: calc(100vh);
-  background: #0b1220;
+  background: #FFF;
   .banner-wrapper {
     width: 100%;
     img {
       width: 100%;
     }
   }
-
-  .nine-square {
-    margin-top: .15rem;
-    height: 1.5rem;
-    width: 100%;
-    background: #0b1220;
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    img {
-      width: 1.06rem;
-      height: .35rem;
-    }
-  }
-
    .agenda-wrapper{
      margin-top: .45rem;
     img {

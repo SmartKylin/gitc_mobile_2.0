@@ -19,8 +19,7 @@ export default class extends Component {
     let {collapsed} = this.state
     let {agenda, bgImg} = this.props
     let {openPop, closePop, setLoginCb} = this.props
-    // let json = JSON.parse(agenda.json)
-    // console.log(json);
+
     let obj = {
       pic:"",
       stime:"09:00-10:00",
@@ -55,12 +54,12 @@ export default class extends Component {
             agenda.data && agenda.data.length
             ? agenda.data.map((item, ind) => (
             <SpeechItem
-            key={ind}
-            speecher={item}
-      
-            openPop={openPop}
-            closePop={closePop}
-            setLoginCb={setLoginCb}
+              key={ind}
+              speecher={item}
+
+              openPop={openPop}
+              closePop={closePop}
+              setLoginCb={setLoginCb}
             />
             ))
             : null

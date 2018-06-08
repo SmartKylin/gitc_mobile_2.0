@@ -2,13 +2,33 @@
   margin-top: .15rem;
   height: 1.5rem;
   width: 100%;
-  background: #0b1220;
-  justify-content: space-around;
+  background: #FFF;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
-  align-items: flex-start;
-  img {
+  a {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     width: 1.06rem;
     height: .35rem;
+    left: .35rem;
+    border-radius:.35rem;
+    color: #FFF;
+    background-image:linear-gradient(-45deg, #3791CE 0%, #36A1DA 35%, #B36EAD 66%, #EE4F75 100%);
+    font-family: PingFangSC-Medium;
+    span:nth-child(1){
+      font-size: 14px;
+      color: #333333;
+    }
+    span:nth-child(1){
+      opacity: 0.99;
+      font-size: 8px;
+      color: #999999;
+      line-height: 8px;
+    }
   }
 }

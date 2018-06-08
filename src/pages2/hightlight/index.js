@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import './index.scss'
 
 import {getAgenda, getLightDot} from "../../services/home";
-import LightImg from '../../images2/light_dot.png'
 import HighLight from '../../components2/Highlight'
+import Title from "../../components2/Title/index";
 
 
 
@@ -46,11 +46,7 @@ export default class extends Component {
     let {highlightData} = this.state
     return (
       <div className="entry-page">
-        {/*大会亮点*/}
-        <div className="light-dot-img">
-          <img src={LightImg} alt=""/>
-        </div>
-
+        <Title Title="亮点环节" EnglishName="HIGHLIGHT LINK"/>
         <div className="accordion-wrapper">
           <div className="accordion">
             {

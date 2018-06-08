@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 import GuestItem from '../../components2/GuestItem'
 import {getPopleList, getSpeecherGroup} from "../../services/home";
-import SpeecherImg from '../../images2/speecher-header.png'
 import Logo from '../../pages/newHome/images/logo.png'
 import './index.scss'
-import NewFouter from "../Fouter/index";
+import Footer from "../Footer/index";
 
 export default class extends Component {
   constructor(props) {
@@ -44,7 +43,7 @@ export default class extends Component {
             : null
           }
         </div>
-        <NewFouter/>
+        <Footer/>
       </div>
     )
   }

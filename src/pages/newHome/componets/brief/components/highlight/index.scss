@@ -8,10 +8,13 @@
     display: flex;
     justify-content: center;
     border-radius: 4px;
-    background: black;
-    font-size: 10px;
+    background: #FFF;
     padding:9px 10px 10px 13px;
-    color:#fff;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #666666;
+    line-height: 20px;
+    text-align: justify;
   }
   //.accor-header {
   //  height: .48rem;
@@ -29,7 +32,7 @@
   .icon-xiangshang
   {
     position: absolute;
-    right: 11px;
+    right: 16px;
     top: 25%;
   }
   .light-content {

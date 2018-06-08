@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import GuestItem from '../../components2/GuestItem'
 import {getPopleList} from "../../services/home";
-import PresidentImg from '../../images2/president_all_03.png'
 import Logo from '../../pages/newHome/images/logo.png'
-import NewFouter from '../../components2/Fouter'
 import './index.scss'
+import Title from "../Title/index";
+import Footer from "../Footer/index";
 
 export default class extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ export default class extends Component {
     return (
       <div className="all-people">
         {this.props.bjImg ?  <img src={Logo} alt="" className="item-header"/>:"" }
-        <img src={PresidentImg} alt="" className="item-header"/>
+        <Title Title="大会主席团" EnglishName="PRESIDIUM"/>
         <div className="people-group">
           {
             presidentData.length
@@ -36,8 +36,9 @@ export default class extends Component {
             : null
           }
         </div>
+
         {
-          this.props.fouter?<NewFouter/>:""
+          this.props.fouter?<Footer/>:""
         }
       </div>
     )

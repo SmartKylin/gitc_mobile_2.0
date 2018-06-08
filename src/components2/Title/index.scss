@@ -1,0 +1,22 @@
+.Title_box{
+  margin: 0 auto;
+  width: 155px;
+  background:url('./images/mobile/m-title.png') no-repeat;
+  height:30px;
+  background-size:100% 100%;
+  margin-top: 64px;
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: PingFangSC-Regular;
+  span:nth-child(1){
+    font-size: 14px;
+    color: #333333;
+  }
+  span:nth-child(2){
+    font-size: 10px;
+    color: #999999;
+  }
+}
