@@ -35,8 +35,8 @@ export default class Conference extends React.Component {
           <div className="ConferenceBoxShangBox">
            <Title Title={list.data.name}  EnglishName={list.data.summary}/>
             {
-              timeArr && timeArr.map(item => {
-                return <div className="ConferenceTime">
+              timeArr && timeArr.map((item,index) => {
+                return <div key={index} className="ConferenceTime">
                   <i className="iconfont icon-shijian" style={{color:"#30508e",marginRight:"3px"}}/>时间: {item}
                 </div>
               })

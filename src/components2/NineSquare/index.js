@@ -38,12 +38,12 @@ export default class extends Component {
         {
           nine_imgs.map((item, index) => {
             if(index == 0 || index == 3){
-              return (<a href={link[index]}>
+              return (<a key={index} href={link[index]}>
                 <sapn>{item.name}</sapn>
                 <sapn>{item.EnglishName}</sapn>
               </a>)
             }else {
-              return(<Link to={link[index]} key={index}>
+              return(<Link  to={link[index]} key={index}>
                 <sapn>{item.name}</sapn>
                 <sapn>{item.EnglishName}</sapn>
               </Link>)
