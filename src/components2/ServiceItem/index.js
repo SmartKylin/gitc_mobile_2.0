@@ -1,20 +1,6 @@
 import React, {Component} from 'react'
-import './index.scss'
 import AccordionHeader from '../../components2/AccordionHeader'
-import {Link} from 'react-router-dom'
-// import SpeechItem from '../../components2/SpeechItem'
-
-function getLinkbyName(name) {
-  if (name.indexOf('品牌专场') > -1) {
-    return  <Link style={{color:"#35a2e8"}} to="/brand">查看详情</Link>
-  } else if (name.indexOf('活动路演') > -1) {
-    return <Link style={{color:"#35a2e8"}} to="/roadshow">查看详情</Link>
-  } else if (name.indexOf('集印章') > -1) {
-    return <Link style={{color:"#35a2e8"}} to="/collectstamp">查看详情</Link>
-  } else {
-    return null
-  }
-}
+import Introduce from "../Introduce/index";
 
 export default class extends Component {
   constructor(props) {
@@ -22,8 +8,6 @@ export default class extends Component {
     this.state = {
       collapsed: false,
     }
-  }
-  componentWillMount () {
   }
   
   changeCollapse = () => {
@@ -43,37 +27,21 @@ export default class extends Component {
   
     return (
       <div className="my-accordion">
-
         <AccordionHeader
           name={service.name}
           changeCollapse={this.changeCollapse}
           bgImg={bgImg}
           enName={content.en}
           collapsed={collapsed}
-          // headerIcon={'icon-yongcan'}
           index={index}
         />
+
         {
           collapsed
           ? <div>
             {
-              // service.author
               service.author != '0'
-              // ? (service.content)
-              ? <div className="light-content">
-                    <div className="time">
-                      <span className="light-item-title">时间</span>
-                      {content.time}
-                    </div>
-                    <div className="addr">
-                      <span className="light-item-title">地点</span>
-                      {content.addr}
-                    </div>
-                    <div className="summary">
-                    <span className="light-item-title">说明</span>
-                    {content.summary}
-                  </div>
-                </div>
+              ? <Introduce content={content}/>
               : <div dangerouslySetInnerHTML={{__html: service.content}} style={{width: '100%'}} />
             }
           </div>

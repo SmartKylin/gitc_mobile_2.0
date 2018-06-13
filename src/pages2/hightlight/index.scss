@@ -1,14 +1,14 @@
 .entry-page {
   background: #FFF;
   min-height: calc(100vh);
+  padding-top: 56px;
   .accordion-wrapper {
     background-size: cover;
-    padding: 0 12px;
+    padding-bottom: 50px;
     .accordion {
       // margin-top: .32rem;
     }
   }
-
   .light-dot-img {
     img {
       width: 100%;

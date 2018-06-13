@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import GuestItem from '../../components2/GuestItem'
 import {getPopleList} from "../../services/home";
 import './index.scss'
-import Logo from '../../pages/newHome/images/logo.png'
+import Logo from '../../images2/banner.png'
 import Footer from "../Footer/index";
 import Title from "../Title/index";
 export default class extends Component {

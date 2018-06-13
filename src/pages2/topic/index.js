@@ -1,14 +1,14 @@
 import React from 'react'
-// import TopicTitle from '../../images2/topic_title.png'
 import {getBriefList} from "../../services/newhome";
 import Highlight from './components/highlight'
 import './index.scss'
+import Title from "../../components2/Title/index";
+import Backoff from "../../components2/Backoff/index";
 
 const generateImgAry = () => {
   let ary = [];
-  for (let i = 1; i < 17; i++) {
-    // ary.push(require(`../../../../images2/accordion_bg${i}.png`))
-    ary.push(require(`../../images2/accordion_bg${i}.png`))
+  for (let i = 1; i < 5; i++) {
+    ary.push(require(`../../images2/tu${i}.png`))
   }
   return ary
 }
@@ -37,7 +37,7 @@ export default class Brief extends React.Component{
   render(){
     return(
         <div className="BriefBox router-page" style={{paddingTop: '40px'}}>
-          <div className="topic-img"/>
+          <Title Title="大会专题" EnglishName="AGENDA"/>
           {
             this.state.data && this.state.data.map((item,index) =>(
               <Highlight
@@ -47,7 +47,7 @@ export default class Brief extends React.Component{
               />
             ))
           }
-
+          <Backoff/>
         </div>
     )
   }

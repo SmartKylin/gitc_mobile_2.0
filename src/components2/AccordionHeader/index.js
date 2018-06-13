@@ -11,7 +11,7 @@ export default class extends Component {
       <div
         className="accor-header"
         onClick={changeCollapse}
-        style={bgImg ? {background: `url(${bgImg}) no-repeat center`} : {backgroundColor: '#fff'}}
+        style={bgImg ? {background: `url(${bgImg}) no-repeat center `,backgroundSize:'100% 100%'} : {backgroundColor:'#fff',backgroundSize:'100% 100%'}}
       >
         {
           index ?

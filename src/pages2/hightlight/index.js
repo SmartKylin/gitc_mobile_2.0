@@ -4,13 +4,14 @@ import './index.scss'
 import {getAgenda, getLightDot} from "../../services/home";
 import HighLight from '../../components2/Highlight'
 import Title from "../../components2/Title/index";
+import Backoff from "../../components2/Backoff/index";
 
 
 
 const generateImgAry = () => {
   let ary = [];
-  for (let i = 1; i < 17; i++) {
-    ary.push(require(`../../images2/accordion_bg${i}.png`))
+  for (let i = 1; i < 5; i++) {
+    ary.push(require(`../../images2/tu${i}.png`))
   }
   return ary
 }
@@ -27,8 +28,6 @@ export default class extends Component {
     }
   }
   async componentWillMount () {
-    // console.log(this.props.history, 'fdfd');
-    
     let res = await getAgenda()
     .then(res => res.json())
     await this.setState({
@@ -56,6 +55,7 @@ export default class extends Component {
             }
           </div>
         </div>
+        <Backoff/>
       </div>
     )
   }

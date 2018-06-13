@@ -31,11 +31,13 @@ export default class extends Component {
         {
           collapsed
           ? <div  className="Mycontent">
-            <div>
-              {data.content}
-              <div style={{width:'100%',textAlign:"right"}}>
-                <Link to={`/meetingdetails/${data.id}`} style={{color:"#2269fa"}}>&nbsp;&nbsp;&nbsp;专题详情>></Link>
-              </div>
+              <div>{data.content}</div>
+              <div className="Mycontent-Div">
+                <div className="Mycontent-Title">
+                  <Link to={`/meetingdetails/${data.id}`}>
+                    专题详情
+                  </Link>
+                </div>
             </div>
           </div>
           : null

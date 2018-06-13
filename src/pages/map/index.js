@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ChildBackground from 'containers/child_container'
 import './index.scss'
 import {getListImgs} from '../../services/getListNews'
+import Title from "../../components2/Title/index";
 
 const getImg = num => require(`../../images/floor_${num}.jpg`)
 
@@ -76,7 +77,7 @@ export default class Map extends Component {
             <div>
               <div className="map-box">
                 <div className="map-img-box">
-                  <h4 className="map-header">{imgAry[index].content}</h4>
+                  <Title Title={imgAry[index].content} style={{width:'325px',paddingLeft:'27px'}}/>
                   <img src={imgAry[index].img} alt="" className="map-img" onClick={this.openImg.bind(this)}/>
                 </div>
     

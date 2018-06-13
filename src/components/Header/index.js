@@ -80,7 +80,7 @@ export default class Header extends React.Component{
     }
     return(
         <div className="HeaderBox">
-          <div className="HeaderInner" style={this.state.styleTop?styleTop:{}}>
+          <div className="HeaderInner" style={styleTop}>
             <div className="HeaderBoxLogo">
             </div>
             <div className="HeaderBoxGPBox">

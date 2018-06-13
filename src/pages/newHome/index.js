@@ -3,10 +3,6 @@ import Logo from '../../images2/banner.png'
 import './index.scss'
 import Brief from './componets/brief'
 import ListMeetings from '../../components2/AllPeople'
-
-import Cooperative from './componets/cooperative'
-import MapWJ from './componets/Mapwj/index'
-
 import PointDiv from './componets/PointDiv/index'
 import MeetingGuide from '../../components2/MeetingGuide'
 import NineSquare from '../../components2/NineSquare'

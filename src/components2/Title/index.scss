@@ -1,6 +1,6 @@
 .Title_box{
   margin: 0 auto;
-  width: 155px;
+  width: 200px;
   background:url('./images/mobile/m-title.png') no-repeat;
   height:30px;
   background-size:100% 100%;
@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   font-family: PingFangSC-Regular;
+  padding-left: 7px;
   span:nth-child(1){
     font-size: 14px;
     color: #333333;

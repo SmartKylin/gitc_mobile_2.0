@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import './index.scss'
 import SpeechItem from '../../../../components2/SpeechItem'
 import AccordionHeader from '../../../../components2/AccordionHeader'
 

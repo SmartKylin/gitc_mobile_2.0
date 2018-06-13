@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import GuestItem from '../../components2/GuestItem'
 import {getPopleList, getSpeecherGroup} from "../../services/home";
-import Logo from '../../pages/newHome/images/logo.png'
+import Logo from '../../images2/banner.png'
 import './index.scss'
 import Footer from "../Footer/index";
+import Title from "../Title/index";
 
 export default class extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class extends Component {
     return (
       <div className="speecher-group">
         <img src={Logo} alt="" className="item-header"/>
-        <div className="speecher-header"/>
+        <Title Title="演讲嘉宾" EnglishName="SPEAKERS"/>
         <div className="people-group">
           {
             speecherData.length

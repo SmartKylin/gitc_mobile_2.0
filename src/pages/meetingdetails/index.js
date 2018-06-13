@@ -4,6 +4,7 @@ import './index.scss'
 import {gatMeetingDetails} from "../../services/meetingDetails";
 // import AccordionHeader from '../../components2/AccordionHeader'
 import Accor from './component/Accordion'
+import Backoff from "../../components2/Backoff/index";
 
 export default class MeetingDetails extends React.Component{
 
@@ -30,14 +31,12 @@ export default class MeetingDetails extends React.Component{
     let {openPop, closePop, setLoginCb} = this.props.history
     return(
         <div className="MeetingDetailsBox">
-          this.state.data && this.state.data.length > 0
-            ? <Conference  id={this.state.id} data={this.state.data? this.state.data : ""}/>
-  
+         <Conference  id={this.state.id} data={this.state.data? this.state.data : ""}/>
           {
             data && data['23']
             ? <Accor
               list={data.first}
-              bgImg={require('../../images2/accordion_bg1.png')}
+              bgImg={require('../../images2/tu1.png')}
               name={data.data.name + '(23日)'}
               enName={data.data.summary}
               openPop={openPop}
@@ -50,7 +49,7 @@ export default class MeetingDetails extends React.Component{
             data && data['24']
             ? <Accor
                 list={data.last}
-                bgImg={require('../../images2/accordion_bg2.png')}
+                bgImg={require('../../images2/tu2.png')}
                 name={data.data.name + '(24日)'}
                 enName={data.data.summary}
                 
@@ -60,7 +59,7 @@ export default class MeetingDetails extends React.Component{
             />
             : null
           }
-
+          <Backoff/>
         </div>
     )
   }

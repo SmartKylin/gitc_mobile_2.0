@@ -7,8 +7,8 @@ export default class Title extends React.Component{
   }
 
   render(){
-    let {Title,EnglishName} = this.props
-    return  <div className="Title_box">
+    let {Title,EnglishName,style} = this.props
+    return  <div className="Title_box" style={style}>
         <span>{Title}</span>
         <span>{EnglishName}</span>
     </div>

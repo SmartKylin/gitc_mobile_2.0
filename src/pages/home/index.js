@@ -1,16 +1,11 @@
 import React, {Component} from 'react'
 import BannerImg from '../../images2/banner.png'
 import './index.scss'
-import contact_us from '../../images2/fouterhome_03.png'
 import {getAgenda, getLightDot} from "../../services/home";
 import Accor from '../../components2/Accordion'
 import HighLight from '../../components2/Highlight'
 import NineSquare from '../../components2/NineSquare'
 import MeetingGuide from '../../components2/MeetingGuide'
-import AllPeople from '../../components2/AllPeople'
-
-
-import PointDiv from '../newHome/componets/PointDiv'
 import Title from "../../components2/Title/index";
 import Footer from "../../components2/Footer/index";
 
@@ -90,7 +85,6 @@ export default class extends Component {
           </div>
         </div>
 
-        
         {/*参会指南*/}
         <MeetingGuide/>
         

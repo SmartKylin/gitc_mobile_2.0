@@ -1,6 +1,7 @@
 .entry-page {
   min-height: calc(100vh);
   background: #FFF;
+  padding-top: 56px;
   .banner-wrapper {
     width: 100%;
     img {
@@ -24,7 +25,6 @@
   .accordion-wrapper {
     //background: url(../../images2/accordion_bg.jpg) no-repeat center;
     background-size: cover;
-    padding: 0 12px;
     .accordion {
       // margin-top: .32rem;
       //background: url(../../images2/accordion_bg.jpg) no-repeat center;

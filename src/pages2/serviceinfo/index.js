@@ -5,8 +5,8 @@ import ServiceItem from '../../components2/ServiceItem'
 
 const generateImgAry = () => {
   let ary = [];
-  for (let i = 1; i < 17; i++) {
-    ary.push(require(`../../images2/accordion_bg${i}.png`))
+  for (let i = 1; i < 5; i++) {
+    ary.push(require(`../../images2/tu${i}.png`))
   }
   return ary
 }
@@ -26,8 +26,6 @@ export default class extends Component {
     await this.setState({
       serviceInfo: serviceData.data
     })
-    /*console.log(this.state.serviceInfo, 'serviece');*/
-    
   }
   
   render () {
@@ -35,7 +33,7 @@ export default class extends Component {
     
     let {serviceInfo} = this.state
     return (
-      <div className="router-page" style={{padding: '60px 12px 0 12px'}}>
+      <div className="router-page" style={{paddingTop: '60px'}}>
         {
           serviceInfo.map((item, ind) => (
           <ServiceItem key={ind} service={item} bgImg={imgAry[ind]} index={ind+1}/>

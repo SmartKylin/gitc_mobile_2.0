@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
-import './index.scss'
 import SpeechItem from '../../components2/SpeechItem'
 import AccordionHeader from '../AccordionHeader'
 export default class extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      collapsed: true,
+      collapsed: false,
     }
   }
   
@@ -46,7 +45,7 @@ export default class extends Component {
           collapsed={collapsed}
         />
 
-        <div className={collapsed ? 'accor-content hidden-style' : 'accor-content'}>
+        <div className={collapsed ? 'accor-content' : 'accor-content hidden-style'}>
           {agenda.name.indexOf("23") !=-1 && agenda.main != "主会场" ?<SpeechItem icon="yes" style='yes' speecher={obj}/> :""}
 
           {agenda.name.indexOf("23") !=-1 && agenda.main == "基础架构专场" ? <SpeechItem  speecher={obj1}/> :""}

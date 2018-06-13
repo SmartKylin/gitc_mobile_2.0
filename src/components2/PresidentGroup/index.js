@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import GuestItem from '../../components2/GuestItem'
 import {getPopleList} from "../../services/home";
-import Logo from '../../pages/newHome/images/logo.png'
+import Logo from '../../images2/banner.png'
 import './index.scss'
 import Title from "../Title/index";
 import Footer from "../Footer/index";
