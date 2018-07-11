@@ -3,7 +3,7 @@ import http from '../fetch'
 
 export function getSpeecherGroup(phone) {
   let phonenew = phone? phone : "13800138000"
-  return http.post(`http://120.92.10.182:8000/api/gitc/person/pages.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}&order_by=ename`)
+  return http.post(`http://api.thegitc.com/api/gitc/person/pages.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}&order_by=ename`)
 }
 
 export function getPopleList(pageId, phone) {
@@ -13,17 +13,17 @@ export function getPopleList(pageId, phone) {
 
 export function getAgenda(phone) {
   let phonenew = phone? phone : "13800138000"
-  return http.get(`http://120.92.10.182:8000/api/gitc/person/beijing.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}&order_by=stime`)
+  return http.get(`http://api.thegitc.com/api/gitc/person/beijing.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}&order_by=stime`)
 }
 
 export function getDate1(phone) {
   let phonenew = phone? phone : "13800138000"
-  return http.get(`http://120.92.10.182:8000/api/gitc/person-4/all/list.json?token=1afb756d16740266efde290917ca1a8e&type=1&phone=${phonenew}`)
+  return http.get(`http://api.thegitc.com/api/gitc/person-4/all/list.json?token=1afb756d16740266efde290917ca1a8e&type=1&phone=${phonenew}`)
 }
 
 export function getDate2(phone) {
   let phonenew = phone? phone : "13800138000"
-  return http.get(`http://120.92.10.182:8000/api/gitc/person-6/all/list.json?token=1afb756d16740266efde290917ca1a8e&type=1&phone=${phonenew}`)
+  return http.get(`http://api.thegitc.com/api/gitc/person-6/all/list.json?token=1afb756d16740266efde290917ca1a8e&type=1&phone=${phonenew}`)
 }
 
 
