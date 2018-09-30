@@ -16,6 +16,7 @@ import AllPeople from '../../components2/AllPeople'
 
 
 import PointDiv from '../newHome/componets/PointDiv'
+import Brief from "../newHome/componets/brief";
 
 const generateImgAry = () => {
   let ary = [];
@@ -57,15 +58,18 @@ export default class extends Component {
     let {openPop, closePop, setLoginCb} = this.props.history
     return (
       <div className="entry-page">
+        {/*banner---修改王杰*/}
         <div className="banner-wrapper">
           <img src={BannerImg} alt=""/>
         </div>
         
-        {/*九宫格*/}
+        {/*九宫格----修改库素*/}
         <NineSquare/>
-        
-        
-        {/*大会日程*/}
+
+        {/*大会简介-----新写库素*/}
+        {/*<Brief/>*/}
+
+        {/*会议结构 --- 修改王杰*/}
         <div className="agenda-wrapper">
           <img src={agenda_title} alt=""/>
         </div>
@@ -86,26 +90,10 @@ export default class extends Component {
           </div>
         </div>
         
-        {/*大会亮点*/}
-        <div className="light-dot-img">
-          <img src={LightImg} alt=""/>
-        </div>
-
-        <div className="accordion-wrapper">
-          <div className="accordion">
-            {
-              highlightData.map((item, ind) => (
-               <HighLight key={ind} light={item} bgImg={imgAry[ind]}/>
-              ))
-            }
-          </div>
-        </div>
-
-        
-        {/*参会指南*/}
+        {/*会议地址---修改王杰 ++  交通信息*/}
         <MeetingGuide/>
         
-       {/* 联系我们*/}
+       {/* 联系我们---修改王杰*/}
         <div className="contact-us">
           <img src={contact_us}/>
         </div>
