@@ -16,6 +16,7 @@
     .HeaderBoxGPBox{
       display:flex;
       justify-content: space-between;
+      align-items: center;
       height: 0.31rem;
       width: 1.85rem;
       a{
@@ -27,10 +28,9 @@
         }
       }
       .HeaderBoxGPBox-sangang{
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background: url(./images/menu-icon.svg) no-repeat center #263c66;
+        width: 22px;
+        height: 22px;
+        background: url(./images/menu-icon.png) no-repeat center;
         background-size: 80%;
       }
 
@@ -41,11 +41,11 @@
         height: 25px;
         line-height: 25px;
         text-align: center;
-        border-radius: 12px;
+       /* border-radius: 12px;*/
         font-size: 13px;
         color: #fff;
-        background-image:-webkit-linear-gradient(to bottom, #2b4474, #1f3051);
-        background-image: linear-gradient(to bottom, #1f3051, #1f3051);
+       /* background-image:-webkit-linear-gradient(to bottom, #2b4474, #1f3051);
+        background-image: linear-gradient(to bottom, #1f3051, #1f3051);*/
         a{
           color: #fff;
         }
@@ -56,11 +56,11 @@
         height: 25px;
         line-height: 25px;
         text-align: center;
-        border-radius: 12px;
+      /*  border-radius: 12px;*/
         font-size: 13px;
         color: #fff;
-        background-image:-webkit-linear-gradient(to bottom, #1d2d4e, #28406e);
-        background-image: linear-gradient(to bottom, #0f1829, #1d2e4e);
+      /*  background-image:-webkit-linear-gradient(to bottom, #1d2d4e, #28406e);
+        background-image: linear-gradient(to bottom, #0f1829, #1d2e4e);*/
         a{
           color: #fff;
         }

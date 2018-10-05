@@ -4,13 +4,14 @@ import dahuijianjie from './images/大会简介.png'
 import {getBriefList} from "../../../../services/newhome";
 
 import Highlight from './components/highlight'
+import Title from "../../../../components/Title";
 // import TestImg from '../../../../images2'
 
 
 const generateImgAry = () => {
   let ary = [];
   for (let i = 1; i < 17; i++) {
-    ary.push(require(`../../../../images2/accordion_bg${i}.png`))
+    ary.push(require(`../../../../images3/accordion_bg${i}.png`))
   }
   return ary
 }
@@ -39,9 +40,10 @@ export default class Brief extends React.Component{
   render(){
     return(
         <div className="BriefBox router-page">
-            <div className="BriefBoxImg">
+            <Title name='会议结构'/>
+        {/*    <div className="BriefBoxImg">
               <img src={dahuijianjie} alt=""/>
-            </div>
+            </div>*/}
           {
             this.state.data && this.state.data.map((item,index) =>(
                 <Highlight data={item} bgImg={imgAry[index]} key={index}/>
