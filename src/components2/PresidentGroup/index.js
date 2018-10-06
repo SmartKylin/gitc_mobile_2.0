@@ -5,6 +5,7 @@ import PresidentImg from '../../images2/president_all_03.png'
 import Logo from '../../pages/newHome/images/logo.png'
 import NewFouter from '../../components2/Fouter'
 import './index.scss'
+import Title from "../../components/Title";
 
 export default class extends Component {
   constructor(props) {
@@ -26,7 +27,8 @@ export default class extends Component {
     return (
       <div className="all-people">
         {this.props.bjImg ?  <img src={Logo} alt="" className="item-header"/>:"" }
-        <img src={PresidentImg} alt="" className="item-header"/>
+        <Title name='大会主席团'/>
+       {/* <img src={PresidentImg} alt="" className="item-header"/>*/}
         <div className="people-group">
           {
             presidentData.length
