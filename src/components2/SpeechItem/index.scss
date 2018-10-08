@@ -2,7 +2,7 @@
   padding: 6px 4px;
   color: #000;
   border-radius: 4px;
-  background: #fff;
+  background: #052B49;
   display: flex;
   margin-bottom: 3px;
   justify-content: space-between;
@@ -22,6 +22,9 @@
       height: .38rem;
       border-radius: 50%;
     }
+    .time{
+      color: #45AED7;
+    }
 
   }
 
@@ -35,9 +38,15 @@
     .theme {
       font-size: 13px;
       margin-bottom: 13px;
+      color: #FFF;
     }
     .speecher {
       display: flex;
+      font-family: PingFangSC-Light;
+      font-size: 12px;
+      color: #45AED7;
+      text-align: justify;
+      line-height: 22px;
       .name {
         margin-right: .05rem;
         min-width: .4rem;
@@ -46,7 +55,7 @@
         display: flex;
         .company {
           min-width: .38rem;
-          border-right: 2px solid #d6d7d9;
+          //border-right: 2px solid #d6d7d9;
           padding-right: 4px;
           margin-right: 4px;
         }
@@ -75,7 +84,7 @@
     padding: 6px 4px;
     color: #000;
     border-radius: 4px;
-    background: #fff;
+    background: #052B49;
     display: flex;
     margin-bottom: 3px;
     justify-content: space-between;

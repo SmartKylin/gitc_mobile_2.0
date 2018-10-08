@@ -26,8 +26,6 @@ export default class extends Component {
     await this.setState({
       serviceInfo: serviceData.data
     })
-    console.log(this.state.serviceInfo, 'serviece');
-    
   }
   
   render () {

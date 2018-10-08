@@ -4,8 +4,8 @@
   align-items: center;
 }
 .entry-page {
-  min-height: calc(100vh);
-  background: #052B49; //需要改背景
+  background:#052B49 fixed;
+  position: relative;
   .banner-wrapper {
     width: 100%;
     img {
@@ -18,7 +18,6 @@
     padding-top: .15rem;
     height: 3.2rem;
     width: 100%;
-    background: #0b1220;
     justify-content: space-around;
     display: flex;
     flex-wrap: wrap;

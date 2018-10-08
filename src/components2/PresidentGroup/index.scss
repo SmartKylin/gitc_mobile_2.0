@@ -1,11 +1,12 @@
 .all-people {
-  background: #052B49; //需要换背景图片
+  background: #052B49 fixed;
   min-height: calc(100vh);
   .people-group {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
     //justify-content: space-around;
   }
   .item-header {

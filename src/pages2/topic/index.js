@@ -3,6 +3,7 @@ import React from 'react'
 import {getBriefList} from "../../services/newhome";
 import Highlight from './components/highlight'
 import './index.scss'
+import Title from "../../components/Title";
 
 const generateImgAry = () => {
   let ary = [];
@@ -37,7 +38,7 @@ export default class Brief extends React.Component{
   render(){
     return(
         <div className="BriefBox router-page" style={{paddingTop: '40px'}}>
-          <div className="topic-img"/>
+          <Title name='大会专题'/>
           {
             this.state.data && this.state.data.map((item,index) =>(
               <Highlight

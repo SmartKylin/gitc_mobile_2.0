@@ -3,6 +3,7 @@ import Header from './componets/Headpage'
 import {getAgenda} from "../../services/home";
 import './index.scss'
 import SpeechItem from '../../components2/SpeechItem'
+import Title from "../../components/Title";
 
 export default class Schedule extends React.Component{
 
@@ -44,6 +45,7 @@ export default class Schedule extends React.Component{
     // console.log(agendaData, 'shefjdls');
     return(
         <div className="ScheduleBox">
+          <Title name='大会议程'/>
           { agendaData.length
             ? agendaData.map((agenda, index) => (
               <div key={index}>
