@@ -242,7 +242,7 @@ export default class extends Component {
             <span>{speecher.meetaddr}</span>
           </div>
           <div>
-            <i className="iconfont icon-shijian"/>
+            {/*<i className="iconfont icon-shijian"/>*/}
             <span>{speecher && formatDate(speecher.sdata)}</span>
             <span>{speecher.stime}</span>
           </div>
