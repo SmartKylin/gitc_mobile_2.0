@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.scss'
-import footer from './images/diye.png'
+import footer from './images/footer.png'
 export default class ContactUs extends React.Component{
 
 

@@ -5,6 +5,7 @@ import SpeecherImg from '../../images2/speecher-header.png'
 import Logo from '../../pages/newHome/images/logo.png'
 import './index.scss'
 import NewFouter from "../Fouter/index";
+import Title from "../../components/Title";
 
 export default class extends Component {
   constructor(props) {
@@ -27,7 +28,8 @@ export default class extends Component {
     return (
       <div className="speecher-group">
         <img src={Logo} alt="" className="item-header"/>
-        <div className="speecher-header"/>
+        {/*<div className="speecher-header"/>*/}
+        <Title name='演讲嘉宾'/>
         <div className="people-group">
           {
             speecherData.length
