@@ -1,5 +1,8 @@
 .entry-page {
-  background: #052B49; //需要改背景
+  width: 100%;
+  background:#052B49 fixed;
+  background-size: cover;
+  position: relative;
   min-height: calc(100vh);
   .accordion-wrapper {
     background-size: cover;
