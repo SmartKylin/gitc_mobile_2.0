@@ -45,7 +45,7 @@ export default class Schedule extends React.Component{
     // console.log(agendaData, 'shefjdls');
     return(
         <div className="ScheduleBox">
-          <Title name='大会议题'/>
+          <Title name='大会议程'/>
           { agendaData.length
             ? agendaData.map((agenda, index) => (
               <div key={index}>
