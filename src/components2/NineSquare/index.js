@@ -6,28 +6,28 @@ const cont= [{
   engtit: 'LIVE BROADCAST'
 }, {
   tit: '大会会刊',
-  engtit: 'LIVE BROADCAST'
+  engtit: 'PROCEEINGS'
 }, {
   tit: '会场微信群',
-  engtit: 'LIVE BROADCAST'
+  engtit: 'WECHAT GROUP'
 }, {
   tit: '大会相册',
-  engtit: 'LIVE BROADCAST'
+  engtit: 'ALBUM'
 }, {
   tit: '热门环节',
-  engtit: 'LIVE BROADCAST'
+  engtit: 'HOT LINK'
 }, {
   tit: '活动信息',
-  engtit: 'LIVE BROADCAST'
+  engtit: 'EVENT INFO'
 }, {
   tit: '品牌专场',
-  engtit: 'LIVE BROADCAST'
+  engtit: 'BRAND SESSION'
 }, {
   tit: '服务信息',
-  engtit: 'LIVE BROADCAST'
+  engtit: 'SERVICE INFO'
 }, {
   tit: '呼叫小秘书',
-  engtit: 'LIVE BROADCAST'
+  engtit: 'CALL SECRETARY'
 }]
 const generateNineAry = () => {
   let ary = []
