@@ -13,7 +13,7 @@ import HighLight from '../../components2/Highlight'
 import NineSquare from '../../components2/NineSquare'
 import MeetingGuide from '../../components2/MeetingGuide'
 import AllPeople from '../../components2/AllPeople'
-
+import Introduce from '../newHome/componets/introduction'
 
 import PointDiv from '../newHome/componets/PointDiv'
 import Brief from "../newHome/componets/brief";
@@ -67,7 +67,8 @@ export default class extends Component {
         <NineSquare/>
 
         {/*大会简介-----新写库素*/}
-        {/*<Brief/>*/}
+        <Introduce/>
+        {/*<Brief />*/}
 
         {/*会议结构 --- 修改王杰*/}
         <div className="agenda-wrapper">
