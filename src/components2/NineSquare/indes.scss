@@ -1,6 +1,12 @@
+@mixin flexs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .nine-square {
   margin-top: .15rem;
-  height: 1.5rem;
+  height: 3.2rem;
   width: 100%;
   background: #0b1220;
   justify-content: space-around;
@@ -8,7 +14,24 @@
   flex-wrap: wrap;
   align-items: flex-start;
   img {
+    width: 46px;
+    height: 46px;
+  }
+  p{
+    display: flex;
+    @include flexs;
+    span{
+      font-size: 14px;
+      &:nth-child(2){
+        font-size: 8px;
+        margin-top: 3px;
+        font-family: 'PingFangSC-Light';
+      }
+    }
+  }
+  li{
     width: 1.06rem;
-    height: .35rem;
+    @include flexs;
+    color: #fff;
   }
 }
