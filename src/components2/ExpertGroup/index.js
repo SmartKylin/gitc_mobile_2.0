@@ -5,6 +5,7 @@ import ExpertImg from '../../images2/expert_all_03.png'
 import './index.scss'
 import Logo from '../../pages/newHome/images/logo.png'
 import NewFouter from '../../components2/Fouter'
+import Title from "../../components/Title";
 export default class extends Component {
   constructor(props) {
     super(props)
@@ -26,7 +27,8 @@ export default class extends Component {
     return (
       <div className="all-people">
         {this.props.bjImg ?  <img src={Logo} alt="" className="item-header"/>:"" }
-        <img src={ExpertImg} alt="" className="item-header"/>
+       {/* <img src={ExpertImg} alt="" className="item-header"/>*/}
+       <Title name='专家顾问团'/>
         <div className="people-group">
           {
             expertData.length
