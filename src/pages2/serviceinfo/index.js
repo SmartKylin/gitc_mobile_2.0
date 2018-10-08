@@ -6,7 +6,7 @@ import ServiceItem from '../../components2/ServiceItem'
 const generateImgAry = () => {
   let ary = [];
   for (let i = 1; i < 17; i++) {
-    ary.push(require(`../../images2/accordion_bg${i}.png`))
+    ary.push(require(`../../images2/accordionA_bg${i}.png`))
   }
   return ary
 }

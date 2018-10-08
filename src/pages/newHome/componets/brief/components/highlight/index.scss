@@ -3,11 +3,9 @@
   color: #fff;
   //height: 8rem;
   margin-bottom: 3px;
-  border-radius: 4px;
   .Mycontent{
     font-family: PingFangSC-Regular;
     display: flex;
-    border-radius: 4px;
     padding:9px 10px 10px 13px;
     font-size: 12px;
     color: #FFFFFF;
@@ -37,14 +35,13 @@
   }
   .light-content {
     font-size: 13px;
-    background: #fff;
-    color: #000;
+    background: #052B49;
+    color: #FFF;
     padding: 12px 15px;
-    border-radius: 4px;
   }
 
   .light-item-title {
-    color: #35a2e8;
+    color: #FFF;
     margin-right: 9px;
   }
 }

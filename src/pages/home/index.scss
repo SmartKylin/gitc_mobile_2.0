@@ -5,16 +5,17 @@
 }
 .entry-page {
   min-height: calc(100vh);
-  background: #0b1220;
+  background: #052B49; //需要改背景
   .banner-wrapper {
     width: 100%;
     img {
+      display: block;
       width: 100%;
     }
   }
 
   .nine-square {
-    margin-top: .15rem;
+    padding-top: .15rem;
     height: 3.2rem;
     width: 100%;
     background: #0b1220;
@@ -62,7 +63,6 @@
   .accordion-wrapper {
     //background: url(../../images2/accordion_bg.jpg) no-repeat center;
     background-size: cover;
-    padding: 0 12px;
     .accordion {
       // margin-top: .32rem;
       //background: url(../../images2/accordion_bg.jpg) no-repeat center;

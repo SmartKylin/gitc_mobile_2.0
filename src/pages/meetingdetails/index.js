@@ -37,7 +37,7 @@ export default class MeetingDetails extends React.Component{
             data && data['23']
             ? <Accor
               list={data.first}
-              bgImg={require('../../images2/accordion_bg1.png')}
+              bgImg={require('../../images2/accordionA_bg1.png')}
               name={data.data.name + '(23日)'}
               enName={data.data.summary}
               openPop={openPop}
@@ -50,7 +50,7 @@ export default class MeetingDetails extends React.Component{
             data && data['24']
             ? <Accor
                 list={data.last}
-                bgImg={require('../../images2/accordion_bg2.png')}
+                bgImg={require('../../images2/accordionA_bg2.png')}
                 name={data.data.name + '(24日)'}
                 enName={data.data.summary}
                 
