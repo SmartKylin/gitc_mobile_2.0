@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import BannerImg from '../../images2/banner.png'
+import BannerImg from '../../images2/banner.jpg'
 import './index.scss'
 import contact_us from '../../images2/fouterhome_03.png'
 // import {Accordion, List} from 'antd-mobile'

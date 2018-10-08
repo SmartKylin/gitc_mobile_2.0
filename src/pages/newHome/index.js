@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './images/logo.png'
+import Logo from '../../images2/banner.jpg'
 import './index.scss'
 import AnAssembly from './componets/AnAssembly'
 import Introduction from './componets/introduction'
@@ -32,14 +32,14 @@ export default class NewHome extends React.Component {
                 {/*九宫格----库素修改*/}
                 <NineSquare/>
 
+                {/*大会简介-----库素修改*/}
+                <Introduction/>
+
                 {/*大会亮点-----库素修改*/}
                 <AnAssembly/>
 
                 {/*会议结构 --- 修改王杰*/}
                 <Brief/>
-
-                {/*大会简介-----库素修改*/}
-                <Introduction/>
 
                 {/*主席团  ||  顾问团  --- 王杰修改*/}
                 <ListMeetings/>
