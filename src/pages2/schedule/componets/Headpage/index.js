@@ -2,11 +2,19 @@ import React from 'react'
 // import dahuiYihceng from '../../images/dahuiyicheng.png'
 import './index.scss'
 import {Link} from 'react-router-dom'
-
+const styleLink = {
+    color: '#FFF',
+    width: '80px',
+    height: '25px',
+    lineHeight: '25px',
+    textAlign: 'center',
+    border: '1px solid',
+    display: 'inline-block',
+    borderRadius: '25px',
+}
 export default class HeaderPage extends React.Component {
   render() {
     let {name, enName, addr, link} = this.props
-    console.log(name,"12312");
     return (
       <div className="HeaderPageBoxBox">
         <div className="HeaderzPageBox">
@@ -17,11 +25,11 @@ export default class HeaderPage extends React.Component {
             {enName}
           </div>
           <div className="HeaderPageBoxDz">
-            <i className="iconfont icon-positioning" style={{color: "#30508e", marginRight: "3px", fontSize: '18px'}}/>
+            <i className="iconfont icon-positioning" style={{color: "#30508e", marginRight: "3px", fontSize: '15px'}}/>
             {addr}
           </div>
         </div>
-        <Link to={`/meetingdetails/${link}`} className="HeaderzPageBoxXiang">详情>></Link>
+        <Link style={styleLink} to={`/meetingdetails/${link}`} className="HeaderzPageBoxXiang">专题详情</Link>
       </div>
     )
   }
