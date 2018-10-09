@@ -46,7 +46,7 @@ export default class extends Component {
               </div>
               <div className="addr">
                 <span className="light-item-title">TEL:</span>
-                <a style={{color:"black"}} href={`tel:${service.tel}`}>{service.tel}</a>
+                <a style={{color:"#FFF"}} href={`tel:${service.tel}`}>{service.tel}</a>
               </div>
               {
                 service.email?
