@@ -1,6 +1,13 @@
 .all-people {
   background: #052B49 fixed;
   min-height: calc(100vh);
+  .bg{
+    img {
+      display: block;
+      width: 100%;
+      min-height: calc(100vh);
+    }
+  }
   .people-group {
     width: 100%;
     display: flex;

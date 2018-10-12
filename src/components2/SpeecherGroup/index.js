@@ -21,9 +21,6 @@ export default class SpeecherGroup extends Component {
         await this.setState({
             speecherData: speecherData.data
         })
-
-        console.log(this.props,'speecherspeecher');
-
     }
 
     render() {
@@ -32,7 +29,7 @@ export default class SpeecherGroup extends Component {
         const {isFlay} = this.props
         return (
             <div className="speecher-group">
-                {!isFlay ? <img src={Logo} alt="" className="item-header"/> : null}
+                {!isFlay ? <div className='bg'><img src={Logo} alt="" className="item-header"/></div>  : null}
                 {/*<div className="speecher-header"/>*/}
                 <Title name='演讲嘉宾'/>
                 <div className="people-group">

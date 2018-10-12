@@ -26,7 +26,7 @@ export default class extends Component {
     let {expertData} = this.state
     return (
       <div className="all-people">
-        {this.props.bjImg ?  <img src={Logo} alt="" className="item-header"/>:"" }
+        {this.props.bjImg ? <div className='bg'><img src={Logo} alt="" className="item-header"/></div> :"" }
        {/* <img src={ExpertImg} alt="" className="item-header"/>*/}
        <Title name='专家顾问团'/>
         <div className="people-group">

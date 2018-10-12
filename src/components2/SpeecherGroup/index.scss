@@ -7,6 +7,15 @@
     background: url(../../images2/speecher-header.png) no-repeat center;
     background-size: 50%;
   }*/
+
+  .bg {
+    img {
+      display: block;
+      width: 100%;
+      min-height: calc(100vh);
+    }
+  }
+
   .people-group {
     width: 100%;
     display: flex;

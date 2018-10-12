@@ -26,7 +26,7 @@ export default class extends Component {
     let {presidentData} = this.state
     return (
       <div className="all-people">
-        {this.props.bjImg ?  <img src={Logo} alt="" className="item-header"/>:"" }
+        {this.props.bjImg ? <div className='bg'><img src={Logo} alt="" className="item-header"/></div> :"" }
         <Title name='大会主席团'/>
        {/* <img src={PresidentImg} alt="" className="item-header"/>*/}
         <div className="people-group">
