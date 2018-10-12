@@ -3,6 +3,7 @@ import ChildBackground from 'containers/child_container'
 import './index.scss'
 import {getListImgs} from '../../services/getListNews'
 
+
 const getImg = num => require(`../../images/floor_${num}.jpg`)
 
 
@@ -20,7 +21,7 @@ export default class Map extends Component {
 
     async componentWillMount() {
         document.title = "场馆地图"
-        let imgAry = await getListImgs(67).then(res => res.json())
+        let imgAry = await getListImgs(95).then(res => res.json())
         // console.log(imgAry.data);
         await this.setState({
             imgAry: imgAry.data
