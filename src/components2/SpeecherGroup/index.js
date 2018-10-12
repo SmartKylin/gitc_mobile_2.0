@@ -18,7 +18,6 @@ export default class extends Component {
     async componentWillMount() {
         document.title = "演讲嘉宾"
         let speecherData = await getSpeecherGroup().then(res => res.json())
-        console.log(speecherData, 'speecherDataspeecherDataspeecherData');
         await this.setState({
             speecherData: speecherData.data
         })

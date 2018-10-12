@@ -17,8 +17,6 @@ export default class Cooperative extends React.Component {
     async componentWillMount() {
 
         let expertData = await getListImgs(98).then(res => res.json())
-
-        console.log(expertData,'expertDataexpertDataexpertData-');
         await this.setState({
             data: expertData.data
         })
