@@ -70,7 +70,7 @@ export default class extends Component {
                 {/*<Brief />*/}
 
                 {/*大会日程 --- 修改王杰*/}
-                <div className="agenda-wrapper">
+               {/* <div className="agenda-wrapper">
                     <Title name='大会日程'/>
                 </div>
                 <div className="accordion-wrapper">
@@ -88,7 +88,7 @@ export default class extends Component {
                             ))
                         }
                     </div>
-                </div>
+                </div>*/}
 
                 {/*会议地址---修改王杰 ++  交通信息*/}
                 <MeetingGuide/>

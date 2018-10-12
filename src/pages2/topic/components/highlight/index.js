@@ -44,7 +44,7 @@ export default class extends Component {
             <div>
               {data.content}
               <div style={{width:'100%',textAlign:"right"}}>
-                <Link to={`/meetingdetails/${data.id}`} style={styleLink}>专题详情</Link>
+               {/* <Link to={`/meetingdetails/${data.id}`} style={styleLink}>专题详情</Link>*/}
               </div>
             </div>
           </div>
