@@ -3,7 +3,7 @@ import http from '../fetch'
 
 export function getSpeecherGroup(phone) {
   let phonenew = phone? phone : "13800138000"
-  return http.post(`http://api.thegitc.com/api/gitc/person/pages.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}&order_by=ename`)
+  return http.get(`http://api.thegitc.com/api/gitc/person-90/list.json?token=9d349496a7dab8f131c620a806e9ec6d&phone=13800138000&phone=${phonenew}`)
 }
 
 export function getPopleList(pageId, phone) {
@@ -29,11 +29,10 @@ export function getDate2(phone) {
 
 // 亮点环节
 export function getLightDot() {
-  return http.get(api.getListNews + `66/list.json?token=1afb756d16740266efde290917ca1a8e`)
+  return http.get(api.getListNews + `94/list.json?token=1afb756d16740266efde290917ca1a8e`)
 }
 
 // 服务信息
-
 export function getServiceInfo() {
-  return http.get(api.getListNews + `69/list.json?token=1afb756d16740266efde290917ca1a8e`)
+  return http.get(api.getListNews + `97/list.json?token=1afb756d16740266efde290917ca1a8e`)
 }

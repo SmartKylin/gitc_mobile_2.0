@@ -16,7 +16,7 @@ export default class extends Component {
   }
   async componentWillMount () {
     
-    let presidentData = await getPopleList(45).then(res => res.json())
+    let presidentData = await getPopleList(88).then(res => res.json())
     await this.setState({
       presidentData: presidentData.data,
     })

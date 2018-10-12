@@ -28,7 +28,7 @@ export default class Brief extends React.Component{
   }
 
   componentWillMount(){
-    getBriefList(68).then(res => res.json())
+    getBriefList(96).then(res => res.json())
         .then(data => {
           // console.log(data);
           this.setState({

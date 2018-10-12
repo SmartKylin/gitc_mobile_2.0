@@ -16,7 +16,7 @@ export default class extends Component {
   }
   async componentWillMount () {
     
-    let expertData = await getPopleList(46).then(res => res.json())
+    let expertData = await getPopleList(89).then(res => res.json())
     await this.setState({
       expertData: expertData.data
     })
