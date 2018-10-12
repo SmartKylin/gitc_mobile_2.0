@@ -57,8 +57,8 @@ export default class extends Component {
                      className="nav--group">
 
                     <Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>
-                    <a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
-                    <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>
+                    {/*<a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
+                    <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>*/}
 
                     {/*<a href="#">大会会刊</a>*/}
                     {/*<Link to={"/dataagenda"} onClick={() => this.props.closeMenu()}>全部日程</Link>*/}
@@ -70,10 +70,10 @@ export default class extends Component {
                    {/* <Link to={"/agenda"} onClick={() => this.props.closeMenu()}>大会日程</Link>*/}
 
                     {/*这个是否换成大会亮点*/}
-                    <Link to={"/light"} onClick={() => this.props.closeMenu()}>亮点环节</Link>
+                   {/* <Link to={"/light"} onClick={() => this.props.closeMenu()}>亮点环节</Link>*/}
 
                     {/*需要改成--->会议结构*/}
-                    <Link to={"/topic"} onClick={() => this.props.closeMenu()}>大会专题</Link>
+                   {/* <Link to={"/topic"} onClick={() => this.props.closeMenu()}>大会专题</Link>*/}
 
                     {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会商店</Link>*/}
                     {/*<Link to={"/activity"} onClick={() => this.props.closeMenu()}>现场活动</Link>*/}

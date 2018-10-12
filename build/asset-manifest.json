@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.6ca6cc84.css",
   "main.css.map": "static/css/main.6ca6cc84.css.map",
-  "main.js": "static/js/main.190b6901.js",
-  "main.js.map": "static/js/main.190b6901.js.map",
+  "main.js": "static/js/main.e9252a99.js",
+  "main.js.map": "static/js/main.e9252a99.js.map",
   "static/media/accordionA_bg1.png": "static/media/accordionA_bg1.e4b8a462.png",
   "static/media/accordionA_bg10.png": "static/media/accordionA_bg10.d8e067d6.png",
   "static/media/accordionA_bg11.png": "static/media/accordionA_bg11.e4b8a462.png",
@@ -58,7 +58,6 @@
   "static/media/introduce.png": "static/media/introduce.ce755b11.png",
   "static/media/logo.png": "static/media/logo.44afa306.png",
   "static/media/navigation_title.png": "static/media/navigation_title.81aa8029.png",
-  "static/media/navigation_title1.png": "static/media/navigation_title1.81aa8029.png",
   "static/media/newFooter.png": "static/media/newFooter.c621981d.png",
   "static/media/road-show_02.png": "static/media/road-show_02.a46084b9.png",
   "static/media/share-log.png": "static/media/share-log.d5d6a181.png",

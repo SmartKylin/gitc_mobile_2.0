@@ -9,6 +9,7 @@ import Cooperative from './componets/cooperative'
 import Footer1 from './componets/ContactUs/index'
 import PointDiv from './componets/PointDiv/index'
 import MeetingGuide from '../../components2/MeetingGuide'
+import SpeecherGroup from '../../components2/SpeecherGroup'
 import NineSquare from '../../components2/NineSquare'
 
 export default class NewHome extends React.Component {
@@ -37,13 +38,17 @@ export default class NewHome extends React.Component {
                 <AnAssembly/>
 
                 {/*会议结构 --- 修改王杰*/}
-                <Brief/>
+               {/* <Brief/>*/}
 
                 {/*主席团  ||  顾问团  --- 王杰修改*/}
                 <ListMeetings/>
+                {/*演讲嘉宾*/}
+
+                <SpeecherGroup isFlay={true} history={this.props.history}/>
+
 
                 {/*合作伙伴 --王杰修改*/}
-                <Cooperative/>
+               {/* <Cooperative/>*/}
                 {/*会议地址---王杰修改+++交通信息*/}
                 <MeetingGuide/>
                 {/*联系我们*/}

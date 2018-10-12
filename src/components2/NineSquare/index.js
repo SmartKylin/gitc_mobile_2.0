@@ -58,7 +58,7 @@ export default class extends Component {
           nine_imgs.map((item, index) => {
             return <li>
               {
-                index == 0 || index == 3 ? <a href={link[index]}><img src={item.img} alt=""/></a>
+                index == 0 || index == 3 ? <a /*href={link[index]}*/><img src={item.img} alt=""/></a>
                 : <Link to={link[index]} key={index}>
                 <img src={item.img} alt=""/>
                 </Link>
