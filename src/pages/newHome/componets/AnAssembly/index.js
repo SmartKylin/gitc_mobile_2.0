@@ -5,6 +5,7 @@ import dahuiliangdian from './images/大会亮点.png'
 import dahuiliangdian2 from './images/大会亮点new.png'
 import Title from "../../../../components/Title";
 import TimelineItem from 'antd/lib/timeline/TimelineItem';
+import {getListImgs} from "../../../../services/getListNews";
 
 const brightdata = [
   {
@@ -43,7 +44,22 @@ const brightdata = [
 ]
 
 export default class AnAssembly extends  React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      lightData: null
+    }
+  }
+  componentWillMount () {
+    getListImgs(84).then(res => res && res.json())
+        .then(data => {
+            this.setState({
+              lightData: data.data,
+            })
+        })
+  }
   render(){
+    const {lightData} = this.state
     return(
         <div className="AnAssemblyBox">
           <Title name='大会亮点'/>
@@ -51,10 +67,10 @@ export default class AnAssembly extends  React.Component{
           {/* <img src={dahuiliangdian2} alt=""/> */}
           <ul>
             {
-              brightdata.map(v => 
+              lightData && lightData.map(v => 
                 <li>
                   <img src={v.img}/>
-                  <h3>{v.tit}</h3>
+                  <h3>{v.title}</h3>
                   <p>{v.content}</p>
                 </li>)
             }
