@@ -56,7 +56,8 @@ export default class extends Component {
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '17px'}}
                      className="nav--group">
 
-                    <Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>
+                    {/*<Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>*/}
+                    <a href="http://www.thegitc.com/home.html" >首页</a>
                     {/*<a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
                     <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>*/}
 
