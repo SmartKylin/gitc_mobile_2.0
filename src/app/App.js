@@ -47,7 +47,7 @@ class App extends Component {
     // const url = window.location.origin
     // console.log(window.location.href, 'fjdksjfksd');
   
-    share.title = "GITC2017全球互联网技术大会参会小助手"
+    share.title = "GITC2018全球互联网技术大会参会小助手"
     getWeixinConfig({url})
     .then(res => res.json())
     .then(data => {

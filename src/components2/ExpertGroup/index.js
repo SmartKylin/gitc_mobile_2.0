@@ -4,6 +4,7 @@ import {getPopleList} from "../../services/home";
 import ExpertImg from '../../images2/expert_all_03.png'
 import './index.scss'
 import Logo from '../../pages/newHome/images/logo.png'
+import LogoX from '../../pages/newHome/images/logo1.png'
 import NewFouter from '../../components2/Fouter'
 import Title from "../../components/Title";
 export default class extends Component {
@@ -12,21 +13,28 @@ export default class extends Component {
     this.state = {
       presidentData: [],
       expertData: [],
+      Width:''
     }
   }
   async componentWillMount () {
-    
+    this.getclientWidth()
     let expertData = await getPopleList(89).then(res => res.json())
     await this.setState({
       expertData: expertData.data
     })
     
   }
+  getclientWidth = () => {
+    let Width = document.documentElement.clientWidth || document.body.clientWidth;
+    this.setState({
+      Width
+    })
+  }
   render () {
-    let {expertData} = this.state
+    let {expertData,Width} = this.state
     return (
       <div className="all-people">
-        {this.props.bjImg ? <div className='bg'><img src={Logo} alt="" className="item-header"/></div> :"" }
+        {this.props.bjImg ? <div className='bg'><img src={Width == 375 ? LogoX : Logo} alt="" className="item-header"/></div> :"" }
        {/* <img src={ExpertImg} alt="" className="item-header"/>*/}
        <Title name='专家顾问团'/>
         <div className="people-group">
