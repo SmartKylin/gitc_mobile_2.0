@@ -32,7 +32,7 @@ export default class extends Component {
         />
   
         <div className={collapsed ? 'accor-content hidden-style' : 'accor-content'}>
-          <div className='collection-item-time'>11月23日</div><div className='xian'></div>
+          <div className='collection-item-time'>11月22日</div><div className='xian'></div>
           {
   
             guestData && guestData[0] && guestData[0].data.map((item, index) => (
@@ -47,7 +47,7 @@ export default class extends Component {
             />
             ))
           }
-          <div><div className='collection-item-time'>11月24日</div><div className='xian'></div></div>
+          <div><div className='collection-item-time'>11月23日</div><div className='xian'></div></div>
           {
     
             guestData && guestData[1] && guestData[1].data.map((item, index) => (
