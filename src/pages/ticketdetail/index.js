@@ -5,12 +5,8 @@ import ticketUsed from '../../images/ticket_used.png'
 import {getTicketDetail} from "../../services/ticket";
 import vip from '../../images/vip.png'
 import zhuanye from '../../images/专业观众.png'
-import jichu from '../../images/基础架构.png'
 import dahui from '../../images/通票.png'
-import dashuju from '../../images/大数据.png'
-import yunwei from '../../images/运维.png'
 import zhanlan from '../../images/展览票.png'
-import quanqiuhua from '../../images/全球化.png'
 import './index.scss'
 import JsBarcode from 'jsbarcode'
 import storage from '../../helper/storage'
@@ -23,20 +19,10 @@ let getBgByTicket = (ticket) => {
       return vip;
     case '专业观众票':
       return zhuanye;
-    case '基础架构专场票':
-      return jichu;
-    case '大会通票':
+    case '通票':
       return dahui;
-    case '大数据&人工智能专场票':
-      return dashuju;
-    case '运维专场票':
-      return yunwei;
     case '展览票':
       return zhanlan;
-      case '全球化专场票':
-          return quanqiuhua;
-    default:
-      return dahui;
   }
 }
 
@@ -49,7 +35,7 @@ export default class extends Component {
       barcodeString: '',
       name: '',
       ticket: '',
-      signStatus: 2,
+      signStatus: 1,
     }
   }
   componentWillMount () {
@@ -61,7 +47,7 @@ export default class extends Component {
     let phone = storage.get(storage.PHONE_KEY)
     //code 码
     let code = this.props.match.params.code
-    let token='1afb756d16740266efde290917ca1a8e'
+    let token='9d349496a7dab8f131c620a806e9ec6d'
     getTicketDetail({phone,code, token })
     .then(res => {
         if (res) {
@@ -80,9 +66,9 @@ export default class extends Component {
       JsBarcode(this.barcode, code,
       {
         displayValue: true,  //  不显示原始值
-        // background: '#4b8b7f',  //  背景色
+        //background: '#000',  //  背景色
         blank: 100,
-        lineColor: 'rgba(255,255,255)', // 线条颜色
+        lineColor: '#000', // 线条颜色
         width: 1.5,  // 线条宽度
         height: 50
       })

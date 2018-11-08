@@ -27,7 +27,7 @@ export default class extends Component {
             message.success('注销成功')
         }
         this.props.closeMenu()
-        this.props.history.push('/home')
+        this.props.history.push('/')
     }
 
     render() {
@@ -58,8 +58,8 @@ export default class extends Component {
 
                     {/*<Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>*/}
                     <a href="http://www.thegitc.com/home.html" >首页</a>
-                    {/*<a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
-                    <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>*/}
+                    <a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
+                    {/*<a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>*/}
 
                     {/*<a href="#">大会会刊</a>*/}
                     {/*<Link to={"/dataagenda"} onClick={() => this.props.closeMenu()}>全部日程</Link>*/}

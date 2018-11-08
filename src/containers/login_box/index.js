@@ -7,7 +7,8 @@ import storage from '../../helper/storage'
 import {TOKEN} from "../../helper/login";
 import {message} from 'antd'
 
-let iconIphone = require('../../images/icon-phone.svg')
+//let iconIphone = require('../../images/icon-phone.svg')
+let iconIphone = require('../../images/iPhone.png')
 
 const TIME = 60
 let inputStyle = {
@@ -94,12 +95,13 @@ export default class extends Component {
     params.token = TOKEN
     
     const sucesss = (data) => {
-      message.success(data.msg)
+      //message.success(data.msg)
       // 如果登陆成功，手机号存到localstorage
       if (data.status) {
         storage.set(storage.PHONE_KEY, this.mobile.value)
         storage.set(storage.DATA_KEY, data.data)
         this.closeLoginBox()
+        message.success(data.msg)
         cb && cb()
       } else {
         message.info(data.msg)

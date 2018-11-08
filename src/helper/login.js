@@ -11,4 +11,4 @@ export function setIphone(phone) {
   document.cookie = cookie ? cookie + ";phone=" + phone : "phone=" + phone
 }
 
-export const TOKEN = '1afb756d16740266efde290917ca1a8e'
+export const TOKEN = '9d349496a7dab8f131c620a806e9ec6d'

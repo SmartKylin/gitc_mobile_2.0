@@ -3,6 +3,7 @@ import './index.scss'
 import Menu from 'containers/menu'
 import {Link} from 'react-router-dom'
 import ljbm from './images/ljbm.png'
+import wdmp from './images/wdmp.png'
 import storage from '../../helper/storage'
 
 
@@ -85,10 +86,10 @@ export default class Header extends React.Component{
             <div className="HeaderBoxLogo">
             </div>
             <div className="HeaderBoxGPBox" >
-              <a style={{overflow:'hidden',height:'0'}}  href={'https://www.bagevent.com/event/768490'} className={this.state.falg ? 'gradientA': 'gradient'} onClick={this.gradient}><img
+              <a  href={'https://www.bagevent.com/event/1717742'} className={this.state.falg ? 'gradientA': 'gradient'} onClick={this.gradient}><img
                   src={ljbm} alt=""/></a>
-              <a style={{overflow:'hidden',height:'0'}} className={this.state.falg ? 'gradientA': 'gradient'} href="javascript:" onClick={() => this.handleClick('/ticket')}><img
-                  src={ljbm} alt=""/></a>
+              <a className={this.state.falg ? 'gradientA': 'gradient'} href="javascript:" onClick={() => this.handleClick('/ticket')}><img
+                  src={wdmp} alt=""/></a>
   
           {/*    <Link  className={this.state.falg ? 'gradientA': 'gradient'}  to={'/ticket'}><a >现场购票</a></Link>
               <a  href={'https://www.bagevent.com/event/768490'} className={this.state.falg ? 'gradientA': 'gradient'} onClick={this.gradient}>我的门票</a>*/}

@@ -6,38 +6,24 @@ import ticketUsed from '../../images/ticket_used.png'
 import {getTicketDetail} from "../../services/ticket";
 import vip from '../../images/vip.png'
 import zhuanye from '../../images/专业观众.png'
-import jichu from '../../images/基础架构.png'
 import dahui from '../../images/通票.png'
-import dashuju from '../../images/大数据.png'
-import yunwei from '../../images/运维.png'
 import zhanlan from '../../images/展览票.png'
-import quanqiuhua from '../../images/全球化.png'
 import '../ticketdetail/index.scss'
 import JsBarcode from 'jsbarcode'
 // import storage from '../../helper/storage'
 
 // 根据票种得到对应门票的权益背景图
 let getBgByTicket = (ticket) => {
-    switch (ticket) {
-        case 'VIP门票':
-            return vip;
-        case '专业观众票':
-            return zhuanye;
-        case '基础架构专场票':
-            return jichu;
-        case '大会通票':
-            return dahui;
-        case '大数据&人工智能专场票':
-            return dashuju;
-        case '运维专场票':
-            return yunwei;
-        case '展览票':
-            return zhanlan;
-        case '全球化专场票':
-            return quanqiuhua;
-        default:
-            return dahui;
-    }
+  switch (ticket) {
+    case 'VIP门票':
+      return vip;
+    case '专业观众票':
+      return zhuanye;
+    case '通票':
+      return dahui;
+    case '展览票':
+      return zhanlan;
+  }
 }
 
 
@@ -59,7 +45,7 @@ export default class extends Component {
     componentDidMount () {
         let phone = this.props.match.params.phone
         let code = this.props.match.params.code
-        let token='1afb756d16740266efde290917ca1a8e'
+        let token='9d349496a7dab8f131c620a806e9ec6d'
         getTicketDetail({phone,code, token })
             .then(res => {
                 if (res) {
@@ -78,9 +64,9 @@ export default class extends Component {
                 JsBarcode(this.barcode, code,
                     {
                         displayValue: true,  //  不显示原始值
-                        // background: '#4b8b7f',  //  背景色
+                        //background: '#000',  //  背景色
                         blank: 100,
-                        lineColor: 'rgba(255,255,255)', // 线条颜色
+                        lineColor: '#000', // 线条颜色
                         width: 1.5,  // 线条宽度
                         height: 50
                     })
@@ -110,10 +96,10 @@ export default class extends Component {
                     <svg ref={ barcde => this.barcode = barcde}></svg>
                   </div>
                     {/*<div style={{position: 'absolute', top: '20%',left:'20%'}}>{this.state.barcodeString}</div>*/}
-                  <div className='menpiaoText1'>
+                  {/*<div className='menpiaoText1'>
                     <div><span className='danhang'>官网：www.thegitc.com</span></div>
                     <div><span className='danhang'>客服：010-88323888</span></div>
-                  </div>
+                  </div>*/}
                 </div>
                 <div className="ticket--instructions">
                   <div>使用说明</div>
