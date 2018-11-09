@@ -36,7 +36,7 @@ export default class extends Component {
     let {service, bgImg, index} = this.props
     let content = null
     try {
-      content = JSON.parse(service.dic_json)
+      content = JSON.parse(service.content)
     } catch (e) {
       console.log(e);
     }
@@ -48,7 +48,7 @@ export default class extends Component {
           name={service.name}
           changeCollapse={this.changeCollapse}
           bgImg={bgImg}
-          enName={content.en}
+          enName={service.summary}
           collapsed={collapsed}
           // headerIcon={'icon-yongcan'}
           index={index}

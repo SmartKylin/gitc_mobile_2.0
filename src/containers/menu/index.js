@@ -71,7 +71,7 @@ export default class extends Component {
                    {/* <Link to={"/agenda"} onClick={() => this.props.closeMenu()}>大会日程</Link>*/}
 
                     {/*这个是否换成大会亮点*/}
-                   {/* <Link to={"/light"} onClick={() => this.props.closeMenu()}>亮点环节</Link>*/}
+                   <Link to={"/light"} onClick={() => this.props.closeMenu()}>亮点环节</Link>
 
                     {/*需要改成--->会议结构*/}
                    {/* <Link to={"/topic"} onClick={() => this.props.closeMenu()}>大会专题</Link>*/}
@@ -85,7 +85,7 @@ export default class extends Component {
                     {/*回到首页*/}
                     <Link to={"/"} onClick={() => this.props.closeMenu()}>精彩内容</Link>
                     {/*需要服务信息*/}
-                   {/* <Link to={"/service"} onClick={() => this.props.closeMenu()}>服务信息</Link>*/}
+                    <Link to={"/service"} onClick={() => this.props.closeMenu()}>服务信息</Link>
                     {/*库素修改*/}
                     {/*<Link to={"/map"} onClick={() => this.props.closeMenu()}>场馆地图</Link>*/}
 

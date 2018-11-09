@@ -5,7 +5,6 @@ import {getAgenda, getLightDot} from "../../services/home";
 import HighLight from '../../components2/Highlight'
 import Title from "../../components/Title";
 
-
 const generateImgAry = () => {
     let ary = [];
     for (let i = 1; i < 17; i++) {
@@ -43,7 +42,7 @@ export default class extends Component {
 
     render() {
 
-        let {highlightData} = this.state
+        let {highlightData} = this.state        
         return (
             <div style={{paddingTop:'45px'}} className="entry-page">
                 {/*亮点环节*/}
@@ -54,7 +53,7 @@ export default class extends Component {
                 <div className="accordion-wrapper">
                     <div className="accordion">
                         {
-                            highlightData.map((item, ind) => (
+                            highlightData && highlightData.length > 0 && highlightData.map((item, ind) => (
                                 <HighLight key={ind} light={item} bgImg={imgAry[ind]}/>
                             ))
                         }

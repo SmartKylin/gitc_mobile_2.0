@@ -43,12 +43,13 @@ export default class extends Component {
     render() {
         let {collapsed} = this.state
         let {light, bgImg} = this.props
-        let content = null
+        let content = null;
         try {
             content = JSON.parse(light.content)
         } catch (e) {
             console.log(e);
         }
+        
         return (
             <div className="my-accordion">
 
@@ -64,11 +65,11 @@ export default class extends Component {
                         ? <div className="light-content">
                             <div className="time">
                                 <span className="light-item-title">时间</span>
-                                {content.time}
+                                {content && content.time}
                             </div>
                             <div className="addr">
                                 <span className="light-item-title">地点</span>
-                                {content.addr}
+                                {content && content.addr}
                             </div>
                             <div className="summary">
                                 <span className="light-item-title" style={{verticalAlign: 'top', width: '7%'}}>介绍</span>
@@ -76,7 +77,7 @@ export default class extends Component {
                                     display: 'inline-block',
                                     width: '88%',
                                     textAlign: 'justify'
-                                }}>{content.summary}</span>
+                                }}>{content && content.summary}</span>
                                 <div style={{color: '#FFF', textAlign: 'right'}}>
                                     {
                                         getLinkbyName(light.name)
