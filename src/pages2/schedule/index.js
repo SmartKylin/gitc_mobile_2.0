@@ -18,7 +18,7 @@ export default class Schedule extends React.Component{
     let res = await getAgenda()
     .then(res => res.json())
     await this.setState({
-      agendaData: res.data
+      agendaData: res.data.filter(item => item.main !== '不显示')
     })
     
   }
@@ -42,7 +42,7 @@ export default class Schedule extends React.Component{
       position:"待定"
     }
     let {openPop, closePop, setLoginCb} = this.props.history
-    // console.log(agendaData, 'shefjdls');
+     console.log(agendaData, 'agendaData11111111');
     return(
         <div className="ScheduleBox">
           <Title name='大会议程'/>
@@ -57,9 +57,9 @@ export default class Schedule extends React.Component{
                 />
   
                 <div className='accor-content'>
-                  {agenda.name.indexOf("23") !=-1 && agenda.main != "主会场" ?<SpeechItem icon="yes" style='yes' speecher={obj}/> :""}
+                  {/*{agenda.name.indexOf("22") !=-1 && agenda.main != "主会场" ?<SpeechItem icon="yes" style='yes' speecher={obj}/> :""}*/}
     
-                  {agenda.name.indexOf("23") !=-1 && agenda.main == "基础架构专场" ? <SpeechItem  speecher={obj1}/> :""}
+                  {/*{agenda.name.indexOf("23") !=-1 && agenda.main == "基础架构专场" ? <SpeechItem  speecher={obj1}/> :""}*/}
                   {
                     agenda.data && agenda.data.length
                     ? agenda.data.map((item, ind) => (

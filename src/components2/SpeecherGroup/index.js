@@ -34,7 +34,7 @@ export default class SpeecherGroup extends Component {
 
   render() {
     let {speecherData,Width} = this.state
-    console.log(Width,'WidthWidthWidth');
+
     let {openPop, closePop, setLoginCb} = this.props.history
     const {isFlay} = this.props
     return (

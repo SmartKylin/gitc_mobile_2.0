@@ -12,7 +12,7 @@ export function getPopleList(pageId, phone) {
 }
 
 export function getAgenda(phone) {
-  return http.get(`http://api.thegitc.com//api/gitc/article-94/list.json?token=9d349496a7dab8f131c620a806e9ec6d`)
+  return http.get(`http://api.thegitc.com/api/gitc/person/beijing2018.json?token=9d349496a7dab8f131c620a806e9ec6d&phone=13800138000&order_by=stime`)
 }
 
 export function getDate1(phone) {

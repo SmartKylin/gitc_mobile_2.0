@@ -67,8 +67,7 @@ export default class extends Component {
                     <Link to={"/expert"} onClick={() => this.props.closeMenu()}>专家顾问团</Link>
                     <Link to={"/speecher"} onClick={() => this.props.closeMenu()}>演讲嘉宾</Link>
 
-                    {/*会议结构点过来的   ---   没有设计稿*/}
-                   {/* <Link to={"/agenda"} onClick={() => this.props.closeMenu()}>大会日程</Link>*/}
+                    <Link to={"/agenda"} onClick={() => this.props.closeMenu()}>大会议程</Link>
 
                     {/*亮点环节*/}
                     <Link to={"/light"} onClick={() => this.props.closeMenu()}>亮点环节</Link>
