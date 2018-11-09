@@ -42,7 +42,7 @@ export default class Schedule extends React.Component{
       position:"待定"
     }
     let {openPop, closePop, setLoginCb} = this.props.history
-     console.log(agendaData, 'agendaData11111111');
+    
     return(
         <div className="ScheduleBox">
           <Title name='大会议程'/>
@@ -51,9 +51,9 @@ export default class Schedule extends React.Component{
               <div key={index}>
                 <Header
                   name={agenda.name}
-                  enName={agenda.json.en || agenda.ename}
-                  addr={agenda.json.addr }
-                  link={agenda.json.details}
+                  // enName={agenda.json.en || agenda.ename}
+                  // addr={agenda.json.addr }
+                  // link={agenda.json.details}
                 />
   
                 <div className='accor-content'>
