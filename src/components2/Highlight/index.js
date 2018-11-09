@@ -17,7 +17,7 @@ const styleLink = {
 function getLinkbyName(name) {
     if (name.indexOf('品牌专场') > -1) {
         return <Link style={styleLink} to="/brand">查看详情</Link>
-    } else if (name.indexOf('活动路演') > -1) {
+    } else if (name.indexOf('活动路演1') > -1) {
         return <Link style={styleLink} to="/roadshow">查看详情</Link>
     } else if (name.indexOf('集印章') > -1) {
         return <Link style={styleLink} to="/collectstamp">查看详情</Link>
