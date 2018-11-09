@@ -29,11 +29,11 @@ export default class extends Component {
     async componentWillMount() {
         // console.log(this.props.history, 'fdfd');
 
-        let res = await getAgenda()
+       /* let res = await getAgenda()
             .then(res => res.json())
         await this.setState({
             agendaData: res.data
-        })
+        })*/
         let data = await getLightDot().then(res => res.json())
         await this.setState({
             highlightData: data.data
