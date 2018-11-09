@@ -70,8 +70,9 @@ export default class extends Component {
                     {/*会议结构点过来的   ---   没有设计稿*/}
                    {/* <Link to={"/agenda"} onClick={() => this.props.closeMenu()}>大会日程</Link>*/}
 
-                    {/*这个是否换成大会亮点*/}
-                   <Link to={"/light"} onClick={() => this.props.closeMenu()}>亮点环节</Link>
+
+                    {/*亮点环节*/}
+                    <Link to={"/light"} onClick={() => this.props.closeMenu()}>亮点环节</Link>
 
                     {/*需要改成--->会议结构*/}
                    {/* <Link to={"/topic"} onClick={() => this.props.closeMenu()}>大会专题</Link>*/}

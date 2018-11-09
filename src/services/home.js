@@ -12,8 +12,7 @@ export function getPopleList(pageId, phone) {
 }
 
 export function getAgenda(phone) {
-  let phonenew = phone? phone : "13800138000"
-  return http.get(`http://api.thegitc.com/api/gitc/person/beijing.json?token=1afb756d16740266efde290917ca1a8e&phone=${phonenew}&order_by=stime`)
+  return http.get(`http://api.thegitc.com//api/gitc/article-94/list.json?token=9d349496a7dab8f131c620a806e9ec6d`)
 }
 
 export function getDate1(phone) {
