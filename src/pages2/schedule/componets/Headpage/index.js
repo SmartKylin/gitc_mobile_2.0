@@ -18,7 +18,7 @@ export default class HeaderPage extends React.Component {
     return (
       <div className="HeaderPageBoxBox">
         <div className="HeaderzPageBox">
-          <div className={name == "大数据&人工智能专场 (23日)"|| name == "大数据&人工智能专场 (24日)"?'HeaderPageBox-bgA':"HeaderPageBox-bg"}>
+          <div className={"HeaderPageBox-bg"}>
             {name}
           </div>
           <div className="HeaderPageYXbox">
@@ -29,7 +29,7 @@ export default class HeaderPage extends React.Component {
             {addr}
           </div>
         </div>
-        <Link style={styleLink} to={`/meetingdetails/${link}`} className="HeaderzPageBoxXiang">专题详情</Link>
+        {/*<Link style={styleLink} to={`/meetingdetails/${link}`} className="HeaderzPageBoxXiang">专题详情</Link>*/}
       </div>
     )
   }

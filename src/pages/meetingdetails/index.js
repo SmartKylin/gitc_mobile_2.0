@@ -34,11 +34,11 @@ export default class MeetingDetails extends React.Component{
             ? <Conference  id={this.state.id} data={this.state.data? this.state.data : ""}/>
   
           {
-            data && data['23']
+            data && data['22']
             ? <Accor
               list={data.first}
               bgImg={require('../../images2/accordionA_bg1.png')}
-              name={data.data.name + '(23日)'}
+              name={data.data.name + '(22日)'}
               enName={data.data.summary}
               openPop={openPop}
               closePop={closePop}
@@ -47,11 +47,11 @@ export default class MeetingDetails extends React.Component{
             : null
           }
           {
-            data && data['24']
+            data && data['23']
             ? <Accor
                 list={data.last}
                 bgImg={require('../../images2/accordionA_bg2.png')}
-                name={data.data.name + '(24日)'}
+                name={data.data.name + '(23日)'}
                 enName={data.data.summary}
                 
                 openPop={openPop}

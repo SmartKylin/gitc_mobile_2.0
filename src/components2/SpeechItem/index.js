@@ -15,7 +15,7 @@ export default class extends Component {
   }
   openGuestPop = () => {
     let {speecher} = this.props
-    if (speecher.stheme == '开幕致辞') {
+    if (speecher.stheme === '开幕致辞') {
       return
     }
 

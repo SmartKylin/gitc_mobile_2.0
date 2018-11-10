@@ -51,9 +51,9 @@ export default class Schedule extends React.Component{
               <div key={index}>
                 <Header
                   name={agenda.name}
-                  // enName={agenda.json.en || agenda.ename}
-                  // addr={agenda.json.addr }
-                  // link={agenda.json.details}
+                  enName={agenda.json.en || agenda.ename}
+                  addr={agenda.json.addr }
+                  link={agenda.json.details}
                 />
   
                 <div className='accor-content'>
