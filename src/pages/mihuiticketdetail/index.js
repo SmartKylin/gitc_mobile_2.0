@@ -8,6 +8,8 @@ import vip from '../../images/vip.png'
 import zhuanye from '../../images/专业观众.png'
 import dahui from '../../images/通票.png'
 import zhanlan from '../../images/展览票.png'
+import zhuanchang  from '../../images/专场票.png'
+
 import '../ticketdetail/index.scss'
 import JsBarcode from 'jsbarcode'
 // import storage from '../../helper/storage'
@@ -23,6 +25,8 @@ let getBgByTicket = (ticket) => {
       return dahui;
     case '展览票':
       return zhanlan;
+    case '专场票':
+      return zhuanchang;
   }
 }
 
