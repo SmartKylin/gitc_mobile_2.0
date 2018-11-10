@@ -25,7 +25,7 @@ export default class HeaderPage extends React.Component {
             {enName}
           </div>
           <div className="HeaderPageBoxDz">
-            <i className="iconfont icon-positioning" style={{color: "#30508e", marginRight: "3px", fontSize: '15px'}}/>
+            <i className="iconfont icon-positioning" style={{color: "#fe6b3e", marginRight: "3px", fontSize: '15px'}}/>
             {addr}
           </div>
         </div>

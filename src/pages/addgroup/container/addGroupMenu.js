@@ -36,14 +36,13 @@ export default class AddGroupContainer extends Component {
     }
     closePopImg(e){
       e.stopPropagation();
-      console.log(this.state.flag, 'llllllllllll');
       this.setState({
         flag: false
       })
     }
 
     render() {
-      console.log(this.state.curPopImg,"@3423423");
+
       return (
             <div className="AddGroupContainer-">
                 <Menu

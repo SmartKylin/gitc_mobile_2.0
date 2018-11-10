@@ -60,7 +60,6 @@ export default class extends Component {
     let { openPop, setLoginCb, closePop } = this.props
     
     let phone = storage.get(storage.PHONE_KEY)
-    console.log(phone, 'phone');
     
     let cb = this._collectGuest
     
@@ -98,7 +97,6 @@ export default class extends Component {
   
   // 取消收藏嘉宾
   _cancelCollectGuest = () => {
-    console.log('cacelCollect');
     // e.stopPropagation()
     let { id, collect } = this.props.speecher
     let { openPop, setLoginCb, closePop } = this.props
@@ -221,8 +219,6 @@ export default class extends Component {
   render () {
     let speecher = this.props.speecher
     const {closeGuestPop, openPop, setLoginCb} = this.props
-    console.log(speecher,"speecher");
-    // console.log(openPop, 'openPop');
     return (
       <div className="people-pop">
         <div className="close-wrapper" >
