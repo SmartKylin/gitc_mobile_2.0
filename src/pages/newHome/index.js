@@ -10,9 +10,10 @@ import Cooperative from './componets/cooperative'
 import Footer1 from './componets/ContactUs/index'
 import PointDiv from './componets/PointDiv/index'
 import MeetingGuide from '../../components2/MeetingGuide'
+import Schedule from '../../pages2/schedule'
 import SpeecherGroup from '../../components2/SpeecherGroup'
 import NineSquare from '../../components2/NineSquare'
-
+import Ticket from 'pages/ticket'
 export default class NewHome extends React.Component {
 
   constructor(props) {
@@ -56,8 +57,10 @@ export default class NewHome extends React.Component {
           {/*大会亮点-----库素修改*/}
           <AnAssembly/>
 
+          {/*大会议程*/}
+          <Schedule history={this.props.history}/>
           {/*会议结构 --- 修改王杰*/}
-          {/* <Brief/>*/}
+           {/*<Brief/>*/}
 
           {/*主席团  ||  顾问团  --- 王杰修改*/}
           <ListMeetings/>
