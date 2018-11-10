@@ -7,7 +7,7 @@ import Title from "../../components/Title";
 
 const generateImgAry = () => {
   let ary = [];
-  for (let i = 1; i < 17; i++) {
+  for (let i = 1; i < 15; i++) {
     // ary.push(require(`../../../../images2/accordion_bg${i}.png`))
     ary.push(require(`../../images2/accordionA_bg${i}.png`))
   }

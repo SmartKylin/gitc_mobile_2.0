@@ -11,7 +11,7 @@ import Title from "../../../../components/Title";
 const generateImgAry = () => {
   let ary = [];
   for (let i = 1; i < 17; i++) {
-    ary.push(require(`../../../../images3/accordion_bg${i}.png`))
+    ary.push(require(`../../../../images2/accordionA_bg${i}.png`))
   }
   return ary
 }
@@ -39,8 +39,8 @@ export default class Brief extends React.Component{
 
   render(){
     return(
-        <div className="BriefBox router-page">
-            <Title name='会议结构'/>
+        <div className="BriefBox router-pageA">
+            <Title name='大会专题'/>
         {/*    <div className="BriefBoxImg">
               <img src={dahuijianjie} alt=""/>
             </div>*/}

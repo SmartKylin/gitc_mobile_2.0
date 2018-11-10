@@ -11,9 +11,11 @@ import Footer1 from './componets/ContactUs/index'
 import PointDiv from './componets/PointDiv/index'
 import MeetingGuide from '../../components2/MeetingGuide'
 import Schedule from '../../pages2/schedule'
+import Topic from '../../pages2/topic'
 import SpeecherGroup from '../../components2/SpeecherGroup'
 import NineSquare from '../../components2/NineSquare'
 import Ticket from 'pages/ticket'
+
 export default class NewHome extends React.Component {
 
   constructor(props) {
@@ -58,9 +60,11 @@ export default class NewHome extends React.Component {
           <AnAssembly/>
 
           {/*大会议程*/}
-          <Schedule history={this.props.history}/>
-          {/*会议结构 --- 修改王杰*/}
-           {/*<Brief/>*/}
+          {/*<Schedule history={this.props.history}/>*/}
+          {/*大会专题--会议结构 --- 修改王杰*/}
+          <Brief/>
+          {/*大会专题*/}
+          {/*<Topic/>*/}
 
           {/*主席团  ||  顾问团  --- 王杰修改*/}
           <ListMeetings/>
