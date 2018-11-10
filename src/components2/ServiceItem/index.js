@@ -62,7 +62,7 @@ export default class extends Component {
                 ? <div>
                   {
                     // service.author
-                    service.author != '0'
+                    service.name != '场馆一览表'
                         // ? (service.content)
                         ? <div className="light-content">
                           <div className="time">
@@ -82,7 +82,7 @@ export default class extends Component {
                             }}>{content && content.summary}</span>
                           </div>
                         </div>
-                        : <div dangerouslySetInnerHTML={{__html: service.content}} style={{width: '100%'}}/>
+                        : <div className='__html' dangerouslySetInnerHTML={{__html: service.content}} style={{width: '100%'}}/>
                   }
                 </div>
                 : null
