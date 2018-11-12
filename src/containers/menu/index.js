@@ -59,7 +59,7 @@ export default class extends Component {
             {/*<Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link>*/}
             <a href="http://www.thegitc.com/home.html">首页</a>
             <a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
-            {/*<a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>*/}
+            <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>
 
             {/*<a href="#">大会会刊</a>*/}
             {/*<Link to={"/dataagenda"} onClick={() => this.props.closeMenu()}>全部日程</Link>*/}
@@ -89,8 +89,6 @@ export default class extends Component {
             {/*库素修改*/}
             {/*<Link to={"/map"} onClick={() => this.props.closeMenu()}>场馆地图</Link>*/}
 
-
-            {/*<Link to={"/map"} onClick={() => this.props.closeMenu()}>场馆地图</Link>*/}
             {/*<Link to={"/issue"} onClick={() => this.props.closeMenu()}>议题提交</Link>*/}
             {/*<Link to={"/sponsorship"} onClick={() => this.props.closeMenu()}>赞助合作</Link>*/}
             {/* <Link to={"/awards"} onClick={() => this.props.closeMenu()}>奖项评选</Link>*/}

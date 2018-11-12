@@ -29,7 +29,7 @@ export default class HeaderPage extends React.Component {
             {addr}
           </div>
         </div>
-        {/*<Link style={styleLink} to={`/meetingdetails/${link}`} className="HeaderzPageBoxXiang">专题详情</Link>*/}
+        <Link style={styleLink} to={`/meetingdetails/${link}`} className="HeaderzPageBoxXiang">专题详情</Link>
       </div>
     )
   }

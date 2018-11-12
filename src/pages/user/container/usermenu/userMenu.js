@@ -32,7 +32,7 @@ export default class extends Component {
         this.phone = phone
         if (phone) {
             // 获取文档列表和嘉宾列表
-            let userData = await getGuestList({phone, token: TOKEN})
+            let userData = await getGuestList({phone})
                 .then(res => res && res.json())
             // console.log(userData.data, 'userdata');
             this.setState({

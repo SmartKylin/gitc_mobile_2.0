@@ -5,7 +5,7 @@ import api from '../api'
 
 
 export function getGuestList(params) {
-  return http.post(api.getGuestList + params.phone + `.json?token=1afb756d16740266efde290917ca1a8e`, params)
+  return http.post(api.getGuestList + params.phone + `.json?token=1afb756d16740266efde290917ca1a8e&pages=15&pages=16&year=2018`, params)
 }
 
 export function collectDocument(params) {

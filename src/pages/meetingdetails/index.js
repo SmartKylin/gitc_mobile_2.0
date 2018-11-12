@@ -34,7 +34,7 @@ export default class MeetingDetails extends React.Component{
             ? <Conference  id={this.state.id} data={this.state.data? this.state.data : ""}/>
   
           {
-            data && data['22']
+            data && data.first_id > 0
             ? <Accor
               list={data.first}
               bgImg={require('../../images2/accordionA_bg1.png')}
@@ -47,7 +47,7 @@ export default class MeetingDetails extends React.Component{
             : null
           }
           {
-            data && data['23']
+            data && data.last_id > 0
             ? <Accor
                 list={data.last}
                 bgImg={require('../../images2/accordionA_bg2.png')}

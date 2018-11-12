@@ -1,31 +1,46 @@
 .my-accordion {
   width: 100%;
   color: #fff;
-  //height: 8rem;
   margin-bottom: 3px;
   border-radius: 4px;
-  //.accor-header {
-  //  position: relative;
-  //  height: .48rem;
-  //  border-radius: 4px;
-  //  padding: 0 12px;
-  //  display: flex;
-  //  flex-direction: column;
-  //  justify-content: center;
-  //  .main-title {
-  //    font-size: 16px;
-  //  }
-  //
-  //  .en-title {
-  //    font-size: 9px;
-  //  }
-  //}
-
   .icon-xiangxia,
   .icon-xiangshang
   {
     position: absolute;
     right: 6px;
     top: 25%;
+  }
+  .main-award {
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    padding-left: 10px;
+    .main-time {
+      margin-bottom: 10px;
+      color: #45AED7;
+      font-size: 12px;
+    }
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      .main-award-type {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        .main-award-tit {
+          font-size: 12px;
+          color: #45AED7;
+          margin-bottom: 10px;
+        }
+        .main-award-cont{
+          font-size: 10px;
+        }
+      }
+    }
   }
 }

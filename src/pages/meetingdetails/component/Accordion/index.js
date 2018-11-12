@@ -10,45 +10,72 @@ export default class extends Component {
       collapsed: true,
     }
   }
-  
+
   changeCollapse = () => {
     this.setState({
       collapsed: !this.state.collapsed
     })
   }
-  render () {
+
+  render() {
     let {collapsed} = this.state
     let {name, enName, list, bgImg, openPop, closePop, setLoginCb} = this.props
     return (
-      <div className="my-accordion">
-        <AccordionHeader
-          name={name}
-          changeCollapse={this.changeCollapse}
-          bgImg={bgImg}
-          enName={enName}
-          collapsed={collapsed}
-        />
-        {
-          collapsed
-          ? <div className="accor-content">
-              {
-                list && list.length
-                ? list.map((item, ind) => (
-                  <SpeechItem
-                    key={ind}
-                    speecher={item}
-                    
-                    openPop={openPop}
-                    closePop={closePop}
-                    setLoginCb={setLoginCb}
-                  />
-                ))
+        <div className="my-accordion">
+          <AccordionHeader
+              name={name}
+              changeCollapse={this.changeCollapse}
+              bgImg={bgImg}
+              enName={enName}
+              collapsed={collapsed}
+          />
+          {
+            collapsed
+                ? <div className="accor-content">
+                  {
+                    list && list.length
+                        ? list.map((item, ind) => {
+                          let objData = null
+                          if (item.id === 1461) {
+                            objData = item && item.sintroduce && JSON.parse(item.sintroduce)
+                          }
+                          return objData ? <GetAward objData={objData}/> :
+                              <SpeechItem
+                                  key={ind}
+                                  speecher={item}
+
+                                  openPop={openPop}
+                                  closePop={closePop}
+                                  setLoginCb={setLoginCb}
+                              />
+                        })
+                        : null
+                  }
+                </div>
                 : null
-              }
-          </div>
-          : null
-        }
-      </div>
+          }
+        </div>
     )
   }
+}
+const GetAward = ({objData}) => {
+  return <div className='main-award'>
+    <div className='main-time'>
+      {objData.time}
+    </div>
+    <div className='main-content'>
+      {
+        objData.awardArr.map(v =>
+            <div className='main-award-type'>
+              <div className='main-award-tit'>{v.award}</div>
+              <div className='main-award-cont'>
+                {
+                  v.types.map(v => <p>{v}</p>)
+                }
+              </div>
+            </div>
+        )
+      }
+    </div>
+  </div>
 }

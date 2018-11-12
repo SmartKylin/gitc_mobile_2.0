@@ -57,7 +57,7 @@ export default (config => {
   //大会简介
   'getBriefList': '/api/gitc/article-',
   //分会场详情
-  'gatMeetingDetails': '/api/gitc/article/beijing/'
+  'gatMeetingDetails': '/api/gitc/article/beijing/all/'
 
 })
 
