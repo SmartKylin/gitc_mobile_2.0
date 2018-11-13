@@ -47,7 +47,7 @@ let link = [
   "", //注销/activityinform 活动信息
   "",//brand 品牌专场
   "",//注销/service 服务信息
-  "",//呼叫小秘书 /screet
+  "/screet",//呼叫小秘书 /screet
 ]
 
 export default class extends Component {
