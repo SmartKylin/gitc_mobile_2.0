@@ -46,7 +46,7 @@ let link = [
   "/light", //亮点环节
   "", //注销/activityinform 活动信息
   "",//brand 品牌专场
-  "",//注销/service 服务信息
+  "/service",//注销/service 服务信息
   "/screet",//呼叫小秘书 /screet
 ]
 

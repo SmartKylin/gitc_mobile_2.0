@@ -28,7 +28,7 @@ export default class AddGroupContainer extends Component {
     }
 
     GroupPop(img){
-      console.log(img, 'pop');
+    //   console.log(img, 'pop');
       this.setState({
         img,
         flag:true
