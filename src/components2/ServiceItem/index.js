@@ -37,7 +37,7 @@ export default class extends Component {
   render() {
     let {collapsed} = this.state
     let {service, bgImg, index} = this.props
-    console.log(service,'service');
+    // console.log(service,'service');
     let content = null
     try {
       content = JSON.parse(service.content)
