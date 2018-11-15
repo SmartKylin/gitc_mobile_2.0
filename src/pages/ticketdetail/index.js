@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import ChildContainer from 'containers/child_container'
 import ticketBg from '../../images/ticket_bj.png'
+import ticketBgXD from '../../images/ticket_bj_xd.png'
 import ticketUsed from '../../images/ticket_used.png'
 import {getTicketDetail} from "../../services/ticket";
 import vip from '../../images/vip.png'
