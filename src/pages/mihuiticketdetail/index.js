@@ -12,6 +12,7 @@ import zhuanchang  from '../../images/专场票.png'
 
 import '../ticketdetail/index.scss'
 import JsBarcode from 'jsbarcode'
+import ticketBgXD from "../../images/ticket_bj_xd.png";
 // import storage from '../../helper/storage'
 
 // 根据票种得到对应门票的权益背景图
@@ -40,6 +41,7 @@ export default class extends Component {
             name: '',
             ticket: '',
             signStatus: 1,
+            isWany:false,
         }
     }
     componentWillMount () {
@@ -74,19 +76,35 @@ export default class extends Component {
                         width: 1.5,  // 线条宽度
                         height: 50
                     })
+              if(data.data){
+                this.getIsDinner(data.data.bt__name)
+              }
             })
             .catch((err) => {
                 this.props.history.goBack()
             })
 
     }
+
+  getIsDinner = (name) => {
+    if(name.indexOf('区') !== -1){
+      this.setState({
+        isWany:true
+      })
+    }else {
+      this.setState({
+        isWany:false
+      })
+    }
+  }
+
     render() {
-      let {signStatus} = this.state
+      let {signStatus,isWany} = this.state
       return (
             <div>
               <ChildContainer>
                 <div style={{background: 'rgba(0, 0, 0, 0)', marginTop: '10.5%', position: 'relative', display: 'flex', justifyContent: 'center'}}>
-                  <img src={ticketBg} alt="" className="ticket--bg"/>
+                  <img src={isWany ? ticketBgXD : ticketBg} alt="" className="ticket--bg"/>
                   {
                     signStatus == 2
                     ? <img className={'ticket-stamp'} alt="" src={ticketUsed}/>

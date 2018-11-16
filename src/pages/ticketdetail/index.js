@@ -40,6 +40,7 @@ export default class extends Component {
       name: '',
       ticket: '',
       signStatus: 1,
+      isWany:false
     }
   }
   componentWillMount () {
@@ -47,7 +48,7 @@ export default class extends Component {
     document.title = "我的门票"
   }
   componentDidMount () {
-    
+
     let phone = storage.get(storage.PHONE_KEY)
     //code 码
     let code = this.props.match.params.code
@@ -65,7 +66,7 @@ export default class extends Component {
         name: data.data && data.data.name,
         signStatus: data.data && data.data.sign_staus
       })
-      
+
       // 生成条形码
       JsBarcode(this.barcode, code,
       {
@@ -76,20 +77,36 @@ export default class extends Component {
         width: 1.5,  // 线条宽度
         height: 50
       })
+      if(data.data){
+        this.getIsDinner(data.data.bt__name)
+      }
     })
     .catch((err) => {
         this.props.history.goBack()
     })
-    
+
   }
+
+  getIsDinner = (name) => {
+    if(name.indexOf('区') !== -1){
+      this.setState({
+        isWany:true
+      })
+    }else {
+      this.setState({
+        isWany:false
+      })
+    }
+  }
+
   render() {
-    let {signStatus} = this.state
+    let {signStatus,isWany} = this.state
     return (
       <div>
         <ChildContainer>
           <div style={{background: 'rgba(0, 0, 0, 0)', marginTop: '10.5%', position: 'relative', display: 'flex', justifyContent: 'center'}}>
-            
-            <img src={ticketBg} alt="" className="ticket--bg"/>
+
+            <img src={isWany ? ticketBgXD : ticketBg} alt="" className="ticket--bg"/>
             {
               signStatus == 2
               ? <img className={'ticket-stamp'} alt="" src={ticketUsed}/>
@@ -102,7 +119,7 @@ export default class extends Component {
             <div className="ticket--barcode">
               <svg ref={ barcde => this.barcode = barcde}></svg>
             </div>
-            
+
           </div>
           <div className="ticket--instructions">
             <div>使用说明</div>
