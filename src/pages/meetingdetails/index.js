@@ -30,9 +30,7 @@ export default class MeetingDetails extends React.Component{
     let {openPop, closePop, setLoginCb} = this.props.history
     return(
         <div className="MeetingDetailsBox">
-          this.state.data && this.state.data.length > 0
-            ? <Conference  id={this.state.id} data={this.state.data? this.state.data : ""}/>
-  
+          <Conference  id={this.state.id} data={this.state.data? this.state.data : ""}/>
           {
             data && data.first_id > 0
             ? <Accor

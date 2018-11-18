@@ -15,7 +15,7 @@ export default class Map extends Component {
             addColor: '#fff',
             imgPop: 'none',
             imgAry: [],
-            index: 5
+            index: 2
         }
     }
 
@@ -36,7 +36,7 @@ export default class Map extends Component {
             this.setState({
                 imgSize: this.state.imgSize + 50
             })
-        }
+        }   
     }
 
     cutClick(e) {
@@ -71,10 +71,12 @@ export default class Map extends Component {
 
     render() {
         let {imgSize, imgPop, imgAry, index} = this.state
-        return (
+      console.log(imgAry,'imgAry');
+      console.log(index,'index');
+      return (
             <ChildBackground>
                 {
-                    imgAry.length
+                  imgAry && imgAry.length > 0
                         ? (
                             <div>
                                 <div className="map-box">

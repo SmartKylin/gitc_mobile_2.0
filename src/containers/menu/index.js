@@ -82,13 +82,10 @@ export default class extends Component {
             {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会相册</Link>*/}
             {/*<Link to={"/conferencenews"} onClick={() => this.props.closeMenu()}>大会新闻</Link>*/}
 
-
-            {/*回到首页*/}
-            <Link to={"/"} onClick={() => this.props.closeMenu()}>精彩内容</Link>
             {/*需要服务信息*/}
             <Link to={"/service"} onClick={() => this.props.closeMenu()}>服务信息</Link>
             {/*库素修改*/}
-            {/*<Link to={"/map"} onClick={() => this.props.closeMenu()}>场馆地图</Link>*/}
+            <Link to={"/map"} onClick={() => this.props.closeMenu()}>场馆地图</Link>
 
             {/*<Link to={"/issue"} onClick={() => this.props.closeMenu()}>议题提交</Link>*/}
             {/*<Link to={"/sponsorship"} onClick={() => this.props.closeMenu()}>赞助合作</Link>*/}

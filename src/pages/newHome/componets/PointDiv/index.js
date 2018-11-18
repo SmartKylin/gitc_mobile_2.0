@@ -20,13 +20,13 @@ export default class PointDiv extends React.Component{
     return(
         <div className="PointDivBox">
 
-         {/* <div className="PointDivBoxXc">
-            <a href="https://www.bagevent.com/event/768490">
+          <div className="PointDivBoxXc">
+            <a href="https://www.bagevent.com/event/1717742">
               <div className="PointDivBoxXcT">
                 <img src={goupiao} alt=""/>
               </div>
             </a>
-          </div>*/}
+          </div>
 
           <div className="PointDivBoxWx iconfont icon-weixin" onClick={this.Bombbox}>
             {
