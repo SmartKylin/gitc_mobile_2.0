@@ -73,7 +73,7 @@ export default class extends Component {
     this.setState({
       mobile: this.mobile.value
     })
-    let reg = /^1[3|4|5|7|8][0-9]{9}$/;
+    let reg = /^1[3|4|5|6|7|8][0-9]{9}$/;
     let mobile = this.mobile.value;
     let mobileRight =  reg.test(mobile)
     this.setState({
