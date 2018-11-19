@@ -60,7 +60,7 @@ export default class AddGroupContainer extends Component {
                                                return index < 4 ?
                                                     <div key={index}>
                                                         <img style={{width: '0.84rem', height: '0.84rem'}} onClick={() => this.GroupPop(innerItem.img)} src={innerItem.img} alt=""/>
-                                                        <div>{innerItem.title}</div>
+                                                        <div style={{fontSize:'11px'}}>{innerItem.title}</div>
                                                     </div>:""
 
                                             })
