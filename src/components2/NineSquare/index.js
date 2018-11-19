@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import "./indes.scss"
-const cont= [{
+
+const cont = [{
   tit: '大会直播',
   engtit: 'LIVE BROADCAST'
 }, {
@@ -32,19 +33,19 @@ const cont= [{
 const generateNineAry = () => {
   let ary = []
   for (let i = 0; i < 9; i++) {
-    ary.push({img: require(`./images/palace_0${i+1}.png`), contents: [cont[i]]})
+    ary.push({img: require(`./images/palace_0${i + 1}.png`), contents: [cont[i]]})
   }
   return ary
 }
-let  nine_imgs = generateNineAry()
+let nine_imgs = generateNineAry()
 
 let link = [
   "http://mudu.tv/watch/2570183",
-  "",
-  "",
-  "",
-  "/light", //亮点环节
-  "", //注销/activityinform 活动信息
+  "http://www.thegitc.com/static/pdf/bj2018.pdf",
+  "/addgroup",
+  "http://www.pailixiang.com/album_ia178625021.html?from=singlemessage&isappinstalled=0",
+  "/light", //light亮点环节
+  "/activityinform", //activityinform 活动信息
   "/brand",//brand 品牌专场
   "/service",//注销/service 服务信息
   "/screet",//呼叫小秘书 /screet
@@ -52,32 +53,32 @@ let link = [
 
 export default class extends Component {
 
-  render () {
+  render() {
     return (
-      <ul className="nine-square">
-        {
-          nine_imgs.map((item, index) => {
-            return <li>
-              {
-                index == 0 || index == 3 ? <a href={link[index]}><img src={item.img} alt=""/></a>
-                : <Link to={link[index]} key={index}>
-                <img src={item.img} alt=""/>
-                </Link>
-              }
-            
-              { 
-                item.contents.map((v, i) => {
-                  return <p>
-                    <span>{v.tit}</span>
-                    <span>{v.engtit}</span>
-                  </p>
-                })
-              }
-            </li>
-          })
-        }
-        
-      </ul>
+        <ul className="nine-square">
+          {
+            nine_imgs.map((item, index) => {
+              return <li>
+                {
+                  index == 0 || index == 1 || index == 3 ? <a href={link[index]}><img src={item.img} alt=""/></a>
+                      : <Link to={link[index]} key={index}>
+                        <img src={item.img} alt=""/>
+                      </Link>
+                }
+
+                {
+                  item.contents.map((v, i) => {
+                    return <p>
+                      <span>{v.tit}</span>
+                      <span>{v.engtit}</span>
+                    </p>
+                  })
+                }
+              </li>
+            })
+          }
+
+        </ul>
     )
   }
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import RoadShowImg from '../../images2/活动路演.png'
+import RoadShowImg from '../../images2/road-show_02.png'
 
 export default class extends Component {
   render () {

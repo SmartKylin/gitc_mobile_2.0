@@ -15,6 +15,9 @@
       }
     }
   }
+  .ant-menu-submenu-open.ant-menu-submenu-inline > .ant-menu-submenu-title:after{
+    content: '';
+  }
   .AddGroupContainerBig{
     img{
       width: 200px;

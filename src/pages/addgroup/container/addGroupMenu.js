@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Menu} from 'antd'
 import 'antd/dist/antd.css'
 import '../index.scss'
-import {getListImgs} from "../../../services/getListNews";
+import {getListPageImgs} from "../../../services/getListNews";
 
 const {SubMenu} = Menu
 export default class AddGroupContainer extends Component {
@@ -18,7 +18,7 @@ export default class AddGroupContainer extends Component {
     }
 
     componentWillMount () {
-        getListImgs(8).then(res => res && res.json())
+      getListPageImgs(19).then(res => res && res.json())
             .then(data => {
                 this.setState({
                     datas: data.data,
@@ -48,6 +48,7 @@ export default class AddGroupContainer extends Component {
                 <Menu
                     mode="inline"
                     style={{background: '#fff',borderRadius: '5px',paddingBottom:'3px'}}
+                    openKeys={['i0']}
                 >
                     {
                         this.state.datas &&  this.state.datas.length>0 && this.state.datas.map((item,index)=>(

@@ -71,8 +71,6 @@ export default class Map extends Component {
 
     render() {
         let {imgSize, imgPop, imgAry, index} = this.state
-      console.log(imgAry,'imgAry');
-      console.log(index,'index');
       return (
             <ChildBackground>
                 {

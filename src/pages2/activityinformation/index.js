@@ -2,8 +2,8 @@ import React from 'react'
 import Accordion from './componets/Accordion'
 import bg1 from '../../images2/accordionA_bg1.png'
 import bg2 from '../../images2/accordionA_bg2.png'
-import img1 from './images/road-show_02.png'
-import img2 from './images/collect-stamp.png'
+import img1 from '../../images2/road-show_02.png'
+import img2 from '../../images2/collect-stamp.png'
 import './index.scss'
 export default class ActivityInformation extends React.Component{
 
