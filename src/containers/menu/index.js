@@ -57,8 +57,8 @@ export default class extends Component {
                className="nav--group">
 
             {/* <Link to={"/home"} onClick={() => this.props.closeMenu()}>首页</Link> */}
-            <Link to={"/"} onClick={() => this.props.closeMenu()}>首页</Link>
-            {/* <a href="http://www.thegitc.com/home.html">首页</a> */}
+            {/*<Link to={"/"} onClick={() => this.props.closeMenu()}>首页</Link>*/}
+            <a href="http://www.thegitc.com/index.html">首页</a>
             <a href="javascript:" onClick={() => this.handleClick('/ticket')}>我的门票</a>
             <a href="javascript:" onClick={() => this.handleClick('/user')}>个人中心</a>
 
@@ -75,7 +75,7 @@ export default class extends Component {
             <Link to={"/light"} onClick={() => this.props.closeMenu()}>亮点环节</Link>
 
             {/*需要改成--->会议结构*/}
-             <Link to={"/topic"} onClick={() => this.props.closeMenu()}>大会专题</Link>
+            <Link to={"/topic"} onClick={() => this.props.closeMenu()}>大会专题</Link>
 
             {/*<Link to={"/login"} onClick={() => this.props.closeMenu()}>大会商店</Link>*/}
             {/*<Link to={"/activity"} onClick={() => this.props.closeMenu()}>现场活动</Link>*/}
